@@ -93,6 +93,16 @@ namespace teacher_evaluation_project.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap NUZP_GERB_svg {
+            get {
+                object obj = ResourceManager.GetObject("NUZP_GERB_svg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap search_alt_2_svgrepo_com_negate {
             get {
                 object obj = ResourceManager.GetObject("search_alt_2_svgrepo_com_negate", resourceCulture);
