@@ -11,6 +11,7 @@ namespace teacher_evaluation_project {
         public FormMainMenu() {
             InitializeComponent();
             random = new Random();
+            ActivateMenuItem(btnHome);
         }
 
         private Color SelectThemeColor() {
@@ -23,10 +24,10 @@ namespace teacher_evaluation_project {
             return ColorTranslator.FromHtml(color);
         }
 
-        private void ActivateButton(object btnSender) {
+        private void ActivateMenuItem(object btnSender) {
             if (btnSender != null) {
                 if (currentButton != (Button)btnSender) {
-                    DisableButton();
+                    DisableMenuItems();
                     Color color = SelectThemeColor();
                     currentButton = (Button)btnSender;
                     currentButton.BackColor = color;
@@ -35,9 +36,9 @@ namespace teacher_evaluation_project {
                 }
             }
         }
-        private void DisableButton() {
+        private void DisableMenuItems() {
             foreach (Control previousBtn in panelMenu.Controls) {
-                if (previousBtn.GetType() == typeof(Button)) {
+                if (previousBtn.GetType() == typeof(Button) && previousBtn != btnLogin) {
                     previousBtn.BackColor = Color.FromArgb(51, 51, 76);
                     previousBtn.ForeColor = Color.Gainsboro;
                     previousBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -45,20 +46,38 @@ namespace teacher_evaluation_project {
             }
         }
 
+
+
         private void btnHome_Click(object sender, EventArgs e) {
-            ActivateButton(sender);
+            ActivateMenuItem(sender);
         }
 
         private void btnSearch_Click(object sender, EventArgs e) {
-            ActivateButton(sender);
+            ActivateMenuItem(sender);
         }
 
         private void btnTheme_Click(object sender, EventArgs e) {
-            ActivateButton(sender);
+            ActivateMenuItem(sender);
         }
 
         private void btnSettings_Click(object sender, EventArgs e) {
-            ActivateButton(sender);
+            ActivateMenuItem(sender);
+        }
+
+        private void btnFaq_Click(object sender, EventArgs e) {
+            ActivateMenuItem(sender);
+        }
+
+        private void btnDev_Click(object sender, EventArgs e) {
+            ActivateMenuItem(sender);
+        }
+
+        private void brnAbout_Click(object sender, EventArgs e) {
+            ActivateMenuItem(sender);
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e) {
+            DisableMenuItems();
         }
     }
 }
