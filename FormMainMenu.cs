@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 namespace teacher_evaluation_project {
     public partial class FormMainMenu : Form {
         //Fields
-        private Button currentButton;
+        private Button activeButton;
         private Form activeForm;
 
         //Constructor
@@ -15,12 +15,12 @@ namespace teacher_evaluation_project {
 
         private void ActivateMenuItem(object btnSender) {
             if (btnSender != null) {
-                if (currentButton != (Button)btnSender) {
+                if (activeButton != (Button)btnSender) {
                     DisableMenuItems();
-                    currentButton = (Button)btnSender;
-                    currentButton.BackColor = Color.FromArgb(0, 176, 176);
-                    currentButton.ForeColor = Color.White;
-                    currentButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                    activeButton = (Button)btnSender;
+                    activeButton.BackColor = Color.FromArgb(0, 176, 176);
+                    activeButton.ForeColor = Color.White;
+                    activeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                 }
             }
         }
@@ -32,6 +32,7 @@ namespace teacher_evaluation_project {
                     previousBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                 }
             }
+            activeButton = null;
         }
 
         public void OpenChildForm(Form childForm) {
