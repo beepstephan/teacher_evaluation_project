@@ -10,8 +10,14 @@ using System.Windows.Forms;
 
 namespace teacher_evaluation_project.Forms {
     public partial class FormSingUp : Form {
-        public FormSingUp() {
+        FormMainMenu mainMenu;
+        public FormSingUp(FormMainMenu mainMenu) {
             InitializeComponent();
+            this.mainMenu = mainMenu;
+        }
+
+        private void label1_Click(object sender, EventArgs e) {
+            mainMenu.OpenChildForm(new Forms.FormLogin(mainMenu));
         }
     }
 }

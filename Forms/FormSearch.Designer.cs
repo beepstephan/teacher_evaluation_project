@@ -23,6 +23,7 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            ListViewItem listViewItem1 = new ListViewItem("Степаненко Степан Степанович");
             listView1 = new ListView();
             radioButton1 = new RadioButton();
             radioButton2 = new RadioButton();
@@ -35,16 +36,19 @@
             // 
             listView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             listView1.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            listView1.Items.AddRange(new ListViewItem[] { listViewItem1 });
             listView1.Location = new Point(34, 136);
             listView1.Name = "listView1";
             listView1.Size = new Size(560, 174);
             listView1.TabIndex = 0;
             listView1.UseCompatibleStateImageBehavior = false;
+            listView1.View = View.List;
             // 
             // radioButton1
             // 
             radioButton1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             radioButton1.AutoSize = true;
+            radioButton1.Checked = true;
             radioButton1.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
             radioButton1.Location = new Point(356, 103);
             radioButton1.Name = "radioButton1";
@@ -63,7 +67,6 @@
             radioButton2.Name = "radioButton2";
             radioButton2.Size = new Size(116, 21);
             radioButton2.TabIndex = 2;
-            radioButton2.TabStop = true;
             radioButton2.Text = "За рейтингом";
             radioButton2.UseVisualStyleBackColor = true;
             // 

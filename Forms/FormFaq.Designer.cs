@@ -23,18 +23,33 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            label1 = new Label();
             SuspendLayout();
+            // 
+            // label1
+            // 
+            label1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            label1.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(286, 36);
+            label1.Name = "label1";
+            label1.Size = new Size(65, 17);
+            label1.TabIndex = 0;
+            label1.Text = "Питання";
+            label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // FormFaq
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(628, 322);
+            Controls.Add(label1);
             Name = "FormFaq";
             Text = "FAQ";
             ResumeLayout(false);
         }
 
         #endregion
+
+        private Label label1;
     }
 }

@@ -34,7 +34,7 @@ namespace teacher_evaluation_project {
             }
         }
 
-        private void OpenChildForm(Form childForm) {
+        public void OpenChildForm(Form childForm) {
             if (activeForm != null) {
                 activeForm.Close();
             }
@@ -78,7 +78,7 @@ namespace teacher_evaluation_project {
         }
         private void btnLogin_Click(object sender, EventArgs e) {
             DisableMenuItems();
-            OpenChildForm(new Forms.FormLogin());
+            OpenChildForm(new Forms.FormLogin(this));
         }
     }
 }

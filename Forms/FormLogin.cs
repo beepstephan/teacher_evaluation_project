@@ -7,11 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace teacher_evaluation_project.Forms {
     public partial class FormLogin : Form {
-        public FormLogin() {
+        FormMainMenu mainMenu;
+        public FormLogin(FormMainMenu mainMenu) {
             InitializeComponent();
+            this.mainMenu = mainMenu;
+        }
+
+        private void label1_Click(object sender, EventArgs e) {
+            mainMenu.OpenChildForm(new Forms.FormSingUp(mainMenu));
         }
     }
 }
