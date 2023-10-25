@@ -56,7 +56,7 @@ namespace teacher_evaluation_project {
         }
         private void btnSearch_Click(object sender, EventArgs e) {
             ActivateMenuItem(sender);
-            OpenChildForm(new Forms.FormSearch());
+            OpenChildForm(new Forms.FormSearch(this));
         }
         private void btnTheme_Click(object sender, EventArgs e) {
             // зміна теми застосунку

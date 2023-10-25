@@ -34,15 +34,20 @@
             // 
             // listView1
             // 
+            listView1.Activation = ItemActivation.OneClick;
             listView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             listView1.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            listView1.FullRowSelect = true;
+            listViewItem1.StateImageIndex = 0;
             listView1.Items.AddRange(new ListViewItem[] { listViewItem1 });
             listView1.Location = new Point(34, 136);
+            listView1.MultiSelect = false;
             listView1.Name = "listView1";
             listView1.Size = new Size(560, 174);
             listView1.TabIndex = 0;
             listView1.UseCompatibleStateImageBehavior = false;
-            listView1.View = View.List;
+            listView1.View = View.SmallIcon;
+            listView1.ItemActivate += listView1_ItemActivate;
             // 
             // radioButton1
             // 

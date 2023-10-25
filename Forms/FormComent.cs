@@ -9,16 +9,17 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace teacher_evaluation_project.Forms {
-    public partial class FormTeacher : Form {
+    public partial class FormComent : Form {
         FormMainMenu mainMenu;
-        public FormTeacher(FormMainMenu mainMenu, string teacherName) {
+        public FormComent(FormMainMenu mainMenu, string teacherName) {
             InitializeComponent();
             this.mainMenu = mainMenu;
             label1.Text = teacherName;
         }
 
         private void button1_Click(object sender, EventArgs e) {
-            mainMenu.OpenChildForm(new Forms.FormComent(mainMenu, label1.Text));
+            /*відпралення на сервер*/
+            mainMenu.OpenChildForm(new Forms.FormSearch(mainMenu));
         }
     }
 }

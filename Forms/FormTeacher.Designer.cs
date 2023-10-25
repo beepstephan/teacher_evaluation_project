@@ -92,6 +92,7 @@
             button1.TabIndex = 5;
             button1.Text = "Дати відгук";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // label5
             // 
@@ -126,7 +127,7 @@
             Controls.Add(label1);
             Controls.Add(pictureBox1);
             Name = "FormTeacher";
-            Text = "FormTeacher";
+            Text = "Викладач";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
