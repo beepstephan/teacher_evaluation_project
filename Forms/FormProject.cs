@@ -9,13 +9,12 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace teacher_evaluation_project.Forms {
-    public partial class FormSingUp : FormProject {
-        public FormSingUp() {
+    public partial class FormProject : Form {
+        public FormProject() {
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e) {
-            FormMainMenu.mainMenu.OpenChildForm(new Forms.FormLogIn());
-        }
+        public virtual void SetThemeColor(Theme newTheme) {}
+        public virtual void ChangeThemeColor() {}
     }
 }

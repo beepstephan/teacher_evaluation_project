@@ -24,12 +24,12 @@
         /// </summary>
         private void InitializeComponent() {
             panelMenu = new Panel();
+            btnTheme = new Button();
             brnAbout = new Button();
             btnFaq = new Button();
             btnDev = new Button();
             btnLogin = new Button();
             btnSettings = new Button();
-            btnTheme = new Button();
             btnSearch = new Button();
             btnHome = new Button();
             panelLogo = new Panel();
@@ -44,7 +44,7 @@
             // 
             // panelMenu
             // 
-            panelMenu.BackColor = Color.FromArgb(51, 51, 76);
+            panelMenu.BackColor = activeTheme.mainMenuColor;
             panelMenu.Controls.Add(btnTheme);
             panelMenu.Controls.Add(brnAbout);
             panelMenu.Controls.Add(btnFaq);
@@ -60,13 +60,33 @@
             panelMenu.Size = new Size(240, 436);
             panelMenu.TabIndex = 0;
             // 
+            // btnTheme
+            // 
+            btnTheme.Dock = DockStyle.Top;
+            btnTheme.FlatAppearance.BorderSize = 0;
+            btnTheme.FlatStyle = FlatStyle.Flat;
+            btnTheme.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            btnTheme.ForeColor = activeTheme.textColor;
+            btnTheme.Image = Properties.Resources.color_palette_svgrepo_com_negate;
+            btnTheme.ImageAlign = ContentAlignment.MiddleLeft;
+            btnTheme.Location = new Point(0, 255);
+            btnTheme.Name = "btnTheme";
+            btnTheme.Padding = new Padding(12, 0, 0, 0);
+            btnTheme.Size = new Size(240, 60);
+            btnTheme.TabIndex = 11;
+            btnTheme.Text = "   Тема";
+            btnTheme.TextAlign = ContentAlignment.MiddleLeft;
+            btnTheme.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnTheme.UseVisualStyleBackColor = true;
+            btnTheme.Click += btnTheme_Click;
+            // 
             // brnAbout
             // 
             brnAbout.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             brnAbout.FlatAppearance.BorderSize = 0;
             brnAbout.FlatStyle = FlatStyle.Flat;
             brnAbout.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            brnAbout.ForeColor = Color.Gainsboro;
+            brnAbout.ForeColor = activeTheme.textColor;
             brnAbout.ImageAlign = ContentAlignment.MiddleLeft;
             brnAbout.Location = new Point(160, 375);
             brnAbout.Name = "brnAbout";
@@ -83,7 +103,7 @@
             btnFaq.FlatAppearance.BorderSize = 0;
             btnFaq.FlatStyle = FlatStyle.Flat;
             btnFaq.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            btnFaq.ForeColor = Color.Gainsboro;
+            btnFaq.ForeColor = activeTheme.textColor;
             btnFaq.ImageAlign = ContentAlignment.MiddleLeft;
             btnFaq.Location = new Point(0, 375);
             btnFaq.Name = "btnFaq";
@@ -100,7 +120,7 @@
             btnDev.FlatAppearance.BorderSize = 0;
             btnDev.FlatStyle = FlatStyle.Flat;
             btnDev.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            btnDev.ForeColor = Color.Gainsboro;
+            btnDev.ForeColor = activeTheme.textColor;
             btnDev.ImageAlign = ContentAlignment.MiddleLeft;
             btnDev.Location = new Point(80, 375);
             btnDev.Name = "btnDev";
@@ -118,7 +138,7 @@
             btnLogin.FlatAppearance.BorderSize = 0;
             btnLogin.FlatStyle = FlatStyle.Flat;
             btnLogin.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            btnLogin.ForeColor = Color.Gainsboro;
+            btnLogin.ForeColor = activeTheme.textColor;
             btnLogin.Image = Properties.Resources.login_svgrepo_com_negate;
             btnLogin.Location = new Point(0, 315);
             btnLogin.Name = "btnLogin";
@@ -133,11 +153,12 @@
             // 
             // btnSettings
             // 
+            btnSettings.BackColor = activeTheme.mainMenuColor;
             btnSettings.Dock = DockStyle.Top;
             btnSettings.FlatAppearance.BorderSize = 0;
             btnSettings.FlatStyle = FlatStyle.Flat;
             btnSettings.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            btnSettings.ForeColor = Color.Gainsboro;
+            btnSettings.ForeColor = activeTheme.textColor;
             btnSettings.Image = Properties.Resources.settings_svgrepo_com_negate;
             btnSettings.ImageAlign = ContentAlignment.MiddleLeft;
             btnSettings.Location = new Point(0, 195);
@@ -148,28 +169,8 @@
             btnSettings.Text = "   Налаштування";
             btnSettings.TextAlign = ContentAlignment.MiddleLeft;
             btnSettings.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnSettings.UseVisualStyleBackColor = true;
+            btnSettings.UseVisualStyleBackColor = false;
             btnSettings.Click += btnSettings_Click;
-            // 
-            // btnTheme
-            // 
-            btnTheme.Dock = DockStyle.Top;
-            btnTheme.FlatAppearance.BorderSize = 0;
-            btnTheme.FlatStyle = FlatStyle.Flat;
-            btnTheme.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            btnTheme.ForeColor = Color.Gainsboro;
-            btnTheme.Image = Properties.Resources.color_palette_svgrepo_com_negate;
-            btnTheme.ImageAlign = ContentAlignment.MiddleLeft;
-            btnTheme.Location = new Point(0, 255);
-            btnTheme.Name = "btnTheme";
-            btnTheme.Padding = new Padding(12, 0, 0, 0);
-            btnTheme.Size = new Size(240, 60);
-            btnTheme.TabIndex = 11;
-            btnTheme.Text = "   Тема";
-            btnTheme.TextAlign = ContentAlignment.MiddleLeft;
-            btnTheme.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnTheme.UseVisualStyleBackColor = true;
-            btnTheme.Click += btnTheme_Click;
             // 
             // btnSearch
             // 
@@ -177,7 +178,7 @@
             btnSearch.FlatAppearance.BorderSize = 0;
             btnSearch.FlatStyle = FlatStyle.Flat;
             btnSearch.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            btnSearch.ForeColor = Color.Gainsboro;
+            btnSearch.ForeColor = activeTheme.textColor;
             btnSearch.Image = Properties.Resources.search_alt_2_svgrepo_com_negate;
             btnSearch.ImageAlign = ContentAlignment.MiddleLeft;
             btnSearch.Location = new Point(0, 135);
@@ -197,7 +198,7 @@
             btnHome.FlatAppearance.BorderSize = 0;
             btnHome.FlatStyle = FlatStyle.Flat;
             btnHome.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            btnHome.ForeColor = Color.Gainsboro;
+            btnHome.ForeColor = activeTheme.textColor;
             btnHome.Image = Properties.Resources.home_svgrepo_com_negate;
             btnHome.ImageAlign = ContentAlignment.MiddleLeft;
             btnHome.Location = new Point(0, 75);
@@ -213,7 +214,7 @@
             // 
             // panelLogo
             // 
-            panelLogo.BackColor = Color.FromArgb(39, 39, 58);
+            panelLogo.BackColor = activeTheme.mainMenuColor;
             panelLogo.Controls.Add(logo);
             panelLogo.Dock = DockStyle.Top;
             panelLogo.Location = new Point(0, 0);
@@ -223,9 +224,11 @@
             // 
             // logo
             // 
+            logo.BackColor = activeTheme.mainMenuColor;
             logo.Dock = DockStyle.Fill;
+            logo.FlatStyle = FlatStyle.Flat;
             logo.Font = new Font("Microsoft Sans Serif", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            logo.ForeColor = Color.Gainsboro;
+            logo.ForeColor = activeTheme.textColor;
             logo.Location = new Point(0, 0);
             logo.Name = "logo";
             logo.Size = new Size(240, 75);
@@ -235,7 +238,7 @@
             // 
             // panelTitleBar
             // 
-            panelTitleBar.BackColor = Color.FromArgb(51, 51, 76);
+            panelTitleBar.BackColor = activeTheme.panelTitleBar;
             panelTitleBar.Controls.Add(lblTitle);
             panelTitleBar.Dock = DockStyle.Top;
             panelTitleBar.Location = new Point(240, 0);
@@ -245,9 +248,10 @@
             // 
             // lblTitle
             // 
+            lblTitle.BackColor = activeTheme.panelTitleBar;
             lblTitle.Dock = DockStyle.Fill;
             lblTitle.Font = new Font("Microsoft Sans Serif", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            lblTitle.ForeColor = Color.Gainsboro;
+            lblTitle.ForeColor = activeTheme.textColor;
             lblTitle.Location = new Point(0, 0);
             lblTitle.Name = "lblTitle";
             lblTitle.Size = new Size(644, 75);
@@ -257,6 +261,7 @@
             // 
             // panelDesktop
             // 
+            panelDesktop.BackColor = activeTheme.panelDesktopColor;
             panelDesktop.Dock = DockStyle.Fill;
             panelDesktop.Location = new Point(240, 75);
             panelDesktop.Name = "panelDesktop";
@@ -267,14 +272,14 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.Control;
+            BackColor = activeTheme.panelDesktopColor;
             ClientSize = new Size(884, 436);
             Controls.Add(panelDesktop);
             Controls.Add(panelTitleBar);
             Controls.Add(panelMenu);
             MinimumSize = new Size(900, 475);
             Name = "FormMainMenu";
-            Text = "Оцінка викладачів";
+            Text = "Оцінювання викладачів";
             panelMenu.ResumeLayout(false);
             panelLogo.ResumeLayout(false);
             panelTitleBar.ResumeLayout(false);

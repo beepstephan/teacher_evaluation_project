@@ -44,6 +44,7 @@
             // 
             // label1
             // 
+            label1.ForeColor = FormMainMenu.activeTheme.textColor;
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label1.Location = new Point(21, 200);
@@ -56,6 +57,7 @@
             // panel1
             // 
             panel1.Anchor = AnchorStyles.None;
+            panel1.BackColor = Color.Transparent;
             panel1.Controls.Add(label1);
             panel1.Controls.Add(pictureBox1);
             panel1.Location = new Point(40, 27);
@@ -65,6 +67,7 @@
             // 
             // FormHome
             // 
+            BackColor = FormMainMenu.activeTheme.panelDesktopColor;
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImageLayout = ImageLayout.None;

@@ -10,15 +10,13 @@ using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace teacher_evaluation_project.Forms {
-    public partial class FormLogin : Form {
-        FormMainMenu mainMenu;
-        public FormLogin(FormMainMenu mainMenu) {
+    public partial class FormLogIn : FormProject {
+        public FormLogIn() {
             InitializeComponent();
-            this.mainMenu = mainMenu;
         }
 
         private void label1_Click(object sender, EventArgs e) {
-            mainMenu.OpenChildForm(new Forms.FormSingUp(mainMenu));
+            FormMainMenu.mainMenu.OpenChildForm(new Forms.FormSingUp());
         }
     }
 }

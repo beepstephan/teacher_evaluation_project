@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace teacher_evaluation_project.Forms {
-    public partial class FormAbout : Form {
+    public partial class FormAbout : FormProject {
         public FormAbout() {
             InitializeComponent();
         }

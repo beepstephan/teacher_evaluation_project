@@ -1,5 +1,5 @@
 ﻿namespace teacher_evaluation_project.Forms {
-    partial class FormLogin {
+    partial class FormLogIn {
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -73,7 +73,7 @@
             label1.Text = "Ще немає облікового запису?";
             label1.Click += label1_Click;
             // 
-            // FormLogin
+            // FormLogIn
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;

@@ -9,9 +9,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace teacher_evaluation_project.Forms {
-    public partial class FormHome : Form {
+    public partial class FormHome : FormProject {
         public FormHome() {
             InitializeComponent();
+        }
+
+        public override void ChangeThemeColor() {
+            BackColor = FormMainMenu.activeTheme.panelDesktopColor;
+            label1.ForeColor = FormMainMenu.activeTheme.textColor;
         }
     }
 }
