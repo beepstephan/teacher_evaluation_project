@@ -1,3 +1,4 @@
+using System.Drawing.Imaging;
 using System.Runtime.InteropServices;
 using teacher_evaluation_project.Forms;
 
@@ -32,11 +33,11 @@ namespace teacher_evaluation_project {
             }
         }
         private void DisableMenuItems() {
-            foreach (Control previousBtn in panelMenu.Controls) {
-                if (previousBtn.GetType() == typeof(Button) && previousBtn != btnLogin) {
-                    previousBtn.BackColor = activeTheme.mainMenuColor;
-                    previousBtn.ForeColor = activeTheme.textColor;
-                    previousBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            foreach (Control btn in panelMenu.Controls) {
+                if (btn.GetType() == typeof(Button) && btn != btnLogin) {
+                    btn.BackColor = activeTheme.mainMenuColor;
+                    btn.ForeColor = activeTheme.textColor;
+                    btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                 }
             }
             activeButton = null;
@@ -56,9 +57,6 @@ namespace teacher_evaluation_project {
             lblTitle.Text = childForm.Text;
         }
 
-        public override void SetThemeColor(Theme newTheme) {
-
-        }
         public override void ChangeThemeColor() {
             Theme tempTheme = themeColor.GetTheme();
             while (activeTheme == tempTheme) {
@@ -72,7 +70,27 @@ namespace teacher_evaluation_project {
                     btn.ForeColor = activeTheme.textColor;
                 }
             }
-            activeForm.ChangeThemeColor();
+
+            foreach (Control btn in panelMenu.Controls) {
+                if (btn.GetType() == typeof(Button)) {
+                    if (((Button)btn).Image != null) {
+                        Image img = ((Button)btn).Image;
+                        Bitmap bmp = new Bitmap(img);
+                        for (int y = 0; y < bmp.Height; y++) {
+                            for (int x = 0; x < bmp.Width; x++) {
+                                Color pixel = bmp.GetPixel(x, y);
+                                int a = pixel.A;
+                                int r = activeTheme.imgColor.R;
+                                int g = activeTheme.imgColor.G;
+                                int b = activeTheme.imgColor.B;
+                                bmp.SetPixel(x, y, Color.FromArgb(a, r, g, b));
+                            }
+                        }
+                        ((Button)btn).Image = bmp;
+                    }
+                }
+                activeForm.ChangeThemeColor();
+            }
         }
 
         private void btnHome_Click(object sender, EventArgs e) {
