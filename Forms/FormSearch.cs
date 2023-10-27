@@ -15,11 +15,19 @@ namespace teacher_evaluation_project.Forms {
     public partial class FormSearch : FormProject {
         public FormSearch() {
             InitializeComponent();
+            SetThemeColor(FormMain.activeTheme);
         }
 
         private void listView1_ItemActivate(object sender, EventArgs e) {
             ListViewItem item = listView1.SelectedItems[0];
-            FormMainMenu.mainMenu.OpenChildForm(new Forms.FormTeacher(item.Text));
+            FormMain.mainMenu.OpenChildForm(new Forms.FormTeacher(item.Text));
+        }
+
+        public override void ChangeThemeColor() {
+            BackColor = FormMain.activeTheme.panelDesktopColor;
+        }
+        public override void SetThemeColor(Theme newTheme) {
+            BackColor = FormMain.activeTheme.panelDesktopColor;
         }
     }
 }

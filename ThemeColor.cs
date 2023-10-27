@@ -34,8 +34,7 @@ namespace teacher_evaluation_project {
         {
             //         mainMenuColor               panelDesktopColor           panelTitleBar               activeButtoneColor           textColor         imgColor
             {new Theme(Color.FromArgb(30, 30, 65), Color.FromArgb(35, 35, 80), Color.FromArgb(27, 27, 63), Color.FromArgb(40, 40, 150), Color.Gainsboro, Color.White)},
-            {new Theme(Color.FromArgb(30, 30, 65), Color.FromArgb(35, 35, 80), Color.FromArgb(230, 30, 30), Color.FromArgb(40, 40, 150), Color.Red, Color.Black)},
-            {new Theme(Color.FromArgb(30, 30, 65), Color.FromArgb(35, 35, 80), Color.FromArgb(180, 120, 80), Color.FromArgb(40, 40, 150), Color.Purple, Color.Red)},
+            {new Theme(Color.FromArgb(71, 115, 115), Color.FromArgb(71, 115, 130), Color.FromArgb(30, 100, 120), Color.FromArgb(40, 90, 90), Color.White, Color.White)}, // 100, 160, 200
         };
         public Theme GetTheme() {
             int themeIndex = random.Next(0, themeList.Count);

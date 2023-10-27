@@ -55,6 +55,7 @@
             radioButton1.AutoSize = true;
             radioButton1.Checked = true;
             radioButton1.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            radioButton1.ForeColor = Color.Gainsboro;
             radioButton1.Location = new Point(356, 103);
             radioButton1.Name = "radioButton1";
             radioButton1.Size = new Size(116, 21);
@@ -68,6 +69,7 @@
             radioButton2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             radioButton2.AutoSize = true;
             radioButton2.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            radioButton2.ForeColor = Color.Gainsboro;
             radioButton2.Location = new Point(478, 103);
             radioButton2.Name = "radioButton2";
             radioButton2.Size = new Size(116, 21);
@@ -111,6 +113,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(35, 35, 80);
             ClientSize = new Size(628, 322);
             Controls.Add(comboBox1);
             Controls.Add(button1);

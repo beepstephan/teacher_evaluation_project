@@ -3,20 +3,21 @@ using System.Runtime.InteropServices;
 using teacher_evaluation_project.Forms;
 
 namespace teacher_evaluation_project {
-    public partial class FormMainMenu : FormProject {
+    public partial class FormMain : FormProject {
         private ThemeColor themeColor = new ThemeColor();
 
         //Fields
         private Button activeButton;
         private FormProject activeForm;
         static public Theme activeTheme;
-        static public FormMainMenu mainMenu;
+        static public FormMain mainMenu;
 
         //Constructor
-        public FormMainMenu() {
+        public FormMain() {
+            InitializeComponent();
             mainMenu = this;
             activeTheme = themeColor.GetDefaultTheme();
-            InitializeComponent();
+            SetThemeColor(activeTheme);
             ActivateMenuItem(btnHome);
             OpenChildForm(new Forms.FormHome());
         }
@@ -34,7 +35,7 @@ namespace teacher_evaluation_project {
         }
         private void DisableMenuItems() {
             foreach (Control btn in panelMenu.Controls) {
-                if (btn.GetType() == typeof(Button) && btn != btnLogin) {
+                if (btn.GetType() == typeof(Button) && btn != btnLogIn) {
                     btn.BackColor = activeTheme.mainMenuColor;
                     btn.ForeColor = activeTheme.textColor;
                     btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -54,25 +55,20 @@ namespace teacher_evaluation_project {
             this.panelDesktop.Tag = childForm;
             childForm.BringToFront();
             childForm.Show();
-            lblTitle.Text = childForm.Text;
+            titleBarText.Text = childForm.Text;
         }
 
-        public override void ChangeThemeColor() {
-            Theme tempTheme = themeColor.GetTheme();
-            while (activeTheme == tempTheme) {
-                tempTheme = themeColor.GetTheme();
-            }
-            activeTheme = tempTheme;
+        public override void SetThemeColor(Theme newTheme) {
             panelTitleBar.BackColor = activeTheme.panelTitleBar;
+            titleBarText.ForeColor = activeTheme.textColor;
+            panelLogo.BackColor = activeTheme.mainMenuColor;
+            logoTxt.ForeColor = activeTheme.textColor;
             panelMenu.BackColor = activeTheme.mainMenuColor;
-            foreach (Control btn in panelMenu.Controls) {
-                if (btn.GetType() == typeof(Button) && btn != btnLogin) {
-                    btn.ForeColor = activeTheme.textColor;
-                }
-            }
 
             foreach (Control btn in panelMenu.Controls) {
                 if (btn.GetType() == typeof(Button)) {
+                    btn.ForeColor = activeTheme.textColor;
+                    btn.BackColor = activeTheme.mainMenuColor;
                     if (((Button)btn).Image != null) {
                         Image img = ((Button)btn).Image;
                         Bitmap bmp = new Bitmap(img);
@@ -89,7 +85,6 @@ namespace teacher_evaluation_project {
                         ((Button)btn).Image = bmp;
                     }
                 }
-                activeForm.ChangeThemeColor();
             }
         }
 
@@ -102,7 +97,13 @@ namespace teacher_evaluation_project {
             OpenChildForm(new Forms.FormSearch());
         }
         private void btnTheme_Click(object sender, EventArgs e) {
-            ChangeThemeColor();
+            Theme tempTheme = themeColor.GetTheme();
+            while (activeTheme == tempTheme) {
+                tempTheme = themeColor.GetTheme();
+            }
+            activeTheme = tempTheme;
+            SetThemeColor(activeTheme);
+            activeForm.SetThemeColor(activeTheme);
         }
         private void btnSettings_Click(object sender, EventArgs e) {
             ActivateMenuItem(sender);

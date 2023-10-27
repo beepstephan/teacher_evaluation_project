@@ -12,11 +12,12 @@ namespace teacher_evaluation_project.Forms {
     public partial class FormHome : FormProject {
         public FormHome() {
             InitializeComponent();
+            SetThemeColor(FormMain.activeTheme);
         }
 
-        public override void ChangeThemeColor() {
-            BackColor = FormMainMenu.activeTheme.panelDesktopColor;
-            label1.ForeColor = FormMainMenu.activeTheme.textColor;
+        public override void SetThemeColor(Theme newTheme) {
+            BackColor = FormMain.activeTheme.panelDesktopColor;
+            label1.ForeColor = FormMain.activeTheme.textColor;
         }
     }
 }

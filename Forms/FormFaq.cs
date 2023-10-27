@@ -12,6 +12,10 @@ namespace teacher_evaluation_project.Forms {
     public partial class FormFaq : FormProject {
         public FormFaq() {
             InitializeComponent();
+            SetThemeColor(FormMain.activeTheme);
+        }
+        public override void SetThemeColor(Theme newTheme) {
+            BackColor = FormMain.activeTheme.panelDesktopColor;
         }
     }
 }

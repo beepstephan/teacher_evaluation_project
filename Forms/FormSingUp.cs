@@ -12,10 +12,14 @@ namespace teacher_evaluation_project.Forms {
     public partial class FormSingUp : FormProject {
         public FormSingUp() {
             InitializeComponent();
+            SetThemeColor(FormMain.activeTheme);
         }
 
         private void label1_Click(object sender, EventArgs e) {
-            FormMainMenu.mainMenu.OpenChildForm(new Forms.FormLogIn());
+            FormMain.mainMenu.OpenChildForm(new Forms.FormLogIn());
+        }
+        public override void SetThemeColor(Theme newTheme) {
+            BackColor = FormMain.activeTheme.panelDesktopColor;
         }
     }
 }

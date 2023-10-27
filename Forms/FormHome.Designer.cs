@@ -44,7 +44,7 @@
             // 
             // label1
             // 
-            label1.ForeColor = FormMainMenu.activeTheme.textColor;
+            label1.ForeColor = FormMain.activeTheme.textColor;
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label1.Location = new Point(21, 200);
@@ -67,7 +67,7 @@
             // 
             // FormHome
             // 
-            BackColor = FormMainMenu.activeTheme.panelDesktopColor;
+            BackColor = FormMain.activeTheme.panelDesktopColor;
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImageLayout = ImageLayout.None;
