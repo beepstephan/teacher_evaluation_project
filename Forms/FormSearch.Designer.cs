@@ -24,103 +24,107 @@
         /// </summary>
         private void InitializeComponent() {
             ListViewItem listViewItem1 = new ListViewItem("Степаненко Степан Степанович");
-            listView1 = new ListView();
-            radioButton1 = new RadioButton();
-            radioButton2 = new RadioButton();
-            textBox1 = new TextBox();
-            button1 = new Button();
-            comboBox1 = new ComboBox();
+            listViewTeachers = new ListView();
+            radioButtonABC = new RadioButton();
+            radioButtonRating = new RadioButton();
+            textBoxSurname = new TextBox();
+            btnSearch = new Button();
+            comboBoxDepartment = new ComboBox();
             SuspendLayout();
             // 
-            // listView1
+            // listViewTeachers
             // 
-            listView1.Activation = ItemActivation.OneClick;
-            listView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            listView1.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            listView1.FullRowSelect = true;
+            listViewTeachers.Activation = ItemActivation.OneClick;
+            listViewTeachers.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            listViewTeachers.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            listViewTeachers.FullRowSelect = true;
             listViewItem1.StateImageIndex = 0;
-            listView1.Items.AddRange(new ListViewItem[] { listViewItem1 });
-            listView1.Location = new Point(34, 136);
-            listView1.MultiSelect = false;
-            listView1.Name = "listView1";
-            listView1.Size = new Size(560, 174);
-            listView1.TabIndex = 0;
-            listView1.UseCompatibleStateImageBehavior = false;
-            listView1.View = View.SmallIcon;
-            listView1.ItemActivate += listView1_ItemActivate;
+            listViewTeachers.Items.AddRange(new ListViewItem[] { listViewItem1 });
+            listViewTeachers.Location = new Point(39, 159);
+            listViewTeachers.MultiSelect = false;
+            listViewTeachers.Name = "listViewTeachers";
+            listViewTeachers.Size = new Size(549, 150);
+            listViewTeachers.TabIndex = 0;
+            listViewTeachers.UseCompatibleStateImageBehavior = false;
+            listViewTeachers.View = View.SmallIcon;
+            listViewTeachers.ItemActivate += listView1_ItemActivate;
             // 
-            // radioButton1
+            // radioButtonABC
             // 
-            radioButton1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            radioButton1.AutoSize = true;
-            radioButton1.Checked = true;
-            radioButton1.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            radioButton1.ForeColor = Color.Gainsboro;
-            radioButton1.Location = new Point(356, 103);
-            radioButton1.Name = "radioButton1";
-            radioButton1.Size = new Size(116, 21);
-            radioButton1.TabIndex = 1;
-            radioButton1.TabStop = true;
-            radioButton1.Text = "За алфавітом";
-            radioButton1.UseVisualStyleBackColor = true;
+            radioButtonABC.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            radioButtonABC.AutoSize = true;
+            radioButtonABC.Checked = true;
+            radioButtonABC.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            radioButtonABC.ForeColor = Color.Gainsboro;
+            radioButtonABC.Location = new Point(320, 131);
+            radioButtonABC.Name = "radioButtonABC";
+            radioButtonABC.Size = new Size(116, 21);
+            radioButtonABC.TabIndex = 1;
+            radioButtonABC.TabStop = true;
+            radioButtonABC.Text = "За алфавітом";
+            radioButtonABC.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // radioButtonRating
             // 
-            radioButton2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            radioButton2.AutoSize = true;
-            radioButton2.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            radioButton2.ForeColor = Color.Gainsboro;
-            radioButton2.Location = new Point(478, 103);
-            radioButton2.Name = "radioButton2";
-            radioButton2.Size = new Size(116, 21);
-            radioButton2.TabIndex = 2;
-            radioButton2.Text = "За рейтингом";
-            radioButton2.UseVisualStyleBackColor = true;
+            radioButtonRating.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            radioButtonRating.AutoSize = true;
+            radioButtonRating.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            radioButtonRating.ForeColor = Color.Gainsboro;
+            radioButtonRating.Location = new Point(472, 132);
+            radioButtonRating.Name = "radioButtonRating";
+            radioButtonRating.Size = new Size(116, 21);
+            radioButtonRating.TabIndex = 2;
+            radioButtonRating.Text = "За рейтингом";
+            radioButtonRating.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // textBoxSurname
             // 
-            textBox1.Anchor = AnchorStyles.Top;
-            textBox1.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox1.Location = new Point(47, 25);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(162, 23);
-            textBox1.TabIndex = 3;
-            textBox1.Text = "Введіть прізвище";
+            textBoxSurname.Anchor = AnchorStyles.Top;
+            textBoxSurname.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            textBoxSurname.Location = new Point(39, 26);
+            textBoxSurname.Name = "textBoxSurname";
+            textBoxSurname.Size = new Size(185, 23);
+            textBoxSurname.TabIndex = 3;
+            textBoxSurname.Text = "Введіть прізвище";
             // 
-            // button1
+            // btnSearch
             // 
-            button1.Anchor = AnchorStyles.Top;
-            button1.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            button1.Location = new Point(273, 66);
-            button1.Name = "button1";
-            button1.Size = new Size(82, 31);
-            button1.TabIndex = 4;
-            button1.Text = "Пошук";
-            button1.UseVisualStyleBackColor = true;
+            btnSearch.Anchor = AnchorStyles.Top;
+            btnSearch.BackColor = Color.FromArgb(30, 30, 65);
+            btnSearch.FlatStyle = FlatStyle.Flat;
+            btnSearch.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            btnSearch.ForeColor = Color.Gainsboro;
+            btnSearch.Location = new Point(267, 70);
+            btnSearch.Name = "btnSearch";
+            btnSearch.Size = new Size(94, 33);
+            btnSearch.TabIndex = 4;
+            btnSearch.Text = "Пошук";
+            btnSearch.UseVisualStyleBackColor = false;
             // 
-            // comboBox1
+            // comboBoxDepartment
             // 
-            comboBox1.Anchor = AnchorStyles.Top;
-            comboBox1.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(273, 24);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(121, 24);
-            comboBox1.TabIndex = 5;
-            comboBox1.Text = "Кафедра";
+            comboBoxDepartment.Anchor = AnchorStyles.Top;
+            comboBoxDepartment.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            comboBoxDepartment.FormattingEnabled = true;
+            comboBoxDepartment.Location = new Point(267, 26);
+            comboBoxDepartment.Name = "comboBoxDepartment";
+            comboBoxDepartment.Size = new Size(138, 24);
+            comboBoxDepartment.TabIndex = 5;
+            comboBoxDepartment.Text = "Кафедра";
             // 
             // FormSearch
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 16F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(35, 35, 80);
             ClientSize = new Size(628, 322);
-            Controls.Add(comboBox1);
-            Controls.Add(button1);
-            Controls.Add(textBox1);
-            Controls.Add(radioButton2);
-            Controls.Add(radioButton1);
-            Controls.Add(listView1);
+            Controls.Add(comboBoxDepartment);
+            Controls.Add(btnSearch);
+            Controls.Add(textBoxSurname);
+            Controls.Add(radioButtonRating);
+            Controls.Add(radioButtonABC);
+            Controls.Add(listViewTeachers);
+            Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
             Name = "FormSearch";
             Text = "Пошук викладачів";
             ResumeLayout(false);
@@ -129,11 +133,11 @@
 
         #endregion
 
-        private ListView listView1;
-        private RadioButton radioButton1;
-        private RadioButton radioButton2;
-        private TextBox textBox1;
-        private Button button1;
-        private ComboBox comboBox1;
+        private ListView listViewTeachers;
+        private RadioButton radioButtonABC;
+        private RadioButton radioButtonRating;
+        private TextBox textBoxSurname;
+        private Button btnSearch;
+        private ComboBox comboBoxDepartment;
     }
 }

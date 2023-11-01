@@ -23,26 +23,29 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            label1 = new Label();
+            lblTitle = new Label();
             SuspendLayout();
             // 
-            // label1
+            // lblTitle
             // 
-            label1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            label1.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(286, 36);
-            label1.Name = "label1";
-            label1.Size = new Size(65, 17);
-            label1.TabIndex = 0;
-            label1.Text = "Питання";
-            label1.TextAlign = ContentAlignment.MiddleCenter;
+            lblTitle.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            lblTitle.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            lblTitle.ForeColor = Color.Gainsboro;
+            lblTitle.Location = new Point(277, 39);
+            lblTitle.Name = "lblTitle";
+            lblTitle.Size = new Size(74, 18);
+            lblTitle.TabIndex = 0;
+            lblTitle.Text = "Питання";
+            lblTitle.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // FormFaq
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 16F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(35, 35, 80);
             ClientSize = new Size(628, 322);
-            Controls.Add(label1);
+            Controls.Add(lblTitle);
+            Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
             Name = "FormFaq";
             Text = "FAQ";
             ResumeLayout(false);
@@ -50,6 +53,6 @@
 
         #endregion
 
-        private Label label1;
+        private Label lblTitle;
     }
 }

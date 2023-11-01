@@ -35,21 +35,21 @@
             pictureBox1.BackColor = Color.Transparent;
             pictureBox1.Image = Properties.Resources.NUZP_GERB_svg;
             pictureBox1.InitialImage = null;
-            pictureBox1.Location = new Point(182, 3);
+            pictureBox1.Location = new Point(170, 3);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(185, 177);
+            pictureBox1.Size = new Size(211, 189);
             pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
             // label1
             // 
-            label1.ForeColor = FormMain.activeTheme.textColor;
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(21, 200);
+            label1.ForeColor = Color.Gainsboro;
+            label1.Location = new Point(25, 213);
             label1.Name = "label1";
-            label1.Size = new Size(511, 42);
+            label1.Size = new Size(500, 45);
             label1.TabIndex = 1;
             label1.Text = "Вітаємо вас у застосунку!\nВиможете дати коментар щодо лекцый викладачів та оцінити їх.";
             label1.TextAlign = ContentAlignment.MiddleCenter;
@@ -60,19 +60,20 @@
             panel1.BackColor = Color.Transparent;
             panel1.Controls.Add(label1);
             panel1.Controls.Add(pictureBox1);
-            panel1.Location = new Point(40, 27);
+            panel1.Location = new Point(39, 25);
             panel1.Name = "panel1";
-            panel1.Size = new Size(550, 250);
+            panel1.Size = new Size(550, 267);
             panel1.TabIndex = 2;
             // 
             // FormHome
             // 
-            BackColor = FormMain.activeTheme.panelDesktopColor;
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 16F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(35, 35, 80);
             BackgroundImageLayout = ImageLayout.None;
             ClientSize = new Size(628, 322);
             Controls.Add(panel1);
+            Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
             Name = "FormHome";
             Text = "Головна";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

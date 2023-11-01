@@ -23,66 +23,72 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            button1 = new Button();
-            label1 = new Label();
+            textBoxEmail = new TextBox();
+            textBoxPassword = new TextBox();
+            btnLogIn = new Button();
+            lblAccount = new Label();
             SuspendLayout();
             // 
-            // textBox1
+            // textBoxEmail
             // 
-            textBox1.Anchor = AnchorStyles.None;
-            textBox1.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox1.Location = new Point(266, 40);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(100, 23);
-            textBox1.TabIndex = 0;
-            textBox1.Text = "email";
+            textBoxEmail.Anchor = AnchorStyles.None;
+            textBoxEmail.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            textBoxEmail.Location = new Point(259, 33);
+            textBoxEmail.Name = "textBoxEmail";
+            textBoxEmail.Size = new Size(114, 23);
+            textBoxEmail.TabIndex = 0;
+            textBoxEmail.Text = "email";
             // 
-            // textBox2
+            // textBoxPassword
             // 
-            textBox2.Anchor = AnchorStyles.None;
-            textBox2.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox2.Location = new Point(266, 90);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(100, 23);
-            textBox2.TabIndex = 1;
-            textBox2.Text = "password";
+            textBoxPassword.Anchor = AnchorStyles.None;
+            textBoxPassword.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            textBoxPassword.Location = new Point(259, 86);
+            textBoxPassword.Name = "textBoxPassword";
+            textBoxPassword.Size = new Size(114, 23);
+            textBoxPassword.TabIndex = 1;
+            textBoxPassword.Text = "password";
             // 
-            // button1
+            // btnLogIn
             // 
-            button1.Anchor = AnchorStyles.None;
-            button1.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            button1.Location = new Point(276, 140);
-            button1.Name = "button1";
-            button1.Size = new Size(80, 23);
-            button1.TabIndex = 2;
-            button1.Text = "Увійти";
-            button1.UseVisualStyleBackColor = true;
+            btnLogIn.Anchor = AnchorStyles.None;
+            btnLogIn.BackColor = Color.FromArgb(30, 30, 65);
+            btnLogIn.FlatStyle = FlatStyle.Flat;
+            btnLogIn.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            btnLogIn.ForeColor = Color.Gainsboro;
+            btnLogIn.Location = new Point(257, 129);
+            btnLogIn.Name = "btnLogIn";
+            btnLogIn.Size = new Size(114, 32);
+            btnLogIn.TabIndex = 2;
+            btnLogIn.Text = "Увійти";
+            btnLogIn.UseVisualStyleBackColor = false;
             // 
-            // label1
+            // lblAccount
             // 
-            label1.Anchor = AnchorStyles.None;
-            label1.AutoSize = true;
-            label1.Cursor = Cursors.Hand;
-            label1.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(215, 180);
-            label1.Name = "label1";
-            label1.Size = new Size(202, 17);
-            label1.TabIndex = 3;
-            label1.Text = "Ще немає облікового запису?";
-            label1.Click += label1_Click;
+            lblAccount.Anchor = AnchorStyles.None;
+            lblAccount.AutoSize = true;
+            lblAccount.Cursor = Cursors.Hand;
+            lblAccount.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            lblAccount.ForeColor = Color.Gainsboro;
+            lblAccount.Location = new Point(213, 182);
+            lblAccount.Name = "lblAccount";
+            lblAccount.Size = new Size(202, 17);
+            lblAccount.TabIndex = 3;
+            lblAccount.Text = "Ще немає облікового запису?";
+            lblAccount.Click += label1_Click;
             // 
             // FormLogIn
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 16F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(35, 35, 80);
             ClientSize = new Size(628, 322);
-            Controls.Add(label1);
-            Controls.Add(button1);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
-            Name = "FormLogin";
+            Controls.Add(lblAccount);
+            Controls.Add(btnLogIn);
+            Controls.Add(textBoxPassword);
+            Controls.Add(textBoxEmail);
+            Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            Name = "FormLogIn";
             Text = "Увійти";
             ResumeLayout(false);
             PerformLayout();
@@ -90,9 +96,9 @@
 
         #endregion
 
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private Button button1;
-        private Label label1;
+        private TextBox textBoxEmail;
+        private TextBox textBoxPassword;
+        private Button btnLogIn;
+        private Label lblAccount;
     }
 }

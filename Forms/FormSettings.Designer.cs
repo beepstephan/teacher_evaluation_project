@@ -23,71 +23,80 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            label1 = new Label();
-            label2 = new Label();
-            comboBox1 = new ComboBox();
-            numericUpDown1 = new NumericUpDown();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
+            lblFontSize = new Label();
+            UpDownFontSize = new NumericUpDown();
+            comboBoxFont = new ComboBox();
+            lblFont = new Label();
+            ((System.ComponentModel.ISupportInitialize)UpDownFontSize).BeginInit();
             SuspendLayout();
             // 
-            // label1
+            // lblFontSize
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(50, 34);
-            label1.Name = "label1";
-            label1.Size = new Size(108, 17);
-            label1.TabIndex = 0;
-            label1.Text = "Розмір шрифту";
+            lblFontSize.AutoSize = true;
+            lblFontSize.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            lblFontSize.ForeColor = Color.Gainsboro;
+            lblFontSize.Location = new Point(57, 36);
+            lblFontSize.Name = "lblFontSize";
+            lblFontSize.Size = new Size(108, 17);
+            lblFontSize.TabIndex = 0;
+            lblFontSize.Text = "Розмір шрифту";
             // 
-            // label2
+            // UpDownFontSize
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(50, 77);
-            label2.Name = "label2";
-            label2.Size = new Size(53, 17);
-            label2.TabIndex = 2;
-            label2.Text = "Шрифт";
+            UpDownFontSize.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            UpDownFontSize.Location = new Point(201, 34);
+            UpDownFontSize.Maximum = new decimal(new int[] { 14, 0, 0, 0 });
+            UpDownFontSize.Minimum = new decimal(new int[] { 10, 0, 0, 0 });
+            UpDownFontSize.Name = "UpDownFontSize";
+            UpDownFontSize.Size = new Size(120, 23);
+            UpDownFontSize.TabIndex = 4;
+            UpDownFontSize.Value = new decimal(new int[] { 10, 0, 0, 0 });
+            UpDownFontSize.ValueChanged += UpDownFontSize_ValueChanged;
             // 
-            // comboBox1
+            // comboBoxFont
             // 
-            comboBox1.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(163, 74);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(121, 24);
-            comboBox1.TabIndex = 3;
+            comboBoxFont.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            comboBoxFont.FormattingEnabled = true;
+            comboBoxFont.Items.AddRange(new object[] { "Microsoft Sans Serif", "Magneto" });
+            comboBoxFont.Location = new Point(201, 79);
+            comboBoxFont.Name = "comboBoxFont";
+            comboBoxFont.Size = new Size(120, 24);
+            comboBoxFont.TabIndex = 3;
             // 
-            // numericUpDown1
+            // lblFont
             // 
-            numericUpDown1.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            numericUpDown1.Location = new Point(163, 33);
-            numericUpDown1.Name = "numericUpDown1";
-            numericUpDown1.Size = new Size(120, 23);
-            numericUpDown1.TabIndex = 4;
+            lblFont.AutoSize = true;
+            lblFont.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            lblFont.ForeColor = Color.Gainsboro;
+            lblFont.Location = new Point(57, 82);
+            lblFont.Name = "lblFont";
+            lblFont.Size = new Size(53, 17);
+            lblFont.TabIndex = 2;
+            lblFont.Text = "Шрифт";
             // 
             // FormSettings
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 16F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(35, 35, 80);
             ClientSize = new Size(628, 322);
-            Controls.Add(numericUpDown1);
-            Controls.Add(comboBox1);
-            Controls.Add(label2);
-            Controls.Add(label1);
+            Controls.Add(UpDownFontSize);
+            Controls.Add(comboBoxFont);
+            Controls.Add(lblFont);
+            Controls.Add(lblFontSize);
+            Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
             Name = "FormSettings";
             Text = "Налаштування";
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)UpDownFontSize).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private Label label1;
-        private Label label2;
-        private ComboBox comboBox1;
-        private NumericUpDown numericUpDown1;
+        private Label lblFontSize;
+        private NumericUpDown UpDownFontSize;
+        private ComboBox comboBoxFont;
+        private Label lblFont;
     }
 }

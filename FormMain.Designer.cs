@@ -71,7 +71,7 @@
             btnTheme.ImageAlign = ContentAlignment.MiddleLeft;
             btnTheme.Location = new Point(0, 255);
             btnTheme.Name = "btnTheme";
-            btnTheme.Padding = new Padding(12, 0, 0, 0);
+            btnTheme.Padding = new Padding(14, 0, 0, 0);
             btnTheme.Size = new Size(240, 60);
             btnTheme.TabIndex = 11;
             btnTheme.Text = "   Тема";
@@ -141,7 +141,7 @@
             btnLogIn.Image = Properties.Resources.login_svgrepo_com_negate;
             btnLogIn.Location = new Point(0, 315);
             btnLogIn.Name = "btnLogIn";
-            btnLogIn.Padding = new Padding(12, 0, 0, 0);
+            btnLogIn.Padding = new Padding(14, 0, 0, 0);
             btnLogIn.Size = new Size(240, 60);
             btnLogIn.TabIndex = 14;
             btnLogIn.Text = "   Увійти";
@@ -161,7 +161,7 @@
             btnSettings.ImageAlign = ContentAlignment.MiddleLeft;
             btnSettings.Location = new Point(0, 195);
             btnSettings.Name = "btnSettings";
-            btnSettings.Padding = new Padding(12, 0, 0, 0);
+            btnSettings.Padding = new Padding(14, 0, 0, 0);
             btnSettings.Size = new Size(240, 60);
             btnSettings.TabIndex = 12;
             btnSettings.Text = "   Налаштування";
@@ -181,7 +181,7 @@
             btnSearch.ImageAlign = ContentAlignment.MiddleLeft;
             btnSearch.Location = new Point(0, 135);
             btnSearch.Name = "btnSearch";
-            btnSearch.Padding = new Padding(12, 0, 0, 0);
+            btnSearch.Padding = new Padding(14, 0, 0, 0);
             btnSearch.Size = new Size(240, 60);
             btnSearch.TabIndex = 10;
             btnSearch.Text = "   Пошук викладачів";
@@ -201,7 +201,7 @@
             btnHome.ImageAlign = ContentAlignment.MiddleLeft;
             btnHome.Location = new Point(0, 75);
             btnHome.Name = "btnHome";
-            btnHome.Padding = new Padding(12, 0, 0, 0);
+            btnHome.Padding = new Padding(14, 0, 0, 0);
             btnHome.Size = new Size(240, 60);
             btnHome.TabIndex = 9;
             btnHome.Text = "   Головна";
@@ -258,6 +258,7 @@
             // 
             // panelDesktop
             // 
+            panelDesktop.BackColor = Color.FromArgb(35, 35, 80);
             panelDesktop.Dock = DockStyle.Fill;
             panelDesktop.Location = new Point(240, 75);
             panelDesktop.Name = "panelDesktop";
@@ -266,12 +267,13 @@
             // 
             // FormMain
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 16F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(884, 436);
             Controls.Add(panelDesktop);
             Controls.Add(panelTitleBar);
             Controls.Add(panelMenu);
+            Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
             MinimumSize = new Size(900, 475);
             Name = "FormMain";
             Text = "Оцінювання викладачів";

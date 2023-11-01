@@ -12,16 +12,27 @@ namespace teacher_evaluation_project.Forms {
     public partial class FormComent : FormProject {
         public FormComent(string teacherName) {
             InitializeComponent();
-            SetThemeColor(FormMain.activeTheme);
-            label1.Text = teacherName;
+            SetTheme();
+            lblName.Text = teacherName;
         }
 
         private void button1_Click(object sender, EventArgs e) {
             /*відпралення на сервер*/
-            FormMain.mainMenu.OpenChildForm(new Forms.FormSearch());
+            FormMain.mainForm.OpenChildForm(new Forms.FormSearch());
         }
-        public override void SetThemeColor(Theme newTheme) {
-            BackColor = FormMain.activeTheme.panelDesktopColor;
+        public override void SetTheme() {
+            SetFont();
+            if (BackColor != Theme.activeTheme.panelDesktopColor) {
+                BackColor = Theme.activeTheme.panelDesktopColor;
+                btnDone.BackColor = Theme.activeTheme.mainMenuColor;
+                lblCounter.ForeColor = Theme.activeTheme.textColor;
+                lblName.ForeColor = Theme.activeTheme.textColor;
+            }
+        }
+
+        private void richTextBox1_TextChanged(object sender, EventArgs e) {
+            lblCounter.Text = "Символів: " + TextBoxComent.Text.Length.ToString() + "/250";
+            Update();
         }
     }
 }

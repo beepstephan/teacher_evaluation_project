@@ -23,73 +23,80 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            label1 = new Label();
-            label2 = new Label();
-            label3 = new Label();
-            label4 = new Label();
-            label5 = new Label();
+            lblAuthor1 = new Label();
+            lblAuthor2 = new Label();
+            lblAuthor3 = new Label();
+            lblAuthor4 = new Label();
+            lblAuthor5 = new Label();
             SuspendLayout();
             // 
-            // label1
+            // lblAuthor1
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(40, 40);
-            label1.Name = "label1";
-            label1.Size = new Size(99, 17);
-            label1.TabIndex = 0;
-            label1.Text = "Степанов Ігор";
+            lblAuthor1.AutoSize = true;
+            lblAuthor1.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            lblAuthor1.ForeColor = Color.Gainsboro;
+            lblAuthor1.Location = new Point(46, 43);
+            lblAuthor1.Name = "lblAuthor1";
+            lblAuthor1.Size = new Size(99, 17);
+            lblAuthor1.TabIndex = 0;
+            lblAuthor1.Text = "Степанов Ігор";
             // 
-            // label2
+            // lblAuthor2
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(40, 80);
-            label2.Name = "label2";
-            label2.Size = new Size(141, 17);
-            label2.TabIndex = 1;
-            label2.Text = "Федишен Станіслав";
+            lblAuthor2.AutoSize = true;
+            lblAuthor2.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            lblAuthor2.ForeColor = Color.Gainsboro;
+            lblAuthor2.Location = new Point(46, 85);
+            lblAuthor2.Name = "lblAuthor2";
+            lblAuthor2.Size = new Size(141, 17);
+            lblAuthor2.TabIndex = 1;
+            lblAuthor2.Text = "Федишен Станіслав";
             // 
-            // label3
+            // lblAuthor3
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(40, 120);
-            label3.Name = "label3";
-            label3.Size = new Size(142, 17);
-            label3.TabIndex = 2;
-            label3.Text = "Пастушенко Микита";
+            lblAuthor3.AutoSize = true;
+            lblAuthor3.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            lblAuthor3.ForeColor = Color.Gainsboro;
+            lblAuthor3.Location = new Point(46, 128);
+            lblAuthor3.Name = "lblAuthor3";
+            lblAuthor3.Size = new Size(142, 17);
+            lblAuthor3.TabIndex = 2;
+            lblAuthor3.Text = "Пастушенко Микита";
             // 
-            // label4
+            // lblAuthor4
             // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(40, 160);
-            label4.Name = "label4";
-            label4.Size = new Size(131, 17);
-            label4.TabIndex = 3;
-            label4.Text = "Гоголенко Дмитро";
+            lblAuthor4.AutoSize = true;
+            lblAuthor4.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            lblAuthor4.ForeColor = Color.Gainsboro;
+            lblAuthor4.Location = new Point(46, 171);
+            lblAuthor4.Name = "lblAuthor4";
+            lblAuthor4.Size = new Size(131, 17);
+            lblAuthor4.TabIndex = 3;
+            lblAuthor4.Text = "Гоголенко Дмитро";
             // 
-            // label5
+            // lblAuthor5
             // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.Location = new Point(40, 200);
-            label5.Name = "label5";
-            label5.Size = new Size(157, 17);
-            label5.TabIndex = 4;
-            label5.Text = "Борисенко Володимир";
+            lblAuthor5.AutoSize = true;
+            lblAuthor5.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            lblAuthor5.ForeColor = Color.Gainsboro;
+            lblAuthor5.Location = new Point(46, 213);
+            lblAuthor5.Name = "lblAuthor5";
+            lblAuthor5.Size = new Size(157, 17);
+            lblAuthor5.TabIndex = 4;
+            lblAuthor5.Text = "Борисенко Володимир";
             // 
             // FormDev
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 16F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(35, 35, 80);
             ClientSize = new Size(628, 322);
-            Controls.Add(label5);
-            Controls.Add(label4);
-            Controls.Add(label3);
-            Controls.Add(label2);
-            Controls.Add(label1);
+            Controls.Add(lblAuthor5);
+            Controls.Add(lblAuthor4);
+            Controls.Add(lblAuthor3);
+            Controls.Add(lblAuthor2);
+            Controls.Add(lblAuthor1);
+            Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
             Name = "FormDev";
             Text = "Розробники";
             ResumeLayout(false);
@@ -98,10 +105,10 @@
 
         #endregion
 
-        private Label label1;
-        private Label label2;
-        private Label label3;
-        private Label label4;
-        private Label label5;
+        private Label lblAuthor1;
+        private Label lblAuthor2;
+        private Label lblAuthor3;
+        private Label lblAuthor4;
+        private Label lblAuthor5;
     }
 }

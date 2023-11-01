@@ -23,89 +23,95 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            label1 = new Label();
-            button1 = new Button();
-            textBox2 = new TextBox();
-            textBox1 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
+            lblAccount = new Label();
+            btnSingUp = new Button();
+            textBoxPassword = new TextBox();
+            textBoxEmail = new TextBox();
+            textBoxName = new TextBox();
+            textBoxSurname = new TextBox();
             SuspendLayout();
             // 
-            // label1
+            // lblAccount
             // 
-            label1.Anchor = AnchorStyles.None;
-            label1.AutoSize = true;
-            label1.Cursor = Cursors.Hand;
-            label1.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(234, 290);
-            label1.Name = "label1";
-            label1.Size = new Size(164, 17);
-            label1.TabIndex = 7;
-            label1.Text = "Вже є обліковий запис?";
-            label1.Click += label1_Click;
+            lblAccount.Anchor = AnchorStyles.None;
+            lblAccount.AutoSize = true;
+            lblAccount.Cursor = Cursors.Hand;
+            lblAccount.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            lblAccount.ForeColor = Color.Gainsboro;
+            lblAccount.Location = new Point(232, 299);
+            lblAccount.Name = "lblAccount";
+            lblAccount.Size = new Size(164, 17);
+            lblAccount.TabIndex = 7;
+            lblAccount.Text = "Вже є обліковий запис?";
+            lblAccount.Click += label1_Click;
             // 
-            // button1
+            // btnSingUp
             // 
-            button1.Anchor = AnchorStyles.None;
-            button1.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            button1.Location = new Point(274, 240);
-            button1.Name = "button1";
-            button1.Size = new Size(80, 23);
-            button1.TabIndex = 6;
-            button1.Text = "Увійти";
-            button1.UseVisualStyleBackColor = true;
+            btnSingUp.Anchor = AnchorStyles.None;
+            btnSingUp.BackColor = Color.FromArgb(30, 30, 65);
+            btnSingUp.FlatStyle = FlatStyle.Flat;
+            btnSingUp.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            btnSingUp.ForeColor = Color.Gainsboro;
+            btnSingUp.Location = new Point(257, 246);
+            btnSingUp.Name = "btnSingUp";
+            btnSingUp.Size = new Size(114, 32);
+            btnSingUp.TabIndex = 6;
+            btnSingUp.Text = "Реєстрація";
+            btnSingUp.UseVisualStyleBackColor = false;
             // 
-            // textBox2
+            // textBoxPassword
             // 
-            textBox2.Anchor = AnchorStyles.None;
-            textBox2.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox2.Location = new Point(264, 90);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(100, 23);
-            textBox2.TabIndex = 5;
-            textBox2.Text = "password";
+            textBoxPassword.Anchor = AnchorStyles.None;
+            textBoxPassword.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            textBoxPassword.Location = new Point(257, 86);
+            textBoxPassword.Name = "textBoxPassword";
+            textBoxPassword.Size = new Size(114, 23);
+            textBoxPassword.TabIndex = 5;
+            textBoxPassword.Text = "password";
             // 
-            // textBox1
+            // textBoxEmail
             // 
-            textBox1.Anchor = AnchorStyles.None;
-            textBox1.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox1.Location = new Point(264, 40);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(100, 23);
-            textBox1.TabIndex = 4;
-            textBox1.Text = "email";
+            textBoxEmail.Anchor = AnchorStyles.None;
+            textBoxEmail.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            textBoxEmail.Location = new Point(257, 33);
+            textBoxEmail.Name = "textBoxEmail";
+            textBoxEmail.Size = new Size(114, 23);
+            textBoxEmail.TabIndex = 4;
+            textBoxEmail.Text = "email";
             // 
-            // textBox3
+            // textBoxName
             // 
-            textBox3.Anchor = AnchorStyles.None;
-            textBox3.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox3.Location = new Point(264, 140);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(100, 23);
-            textBox3.TabIndex = 8;
-            textBox3.Text = "Ім'я";
+            textBoxName.Anchor = AnchorStyles.None;
+            textBoxName.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            textBoxName.Location = new Point(257, 139);
+            textBoxName.Name = "textBoxName";
+            textBoxName.Size = new Size(114, 23);
+            textBoxName.TabIndex = 8;
+            textBoxName.Text = "Ім'я";
             // 
-            // textBox4
+            // textBoxSurname
             // 
-            textBox4.Anchor = AnchorStyles.None;
-            textBox4.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox4.Location = new Point(264, 190);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(100, 23);
-            textBox4.TabIndex = 9;
-            textBox4.Text = "Прізвище";
+            textBoxSurname.Anchor = AnchorStyles.None;
+            textBoxSurname.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            textBoxSurname.Location = new Point(257, 193);
+            textBoxSurname.Name = "textBoxSurname";
+            textBoxSurname.Size = new Size(114, 23);
+            textBoxSurname.TabIndex = 9;
+            textBoxSurname.Text = "Прізвище";
             // 
             // FormSingUp
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 16F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(35, 35, 80);
             ClientSize = new Size(628, 322);
-            Controls.Add(textBox4);
-            Controls.Add(textBox3);
-            Controls.Add(label1);
-            Controls.Add(button1);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(textBoxSurname);
+            Controls.Add(textBoxName);
+            Controls.Add(lblAccount);
+            Controls.Add(btnSingUp);
+            Controls.Add(textBoxPassword);
+            Controls.Add(textBoxEmail);
+            Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
             Name = "FormSingUp";
             Text = "Реєстрація";
             ResumeLayout(false);
@@ -114,11 +120,11 @@
 
         #endregion
 
-        private Label label1;
-        private Button button1;
-        private TextBox textBox2;
-        private TextBox textBox1;
-        private TextBox textBox3;
-        private TextBox textBox4;
+        private Label lblAccount;
+        private Button btnSingUp;
+        private TextBox textBoxPassword;
+        private TextBox textBoxEmail;
+        private TextBox textBoxName;
+        private TextBox textBoxSurname;
     }
 }

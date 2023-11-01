@@ -13,18 +13,20 @@ namespace teacher_evaluation_project.Forms {
     public partial class FormAbout : FormProject {
         public FormAbout() {
             InitializeComponent();
-            SetThemeColor(FormMain.activeTheme);
+            SetTheme();
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
             linkLabel1.LinkVisited = true;
             Process.Start(new ProcessStartInfo("https://www.svgrepo.com/") { UseShellExecute = true });
         }
-        public override void SetThemeColor(Theme newTheme) {
-            BackColor = FormMain.activeTheme.panelDesktopColor;
-        }
-        public override void ChangeThemeColor() {
-            
+        public override void SetTheme() {
+            SetFont();
+            if (BackColor != Theme.activeTheme.panelDesktopColor) {
+                BackColor = Theme.activeTheme.panelDesktopColor;
+                label1.ForeColor = Theme.activeTheme.textColor;
+                linkLabel1.ForeColor = Theme.activeTheme.textColor;
+            }
         }
     }
 }

@@ -23,89 +23,98 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            richTextBox1 = new RichTextBox();
-            label1 = new Label();
-            button1 = new Button();
-            trackBar1 = new TrackBar();
-            label2 = new Label();
-            ((System.ComponentModel.ISupportInitialize)trackBar1).BeginInit();
+            TextBoxComent = new RichTextBox();
+            lblName = new Label();
+            btnDone = new Button();
+            trackBarRating = new TrackBar();
+            lblCounter = new Label();
+            ((System.ComponentModel.ISupportInitialize)trackBarRating).BeginInit();
             SuspendLayout();
             // 
-            // richTextBox1
+            // TextBoxComent
             // 
-            richTextBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            richTextBox1.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            richTextBox1.Location = new Point(12, 106);
-            richTextBox1.Name = "richTextBox1";
-            richTextBox1.Size = new Size(604, 204);
-            richTextBox1.TabIndex = 0;
-            richTextBox1.Text = "";
+            TextBoxComent.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            TextBoxComent.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            TextBoxComent.Location = new Point(14, 113);
+            TextBoxComent.MaxLength = 250;
+            TextBoxComent.Name = "TextBoxComent";
+            TextBoxComent.Size = new Size(600, 196);
+            TextBoxComent.TabIndex = 0;
+            TextBoxComent.Text = "";
+            TextBoxComent.TextChanged += richTextBox1_TextChanged;
             // 
-            // label1
+            // lblName
             // 
-            label1.Dock = DockStyle.Top;
-            label1.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(0, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(628, 26);
-            label1.TabIndex = 1;
-            label1.Text = "ПІБ";
-            label1.TextAlign = ContentAlignment.MiddleCenter;
+            lblName.Dock = DockStyle.Top;
+            lblName.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            lblName.ForeColor = Color.Gainsboro;
+            lblName.Location = new Point(0, 0);
+            lblName.Name = "lblName";
+            lblName.Size = new Size(628, 28);
+            lblName.TabIndex = 1;
+            lblName.Text = "ПІБ";
+            lblName.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // button1
+            // btnDone
             // 
-            button1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            button1.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            button1.Location = new Point(458, 57);
-            button1.Name = "button1";
-            button1.Size = new Size(126, 32);
-            button1.TabIndex = 2;
-            button1.Text = "Готово";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            btnDone.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnDone.BackColor = Color.FromArgb(30, 30, 65);
+            btnDone.FlatStyle = FlatStyle.Flat;
+            btnDone.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            btnDone.ForeColor = Color.Gainsboro;
+            btnDone.Location = new Point(433, 61);
+            btnDone.Name = "btnDone";
+            btnDone.Size = new Size(144, 34);
+            btnDone.TabIndex = 2;
+            btnDone.Text = "Готово";
+            btnDone.UseVisualStyleBackColor = false;
+            btnDone.Click += button1_Click;
             // 
-            // trackBar1
+            // trackBarRating
             // 
-            trackBar1.Location = new Point(12, 38);
-            trackBar1.Minimum = 1;
-            trackBar1.Name = "trackBar1";
-            trackBar1.Size = new Size(256, 45);
-            trackBar1.TabIndex = 3;
-            trackBar1.Value = 1;
+            trackBarRating.Location = new Point(14, 41);
+            trackBarRating.Minimum = 1;
+            trackBarRating.Name = "trackBarRating";
+            trackBarRating.Size = new Size(293, 45);
+            trackBarRating.TabIndex = 3;
+            trackBarRating.Value = 1;
             // 
-            // label2
+            // lblCounter
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(12, 86);
-            label2.Name = "label2";
-            label2.Size = new Size(111, 17);
-            label2.TabIndex = 4;
-            label2.Text = "Символів: 0/250";
+            lblCounter.AutoSize = true;
+            lblCounter.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            lblCounter.ForeColor = Color.Gainsboro;
+            lblCounter.Location = new Point(14, 92);
+            lblCounter.Name = "lblCounter";
+            lblCounter.Size = new Size(111, 17);
+            lblCounter.TabIndex = 4;
+            lblCounter.Text = "Символів: 0/250";
             // 
             // FormComent
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 16F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(35, 35, 80);
             ClientSize = new Size(628, 322);
-            Controls.Add(label2);
-            Controls.Add(trackBar1);
-            Controls.Add(button1);
-            Controls.Add(label1);
-            Controls.Add(richTextBox1);
+            Controls.Add(lblCounter);
+            Controls.Add(trackBarRating);
+            Controls.Add(btnDone);
+            Controls.Add(lblName);
+            Controls.Add(TextBoxComent);
+            Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
             Name = "FormComent";
             Text = "Дати відгук";
-            ((System.ComponentModel.ISupportInitialize)trackBar1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)trackBarRating).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private RichTextBox richTextBox1;
-        private Label label1;
-        private Button button1;
-        private TrackBar trackBar1;
-        private Label label2;
+        private RichTextBox TextBoxComent;
+        private Label lblName;
+        private Button btnDone;
+        private TrackBar trackBarRating;
+        private Label lblCounter;
     }
 }

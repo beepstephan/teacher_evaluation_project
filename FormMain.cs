@@ -1,23 +1,22 @@
 using System.Drawing.Imaging;
 using System.Runtime.InteropServices;
+using System.Security.Cryptography.Xml;
 using teacher_evaluation_project.Forms;
 
 namespace teacher_evaluation_project {
     public partial class FormMain : FormProject {
-        private ThemeColor themeColor = new ThemeColor();
+
+        private Theme themeColor = new Theme();
 
         //Fields
         private Button activeButton;
         private FormProject activeForm;
-        static public Theme activeTheme;
-        static public FormMain mainMenu;
+        static public FormMain mainForm;
 
         //Constructor
         public FormMain() {
             InitializeComponent();
-            mainMenu = this;
-            activeTheme = themeColor.GetDefaultTheme();
-            SetThemeColor(activeTheme);
+            mainForm = this;
             ActivateMenuItem(btnHome);
             OpenChildForm(new Forms.FormHome());
         }
@@ -27,18 +26,18 @@ namespace teacher_evaluation_project {
                 if (activeButton != (Button)btnSender) {
                     DisableMenuItems();
                     activeButton = (Button)btnSender;
-                    activeButton.BackColor = activeTheme.activeButtoneColor;
-                    activeButton.ForeColor = activeTheme.textColor;
-                    activeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                    activeButton.BackColor = Theme.activeTheme.activeButtoneColor;
+                    activeButton.ForeColor = Theme.activeTheme.textColor;
+                    activeButton.Font = new System.Drawing.Font(Theme.activeFont, Theme.textSize + 2, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                 }
             }
         }
         private void DisableMenuItems() {
             foreach (Control btn in panelMenu.Controls) {
                 if (btn.GetType() == typeof(Button) && btn != btnLogIn) {
-                    btn.BackColor = activeTheme.mainMenuColor;
-                    btn.ForeColor = activeTheme.textColor;
-                    btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                    btn.BackColor = Theme.activeTheme.mainMenuColor;
+                    btn.ForeColor = Theme.activeTheme.textColor;
+                    btn.Font = new System.Drawing.Font(Theme.activeFont, Theme.textSize, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                 }
             }
             activeButton = null;
@@ -57,18 +56,18 @@ namespace teacher_evaluation_project {
             childForm.Show();
             titleBarText.Text = childForm.Text;
         }
-
-        public override void SetThemeColor(Theme newTheme) {
-            panelTitleBar.BackColor = activeTheme.panelTitleBar;
-            titleBarText.ForeColor = activeTheme.textColor;
-            panelLogo.BackColor = activeTheme.mainMenuColor;
-            logoTxt.ForeColor = activeTheme.textColor;
-            panelMenu.BackColor = activeTheme.mainMenuColor;
+        public override void SetTheme() {
+            SetFont();
+            panelTitleBar.BackColor = Theme.activeTheme.panelTitleBar;
+            titleBarText.ForeColor = Theme.activeTheme.textColor;
+            panelLogo.BackColor = Theme.activeTheme.mainMenuColor;
+            logoTxt.ForeColor = Theme.activeTheme.textColor;
+            panelMenu.BackColor = Theme.activeTheme.mainMenuColor;
 
             foreach (Control btn in panelMenu.Controls) {
                 if (btn.GetType() == typeof(Button)) {
-                    btn.ForeColor = activeTheme.textColor;
-                    btn.BackColor = activeTheme.mainMenuColor;
+                    btn.ForeColor = Theme.activeTheme.textColor;
+                    btn.BackColor = Theme.activeTheme.mainMenuColor;
                     if (((Button)btn).Image != null) {
                         Image img = ((Button)btn).Image;
                         Bitmap bmp = new Bitmap(img);
@@ -76,9 +75,9 @@ namespace teacher_evaluation_project {
                             for (int x = 0; x < bmp.Width; x++) {
                                 Color pixel = bmp.GetPixel(x, y);
                                 int a = pixel.A;
-                                int r = activeTheme.imgColor.R;
-                                int g = activeTheme.imgColor.G;
-                                int b = activeTheme.imgColor.B;
+                                int r = Theme.activeTheme.imgColor.R;
+                                int g = Theme.activeTheme.imgColor.G;
+                                int b = Theme.activeTheme.imgColor.B;
                                 bmp.SetPixel(x, y, Color.FromArgb(a, r, g, b));
                             }
                         }
@@ -86,6 +85,8 @@ namespace teacher_evaluation_project {
                     }
                 }
             }
+
+            activeButton.BackColor = Theme.activeTheme.activeButtoneColor;
         }
 
         private void btnHome_Click(object sender, EventArgs e) {
@@ -97,13 +98,9 @@ namespace teacher_evaluation_project {
             OpenChildForm(new Forms.FormSearch());
         }
         private void btnTheme_Click(object sender, EventArgs e) {
-            Theme tempTheme = themeColor.GetTheme();
-            while (activeTheme == tempTheme) {
-                tempTheme = themeColor.GetTheme();
-            }
-            activeTheme = tempTheme;
-            SetThemeColor(activeTheme);
-            activeForm.SetThemeColor(activeTheme);
+            themeColor.SetNext();
+            SetTheme();
+            activeForm.SetTheme();
         }
         private void btnSettings_Click(object sender, EventArgs e) {
             ActivateMenuItem(sender);

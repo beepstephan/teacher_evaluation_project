@@ -14,7 +14,13 @@ namespace teacher_evaluation_project.Forms {
             InitializeComponent();
         }
 
-        public virtual void SetThemeColor(Theme newTheme) {}
-        public virtual void ChangeThemeColor() {}
+        public virtual void SetTheme() {}
+        public virtual void SetFont() {
+            if (Font != new System.Drawing.Font(Theme.activeFont, Theme.textSize, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)))) {
+                foreach (Control item in Controls) {
+                    item.Font = new System.Drawing.Font(Theme.activeFont, Theme.textSize, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                }
+            }
+        }
     }
 }

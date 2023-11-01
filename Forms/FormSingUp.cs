@@ -12,14 +12,20 @@ namespace teacher_evaluation_project.Forms {
     public partial class FormSingUp : FormProject {
         public FormSingUp() {
             InitializeComponent();
-            SetThemeColor(FormMain.activeTheme);
+            SetTheme();
         }
 
         private void label1_Click(object sender, EventArgs e) {
-            FormMain.mainMenu.OpenChildForm(new Forms.FormLogIn());
+            FormMain.mainForm.OpenChildForm(new Forms.FormLogIn());
         }
-        public override void SetThemeColor(Theme newTheme) {
-            BackColor = FormMain.activeTheme.panelDesktopColor;
+        public override void SetTheme() {
+            SetFont();
+            if (BackColor != Theme.activeTheme.panelDesktopColor) {
+                BackColor = Theme.activeTheme.panelDesktopColor;
+                btnSingUp.BackColor = Theme.activeTheme.mainMenuColor;
+                btnSingUp.ForeColor = Theme.activeTheme.textColor;
+                lblAccount.ForeColor = Theme.activeTheme.textColor;
+            }
         }
     }
 }

@@ -12,15 +12,25 @@ namespace teacher_evaluation_project.Forms {
     public partial class FormTeacher : FormProject {
         public FormTeacher(string teacherName) {
             InitializeComponent();
-            SetThemeColor(FormMain.activeTheme);
-            label1.Text = teacherName;
+            SetTheme();
+            lblName.Text = teacherName;
         }
 
         private void button1_Click(object sender, EventArgs e) {
-            FormMain.mainMenu.OpenChildForm(new Forms.FormComent(label1.Text));
+            FormMain.mainForm.OpenChildForm(new Forms.FormComent(lblName.Text));
         }
-        public override void SetThemeColor(Theme newTheme) {
-            BackColor = FormMain.activeTheme.panelDesktopColor;
+        public override void SetTheme() {
+            SetFont();
+            if (BackColor != Theme.activeTheme.panelDesktopColor) {
+                BackColor = Theme.activeTheme.panelDesktopColor;
+                lblName.ForeColor = Theme.activeTheme.textColor;
+                lblDepartment.ForeColor = Theme.activeTheme.textColor;
+                lblSubject.ForeColor = Theme.activeTheme.textColor;
+                lblActivity.ForeColor = Theme.activeTheme.textColor;
+                lblGPA.ForeColor = Theme.activeTheme.textColor;
+                btnFeedback.ForeColor = Theme.activeTheme.textColor;
+                btnFeedback.BackColor = Theme.activeTheme.mainMenuColor;
+            }
         }
     }
 }
