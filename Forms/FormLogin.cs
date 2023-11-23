@@ -20,6 +20,7 @@ namespace teacher_evaluation_project.Forms {
             FormMain.mainForm.OpenChildForm(new Forms.FormSingUp());
         }
         public override void SetTheme() {
+            SetFont();
             if (BackColor != Theme.activeTheme.panelDesktopColor) {
                 BackColor = Theme.activeTheme.panelDesktopColor;
                 btnLogIn.BackColor = Theme.activeTheme.mainMenuColor;

@@ -28,7 +28,7 @@ namespace teacher_evaluation_project {
                     activeButton = (Button)btnSender;
                     activeButton.BackColor = Theme.activeTheme.activeButtoneColor;
                     activeButton.ForeColor = Theme.activeTheme.textColor;
-                    activeButton.Font = new System.Drawing.Font(Theme.activeFont, Theme.textSize + 2, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                    activeButton.Font = new System.Drawing.Font(Theme.fontStyle, Theme.textSize + 2, System.Drawing.FontStyle.Regular);
                 }
             }
         }
@@ -37,7 +37,7 @@ namespace teacher_evaluation_project {
                 if (btn.GetType() == typeof(Button) && btn != btnLogIn) {
                     btn.BackColor = Theme.activeTheme.mainMenuColor;
                     btn.ForeColor = Theme.activeTheme.textColor;
-                    btn.Font = new System.Drawing.Font(Theme.activeFont, Theme.textSize, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                    btn.Font = new System.Drawing.Font(Theme.fontStyle, Theme.textSize, System.Drawing.FontStyle.Regular);
                 }
             }
             activeButton = null;
@@ -85,8 +85,18 @@ namespace teacher_evaluation_project {
                     }
                 }
             }
+            if (activeButton != null) {
+                activeButton.BackColor = Theme.activeTheme.activeButtoneColor;
+            }
+        }
 
-            activeButton.BackColor = Theme.activeTheme.activeButtoneColor;
+        public override void SetFont() {
+            if (Font != new System.Drawing.Font(Theme.fontStyle, Theme.textSize, System.Drawing.FontStyle.Regular)) {
+                foreach (Control btn in panelMenu.Controls) {
+                    btn.Font = new System.Drawing.Font(Theme.fontStyle, Theme.textSize, System.Drawing.FontStyle.Regular);
+                }
+                titleBarText.Font = new System.Drawing.Font(Theme.fontStyle, 20, System.Drawing.FontStyle.Regular);
+            }
         }
 
         private void btnHome_Click(object sender, EventArgs e) {

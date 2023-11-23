@@ -33,7 +33,7 @@
             // 
             textBoxEmail.Anchor = AnchorStyles.None;
             textBoxEmail.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxEmail.Location = new Point(259, 33);
+            textBoxEmail.Location = new Point(257, 35);
             textBoxEmail.Name = "textBoxEmail";
             textBoxEmail.Size = new Size(114, 23);
             textBoxEmail.TabIndex = 0;
@@ -43,7 +43,7 @@
             // 
             textBoxPassword.Anchor = AnchorStyles.None;
             textBoxPassword.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxPassword.Location = new Point(259, 86);
+            textBoxPassword.Location = new Point(257, 85);
             textBoxPassword.Name = "textBoxPassword";
             textBoxPassword.Size = new Size(114, 23);
             textBoxPassword.TabIndex = 1;
@@ -56,7 +56,7 @@
             btnLogIn.FlatStyle = FlatStyle.Flat;
             btnLogIn.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
             btnLogIn.ForeColor = Color.Gainsboro;
-            btnLogIn.Location = new Point(257, 129);
+            btnLogIn.Location = new Point(257, 135);
             btnLogIn.Name = "btnLogIn";
             btnLogIn.Size = new Size(114, 32);
             btnLogIn.TabIndex = 2;
@@ -66,15 +66,15 @@
             // lblAccount
             // 
             lblAccount.Anchor = AnchorStyles.None;
-            lblAccount.AutoSize = true;
             lblAccount.Cursor = Cursors.Hand;
             lblAccount.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
             lblAccount.ForeColor = Color.Gainsboro;
-            lblAccount.Location = new Point(213, 182);
+            lblAccount.Location = new Point(151, 185);
             lblAccount.Name = "lblAccount";
-            lblAccount.Size = new Size(202, 17);
+            lblAccount.Size = new Size(326, 35);
             lblAccount.TabIndex = 3;
             lblAccount.Text = "Ще немає облікового запису?";
+            lblAccount.TextAlign = ContentAlignment.TopCenter;
             lblAccount.Click += label1_Click;
             // 
             // FormLogIn

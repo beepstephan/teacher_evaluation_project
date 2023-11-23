@@ -14,6 +14,7 @@ namespace teacher_evaluation_project.Forms {
             InitializeComponent();
             SetTheme();
             UpDownFontSize.Value = (int)Theme.textSize;
+            comboBoxFont.Text = Theme.fontStyle;
         }
         public override void SetTheme() {
             SetFont();
@@ -25,9 +26,25 @@ namespace teacher_evaluation_project.Forms {
         }
         private void UpDownFontSize_ValueChanged(object sender, EventArgs e) {
             Theme.textSize = (float)UpDownFontSize.Value;
-            Theme.activeFont = comboBoxFont.Text;
             FormMain.mainForm.SetFont();
             SetFont();
+        }
+
+        private void comboBoxFont_SelectedValueChanged(object sender, EventArgs e) {
+            Theme.fontStyle = comboBoxFont.Text;
+            FormMain.mainForm.SetFont();
+            SetFont();
+        }
+        public override void SetFont() {
+            if (Font != new System.Drawing.Font(Theme.fontStyle, Theme.textSize, System.Drawing.FontStyle.Regular)) {
+                foreach (Control item in Controls) {
+                    if (item != comboBoxFont) {
+                        item.Font = new System.Drawing.Font(Theme.fontStyle, Theme.textSize, System.Drawing.FontStyle.Regular);
+                    } else {
+                        item.Font = new System.Drawing.Font("Microsoft Sans Serif", Theme.textSize, System.Drawing.FontStyle.Regular);
+                    }
+                }
+            }
         }
     }
 }

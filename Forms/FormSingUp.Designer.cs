@@ -34,15 +34,15 @@
             // lblAccount
             // 
             lblAccount.Anchor = AnchorStyles.None;
-            lblAccount.AutoSize = true;
             lblAccount.Cursor = Cursors.Hand;
             lblAccount.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
             lblAccount.ForeColor = Color.Gainsboro;
-            lblAccount.Location = new Point(232, 299);
+            lblAccount.Location = new Point(150, 285);
             lblAccount.Name = "lblAccount";
-            lblAccount.Size = new Size(164, 17);
+            lblAccount.Size = new Size(326, 30);
             lblAccount.TabIndex = 7;
             lblAccount.Text = "Вже є обліковий запис?";
+            lblAccount.TextAlign = ContentAlignment.TopCenter;
             lblAccount.Click += label1_Click;
             // 
             // btnSingUp
@@ -52,7 +52,7 @@
             btnSingUp.FlatStyle = FlatStyle.Flat;
             btnSingUp.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
             btnSingUp.ForeColor = Color.Gainsboro;
-            btnSingUp.Location = new Point(257, 246);
+            btnSingUp.Location = new Point(257, 235);
             btnSingUp.Name = "btnSingUp";
             btnSingUp.Size = new Size(114, 32);
             btnSingUp.TabIndex = 6;
@@ -63,7 +63,7 @@
             // 
             textBoxPassword.Anchor = AnchorStyles.None;
             textBoxPassword.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxPassword.Location = new Point(257, 86);
+            textBoxPassword.Location = new Point(257, 85);
             textBoxPassword.Name = "textBoxPassword";
             textBoxPassword.Size = new Size(114, 23);
             textBoxPassword.TabIndex = 5;
@@ -73,7 +73,7 @@
             // 
             textBoxEmail.Anchor = AnchorStyles.None;
             textBoxEmail.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxEmail.Location = new Point(257, 33);
+            textBoxEmail.Location = new Point(257, 35);
             textBoxEmail.Name = "textBoxEmail";
             textBoxEmail.Size = new Size(114, 23);
             textBoxEmail.TabIndex = 4;
@@ -83,7 +83,7 @@
             // 
             textBoxName.Anchor = AnchorStyles.None;
             textBoxName.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxName.Location = new Point(257, 139);
+            textBoxName.Location = new Point(257, 135);
             textBoxName.Name = "textBoxName";
             textBoxName.Size = new Size(114, 23);
             textBoxName.TabIndex = 8;
@@ -93,7 +93,7 @@
             // 
             textBoxSurname.Anchor = AnchorStyles.None;
             textBoxSurname.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxSurname.Location = new Point(257, 193);
+            textBoxSurname.Location = new Point(257, 185);
             textBoxSurname.Name = "textBoxSurname";
             textBoxSurname.Size = new Size(114, 23);
             textBoxSurname.TabIndex = 9;

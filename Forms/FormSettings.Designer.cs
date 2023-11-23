@@ -45,7 +45,7 @@
             // 
             UpDownFontSize.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
             UpDownFontSize.Location = new Point(201, 34);
-            UpDownFontSize.Maximum = new decimal(new int[] { 14, 0, 0, 0 });
+            UpDownFontSize.Maximum = new decimal(new int[] { 13, 0, 0, 0 });
             UpDownFontSize.Minimum = new decimal(new int[] { 10, 0, 0, 0 });
             UpDownFontSize.Name = "UpDownFontSize";
             UpDownFontSize.Size = new Size(120, 23);
@@ -57,11 +57,14 @@
             // 
             comboBoxFont.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
             comboBoxFont.FormattingEnabled = true;
-            comboBoxFont.Items.AddRange(new object[] { "Microsoft Sans Serif", "Magneto" });
+            comboBoxFont.ImeMode = ImeMode.NoControl;
+            comboBoxFont.Items.AddRange(new object[] { "Microsoft Sans Serif", "Times New Roman", "Bahnschrift SemiBold" });
             comboBoxFont.Location = new Point(201, 79);
             comboBoxFont.Name = "comboBoxFont";
+            comboBoxFont.RightToLeft = RightToLeft.No;
             comboBoxFont.Size = new Size(120, 24);
             comboBoxFont.TabIndex = 3;
+            comboBoxFont.SelectedValueChanged += comboBoxFont_SelectedValueChanged;
             // 
             // lblFont
             // 

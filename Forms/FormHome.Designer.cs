@@ -49,10 +49,10 @@
             label1.ForeColor = Color.Gainsboro;
             label1.Location = new Point(25, 213);
             label1.Name = "label1";
-            label1.Size = new Size(500, 45);
+            label1.Size = new Size(500, 75);
             label1.TabIndex = 1;
-            label1.Text = "Вітаємо вас у застосунку!\nВиможете дати коментар щодо лекцый викладачів та оцінити їх.";
-            label1.TextAlign = ContentAlignment.MiddleCenter;
+            label1.Text = "Вітаємо вас у застосунку!\nВи можете дати коментар щодо лекцій викладачів та оцінити їх.";
+            label1.TextAlign = ContentAlignment.TopCenter;
             // 
             // panel1
             // 
@@ -62,7 +62,7 @@
             panel1.Controls.Add(pictureBox1);
             panel1.Location = new Point(39, 25);
             panel1.Name = "panel1";
-            panel1.Size = new Size(550, 267);
+            panel1.Size = new Size(550, 293);
             panel1.TabIndex = 2;
             // 
             // FormHome
