@@ -100,6 +100,7 @@ namespace teacher_evaluation_project {
         public void OpenChildForm(FormProject childForm) {
             if (activeForm != null) {
                 activeForm.Hide();
+                panelDesktop.Controls.Remove(activeForm);
             }
             activeForm = childForm;
             activeForm.SetTheme();
