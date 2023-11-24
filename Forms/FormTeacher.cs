@@ -10,14 +10,21 @@ using System.Windows.Forms;
 
 namespace teacher_evaluation_project.Forms {
     public partial class FormTeacher : FormProject {
-        public FormTeacher(string teacherName) {
+        ListViewItem teacher;
+        public FormTeacher() {
             InitializeComponent();
             SetTheme();
-            lblName.Text = teacherName;
+        }
+        public FormTeacher(ListViewItem item) {
+            InitializeComponent();
+            SetTheme();
+            teacher = item;
+            lblName.Text = $"{item.Text} {item.SubItems[1].Text} {item.SubItems[2].Text}";
         }
 
         private void button1_Click(object sender, EventArgs e) {
-            FormMain.mainForm.OpenChildForm(new Forms.FormComent(lblName.Text));
+            FormMain.mainForm.formComent = new FormComent(teacher);
+            FormMain.mainForm.OpenChildForm(FormMain.mainForm.formComent);
         }
         public override void SetTheme() {
             SetFont();

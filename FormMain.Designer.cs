@@ -274,6 +274,7 @@
             Controls.Add(panelTitleBar);
             Controls.Add(panelMenu);
             Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            IsMdiContainer = true;
             MinimumSize = new Size(900, 475);
             Name = "FormMain";
             Text = "Оцінювання викладачів";

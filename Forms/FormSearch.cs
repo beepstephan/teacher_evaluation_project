@@ -18,16 +18,20 @@ namespace teacher_evaluation_project.Forms {
             SetTheme();
         }
 
-        private void listView1_ItemActivate(object sender, EventArgs e) {
-            ListViewItem item = listViewTeachers.SelectedItems[0];
-            FormMain.mainForm.OpenChildForm(new Forms.FormTeacher(item.Text));
-        }
         public override void SetTheme() {
             SetFont();
             if (BackColor != Theme.activeTheme.panelDesktopColor) {
                 BackColor = Theme.activeTheme.panelDesktopColor;
                 btnSearch.BackColor = Theme.activeTheme.mainMenuColor;
                 btnSearch.ForeColor = Theme.activeTheme.textColor;
+            }
+        }
+
+        private void listViewTeachers_SelectedIndexChanged(object sender, EventArgs e) {
+            if (listViewTeachers.SelectedItems.Count > 0) {
+                ListViewItem item = listViewTeachers.SelectedItems[0];
+                FormMain.mainForm.formTeacher = new FormTeacher(item);
+                FormMain.mainForm.OpenChildForm(FormMain.mainForm.formTeacher);
             }
         }
     }

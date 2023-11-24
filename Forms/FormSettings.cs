@@ -32,7 +32,9 @@ namespace teacher_evaluation_project.Forms {
 
         private void comboBoxFont_SelectedValueChanged(object sender, EventArgs e) {
             Theme.fontStyle = comboBoxFont.Text;
-            FormMain.mainForm.SetFont();
+            if (FormMain.mainForm != null) {
+                FormMain.mainForm.SetFont();
+            }
             SetFont();
         }
         public override void SetFont() {

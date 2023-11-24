@@ -17,7 +17,8 @@ namespace teacher_evaluation_project.Forms {
         }
 
         private void label1_Click(object sender, EventArgs e) {
-            FormMain.mainForm.OpenChildForm(new Forms.FormSingUp());
+            FormMain.mainForm.formSingUp = new FormSingUp();
+            FormMain.mainForm.OpenChildForm(FormMain.mainForm.formSingUp);
         }
         public override void SetTheme() {
             SetFont();

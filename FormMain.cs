@@ -13,12 +13,24 @@ namespace teacher_evaluation_project {
         private FormProject activeForm;
         static public FormMain mainForm;
 
+        //child forms
+        public FormHome formHome = new FormHome();
+        public FormSearch formSearch = new FormSearch();
+        public FormSettings formSettings = new FormSettings();
+        public FormTeacher formTeacher = new FormTeacher();
+        public FormComent formComent = new FormComent();
+        public FormLogIn formLogIn = new FormLogIn();
+        public FormSingUp formSingUp = new FormSingUp();
+        public FormFaq formFaq = new FormFaq();
+        public FormDev formDev = new FormDev();
+        public FormAbout formAbout = new FormAbout();
+
         //Constructor
         public FormMain() {
-            InitializeComponent();
             mainForm = this;
+            InitializeComponent();
             ActivateMenuItem(btnHome);
-            OpenChildForm(new Forms.FormHome());
+            OpenChildForm(formHome);
         }
 
         private void ActivateMenuItem(object btnSender) {
@@ -42,20 +54,7 @@ namespace teacher_evaluation_project {
             }
             activeButton = null;
         }
-        public void OpenChildForm(FormProject childForm) {
-            if (activeForm != null) {
-                activeForm.Close();
-            }
-            activeForm = childForm;
-            childForm.TopLevel = false;
-            childForm.FormBorderStyle = FormBorderStyle.None;
-            childForm.Dock = DockStyle.Fill;
-            this.panelDesktop.Controls.Add(childForm);
-            this.panelDesktop.Tag = childForm;
-            childForm.BringToFront();
-            childForm.Show();
-            titleBarText.Text = childForm.Text;
-        }
+        
         public override void SetTheme() {
             SetFont();
             panelTitleBar.BackColor = Theme.activeTheme.panelTitleBar;
@@ -89,7 +88,6 @@ namespace teacher_evaluation_project {
                 activeButton.BackColor = Theme.activeTheme.activeButtoneColor;
             }
         }
-
         public override void SetFont() {
             if (Font != new System.Drawing.Font(Theme.fontStyle, Theme.textSize, System.Drawing.FontStyle.Regular)) {
                 foreach (Control btn in panelMenu.Controls) {
@@ -99,13 +97,31 @@ namespace teacher_evaluation_project {
             }
         }
 
+        public void OpenChildForm(FormProject childForm) {
+            if (activeForm != null) {
+                activeForm.Hide();
+            }
+            activeForm = childForm;
+            activeForm.SetTheme();
+
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            panelDesktop.Controls.Add(childForm);
+            panelDesktop.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+
+            titleBarText.Text = childForm.Text;
+        }
+
         private void btnHome_Click(object sender, EventArgs e) {
             ActivateMenuItem(sender);
-            OpenChildForm(new Forms.FormHome());
+            OpenChildForm(formHome);
         }
         private void btnSearch_Click(object sender, EventArgs e) {
             ActivateMenuItem(sender);
-            OpenChildForm(new Forms.FormSearch());
+            OpenChildForm(formSearch);
         }
         private void btnTheme_Click(object sender, EventArgs e) {
             themeColor.SetNext();
@@ -114,23 +130,23 @@ namespace teacher_evaluation_project {
         }
         private void btnSettings_Click(object sender, EventArgs e) {
             ActivateMenuItem(sender);
-            OpenChildForm(new Forms.FormSettings());
+            OpenChildForm(formSettings);
         }
         private void btnFaq_Click(object sender, EventArgs e) {
             ActivateMenuItem(sender);
-            OpenChildForm(new Forms.FormFaq());
+            OpenChildForm(formFaq);
         }
         private void btnDev_Click(object sender, EventArgs e) {
             ActivateMenuItem(sender);
-            OpenChildForm(new Forms.FormDev());
+            OpenChildForm(formDev);
         }
         private void brnAbout_Click(object sender, EventArgs e) {
             ActivateMenuItem(sender);
-            OpenChildForm(new Forms.FormAbout());
+            OpenChildForm(formAbout);
         }
         private void btnLogin_Click(object sender, EventArgs e) {
             DisableMenuItems();
-            OpenChildForm(new Forms.FormLogIn());
+            OpenChildForm(formLogIn);
         }
     }
 }

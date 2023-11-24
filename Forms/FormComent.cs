@@ -10,15 +10,18 @@ using System.Windows.Forms;
 
 namespace teacher_evaluation_project.Forms {
     public partial class FormComent : FormProject {
-        public FormComent(string teacherName) {
+        public FormComent() {
             InitializeComponent();
             SetTheme();
-            lblName.Text = teacherName;
+        }
+        public FormComent(ListViewItem item) {
+            InitializeComponent();
+            SetTheme();
+            lblName.Text = $"{item.Text} {item.SubItems[1].Text} {item.SubItems[2].Text}";
         }
 
         private void button1_Click(object sender, EventArgs e) {
-            /*відпралення на сервер*/
-            FormMain.mainForm.OpenChildForm(new Forms.FormSearch());
+            FormMain.mainForm.OpenChildForm(FormMain.mainForm.formSearch);
         }
         public override void SetTheme() {
             SetFont();

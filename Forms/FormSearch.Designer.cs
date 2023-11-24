@@ -23,31 +23,18 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            ListViewItem listViewItem1 = new ListViewItem("Степаненко Степан Степанович");
-            listViewTeachers = new ListView();
+            ListViewItem listViewItem1 = new ListViewItem(new string[] { "Степаненко", "Степан", "Степанович" }, -1);
+            ListViewItem listViewItem2 = new ListViewItem(new string[] { "Іванов", "Іван", "Іванович" }, -1);
             radioButtonABC = new RadioButton();
             radioButtonRating = new RadioButton();
             textBoxSurname = new TextBox();
             btnSearch = new Button();
             comboBoxDepartment = new ComboBox();
+            listViewTeachers = new ListView();
+            columnHeader1 = new ColumnHeader();
+            columnHeader2 = new ColumnHeader();
+            columnHeader3 = new ColumnHeader();
             SuspendLayout();
-            // 
-            // listViewTeachers
-            // 
-            listViewTeachers.Activation = ItemActivation.OneClick;
-            listViewTeachers.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            listViewTeachers.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            listViewTeachers.FullRowSelect = true;
-            listViewItem1.StateImageIndex = 0;
-            listViewTeachers.Items.AddRange(new ListViewItem[] { listViewItem1 });
-            listViewTeachers.Location = new Point(39, 159);
-            listViewTeachers.MultiSelect = false;
-            listViewTeachers.Name = "listViewTeachers";
-            listViewTeachers.Size = new Size(549, 150);
-            listViewTeachers.TabIndex = 0;
-            listViewTeachers.UseCompatibleStateImageBehavior = false;
-            listViewTeachers.View = View.SmallIcon;
-            listViewTeachers.ItemActivate += listView1_ItemActivate;
             // 
             // radioButtonABC
             // 
@@ -112,18 +99,48 @@
             comboBoxDepartment.TabIndex = 5;
             comboBoxDepartment.Text = "Кафедра";
             // 
+            // listViewTeachers
+            // 
+            listViewTeachers.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            listViewTeachers.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3 });
+            listViewTeachers.FullRowSelect = true;
+            listViewTeachers.GridLines = true;
+            listViewItem1.StateImageIndex = 0;
+            listViewTeachers.Items.AddRange(new ListViewItem[] { listViewItem1, listViewItem2 });
+            listViewTeachers.Location = new Point(39, 159);
+            listViewTeachers.Name = "listViewTeachers";
+            listViewTeachers.Size = new Size(549, 150);
+            listViewTeachers.TabIndex = 6;
+            listViewTeachers.UseCompatibleStateImageBehavior = false;
+            listViewTeachers.View = View.Details;
+            listViewTeachers.SelectedIndexChanged += listViewTeachers_SelectedIndexChanged;
+            // 
+            // columnHeader1
+            // 
+            columnHeader1.Text = "Прізвище";
+            columnHeader1.Width = 100;
+            // 
+            // columnHeader2
+            // 
+            columnHeader2.Text = "Ім'я";
+            // 
+            // columnHeader3
+            // 
+            columnHeader3.Text = "Побатькові";
+            columnHeader3.Width = 80;
+            // 
             // FormSearch
             // 
             AutoScaleDimensions = new SizeF(8F, 16F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(35, 35, 80);
             ClientSize = new Size(628, 322);
+            Controls.Add(listViewTeachers);
             Controls.Add(comboBoxDepartment);
             Controls.Add(btnSearch);
             Controls.Add(textBoxSurname);
             Controls.Add(radioButtonRating);
             Controls.Add(radioButtonABC);
-            Controls.Add(listViewTeachers);
             Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
             Name = "FormSearch";
             Text = "Пошук викладачів";
@@ -132,12 +149,14 @@
         }
 
         #endregion
-
-        private ListView listViewTeachers;
         private RadioButton radioButtonABC;
         private RadioButton radioButtonRating;
         private TextBox textBoxSurname;
         private Button btnSearch;
         private ComboBox comboBoxDepartment;
+        private ListView listViewTeachers;
+        private ColumnHeader columnHeader1;
+        private ColumnHeader columnHeader2;
+        private ColumnHeader columnHeader3;
     }
 }
