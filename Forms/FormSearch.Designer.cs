@@ -1,5 +1,7 @@
-﻿namespace teacher_evaluation_project.Forms {
-    partial class FormSearch {
+﻿namespace teacher_evaluation_project.Forms
+{
+    partial class FormSearch
+    {
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -9,8 +11,10 @@
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing) {
-            if (disposing && (components != null)) {
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
                 components.Dispose();
             }
             base.Dispose(disposing);
@@ -22,7 +26,8 @@
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent() {
+        private void InitializeComponent()
+        {
             ListViewItem listViewItem1 = new ListViewItem(new string[] { "Степаненко", "Степан", "Степанович" }, -1);
             ListViewItem listViewItem2 = new ListViewItem(new string[] { "Іванов", "Іван", "Іванович" }, -1);
             radioButtonABC = new RadioButton();
@@ -43,9 +48,9 @@
             radioButtonABC.Checked = true;
             radioButtonABC.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
             radioButtonABC.ForeColor = Color.Gainsboro;
-            radioButtonABC.Location = new Point(320, 131);
+            radioButtonABC.Location = new Point(287, 131);
             radioButtonABC.Name = "radioButtonABC";
-            radioButtonABC.Size = new Size(116, 21);
+            radioButtonABC.Size = new Size(149, 24);
             radioButtonABC.TabIndex = 1;
             radioButtonABC.TabStop = true;
             radioButtonABC.Text = "За алфавітом";
@@ -57,9 +62,9 @@
             radioButtonRating.AutoSize = true;
             radioButtonRating.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
             radioButtonRating.ForeColor = Color.Gainsboro;
-            radioButtonRating.Location = new Point(472, 132);
+            radioButtonRating.Location = new Point(441, 132);
             radioButtonRating.Name = "radioButtonRating";
-            radioButtonRating.Size = new Size(116, 21);
+            radioButtonRating.Size = new Size(147, 24);
             radioButtonRating.TabIndex = 2;
             radioButtonRating.Text = "За рейтингом";
             radioButtonRating.UseVisualStyleBackColor = true;
@@ -70,7 +75,7 @@
             textBoxSurname.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
             textBoxSurname.Location = new Point(39, 26);
             textBoxSurname.Name = "textBoxSurname";
-            textBoxSurname.Size = new Size(185, 23);
+            textBoxSurname.Size = new Size(185, 26);
             textBoxSurname.TabIndex = 3;
             textBoxSurname.Text = "Введіть прізвище";
             // 
@@ -95,7 +100,7 @@
             comboBoxDepartment.FormattingEnabled = true;
             comboBoxDepartment.Location = new Point(267, 26);
             comboBoxDepartment.Name = "comboBoxDepartment";
-            comboBoxDepartment.Size = new Size(138, 24);
+            comboBoxDepartment.Size = new Size(138, 28);
             comboBoxDepartment.TabIndex = 5;
             comboBoxDepartment.Text = "Кафедра";
             // 
@@ -131,7 +136,7 @@
             // 
             // FormSearch
             // 
-            AutoScaleDimensions = new SizeF(8F, 16F);
+            AutoScaleDimensions = new SizeF(10F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(35, 35, 80);
             ClientSize = new Size(628, 322);
