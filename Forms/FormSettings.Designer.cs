@@ -1,5 +1,7 @@
-﻿namespace teacher_evaluation_project.Forms {
-    partial class FormSettings {
+﻿namespace teacher_evaluation_project.Forms
+{
+    partial class FormSettings
+    {
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -9,8 +11,10 @@
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing) {
-            if (disposing && (components != null)) {
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
                 components.Dispose();
             }
             base.Dispose(disposing);
@@ -22,11 +26,12 @@
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent() {
+        private void InitializeComponent()
+        {
             lblFontSize = new Label();
             UpDownFontSize = new NumericUpDown();
-            comboBoxFont = new ComboBox();
-            lblFont = new Label();
+            boxFontStyle = new ComboBox();
+            lblFontStyle = new Label();
             ((System.ComponentModel.ISupportInitialize)UpDownFontSize).BeginInit();
             SuspendLayout();
             // 
@@ -53,29 +58,29 @@
             UpDownFontSize.Value = new decimal(new int[] { 10, 0, 0, 0 });
             UpDownFontSize.ValueChanged += UpDownFontSize_ValueChanged;
             // 
-            // comboBoxFont
+            // boxFontStyle
             // 
-            comboBoxFont.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            comboBoxFont.FormattingEnabled = true;
-            comboBoxFont.ImeMode = ImeMode.NoControl;
-            comboBoxFont.Items.AddRange(new object[] { "Microsoft Sans Serif", "Times New Roman", "Bahnschrift SemiBold" });
-            comboBoxFont.Location = new Point(201, 79);
-            comboBoxFont.Name = "comboBoxFont";
-            comboBoxFont.RightToLeft = RightToLeft.No;
-            comboBoxFont.Size = new Size(120, 24);
-            comboBoxFont.TabIndex = 3;
-            comboBoxFont.SelectedValueChanged += comboBoxFont_SelectedValueChanged;
+            boxFontStyle.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            boxFontStyle.FormattingEnabled = true;
+            boxFontStyle.ImeMode = ImeMode.NoControl;
+            boxFontStyle.Items.AddRange(new object[] { "Microsoft Sans Serif", "Times New Roman", "Bahnschrift SemiBold" });
+            boxFontStyle.Location = new Point(201, 79);
+            boxFontStyle.Name = "boxFontStyle";
+            boxFontStyle.RightToLeft = RightToLeft.No;
+            boxFontStyle.Size = new Size(120, 24);
+            boxFontStyle.TabIndex = 3;
+            boxFontStyle.SelectedValueChanged += comboBoxFont_SelectedValueChanged;
             // 
-            // lblFont
+            // lblFontStyle
             // 
-            lblFont.AutoSize = true;
-            lblFont.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            lblFont.ForeColor = Color.Gainsboro;
-            lblFont.Location = new Point(57, 82);
-            lblFont.Name = "lblFont";
-            lblFont.Size = new Size(53, 17);
-            lblFont.TabIndex = 2;
-            lblFont.Text = "Шрифт";
+            lblFontStyle.AutoSize = true;
+            lblFontStyle.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            lblFontStyle.ForeColor = Color.Gainsboro;
+            lblFontStyle.Location = new Point(57, 82);
+            lblFontStyle.Name = "lblFontStyle";
+            lblFontStyle.Size = new Size(53, 17);
+            lblFontStyle.TabIndex = 2;
+            lblFontStyle.Text = "Шрифт";
             // 
             // FormSettings
             // 
@@ -84,8 +89,8 @@
             BackColor = Color.FromArgb(35, 35, 80);
             ClientSize = new Size(628, 322);
             Controls.Add(UpDownFontSize);
-            Controls.Add(comboBoxFont);
-            Controls.Add(lblFont);
+            Controls.Add(boxFontStyle);
+            Controls.Add(lblFontStyle);
             Controls.Add(lblFontSize);
             Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
             Name = "FormSettings";
@@ -99,7 +104,7 @@
 
         private Label lblFontSize;
         private NumericUpDown UpDownFontSize;
-        private ComboBox comboBoxFont;
-        private Label lblFont;
+        private ComboBox boxFontStyle;
+        private Label lblFontStyle;
     }
 }

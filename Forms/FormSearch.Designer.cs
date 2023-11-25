@@ -1,5 +1,7 @@
-﻿namespace teacher_evaluation_project.Forms {
-    partial class FormSearch {
+﻿namespace teacher_evaluation_project.Forms
+{
+    partial class FormSearch
+    {
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -9,8 +11,10 @@
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing) {
-            if (disposing && (components != null)) {
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
                 components.Dispose();
             }
             base.Dispose(disposing);
@@ -22,47 +26,48 @@
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent() {
-            ListViewItem listViewItem1 = new ListViewItem(new string[] { "Степаненко", "Степан", "Степанович" }, -1);
-            ListViewItem listViewItem2 = new ListViewItem(new string[] { "Іванов", "Іван", "Іванович" }, -1);
-            radioButtonABC = new RadioButton();
-            radioButtonRating = new RadioButton();
+        private void InitializeComponent()
+        {
+            ListViewItem listViewItem3 = new ListViewItem(new string[] { "Степаненко", "Степан", "Степанович" }, -1);
+            ListViewItem listViewItem4 = new ListViewItem(new string[] { "Іванов", "Іван", "Іванович" }, -1);
+            radBtnABC = new RadioButton();
+            radBtnRating = new RadioButton();
             textBoxSurname = new TextBox();
             btnSearch = new Button();
             comboBoxDepartment = new ComboBox();
-            listViewTeachers = new ListView();
+            listTeachers = new ListView();
             columnHeader1 = new ColumnHeader();
             columnHeader2 = new ColumnHeader();
             columnHeader3 = new ColumnHeader();
             SuspendLayout();
             // 
-            // radioButtonABC
+            // radBtnABC
             // 
-            radioButtonABC.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            radioButtonABC.AutoSize = true;
-            radioButtonABC.Checked = true;
-            radioButtonABC.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            radioButtonABC.ForeColor = Color.Gainsboro;
-            radioButtonABC.Location = new Point(320, 131);
-            radioButtonABC.Name = "radioButtonABC";
-            radioButtonABC.Size = new Size(116, 21);
-            radioButtonABC.TabIndex = 1;
-            radioButtonABC.TabStop = true;
-            radioButtonABC.Text = "За алфавітом";
-            radioButtonABC.UseVisualStyleBackColor = true;
+            radBtnABC.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            radBtnABC.AutoSize = true;
+            radBtnABC.Checked = true;
+            radBtnABC.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            radBtnABC.ForeColor = Color.Gainsboro;
+            radBtnABC.Location = new Point(320, 131);
+            radBtnABC.Name = "radBtnABC";
+            radBtnABC.Size = new Size(116, 21);
+            radBtnABC.TabIndex = 1;
+            radBtnABC.TabStop = true;
+            radBtnABC.Text = "За алфавітом";
+            radBtnABC.UseVisualStyleBackColor = true;
             // 
-            // radioButtonRating
+            // radBtnRating
             // 
-            radioButtonRating.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            radioButtonRating.AutoSize = true;
-            radioButtonRating.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            radioButtonRating.ForeColor = Color.Gainsboro;
-            radioButtonRating.Location = new Point(472, 132);
-            radioButtonRating.Name = "radioButtonRating";
-            radioButtonRating.Size = new Size(116, 21);
-            radioButtonRating.TabIndex = 2;
-            radioButtonRating.Text = "За рейтингом";
-            radioButtonRating.UseVisualStyleBackColor = true;
+            radBtnRating.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            radBtnRating.AutoSize = true;
+            radBtnRating.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            radBtnRating.ForeColor = Color.Gainsboro;
+            radBtnRating.Location = new Point(472, 132);
+            radBtnRating.Name = "radBtnRating";
+            radBtnRating.Size = new Size(116, 21);
+            radBtnRating.TabIndex = 2;
+            radBtnRating.Text = "За рейтингом";
+            radBtnRating.UseVisualStyleBackColor = true;
             // 
             // textBoxSurname
             // 
@@ -99,21 +104,21 @@
             comboBoxDepartment.TabIndex = 5;
             comboBoxDepartment.Text = "Кафедра";
             // 
-            // listViewTeachers
+            // listTeachers
             // 
-            listViewTeachers.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            listViewTeachers.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3 });
-            listViewTeachers.FullRowSelect = true;
-            listViewTeachers.GridLines = true;
-            listViewItem1.StateImageIndex = 0;
-            listViewTeachers.Items.AddRange(new ListViewItem[] { listViewItem1, listViewItem2 });
-            listViewTeachers.Location = new Point(39, 159);
-            listViewTeachers.Name = "listViewTeachers";
-            listViewTeachers.Size = new Size(549, 150);
-            listViewTeachers.TabIndex = 6;
-            listViewTeachers.UseCompatibleStateImageBehavior = false;
-            listViewTeachers.View = View.Details;
-            listViewTeachers.SelectedIndexChanged += listViewTeachers_SelectedIndexChanged;
+            listTeachers.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            listTeachers.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3 });
+            listTeachers.FullRowSelect = true;
+            listTeachers.GridLines = true;
+            listViewItem3.StateImageIndex = 0;
+            listTeachers.Items.AddRange(new ListViewItem[] { listViewItem3, listViewItem4 });
+            listTeachers.Location = new Point(39, 159);
+            listTeachers.Name = "listTeachers";
+            listTeachers.Size = new Size(549, 150);
+            listTeachers.TabIndex = 6;
+            listTeachers.UseCompatibleStateImageBehavior = false;
+            listTeachers.View = View.Details;
+            listTeachers.SelectedIndexChanged += listViewTeachers_SelectedIndexChanged;
             // 
             // columnHeader1
             // 
@@ -135,12 +140,12 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(35, 35, 80);
             ClientSize = new Size(628, 322);
-            Controls.Add(listViewTeachers);
+            Controls.Add(listTeachers);
             Controls.Add(comboBoxDepartment);
             Controls.Add(btnSearch);
             Controls.Add(textBoxSurname);
-            Controls.Add(radioButtonRating);
-            Controls.Add(radioButtonABC);
+            Controls.Add(radBtnRating);
+            Controls.Add(radBtnABC);
             Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
             Name = "FormSearch";
             Text = "Пошук викладачів";
@@ -149,12 +154,12 @@
         }
 
         #endregion
-        private RadioButton radioButtonABC;
-        private RadioButton radioButtonRating;
+        private RadioButton radBtnABC;
+        private RadioButton radBtnRating;
         private TextBox textBoxSurname;
         private Button btnSearch;
         private ComboBox comboBoxDepartment;
-        private ListView listViewTeachers;
+        private ListView listTeachers;
         private ColumnHeader columnHeader1;
         private ColumnHeader columnHeader2;
         private ColumnHeader columnHeader3;

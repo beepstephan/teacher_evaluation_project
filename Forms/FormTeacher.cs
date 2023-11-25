@@ -11,34 +11,40 @@ using teacher_evaluation_project.projectClasses;
 
 namespace teacher_evaluation_project.Forms
 {
-    public partial class FormTeacher : FormProject {
+    public partial class FormTeacher : FormProject
+    {
         ListViewItem teacher;
-        public FormTeacher() {
+        public FormTeacher()
+        {
             InitializeComponent();
             SetTheme();
         }
-        public FormTeacher(ListViewItem item) {
+        public FormTeacher(ListViewItem item)
+        {
             InitializeComponent();
             SetTheme();
             teacher = item;
             lblName.Text = $"{item.Text} {item.SubItems[1].Text} {item.SubItems[2].Text}";
         }
 
-        private void button1_Click(object sender, EventArgs e) {
+        private void button1_Click(object sender, EventArgs e)
+        {
             FormMain.mainForm.formComent = new FormComent(teacher);
             FormMain.mainForm.OpenChildForm(FormMain.mainForm.formComent);
         }
-        public override void SetTheme() {
+        public override void SetTheme()
+        {
             SetFont();
-            if (BackColor != Theme.activeTheme.panelDesktopColor) {
+            if (BackColor != Theme.activeTheme.panelDesktopColor)
+            {
                 BackColor = Theme.activeTheme.panelDesktopColor;
                 lblName.ForeColor = Theme.activeTheme.textColor;
                 lblDepartment.ForeColor = Theme.activeTheme.textColor;
                 lblSubject.ForeColor = Theme.activeTheme.textColor;
                 lblActivity.ForeColor = Theme.activeTheme.textColor;
-                lblGPA.ForeColor = Theme.activeTheme.textColor;
-                btnFeedback.ForeColor = Theme.activeTheme.textColor;
-                btnFeedback.BackColor = Theme.activeTheme.mainMenuColor;
+                lblGpa.ForeColor = Theme.activeTheme.textColor;
+                btnComment.ForeColor = Theme.activeTheme.textColor;
+                btnComment.BackColor = Theme.activeTheme.mainMenuColor;
             }
         }
     }
