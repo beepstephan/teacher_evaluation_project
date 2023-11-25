@@ -52,9 +52,9 @@
             lblWelcome.BackColor = Color.Transparent;
             lblWelcome.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             lblWelcome.ForeColor = Color.Gainsboro;
-            lblWelcome.Location = new Point(25, 213);
+            lblWelcome.Location = new Point(15, 213);
             lblWelcome.Name = "lblWelcome";
-            lblWelcome.Size = new Size(500, 75);
+            lblWelcome.Size = new Size(520, 75);
             lblWelcome.TabIndex = 1;
             lblWelcome.Text = "Вітаємо вас у застосунку!\nВи можете дати коментар щодо лекцій викладачів та оцінити їх.";
             lblWelcome.TextAlign = ContentAlignment.TopCenter;
