@@ -38,12 +38,12 @@
             // pictureBox
             // 
             pictureBox.BackColor = Color.Transparent;
-            pictureBox.Image = Properties.Resources.NUZP_GERB_svg;
+            pictureBox.Image = Properties.Resources.imgLogo;
             pictureBox.InitialImage = null;
             pictureBox.Location = new Point(170, 3);
             pictureBox.Name = "pictureBox";
             pictureBox.Size = new Size(211, 189);
-            pictureBox.SizeMode = PictureBoxSizeMode.CenterImage;
+            pictureBox.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox.TabIndex = 0;
             pictureBox.TabStop = false;
             // 

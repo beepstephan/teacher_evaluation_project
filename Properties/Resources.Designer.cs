@@ -83,6 +83,26 @@ namespace teacher_evaluation_project.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap imgLogo {
+            get {
+                object obj = ResourceManager.GetObject("imgLogo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap imgLogo_small {
+            get {
+                object obj = ResourceManager.GetObject("imgLogo_small", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap login_svgrepo_com_negate {
             get {
                 object obj = ResourceManager.GetObject("login_svgrepo_com_negate", resourceCulture);

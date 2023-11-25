@@ -1,5 +1,7 @@
-﻿namespace teacher_evaluation_project {
-    partial class FormMain {
+﻿namespace teacher_evaluation_project
+{
+    partial class FormMain
+    {
         /// <summary>
         ///  Required designer variable.
         /// </summary>
@@ -9,8 +11,10 @@
         ///  Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing) {
-            if (disposing && (components != null)) {
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
                 components.Dispose();
             }
             base.Dispose(disposing);
@@ -22,7 +26,9 @@
         ///  Required method for Designer support - do not modify
         ///  the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent() {
+        private void InitializeComponent()
+        {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             panelMenu = new Panel();
             btnTheme = new Button();
             btnAbout = new Button();
@@ -33,12 +39,13 @@
             btnSearch = new Button();
             btnHome = new Button();
             panelLogo = new Panel();
-            logoTxt = new Label();
+            picLogo = new PictureBox();
             panelTitleBar = new Panel();
             titleBarText = new Label();
             panelDesktop = new Panel();
             panelMenu.SuspendLayout();
             panelLogo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)picLogo).BeginInit();
             panelTitleBar.SuspendLayout();
             SuspendLayout();
             // 
@@ -212,26 +219,22 @@
             // 
             // panelLogo
             // 
-            panelLogo.Controls.Add(logoTxt);
+            panelLogo.Controls.Add(picLogo);
             panelLogo.Dock = DockStyle.Top;
             panelLogo.Location = new Point(0, 0);
             panelLogo.Name = "panelLogo";
             panelLogo.Size = new Size(240, 75);
             panelLogo.TabIndex = 0;
             // 
-            // logoTxt
+            // picLogo
             // 
-            logoTxt.BackColor = Color.Transparent;
-            logoTxt.Dock = DockStyle.Fill;
-            logoTxt.FlatStyle = FlatStyle.Flat;
-            logoTxt.Font = new Font("Microsoft Sans Serif", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            logoTxt.ForeColor = Color.Gainsboro;
-            logoTxt.Location = new Point(0, 0);
-            logoTxt.Name = "logoTxt";
-            logoTxt.Size = new Size(240, 75);
-            logoTxt.TabIndex = 1;
-            logoTxt.Text = "logo";
-            logoTxt.TextAlign = ContentAlignment.MiddleCenter;
+            picLogo.Image = Properties.Resources.imgLogo;
+            picLogo.Location = new Point(36, 9);
+            picLogo.Name = "picLogo";
+            picLogo.Size = new Size(60, 60);
+            picLogo.SizeMode = PictureBoxSizeMode.Zoom;
+            picLogo.TabIndex = 0;
+            picLogo.TabStop = false;
             // 
             // panelTitleBar
             // 
@@ -274,12 +277,14 @@
             Controls.Add(panelTitleBar);
             Controls.Add(panelMenu);
             Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             IsMdiContainer = true;
             MinimumSize = new Size(900, 475);
             Name = "FormMain";
             Text = "Оцінювання викладачів";
             panelMenu.ResumeLayout(false);
             panelLogo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)picLogo).EndInit();
             panelTitleBar.ResumeLayout(false);
             ResumeLayout(false);
         }
@@ -298,7 +303,7 @@
         private Button btnDev;
         private Panel panelTitleBar;
         private Label titleBarText;
-        private Label logoTxt;
         private Panel panelDesktop;
+        private PictureBox picLogo;
     }
 }
