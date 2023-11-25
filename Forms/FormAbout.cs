@@ -8,8 +8,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using teacher_evaluation_project.projectClasses;
 
-namespace teacher_evaluation_project.Forms {
+namespace teacher_evaluation_project.Forms
+{
     public partial class FormAbout : FormProject {
         public FormAbout() {
             InitializeComponent();

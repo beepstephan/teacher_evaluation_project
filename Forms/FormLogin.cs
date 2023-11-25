@@ -7,9 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using teacher_evaluation_project.projectClasses;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
-namespace teacher_evaluation_project.Forms {
+namespace teacher_evaluation_project.Forms
+{
     public partial class FormLogIn : FormProject {
         public FormLogIn() {
             InitializeComponent();

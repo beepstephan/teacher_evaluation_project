@@ -4,15 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace teacher_evaluation_project {
-    public struct Palette {
+namespace teacher_evaluation_project.projectClasses
+{
+    public struct Palette
+    {
         public Color mainMenuColor;
         public Color panelDesktopColor;
         public Color panelTitleBar;
         public Color activeButtoneColor;
         public Color textColor;
         public Color imgColor;
-        public Palette(Color mainMenuColor, Color panelDesktopColor, Color panelTitleBar, Color activeButtoneColor, Color textColor, Color imgColor) {
+        public Palette(Color mainMenuColor, Color panelDesktopColor, Color panelTitleBar, Color activeButtoneColor, Color textColor, Color imgColor)
+        {
             this.mainMenuColor = mainMenuColor;
             this.panelDesktopColor = panelDesktopColor;
             this.panelTitleBar = panelTitleBar;
@@ -20,14 +23,17 @@ namespace teacher_evaluation_project {
             this.textColor = textColor;
             this.imgColor = imgColor;
         }
-        public static bool operator ==(Palette c1, Palette c2) {
+        public static bool operator ==(Palette c1, Palette c2)
+        {
             return c1.Equals(c2);
         }
-        public static bool operator !=(Palette c1, Palette c2) {
+        public static bool operator !=(Palette c1, Palette c2)
+        {
             return !c1.Equals(c2);
         }
     }
-    public class Theme {
+    public class Theme
+    {
         private int themeIndex;
         public static Palette activeTheme;
         public static float textSize;
@@ -41,14 +47,16 @@ namespace teacher_evaluation_project {
             {new Palette(Color.FromArgb(70, 70, 70), Color.FromArgb(65, 95, 95), Color.FromArgb(54, 64, 64), Color.FromArgb(30, 80, 80), Color.Gainsboro, Color.White)},
         };
 
-        public Theme() {
+        public Theme()
+        {
             textSize = 10;
             fontStyle = "Microsoft Sans Serif";
             themeIndex = 0;
             activeTheme = themeList[0];
         }
 
-        public void SetNext() {
+        public void SetNext()
+        {
             themeIndex++;
             if (themeIndex == themeList.Count) themeIndex = 0;
             activeTheme = themeList[themeIndex];
