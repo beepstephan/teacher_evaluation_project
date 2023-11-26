@@ -21,7 +21,7 @@ namespace teacher_evaluation_project.Forms
         {
             InitializeComponent();
             SetTheme();
-            
+
             // завантаження викладачів 
 
         }
@@ -45,6 +45,11 @@ namespace teacher_evaluation_project.Forms
                 FormMain.mainForm.formTeacher = new FormTeacher(item);
                 FormMain.mainForm.OpenChildForm(FormMain.mainForm.formTeacher);
             }
+        }
+
+        private void listTeachers_SizeChanged(object sender, EventArgs e)
+        {
+            listTeachers.Columns[3].Width = listTeachers.Width - 6 - (listTeachers.Columns[0].Width + listTeachers.Columns[1].Width + listTeachers.Columns[2].Width + listTeachers.Columns[4].Width);
         }
     }
 }
