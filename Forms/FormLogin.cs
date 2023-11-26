@@ -56,6 +56,7 @@ namespace teacher_evaluation_project.Forms
 
             if (table.Rows.Count > 0)
                 MessageBox.Show("YES");
+
             else
                 MessageBox.Show("NO");
         }

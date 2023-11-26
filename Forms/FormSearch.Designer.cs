@@ -48,12 +48,11 @@
             // 
             // radBtnABC
             // 
-            this.radBtnABC.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.radBtnABC.AutoSize = true;
             this.radBtnABC.Checked = true;
             this.radBtnABC.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.radBtnABC.ForeColor = System.Drawing.Color.Gainsboro;
-            this.radBtnABC.Location = new System.Drawing.Point(320, 131);
+            this.radBtnABC.Location = new System.Drawing.Point(39, 118);
             this.radBtnABC.Name = "radBtnABC";
             this.radBtnABC.Size = new System.Drawing.Size(116, 21);
             this.radBtnABC.TabIndex = 1;
@@ -63,11 +62,10 @@
             // 
             // radBtnRating
             // 
-            this.radBtnRating.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.radBtnRating.AutoSize = true;
             this.radBtnRating.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.radBtnRating.ForeColor = System.Drawing.Color.Gainsboro;
-            this.radBtnRating.Location = new System.Drawing.Point(472, 132);
+            this.radBtnRating.Location = new System.Drawing.Point(183, 118);
             this.radBtnRating.Name = "radBtnRating";
             this.radBtnRating.Size = new System.Drawing.Size(116, 21);
             this.radBtnRating.TabIndex = 2;
@@ -124,12 +122,13 @@
             this.listTeachers.GridLines = true;
             this.listTeachers.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
             listViewItem1});
-            this.listTeachers.Location = new System.Drawing.Point(39, 159);
+            this.listTeachers.Location = new System.Drawing.Point(39, 145);
             this.listTeachers.Name = "listTeachers";
-            this.listTeachers.Size = new System.Drawing.Size(549, 150);
+            this.listTeachers.Size = new System.Drawing.Size(549, 164);
             this.listTeachers.TabIndex = 6;
             this.listTeachers.UseCompatibleStateImageBehavior = false;
             this.listTeachers.View = System.Windows.Forms.View.Details;
+            this.listTeachers.SelectedIndexChanged += new System.EventHandler(this.listViewTeachers_SelectedIndexChanged);
             // 
             // columnHeader1
             // 
