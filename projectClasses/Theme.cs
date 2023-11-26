@@ -12,16 +12,12 @@ namespace teacher_evaluation_project.projectClasses
         public Color panelDesktopColor;
         public Color panelTitleBar;
         public Color activeButtoneColor;
-        public Color textColor;
-        public Color imgColor;
-        public Palette(Color mainMenuColor, Color panelDesktopColor, Color panelTitleBar, Color activeButtoneColor, Color textColor, Color imgColor)
+        public Palette(Color mainMenuColor, Color panelDesktopColor, Color panelTitleBar, Color activeButtoneColor)
         {
             this.mainMenuColor = mainMenuColor;
             this.panelDesktopColor = panelDesktopColor;
             this.panelTitleBar = panelTitleBar;
             this.activeButtoneColor = activeButtoneColor;
-            this.textColor = textColor;
-            this.imgColor = imgColor;
         }
         public static bool operator ==(Palette c1, Palette c2)
         {
@@ -41,10 +37,10 @@ namespace teacher_evaluation_project.projectClasses
 
         List<Palette> themeList = new List<Palette>()
         {
-            //         mainMenuColor               panelDesktopColor           panelTitleBar               activeButtoneColor           textColor         imgColor
-            {new Palette(Color.FromArgb(30, 30, 65), Color.FromArgb(35, 35, 80), Color.FromArgb(27, 27, 63), Color.FromArgb(40, 40, 150), Color.Gainsboro, Color.White)},
-            {new Palette(Color.FromArgb(71, 115, 115), Color.FromArgb(71, 115, 130), Color.FromArgb(30, 100, 120), Color.FromArgb(40, 90, 90), Color.Gainsboro, Color.White)},
-            {new Palette(Color.FromArgb(70, 70, 70), Color.FromArgb(65, 95, 95), Color.FromArgb(54, 64, 64), Color.FromArgb(30, 80, 80), Color.Gainsboro, Color.White)},
+            //         mainMenuColor               panelDesktopColor           panelTitleBar               activeButtoneColor
+            {new Palette(Color.FromArgb(30, 30, 65), Color.FromArgb(35, 35, 80), Color.FromArgb(27, 27, 63), Color.FromArgb(40, 40, 150))},
+            {new Palette(Color.FromArgb(71, 115, 115), Color.FromArgb(71, 115, 130), Color.FromArgb(30, 100, 120), Color.FromArgb(40, 90, 90))},
+            {new Palette(Color.FromArgb(70, 70, 70), Color.FromArgb(65, 95, 95), Color.FromArgb(54, 64, 64), Color.FromArgb(30, 80, 80))},
         };
 
         public Theme()

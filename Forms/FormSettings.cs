@@ -11,40 +11,51 @@ using teacher_evaluation_project.projectClasses;
 
 namespace teacher_evaluation_project.Forms
 {
-    public partial class FormSettings : FormProject {
-        public FormSettings() {
+    public partial class FormSettings : FormProject
+    {
+        public FormSettings()
+        {
             InitializeComponent();
             SetTheme();
             UpDownFontSize.Value = (int)Theme.textSize;
-            comboBoxFont.Text = Theme.fontStyle;
+            boxFontStyle.Text = Theme.fontStyle;
         }
-        public override void SetTheme() {
+        public override void SetTheme()
+        {
             SetFont();
-            if (BackColor != Theme.activeTheme.panelDesktopColor) {
+            if (BackColor != Theme.activeTheme.panelDesktopColor)
+            {
                 BackColor = Theme.activeTheme.panelDesktopColor;
-                lblFont.ForeColor = Theme.activeTheme.textColor;
-                lblFontSize.ForeColor = Theme.activeTheme.textColor;
             }
         }
-        private void UpDownFontSize_ValueChanged(object sender, EventArgs e) {
+        private void UpDownFontSize_ValueChanged(object sender, EventArgs e)
+        {
             Theme.textSize = (float)UpDownFontSize.Value;
             FormMain.mainForm.SetFont();
             SetFont();
         }
 
-        private void comboBoxFont_SelectedValueChanged(object sender, EventArgs e) {
-            Theme.fontStyle = comboBoxFont.Text;
-            if (FormMain.mainForm != null) {
+        private void comboBoxFont_SelectedValueChanged(object sender, EventArgs e)
+        {
+            Theme.fontStyle = boxFontStyle.Text;
+            if (FormMain.mainForm != null)
+            {
                 FormMain.mainForm.SetFont();
             }
             SetFont();
         }
-        public override void SetFont() {
-            if (Font != new System.Drawing.Font(Theme.fontStyle, Theme.textSize, System.Drawing.FontStyle.Regular)) {
-                foreach (Control item in Controls) {
-                    if (item != comboBoxFont) {
+        public override void SetFont()
+        {
+            if (Font != new System.Drawing.Font(Theme.fontStyle, Theme.textSize, System.Drawing.FontStyle.Regular))
+            {
+                foreach (Control item in Controls)
+                {
+                    if (item != boxFontStyle)
+                    {
                         item.Font = new System.Drawing.Font(Theme.fontStyle, Theme.textSize, System.Drawing.FontStyle.Regular);
-                    } else {
+                    }
+                    else
+                    {
                         item.Font = new System.Drawing.Font("Microsoft Sans Serif", Theme.textSize, System.Drawing.FontStyle.Regular);
                     }
                 }

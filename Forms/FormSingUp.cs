@@ -32,8 +32,7 @@ namespace teacher_evaluation_project.Forms
             {
                 BackColor = Theme.activeTheme.panelDesktopColor;
                 buttonSingUp.BackColor = Theme.activeTheme.mainMenuColor;
-                buttonSingUp.ForeColor = Theme.activeTheme.textColor;
-                lblAccount.ForeColor = Theme.activeTheme.textColor;
+
             }
         }
 

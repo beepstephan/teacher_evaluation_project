@@ -12,6 +12,7 @@ using teacher_evaluation_project.projectClasses;
 using MySql.Data.MySqlClient;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
+
 namespace teacher_evaluation_project.Forms
 {
     public partial class FormSearch : FormProject
@@ -20,7 +21,9 @@ namespace teacher_evaluation_project.Forms
         {
             InitializeComponent();
             SetTheme();
-                              // завантаження викладачів 
+            
+            // завантаження викладачів 
+
         }
 
         public override void SetTheme()
@@ -30,15 +33,15 @@ namespace teacher_evaluation_project.Forms
             {
                 BackColor = Theme.activeTheme.panelDesktopColor;
                 btnSearch.BackColor = Theme.activeTheme.mainMenuColor;
-                btnSearch.ForeColor = Theme.activeTheme.textColor;
             }
         }
 
         private void listViewTeachers_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (listViewTeachers.SelectedItems.Count > 0)
+
+            if (listTeachers.SelectedItems.Count > 0)
             {
-                ListViewItem item = listViewTeachers.SelectedItems[0];
+                ListViewItem item = listTeachers.SelectedItems[0];
                 FormMain.mainForm.formTeacher = new FormTeacher(item);
                 FormMain.mainForm.OpenChildForm(FormMain.mainForm.formTeacher);
             }

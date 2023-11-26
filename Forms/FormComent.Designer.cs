@@ -1,5 +1,7 @@
-﻿namespace teacher_evaluation_project.Forms {
-    partial class FormComent {
+﻿namespace teacher_evaluation_project.Forms
+{
+    partial class FormComent
+    {
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -9,8 +11,10 @@
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing) {
-            if (disposing && (components != null)) {
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
                 components.Dispose();
             }
             base.Dispose(disposing);
@@ -22,38 +26,39 @@
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent() {
-            TextBoxComent = new RichTextBox();
-            lblName = new Label();
+        private void InitializeComponent()
+        {
+            textBoxComent = new RichTextBox();
+            lblTeacherName = new Label();
             btnDone = new Button();
             trackBarRating = new TrackBar();
             lblCounter = new Label();
             ((System.ComponentModel.ISupportInitialize)trackBarRating).BeginInit();
             SuspendLayout();
             // 
-            // TextBoxComent
+            // textBoxComent
             // 
-            TextBoxComent.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            TextBoxComent.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            TextBoxComent.Location = new Point(14, 113);
-            TextBoxComent.MaxLength = 250;
-            TextBoxComent.Name = "TextBoxComent";
-            TextBoxComent.Size = new Size(600, 196);
-            TextBoxComent.TabIndex = 0;
-            TextBoxComent.Text = "";
-            TextBoxComent.TextChanged += richTextBox1_TextChanged;
+            textBoxComent.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            textBoxComent.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            textBoxComent.Location = new Point(14, 113);
+            textBoxComent.MaxLength = 250;
+            textBoxComent.Name = "textBoxComent";
+            textBoxComent.Size = new Size(600, 196);
+            textBoxComent.TabIndex = 0;
+            textBoxComent.Text = "";
+            textBoxComent.TextChanged += richTextBox1_TextChanged;
             // 
-            // lblName
+            // lblTeacherName
             // 
-            lblName.Dock = DockStyle.Top;
-            lblName.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            lblName.ForeColor = Color.Gainsboro;
-            lblName.Location = new Point(0, 0);
-            lblName.Name = "lblName";
-            lblName.Size = new Size(628, 28);
-            lblName.TabIndex = 1;
-            lblName.Text = "ПІБ";
-            lblName.TextAlign = ContentAlignment.MiddleCenter;
+            lblTeacherName.Dock = DockStyle.Top;
+            lblTeacherName.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            lblTeacherName.ForeColor = Color.Gainsboro;
+            lblTeacherName.Location = new Point(0, 0);
+            lblTeacherName.Name = "lblTeacherName";
+            lblTeacherName.Size = new Size(628, 28);
+            lblTeacherName.TabIndex = 1;
+            lblTeacherName.Text = "ПІБ";
+            lblTeacherName.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // btnDone
             // 
@@ -99,8 +104,8 @@
             Controls.Add(lblCounter);
             Controls.Add(trackBarRating);
             Controls.Add(btnDone);
-            Controls.Add(lblName);
-            Controls.Add(TextBoxComent);
+            Controls.Add(lblTeacherName);
+            Controls.Add(textBoxComent);
             Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
             Name = "FormComent";
             Text = "Дати відгук";
@@ -111,8 +116,8 @@
 
         #endregion
 
-        private RichTextBox TextBoxComent;
-        private Label lblName;
+        private RichTextBox textBoxComent;
+        private Label lblTeacherName;
         private Button btnDone;
         private TrackBar trackBarRating;
         private Label lblCounter;

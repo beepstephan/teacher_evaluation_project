@@ -11,22 +11,28 @@ using teacher_evaluation_project.projectClasses;
 
 namespace teacher_evaluation_project.Forms
 {
-    public partial class FormHome : FormProject {
-        public FormHome() {
+    public partial class FormHome : FormProject
+    {
+        public FormHome()
+        {
             InitializeComponent();
             SetTheme();
         }
 
-        public override void SetTheme() {
+        public override void SetTheme()
+        {
             SetFont();
-            if (BackColor != Theme.activeTheme.panelDesktopColor) {
+            if (BackColor != Theme.activeTheme.panelDesktopColor)
+            {
                 BackColor = Theme.activeTheme.panelDesktopColor;
-                label1.ForeColor = Theme.activeTheme.textColor;
             }
         }
-        public override void SetFont() {
-            if (Font != new System.Drawing.Font(Theme.fontStyle, Theme.textSize, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)))) {
-                foreach (Control item in panel1.Controls) {
+        public override void SetFont()
+        {
+            if (Font != new System.Drawing.Font(Theme.fontStyle, Theme.textSize, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))))
+            {
+                foreach (Control item in panelCenter.Controls)
+                {
                     item.Font = new System.Drawing.Font(Theme.fontStyle, Theme.textSize, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                 }
             }

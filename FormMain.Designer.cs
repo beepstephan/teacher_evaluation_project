@@ -1,5 +1,7 @@
-﻿namespace teacher_evaluation_project {
-    partial class FormMain {
+﻿namespace teacher_evaluation_project
+{
+    partial class FormMain
+    {
         /// <summary>
         ///  Required designer variable.
         /// </summary>
@@ -9,8 +11,10 @@
         ///  Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing) {
-            if (disposing && (components != null)) {
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
                 components.Dispose();
             }
             base.Dispose(disposing);
@@ -22,7 +26,9 @@
         ///  Required method for Designer support - do not modify
         ///  the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent() {
+        private void InitializeComponent()
+        {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             panelMenu = new Panel();
             btnTheme = new Button();
             btnAbout = new Button();
@@ -33,12 +39,13 @@
             btnSearch = new Button();
             btnHome = new Button();
             panelLogo = new Panel();
-            logoTxt = new Label();
+            picLogo = new PictureBox();
             panelTitleBar = new Panel();
             titleBarText = new Label();
             panelDesktop = new Panel();
             panelMenu.SuspendLayout();
             panelLogo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)picLogo).BeginInit();
             panelTitleBar.SuspendLayout();
             SuspendLayout();
             // 
@@ -71,7 +78,7 @@
             btnTheme.ImageAlign = ContentAlignment.MiddleLeft;
             btnTheme.Location = new Point(0, 255);
             btnTheme.Name = "btnTheme";
-            btnTheme.Padding = new Padding(14, 0, 0, 0);
+            btnTheme.Padding = new Padding(5, 0, 0, 0);
             btnTheme.Size = new Size(240, 60);
             btnTheme.TabIndex = 11;
             btnTheme.Text = "   Тема";
@@ -141,7 +148,7 @@
             btnLogIn.Image = Properties.Resources.login_svgrepo_com_negate;
             btnLogIn.Location = new Point(0, 315);
             btnLogIn.Name = "btnLogIn";
-            btnLogIn.Padding = new Padding(14, 0, 0, 0);
+            btnLogIn.Padding = new Padding(5, 0, 0, 0);
             btnLogIn.Size = new Size(240, 60);
             btnLogIn.TabIndex = 14;
             btnLogIn.Text = "   Увійти";
@@ -161,7 +168,7 @@
             btnSettings.ImageAlign = ContentAlignment.MiddleLeft;
             btnSettings.Location = new Point(0, 195);
             btnSettings.Name = "btnSettings";
-            btnSettings.Padding = new Padding(14, 0, 0, 0);
+            btnSettings.Padding = new Padding(5, 0, 0, 0);
             btnSettings.Size = new Size(240, 60);
             btnSettings.TabIndex = 12;
             btnSettings.Text = "   Налаштування";
@@ -181,7 +188,7 @@
             btnSearch.ImageAlign = ContentAlignment.MiddleLeft;
             btnSearch.Location = new Point(0, 135);
             btnSearch.Name = "btnSearch";
-            btnSearch.Padding = new Padding(14, 0, 0, 0);
+            btnSearch.Padding = new Padding(5, 0, 0, 0);
             btnSearch.Size = new Size(240, 60);
             btnSearch.TabIndex = 10;
             btnSearch.Text = "   Пошук викладачів";
@@ -201,7 +208,7 @@
             btnHome.ImageAlign = ContentAlignment.MiddleLeft;
             btnHome.Location = new Point(0, 75);
             btnHome.Name = "btnHome";
-            btnHome.Padding = new Padding(14, 0, 0, 0);
+            btnHome.Padding = new Padding(5, 0, 0, 0);
             btnHome.Size = new Size(240, 60);
             btnHome.TabIndex = 9;
             btnHome.Text = "   Головна";
@@ -212,26 +219,22 @@
             // 
             // panelLogo
             // 
-            panelLogo.Controls.Add(logoTxt);
+            panelLogo.Controls.Add(picLogo);
             panelLogo.Dock = DockStyle.Top;
             panelLogo.Location = new Point(0, 0);
             panelLogo.Name = "panelLogo";
             panelLogo.Size = new Size(240, 75);
             panelLogo.TabIndex = 0;
             // 
-            // logoTxt
+            // picLogo
             // 
-            logoTxt.BackColor = Color.Transparent;
-            logoTxt.Dock = DockStyle.Fill;
-            logoTxt.FlatStyle = FlatStyle.Flat;
-            logoTxt.Font = new Font("Microsoft Sans Serif", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            logoTxt.ForeColor = Color.Gainsboro;
-            logoTxt.Location = new Point(0, 0);
-            logoTxt.Name = "logoTxt";
-            logoTxt.Size = new Size(240, 75);
-            logoTxt.TabIndex = 1;
-            logoTxt.Text = "logo";
-            logoTxt.TextAlign = ContentAlignment.MiddleCenter;
+            picLogo.Image = Properties.Resources.imgLogo;
+            picLogo.Location = new Point(36, 7);
+            picLogo.Name = "picLogo";
+            picLogo.Size = new Size(60, 60);
+            picLogo.SizeMode = PictureBoxSizeMode.Zoom;
+            picLogo.TabIndex = 0;
+            picLogo.TabStop = false;
             // 
             // panelTitleBar
             // 
@@ -274,12 +277,14 @@
             Controls.Add(panelTitleBar);
             Controls.Add(panelMenu);
             Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             IsMdiContainer = true;
             MinimumSize = new Size(900, 475);
             Name = "FormMain";
             Text = "Оцінювання викладачів";
             panelMenu.ResumeLayout(false);
             panelLogo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)picLogo).EndInit();
             panelTitleBar.ResumeLayout(false);
             ResumeLayout(false);
         }
@@ -298,7 +303,7 @@
         private Button btnDev;
         private Panel panelTitleBar;
         private Label titleBarText;
-        private Label logoTxt;
         private Panel panelDesktop;
+        private PictureBox picLogo;
     }
 }

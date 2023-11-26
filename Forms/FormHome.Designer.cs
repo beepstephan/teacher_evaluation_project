@@ -1,5 +1,7 @@
-﻿namespace teacher_evaluation_project.Forms {
-    partial class FormHome {
+﻿namespace teacher_evaluation_project.Forms
+{
+    partial class FormHome
+    {
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -9,8 +11,10 @@
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing) {
-            if (disposing && (components != null)) {
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
                 components.Dispose();
             }
             base.Dispose(disposing);
@@ -22,48 +26,49 @@
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent() {
-            pictureBox1 = new PictureBox();
-            label1 = new Label();
-            panel1 = new Panel();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            panel1.SuspendLayout();
+        private void InitializeComponent()
+        {
+            pictureBox = new PictureBox();
+            lblWelcome = new Label();
+            panelCenter = new Panel();
+            ((System.ComponentModel.ISupportInitialize)pictureBox).BeginInit();
+            panelCenter.SuspendLayout();
             SuspendLayout();
             // 
-            // pictureBox1
+            // pictureBox
             // 
-            pictureBox1.BackColor = Color.Transparent;
-            pictureBox1.Image = Properties.Resources.NUZP_GERB_svg;
-            pictureBox1.InitialImage = null;
-            pictureBox1.Location = new Point(170, 3);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(211, 189);
-            pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
+            pictureBox.BackColor = Color.Transparent;
+            pictureBox.Image = Properties.Resources.imgLogo;
+            pictureBox.InitialImage = null;
+            pictureBox.Location = new Point(170, 3);
+            pictureBox.Name = "pictureBox";
+            pictureBox.Size = new Size(211, 189);
+            pictureBox.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox.TabIndex = 0;
+            pictureBox.TabStop = false;
             // 
-            // label1
+            // lblWelcome
             // 
-            label1.BackColor = Color.Transparent;
-            label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.ForeColor = Color.Gainsboro;
-            label1.Location = new Point(25, 213);
-            label1.Name = "label1";
-            label1.Size = new Size(500, 75);
-            label1.TabIndex = 1;
-            label1.Text = "Вітаємо вас у застосунку!\nВи можете дати коментар щодо лекцій викладачів та оцінити їх.";
-            label1.TextAlign = ContentAlignment.TopCenter;
+            lblWelcome.BackColor = Color.Transparent;
+            lblWelcome.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            lblWelcome.ForeColor = Color.Gainsboro;
+            lblWelcome.Location = new Point(15, 213);
+            lblWelcome.Name = "lblWelcome";
+            lblWelcome.Size = new Size(520, 75);
+            lblWelcome.TabIndex = 1;
+            lblWelcome.Text = "Вітаємо вас у застосунку!\nВи можете дати коментар щодо лекцій викладачів та оцінити їх.";
+            lblWelcome.TextAlign = ContentAlignment.TopCenter;
             // 
-            // panel1
+            // panelCenter
             // 
-            panel1.Anchor = AnchorStyles.None;
-            panel1.BackColor = Color.Transparent;
-            panel1.Controls.Add(label1);
-            panel1.Controls.Add(pictureBox1);
-            panel1.Location = new Point(39, 25);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(550, 293);
-            panel1.TabIndex = 2;
+            panelCenter.Anchor = AnchorStyles.None;
+            panelCenter.BackColor = Color.Transparent;
+            panelCenter.Controls.Add(lblWelcome);
+            panelCenter.Controls.Add(pictureBox);
+            panelCenter.Location = new Point(39, 25);
+            panelCenter.Name = "panelCenter";
+            panelCenter.Size = new Size(550, 293);
+            panelCenter.TabIndex = 2;
             // 
             // FormHome
             // 
@@ -72,19 +77,19 @@
             BackColor = Color.FromArgb(35, 35, 80);
             BackgroundImageLayout = ImageLayout.None;
             ClientSize = new Size(628, 322);
-            Controls.Add(panel1);
+            Controls.Add(panelCenter);
             Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
             Name = "FormHome";
             Text = "Головна";
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox).EndInit();
+            panelCenter.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
 
-        private PictureBox pictureBox1;
-        private Label label1;
-        private Panel panel1;
+        private PictureBox pictureBox;
+        private Label lblWelcome;
+        private Panel panelCenter;
     }
 }
