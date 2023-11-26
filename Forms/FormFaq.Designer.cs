@@ -23,36 +23,55 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            lblTitle = new Label();
-            SuspendLayout();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormFaq));
+            this.lblTitle = new System.Windows.Forms.Label();
+            this.labelGuide = new System.Windows.Forms.Label();
+            this.SuspendLayout();
             // 
             // lblTitle
             // 
-            lblTitle.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            lblTitle.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            lblTitle.ForeColor = Color.Gainsboro;
-            lblTitle.Location = new Point(277, 39);
-            lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(74, 18);
-            lblTitle.TabIndex = 0;
-            lblTitle.Text = "Питання";
-            lblTitle.TextAlign = ContentAlignment.MiddleCenter;
+            this.lblTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblTitle.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lblTitle.Location = new System.Drawing.Point(11, 9);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(604, 48);
+            this.lblTitle.TabIndex = 0;
+            this.lblTitle.Text = "Покроковий гайд для користувача";
+            this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelGuide
+            // 
+            this.labelGuide.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelGuide.ForeColor = System.Drawing.Color.Gainsboro;
+            this.labelGuide.Location = new System.Drawing.Point(11, 57);
+            this.labelGuide.Name = "labelGuide";
+            this.labelGuide.Size = new System.Drawing.Size(605, 256);
+            this.labelGuide.TabIndex = 1;
+            this.labelGuide.Text = resources.GetString("labelGuide.Text");
+            this.labelGuide.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // FormFaq
             // 
-            AutoScaleDimensions = new SizeF(8F, 16F);
-            AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(35, 35, 80);
-            ClientSize = new Size(628, 322);
-            Controls.Add(lblTitle);
-            Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            Name = "FormFaq";
-            Text = "FAQ";
-            ResumeLayout(false);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(80)))));
+            this.ClientSize = new System.Drawing.Size(628, 322);
+            this.Controls.Add(this.labelGuide);
+            this.Controls.Add(this.lblTitle);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Name = "FormFaq";
+            this.Text = "FAQ";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
 
         private Label lblTitle;
+        private Label labelGuide;
     }
 }

@@ -15,6 +15,10 @@ namespace teacher_evaluation_project.Forms
         public FormFaq() {
             InitializeComponent();
             SetTheme();
+            //labelGuide.Text = "Крок 1: \n Авторизуйтесь у вікні \"Увійти\", " +
+            //    "якщо у вас немає акаунту, зареєструйтесь, натиснувши " +
+            //    "на текст \"Ще немає облікового запису?\" \n Крок 2: \n Перейдіть" +
+            //    " до головного меню і натисніть на вікно \"Пошук викладачів\" \n Крок 3: \n";
         }
         public override void SetTheme() {
             SetFont();

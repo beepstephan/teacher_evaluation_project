@@ -22,5 +22,17 @@ namespace teacher_evaluation_project.Forms
                 BackColor = Theme.activeTheme.panelDesktopColor;
             }
         }
+        public override void SetFont()
+        {
+            if (Font != new System.Drawing.Font(Theme.fontStyle, Theme.textSize, System.Drawing.FontStyle.Regular))
+            {
+                foreach (Control item in panel1.Controls)
+                {
+                    item.Font = new System.Drawing.Font(Theme.fontStyle, Theme.textSize, System.Drawing.FontStyle.Regular);
+                }
+            }
+        }
+
+        
     }
 }

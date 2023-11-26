@@ -15,6 +15,9 @@ namespace teacher_evaluation_project
         private Button activeButton;
         private FormProject activeForm;
         static public FormMain mainForm;
+        public User currentUser = new User();
+
+
 
         //child forms
         public FormHome formHome = new FormHome();
@@ -37,6 +40,8 @@ namespace teacher_evaluation_project
             OpenChildForm(formHome);
         }
 
+        
+
         private void ActivateMenuItem(object btnSender)
         {
             if (btnSender != null)
@@ -54,12 +59,13 @@ namespace teacher_evaluation_project
         {
             foreach (Control btn in panelMenu.Controls)
             {
-                if (btn.GetType() == typeof(Button) && btn != btnLogIn)
+                if (btn.GetType() == typeof(Button))
                 {
                     btn.BackColor = Theme.activeTheme.mainMenuColor;
                     btn.Font = new System.Drawing.Font(Theme.fontStyle, Theme.textSize, System.Drawing.FontStyle.Regular);
                 }
             }
+            
             activeButton = null;
         }
 
@@ -122,8 +128,17 @@ namespace teacher_evaluation_project
         }
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            ActivateMenuItem(sender);
-            OpenChildForm(formSearch);
+            if (currentUser.isLogIn==true)
+            {
+                ActivateMenuItem(sender);
+                OpenChildForm(formSearch);
+            }  
+            else
+            {
+                ActivateMenuItem(btnLogIn);
+                OpenChildForm(formLogIn);
+                MessageBox.Show("Щоб почати пошук викладачів, виконайте авторизацію", "Потрібна авторизація", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
         private void btnTheme_Click(object sender, EventArgs e)
         {
@@ -153,7 +168,7 @@ namespace teacher_evaluation_project
         }
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            DisableMenuItems();
+            ActivateMenuItem(sender);
             OpenChildForm(formLogIn);
         }
     }
