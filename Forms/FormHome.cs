@@ -25,7 +25,6 @@ namespace teacher_evaluation_project.Forms
             if (BackColor != Theme.activeTheme.panelDesktopColor)
             {
                 BackColor = Theme.activeTheme.panelDesktopColor;
-                lblWelcome.ForeColor = Theme.activeTheme.textColor;
             }
         }
         public override void SetFont()

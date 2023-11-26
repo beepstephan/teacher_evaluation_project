@@ -46,7 +46,6 @@ namespace teacher_evaluation_project
                     DisableMenuItems();
                     activeButton = (Button)btnSender;
                     activeButton.BackColor = Theme.activeTheme.activeButtoneColor;
-                    activeButton.ForeColor = Theme.activeTheme.textColor;
                     activeButton.Font = new System.Drawing.Font(Theme.fontStyle, Theme.textSize + 2, System.Drawing.FontStyle.Regular);
                 }
             }
@@ -58,7 +57,6 @@ namespace teacher_evaluation_project
                 if (btn.GetType() == typeof(Button) && btn != btnLogIn)
                 {
                     btn.BackColor = Theme.activeTheme.mainMenuColor;
-                    btn.ForeColor = Theme.activeTheme.textColor;
                     btn.Font = new System.Drawing.Font(Theme.fontStyle, Theme.textSize, System.Drawing.FontStyle.Regular);
                 }
             }
@@ -69,7 +67,6 @@ namespace teacher_evaluation_project
         {
             SetFont();
             panelTitleBar.BackColor = Theme.activeTheme.panelTitleBar;
-            titleBarText.ForeColor = Theme.activeTheme.textColor;
             panelLogo.BackColor = Theme.activeTheme.mainMenuColor;
             panelMenu.BackColor = Theme.activeTheme.mainMenuColor;
 
@@ -77,26 +74,7 @@ namespace teacher_evaluation_project
             {
                 if (btn.GetType() == typeof(Button))
                 {
-                    btn.ForeColor = Theme.activeTheme.textColor;
                     btn.BackColor = Theme.activeTheme.mainMenuColor;
-                    if (((Button)btn).Image != null)
-                    {
-                        Image img = ((Button)btn).Image;
-                        Bitmap bmp = new Bitmap(img);
-                        for (int y = 0; y < bmp.Height; y++)
-                        {
-                            for (int x = 0; x < bmp.Width; x++)
-                            {
-                                Color pixel = bmp.GetPixel(x, y);
-                                int a = pixel.A;
-                                int r = Theme.activeTheme.imgColor.R;
-                                int g = Theme.activeTheme.imgColor.G;
-                                int b = Theme.activeTheme.imgColor.B;
-                                bmp.SetPixel(x, y, Color.FromArgb(a, r, g, b));
-                            }
-                        }
-                        ((Button)btn).Image = bmp;
-                    }
                 }
             }
             if (activeButton != null)

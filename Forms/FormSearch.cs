@@ -28,7 +28,6 @@ namespace teacher_evaluation_project.Forms
             {
                 BackColor = Theme.activeTheme.panelDesktopColor;
                 btnSearch.BackColor = Theme.activeTheme.mainMenuColor;
-                btnSearch.ForeColor = Theme.activeTheme.textColor;
             }
         }
 

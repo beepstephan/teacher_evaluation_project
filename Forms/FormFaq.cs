@@ -20,7 +20,6 @@ namespace teacher_evaluation_project.Forms
             SetFont();
             if (BackColor != Theme.activeTheme.panelDesktopColor) {
                 BackColor = Theme.activeTheme.panelDesktopColor;
-                lblTitle.ForeColor = Theme.activeTheme.textColor;
             }
         }
     }

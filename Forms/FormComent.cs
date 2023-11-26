@@ -36,8 +36,6 @@ namespace teacher_evaluation_project.Forms
             {
                 BackColor = Theme.activeTheme.panelDesktopColor;
                 btnDone.BackColor = Theme.activeTheme.mainMenuColor;
-                lblCounter.ForeColor = Theme.activeTheme.textColor;
-                lblTeacherName.ForeColor = Theme.activeTheme.textColor;
             }
         }
 

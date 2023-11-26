@@ -38,12 +38,6 @@ namespace teacher_evaluation_project.Forms
             if (BackColor != Theme.activeTheme.panelDesktopColor)
             {
                 BackColor = Theme.activeTheme.panelDesktopColor;
-                lblName.ForeColor = Theme.activeTheme.textColor;
-                lblDepartment.ForeColor = Theme.activeTheme.textColor;
-                lblSubject.ForeColor = Theme.activeTheme.textColor;
-                lblActivity.ForeColor = Theme.activeTheme.textColor;
-                lblGpa.ForeColor = Theme.activeTheme.textColor;
-                btnComment.ForeColor = Theme.activeTheme.textColor;
                 btnComment.BackColor = Theme.activeTheme.mainMenuColor;
             }
         }

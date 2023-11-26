@@ -27,8 +27,6 @@ namespace teacher_evaluation_project.Forms
             if (BackColor != Theme.activeTheme.panelDesktopColor) {
                 BackColor = Theme.activeTheme.panelDesktopColor;
                 btnLogIn.BackColor = Theme.activeTheme.mainMenuColor;
-                btnLogIn.ForeColor = Theme.activeTheme.textColor;
-                lblAccount.ForeColor = Theme.activeTheme.textColor;
             }
         }
     }

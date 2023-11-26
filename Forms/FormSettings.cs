@@ -26,8 +26,6 @@ namespace teacher_evaluation_project.Forms
             if (BackColor != Theme.activeTheme.panelDesktopColor)
             {
                 BackColor = Theme.activeTheme.panelDesktopColor;
-                lblFontStyle.ForeColor = Theme.activeTheme.textColor;
-                lblFontSize.ForeColor = Theme.activeTheme.textColor;
             }
         }
         private void UpDownFontSize_ValueChanged(object sender, EventArgs e)
