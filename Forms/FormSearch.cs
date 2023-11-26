@@ -9,27 +9,35 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using teacher_evaluation_project.projectClasses;
+using MySql.Data.MySqlClient;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace teacher_evaluation_project.Forms
 {
-    public partial class FormSearch : FormProject {
-        public FormSearch() {
+    public partial class FormSearch : FormProject
+    {
+        public FormSearch()
+        {
             InitializeComponent();
             SetTheme();
+                              // завантаження викладачів 
         }
 
-        public override void SetTheme() {
+        public override void SetTheme()
+        {
             SetFont();
-            if (BackColor != Theme.activeTheme.panelDesktopColor) {
+            if (BackColor != Theme.activeTheme.panelDesktopColor)
+            {
                 BackColor = Theme.activeTheme.panelDesktopColor;
                 btnSearch.BackColor = Theme.activeTheme.mainMenuColor;
                 btnSearch.ForeColor = Theme.activeTheme.textColor;
             }
         }
 
-        private void listViewTeachers_SelectedIndexChanged(object sender, EventArgs e) {
-            if (listViewTeachers.SelectedItems.Count > 0) {
+        private void listViewTeachers_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (listViewTeachers.SelectedItems.Count > 0)
+            {
                 ListViewItem item = listViewTeachers.SelectedItems[0];
                 FormMain.mainForm.formTeacher = new FormTeacher(item);
                 FormMain.mainForm.OpenChildForm(FormMain.mainForm.formTeacher);

@@ -1,5 +1,7 @@
-﻿namespace teacher_evaluation_project.Forms {
-    partial class FormLogIn {
+﻿namespace teacher_evaluation_project.Forms
+{
+    partial class FormLogIn
+    {
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -9,8 +11,10 @@
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing) {
-            if (disposing && (components != null)) {
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
                 components.Dispose();
             }
             base.Dispose(disposing);
@@ -22,32 +26,33 @@
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent() {
-            textBoxEmail = new TextBox();
-            textBoxPassword = new TextBox();
+        private void InitializeComponent()
+        {
+            loginField = new TextBox();
+            passField = new TextBox();
             btnLogIn = new Button();
             lblAccount = new Label();
             SuspendLayout();
             // 
-            // textBoxEmail
+            // loginField
             // 
-            textBoxEmail.Anchor = AnchorStyles.None;
-            textBoxEmail.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxEmail.Location = new Point(257, 35);
-            textBoxEmail.Name = "textBoxEmail";
-            textBoxEmail.Size = new Size(114, 23);
-            textBoxEmail.TabIndex = 0;
-            textBoxEmail.Text = "email";
+            loginField.Anchor = AnchorStyles.None;
+            loginField.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            loginField.Location = new Point(257, 35);
+            loginField.Name = "loginField";
+            loginField.Size = new Size(114, 26);
+            loginField.TabIndex = 0;
+            loginField.Text = "email";
             // 
-            // textBoxPassword
+            // passField
             // 
-            textBoxPassword.Anchor = AnchorStyles.None;
-            textBoxPassword.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxPassword.Location = new Point(257, 85);
-            textBoxPassword.Name = "textBoxPassword";
-            textBoxPassword.Size = new Size(114, 23);
-            textBoxPassword.TabIndex = 1;
-            textBoxPassword.Text = "password";
+            passField.Anchor = AnchorStyles.None;
+            passField.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            passField.Location = new Point(257, 85);
+            passField.Name = "passField";
+            passField.Size = new Size(114, 26);
+            passField.TabIndex = 1;
+            passField.Text = "password";
             // 
             // btnLogIn
             // 
@@ -62,6 +67,7 @@
             btnLogIn.TabIndex = 2;
             btnLogIn.Text = "Увійти";
             btnLogIn.UseVisualStyleBackColor = false;
+            btnLogIn.Click += btnLogIn_Click;
             // 
             // lblAccount
             // 
@@ -79,14 +85,14 @@
             // 
             // FormLogIn
             // 
-            AutoScaleDimensions = new SizeF(8F, 16F);
+            AutoScaleDimensions = new SizeF(10F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(35, 35, 80);
             ClientSize = new Size(628, 322);
             Controls.Add(lblAccount);
             Controls.Add(btnLogIn);
-            Controls.Add(textBoxPassword);
-            Controls.Add(textBoxEmail);
+            Controls.Add(passField);
+            Controls.Add(loginField);
             Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
             Name = "FormLogIn";
             Text = "Увійти";
@@ -96,8 +102,8 @@
 
         #endregion
 
-        private TextBox textBoxEmail;
-        private TextBox textBoxPassword;
+        private TextBox loginField;
+        private TextBox passField;
         private Button btnLogIn;
         private Label lblAccount;
     }

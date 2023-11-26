@@ -1,5 +1,7 @@
-﻿namespace teacher_evaluation_project.Forms {
-    partial class FormSingUp {
+﻿namespace teacher_evaluation_project.Forms
+{
+    partial class FormSingUp
+    {
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -9,8 +11,10 @@
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing) {
-            if (disposing && (components != null)) {
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
                 components.Dispose();
             }
             base.Dispose(disposing);
@@ -22,13 +26,14 @@
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent() {
+        private void InitializeComponent()
+        {
             lblAccount = new Label();
-            btnSingUp = new Button();
-            textBoxPassword = new TextBox();
-            textBoxEmail = new TextBox();
-            textBoxName = new TextBox();
-            textBoxSurname = new TextBox();
+            buttonSingUp = new Button();
+            passField = new TextBox();
+            loginField = new TextBox();
+            userNameField = new TextBox();
+            userSurnameField = new TextBox();
             SuspendLayout();
             // 
             // lblAccount
@@ -45,72 +50,80 @@
             lblAccount.TextAlign = ContentAlignment.TopCenter;
             lblAccount.Click += label1_Click;
             // 
-            // btnSingUp
+            // buttonSingUp
             // 
-            btnSingUp.Anchor = AnchorStyles.None;
-            btnSingUp.BackColor = Color.FromArgb(30, 30, 65);
-            btnSingUp.FlatStyle = FlatStyle.Flat;
-            btnSingUp.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            btnSingUp.ForeColor = Color.Gainsboro;
-            btnSingUp.Location = new Point(257, 235);
-            btnSingUp.Name = "btnSingUp";
-            btnSingUp.Size = new Size(114, 32);
-            btnSingUp.TabIndex = 6;
-            btnSingUp.Text = "Реєстрація";
-            btnSingUp.UseVisualStyleBackColor = false;
+            buttonSingUp.Anchor = AnchorStyles.None;
+            buttonSingUp.BackColor = Color.FromArgb(30, 30, 65);
+            buttonSingUp.FlatStyle = FlatStyle.Flat;
+            buttonSingUp.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            buttonSingUp.ForeColor = Color.Gainsboro;
+            buttonSingUp.Location = new Point(257, 235);
+            buttonSingUp.Name = "buttonSingUp";
+            buttonSingUp.Size = new Size(114, 32);
+            buttonSingUp.TabIndex = 6;
+            buttonSingUp.Text = "Реєстрація";
+            buttonSingUp.UseVisualStyleBackColor = false;
+            buttonSingUp.Click += buttonSingUp_Click_1;
             // 
-            // textBoxPassword
+            // passField
             // 
-            textBoxPassword.Anchor = AnchorStyles.None;
-            textBoxPassword.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxPassword.Location = new Point(257, 85);
-            textBoxPassword.Name = "textBoxPassword";
-            textBoxPassword.Size = new Size(114, 23);
-            textBoxPassword.TabIndex = 5;
-            textBoxPassword.Text = "password";
+            passField.Anchor = AnchorStyles.None;
+            passField.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            passField.Location = new Point(257, 85);
+            passField.Name = "passField";
+            passField.Size = new Size(114, 26);
+            passField.TabIndex = 5;
+            passField.Text = "Введіть пароль";
+            passField.TextChanged += passField_TextChanged;
+            passField.Enter += passField_Enter;
             // 
-            // textBoxEmail
+            // loginField
             // 
-            textBoxEmail.Anchor = AnchorStyles.None;
-            textBoxEmail.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxEmail.Location = new Point(257, 35);
-            textBoxEmail.Name = "textBoxEmail";
-            textBoxEmail.Size = new Size(114, 23);
-            textBoxEmail.TabIndex = 4;
-            textBoxEmail.Text = "email";
+            loginField.Anchor = AnchorStyles.None;
+            loginField.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            loginField.Location = new Point(257, 35);
+            loginField.Name = "loginField";
+            loginField.Size = new Size(114, 26);
+            loginField.TabIndex = 4;
+            loginField.Text = "Введіть логін";
+            loginField.Enter += loginField_Enter;
             // 
-            // textBoxName
+            // userNameField
             // 
-            textBoxName.Anchor = AnchorStyles.None;
-            textBoxName.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxName.Location = new Point(257, 135);
-            textBoxName.Name = "textBoxName";
-            textBoxName.Size = new Size(114, 23);
-            textBoxName.TabIndex = 8;
-            textBoxName.Text = "Ім'я";
+            userNameField.Anchor = AnchorStyles.None;
+            userNameField.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            userNameField.Location = new Point(257, 135);
+            userNameField.Name = "userNameField";
+            userNameField.Size = new Size(114, 26);
+            userNameField.TabIndex = 8;
+            userNameField.Text = "Введіть ім'я";
+            userNameField.TextChanged += userNameField_TextChanged;
+            userNameField.Enter += userNameField_Enter;
             // 
-            // textBoxSurname
+            // userSurnameField
             // 
-            textBoxSurname.Anchor = AnchorStyles.None;
-            textBoxSurname.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxSurname.Location = new Point(257, 185);
-            textBoxSurname.Name = "textBoxSurname";
-            textBoxSurname.Size = new Size(114, 23);
-            textBoxSurname.TabIndex = 9;
-            textBoxSurname.Text = "Прізвище";
+            userSurnameField.Anchor = AnchorStyles.None;
+            userSurnameField.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            userSurnameField.Location = new Point(257, 185);
+            userSurnameField.Name = "userSurnameField";
+            userSurnameField.Size = new Size(114, 26);
+            userSurnameField.TabIndex = 9;
+            userSurnameField.Text = "Введіть прізвище";
+            userSurnameField.TextChanged += userSurnameField_TextChanged;
+            userSurnameField.Enter += userSurnameField_Enter;
             // 
             // FormSingUp
             // 
-            AutoScaleDimensions = new SizeF(8F, 16F);
+            AutoScaleDimensions = new SizeF(10F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(35, 35, 80);
             ClientSize = new Size(628, 322);
-            Controls.Add(textBoxSurname);
-            Controls.Add(textBoxName);
+            Controls.Add(userSurnameField);
+            Controls.Add(userNameField);
             Controls.Add(lblAccount);
-            Controls.Add(btnSingUp);
-            Controls.Add(textBoxPassword);
-            Controls.Add(textBoxEmail);
+            Controls.Add(buttonSingUp);
+            Controls.Add(passField);
+            Controls.Add(loginField);
             Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
             Name = "FormSingUp";
             Text = "Реєстрація";
@@ -121,10 +134,10 @@
         #endregion
 
         private Label lblAccount;
-        private Button btnSingUp;
-        private TextBox textBoxPassword;
-        private TextBox textBoxEmail;
-        private TextBox textBoxName;
-        private TextBox textBoxSurname;
+        private Button buttonSingUp;
+        private TextBox passField;
+        private TextBox loginField;
+        private TextBox userNameField;
+        private TextBox userSurnameField;
     }
 }
