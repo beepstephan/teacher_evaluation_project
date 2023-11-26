@@ -78,7 +78,7 @@
             btnTheme.ImageAlign = ContentAlignment.MiddleLeft;
             btnTheme.Location = new Point(0, 255);
             btnTheme.Name = "btnTheme";
-            btnTheme.Padding = new Padding(14, 0, 0, 0);
+            btnTheme.Padding = new Padding(5, 0, 0, 0);
             btnTheme.Size = new Size(240, 60);
             btnTheme.TabIndex = 11;
             btnTheme.Text = "   Тема";
@@ -148,7 +148,7 @@
             btnLogIn.Image = Properties.Resources.login_svgrepo_com_negate;
             btnLogIn.Location = new Point(0, 315);
             btnLogIn.Name = "btnLogIn";
-            btnLogIn.Padding = new Padding(14, 0, 0, 0);
+            btnLogIn.Padding = new Padding(5, 0, 0, 0);
             btnLogIn.Size = new Size(240, 60);
             btnLogIn.TabIndex = 14;
             btnLogIn.Text = "   Увійти";
@@ -168,7 +168,7 @@
             btnSettings.ImageAlign = ContentAlignment.MiddleLeft;
             btnSettings.Location = new Point(0, 195);
             btnSettings.Name = "btnSettings";
-            btnSettings.Padding = new Padding(14, 0, 0, 0);
+            btnSettings.Padding = new Padding(5, 0, 0, 0);
             btnSettings.Size = new Size(240, 60);
             btnSettings.TabIndex = 12;
             btnSettings.Text = "   Налаштування";
@@ -188,7 +188,7 @@
             btnSearch.ImageAlign = ContentAlignment.MiddleLeft;
             btnSearch.Location = new Point(0, 135);
             btnSearch.Name = "btnSearch";
-            btnSearch.Padding = new Padding(14, 0, 0, 0);
+            btnSearch.Padding = new Padding(5, 0, 0, 0);
             btnSearch.Size = new Size(240, 60);
             btnSearch.TabIndex = 10;
             btnSearch.Text = "   Пошук викладачів";
@@ -208,7 +208,7 @@
             btnHome.ImageAlign = ContentAlignment.MiddleLeft;
             btnHome.Location = new Point(0, 75);
             btnHome.Name = "btnHome";
-            btnHome.Padding = new Padding(14, 0, 0, 0);
+            btnHome.Padding = new Padding(5, 0, 0, 0);
             btnHome.Size = new Size(240, 60);
             btnHome.TabIndex = 9;
             btnHome.Text = "   Головна";
@@ -229,7 +229,7 @@
             // picLogo
             // 
             picLogo.Image = Properties.Resources.imgLogo;
-            picLogo.Location = new Point(36, 9);
+            picLogo.Location = new Point(36, 7);
             picLogo.Name = "picLogo";
             picLogo.Size = new Size(60, 60);
             picLogo.SizeMode = PictureBoxSizeMode.Zoom;
