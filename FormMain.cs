@@ -24,7 +24,7 @@ namespace teacher_evaluation_project
         public FormSearch formSearch = new FormSearch();
         public FormSettings formSettings = new FormSettings();
         public FormTeacher formTeacher = new FormTeacher();
-        public FormComent formComent = new FormComent();
+        public FormComment formComent = new FormComment();
         public FormLogIn formLogIn = new FormLogIn();
         public FormSingUp formSingUp = new FormSingUp();
         public FormFaq formFaq = new FormFaq();

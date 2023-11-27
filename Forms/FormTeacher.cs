@@ -27,9 +27,10 @@ namespace teacher_evaluation_project.Forms
             lblName.Text = $"{item.Text} {item.SubItems[1].Text} {item.SubItems[2].Text}";
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnComment_Click(object sender, EventArgs e)
         {
-            FormMain.mainForm.formComent = new FormComent(teacher);
+            // відкриття форми коментування
+            FormMain.mainForm.formComent = new FormComment(teacher);
             FormMain.mainForm.OpenChildForm(FormMain.mainForm.formComent);
         }
         public override void SetTheme()

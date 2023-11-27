@@ -36,7 +36,7 @@ namespace teacher_evaluation_project.Forms
             }
         }
 
-        private void listViewTeachers_SelectedIndexChanged(object sender, EventArgs e)
+        private void listTeachers_SelectedIndexChanged(object sender, EventArgs e)
         {
 
             if (listTeachers.SelectedItems.Count > 0)
@@ -47,11 +47,9 @@ namespace teacher_evaluation_project.Forms
             }
         }
 
-
         private void listTeachers_SizeChanged(object sender, EventArgs e)
         {
             listTeachers.Columns[3].Width = listTeachers.Width - 6 - (listTeachers.Columns[0].Width + listTeachers.Columns[1].Width + listTeachers.Columns[2].Width + listTeachers.Columns[4].Width);
         }
-
     }
 }

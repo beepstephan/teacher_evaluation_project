@@ -105,7 +105,7 @@
             btnComment.TabIndex = 5;
             btnComment.Text = "Дати відгук";
             btnComment.UseVisualStyleBackColor = false;
-            btnComment.Click += button1_Click;
+            btnComment.Click += btnComment_Click;
             // 
             // lblGpa
             // 
