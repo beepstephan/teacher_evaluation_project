@@ -1,6 +1,6 @@
 ﻿namespace teacher_evaluation_project.Forms
 {
-    partial class FormComent
+    partial class FormComment
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            textBoxComent = new RichTextBox();
+            textBoxComment = new RichTextBox();
             lblTeacherName = new Label();
             btnDone = new Button();
             trackBarRating = new TrackBar();
@@ -36,17 +36,17 @@
             ((System.ComponentModel.ISupportInitialize)trackBarRating).BeginInit();
             SuspendLayout();
             // 
-            // textBoxComent
+            // textBoxComment
             // 
-            textBoxComent.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            textBoxComent.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxComent.Location = new Point(14, 113);
-            textBoxComent.MaxLength = 250;
-            textBoxComent.Name = "textBoxComent";
-            textBoxComent.Size = new Size(600, 196);
-            textBoxComent.TabIndex = 0;
-            textBoxComent.Text = "";
-            textBoxComent.TextChanged += richTextBox1_TextChanged;
+            textBoxComment.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            textBoxComment.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            textBoxComment.Location = new Point(14, 113);
+            textBoxComment.MaxLength = 250;
+            textBoxComment.Name = "textBoxComment";
+            textBoxComment.Size = new Size(600, 196);
+            textBoxComment.TabIndex = 0;
+            textBoxComment.Text = "";
+            textBoxComment.TextChanged += textBoxComment_TextChanged;
             // 
             // lblTeacherName
             // 
@@ -73,7 +73,7 @@
             btnDone.TabIndex = 2;
             btnDone.Text = "Готово";
             btnDone.UseVisualStyleBackColor = false;
-            btnDone.Click += button1_Click;
+            btnDone.Click += btnDone_Click;
             // 
             // trackBarRating
             // 
@@ -95,7 +95,7 @@
             lblCounter.TabIndex = 4;
             lblCounter.Text = "Символів: 0/250";
             // 
-            // FormComent
+            // FormComment
             // 
             AutoScaleDimensions = new SizeF(8F, 16F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -105,9 +105,9 @@
             Controls.Add(trackBarRating);
             Controls.Add(btnDone);
             Controls.Add(lblTeacherName);
-            Controls.Add(textBoxComent);
+            Controls.Add(textBoxComment);
             Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            Name = "FormComent";
+            Name = "FormComment";
             Text = "Дати відгук";
             ((System.ComponentModel.ISupportInitialize)trackBarRating).EndInit();
             ResumeLayout(false);
@@ -116,7 +116,7 @@
 
         #endregion
 
-        private RichTextBox textBoxComent;
+        private RichTextBox textBoxComment;
         private Label lblTeacherName;
         private Button btnDone;
         private TrackBar trackBarRating;

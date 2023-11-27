@@ -11,22 +11,26 @@ using teacher_evaluation_project.projectClasses;
 
 namespace teacher_evaluation_project.Forms
 {
-    public partial class FormComent : FormProject
+    public partial class FormComment : FormProject
     {
-        public FormComent()
+        public FormComment()
         {
             InitializeComponent();
             SetTheme();
         }
-        public FormComent(ListViewItem item)
+        public FormComment(ListViewItem item)
         {
             InitializeComponent();
             SetTheme();
             lblTeacherName.Text = $"{item.Text} {item.SubItems[1].Text} {item.SubItems[2].Text}";
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnDone_Click(object sender, EventArgs e)
         {
+            // логіка
+            // ...
+
+            // повернення до вікна пошуку викладачів
             FormMain.mainForm.OpenChildForm(FormMain.mainForm.formSearch);
         }
         public override void SetTheme()
@@ -50,9 +54,9 @@ namespace teacher_evaluation_project.Forms
             }
         }
 
-        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        private void textBoxComment_TextChanged(object sender, EventArgs e)
         {
-            lblCounter.Text = "Символів: " + textBoxComent.Text.Length.ToString() + "/250";
+            lblCounter.Text = "Символів: " + textBoxComment.Text.Length.ToString() + "/250";
             Update();
         }
     }
