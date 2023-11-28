@@ -123,7 +123,7 @@
             listComments.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             listComments.Location = new Point(37, 226);
             listComments.Name = "listComments";
-            listComments.Size = new Size(563, 83);
+            listComments.Size = new Size(563, 102);
             listComments.TabIndex = 7;
             listComments.UseCompatibleStateImageBehavior = false;
             // 
@@ -132,7 +132,7 @@
             AutoScaleDimensions = new SizeF(8F, 16F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(35, 35, 80);
-            ClientSize = new Size(628, 322);
+            ClientSize = new Size(628, 341);
             Controls.Add(listComments);
             Controls.Add(lblGpa);
             Controls.Add(btnComment);

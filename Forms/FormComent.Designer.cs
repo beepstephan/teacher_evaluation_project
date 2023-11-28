@@ -43,7 +43,7 @@
             textBoxComment.Location = new Point(14, 113);
             textBoxComment.MaxLength = 250;
             textBoxComment.Name = "textBoxComment";
-            textBoxComment.Size = new Size(600, 196);
+            textBoxComment.Size = new Size(600, 215);
             textBoxComment.TabIndex = 0;
             textBoxComment.Text = "";
             textBoxComment.TextChanged += textBoxComment_TextChanged;
@@ -100,7 +100,7 @@
             AutoScaleDimensions = new SizeF(8F, 16F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(35, 35, 80);
-            ClientSize = new Size(628, 322);
+            ClientSize = new Size(628, 341);
             Controls.Add(lblCounter);
             Controls.Add(trackBarRating);
             Controls.Add(btnDone);

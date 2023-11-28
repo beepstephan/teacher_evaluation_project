@@ -42,7 +42,7 @@
             lblAccount.Cursor = Cursors.Hand;
             lblAccount.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
             lblAccount.ForeColor = Color.Gainsboro;
-            lblAccount.Location = new Point(150, 285);
+            lblAccount.Location = new Point(150, 295);
             lblAccount.Name = "lblAccount";
             lblAccount.Size = new Size(326, 30);
             lblAccount.TabIndex = 7;
@@ -57,7 +57,7 @@
             buttonSingUp.FlatStyle = FlatStyle.Flat;
             buttonSingUp.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
             buttonSingUp.ForeColor = Color.Gainsboro;
-            buttonSingUp.Location = new Point(257, 235);
+            buttonSingUp.Location = new Point(257, 245);
             buttonSingUp.Name = "buttonSingUp";
             buttonSingUp.Size = new Size(114, 32);
             buttonSingUp.TabIndex = 6;
@@ -69,55 +69,48 @@
             // 
             passField.Anchor = AnchorStyles.None;
             passField.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            passField.Location = new Point(257, 85);
+            passField.Location = new Point(238, 95);
             passField.Name = "passField";
-            passField.Size = new Size(114, 26);
+            passField.Size = new Size(150, 23);
             passField.TabIndex = 5;
             passField.Text = "Введіть пароль";
-            passField.TextChanged += passField_TextChanged;
-            passField.Enter += passField_Enter;
             // 
             // loginField
             // 
             loginField.Anchor = AnchorStyles.None;
             loginField.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            loginField.Location = new Point(257, 35);
+            loginField.Location = new Point(238, 45);
             loginField.Name = "loginField";
-            loginField.Size = new Size(114, 26);
+            loginField.Size = new Size(150, 23);
             loginField.TabIndex = 4;
             loginField.Text = "Введіть логін";
-            loginField.Enter += loginField_Enter;
             // 
             // userNameField
             // 
             userNameField.Anchor = AnchorStyles.None;
             userNameField.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            userNameField.Location = new Point(257, 135);
+            userNameField.Location = new Point(238, 145);
             userNameField.Name = "userNameField";
-            userNameField.Size = new Size(114, 26);
+            userNameField.Size = new Size(150, 23);
             userNameField.TabIndex = 8;
             userNameField.Text = "Введіть ім'я";
-            userNameField.TextChanged += userNameField_TextChanged;
-            userNameField.Enter += userNameField_Enter;
             // 
             // userSurnameField
             // 
             userSurnameField.Anchor = AnchorStyles.None;
             userSurnameField.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            userSurnameField.Location = new Point(257, 185);
+            userSurnameField.Location = new Point(238, 195);
             userSurnameField.Name = "userSurnameField";
-            userSurnameField.Size = new Size(114, 26);
+            userSurnameField.Size = new Size(150, 23);
             userSurnameField.TabIndex = 9;
             userSurnameField.Text = "Введіть прізвище";
-            userSurnameField.TextChanged += userSurnameField_TextChanged;
-            userSurnameField.Enter += userSurnameField_Enter;
             // 
             // FormSingUp
             // 
-            AutoScaleDimensions = new SizeF(10F, 20F);
+            AutoScaleDimensions = new SizeF(8F, 16F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(35, 35, 80);
-            ClientSize = new Size(628, 322);
+            ClientSize = new Size(628, 341);
             Controls.Add(userSurnameField);
             Controls.Add(userNameField);
             Controls.Add(lblAccount);
@@ -127,6 +120,7 @@
             Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
             Name = "FormSingUp";
             Text = "Реєстрація";
+            Load += FormSingUp_Load;
             ResumeLayout(false);
             PerformLayout();
         }

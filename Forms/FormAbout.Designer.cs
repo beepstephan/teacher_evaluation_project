@@ -29,50 +29,49 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAbout));
-            this.imgLink = new System.Windows.Forms.LinkLabel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.SuspendLayout();
+            imgLink = new LinkLabel();
+            label1 = new Label();
+            SuspendLayout();
             // 
             // imgLink
             // 
-            this.imgLink.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.imgLink.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.imgLink.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.imgLink.LinkColor = System.Drawing.Color.Gainsboro;
-            this.imgLink.Location = new System.Drawing.Point(12, 259);
-            this.imgLink.Name = "imgLink";
-            this.imgLink.Size = new System.Drawing.Size(604, 39);
-            this.imgLink.TabIndex = 0;
-            this.imgLink.TabStop = true;
-            this.imgLink.Text = "Зображення";
-            this.imgLink.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.imgLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            imgLink.Anchor = AnchorStyles.Bottom;
+            imgLink.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            imgLink.ForeColor = SystemColors.ControlText;
+            imgLink.LinkColor = Color.Gainsboro;
+            imgLink.Location = new Point(12, 278);
+            imgLink.Name = "imgLink";
+            imgLink.Size = new Size(604, 39);
+            imgLink.TabIndex = 0;
+            imgLink.TabStop = true;
+            imgLink.Text = "Зображення";
+            imgLink.TextAlign = ContentAlignment.MiddleCenter;
+            imgLink.LinkClicked += linkLabel1_LinkClicked;
             // 
             // label1
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label1.Location = new System.Drawing.Point(12, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(604, 211);
-            this.label1.TabIndex = 1;
-            this.label1.Text = resources.GetString("label1.Text");
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label1.Anchor = AnchorStyles.None;
+            label1.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.ForeColor = Color.Gainsboro;
+            label1.Location = new Point(12, 18);
+            label1.Name = "label1";
+            label1.Size = new Size(604, 211);
+            label1.TabIndex = 1;
+            label1.Text = resources.GetString("label1.Text");
+            label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // FormAbout
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(80)))));
-            this.ClientSize = new System.Drawing.Size(628, 322);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.imgLink);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Name = "FormAbout";
-            this.Text = "About";
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(8F, 16F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(35, 35, 80);
+            ClientSize = new Size(628, 341);
+            Controls.Add(label1);
+            Controls.Add(imgLink);
+            Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            Name = "FormAbout";
+            Text = "About";
+            ResumeLayout(false);
         }
 
         #endregion

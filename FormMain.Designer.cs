@@ -76,7 +76,7 @@
             btnTheme.ForeColor = Color.Gainsboro;
             btnTheme.Image = Properties.Resources.color_palette_svgrepo_com_negate;
             btnTheme.ImageAlign = ContentAlignment.MiddleLeft;
-            btnTheme.Location = new Point(0, 255);
+            btnTheme.Location = new Point(0, 236);
             btnTheme.Name = "btnTheme";
             btnTheme.Padding = new Padding(5, 0, 0, 0);
             btnTheme.Size = new Size(240, 60);
@@ -166,7 +166,7 @@
             btnSettings.ForeColor = Color.Gainsboro;
             btnSettings.Image = Properties.Resources.settings_svgrepo_com_negate;
             btnSettings.ImageAlign = ContentAlignment.MiddleLeft;
-            btnSettings.Location = new Point(0, 195);
+            btnSettings.Location = new Point(0, 176);
             btnSettings.Name = "btnSettings";
             btnSettings.Padding = new Padding(5, 0, 0, 0);
             btnSettings.Size = new Size(240, 60);
@@ -186,7 +186,7 @@
             btnSearch.ForeColor = Color.Gainsboro;
             btnSearch.Image = Properties.Resources.search_alt_2_svgrepo_com_negate;
             btnSearch.ImageAlign = ContentAlignment.MiddleLeft;
-            btnSearch.Location = new Point(0, 135);
+            btnSearch.Location = new Point(0, 116);
             btnSearch.Name = "btnSearch";
             btnSearch.Padding = new Padding(5, 0, 0, 0);
             btnSearch.Size = new Size(240, 60);
@@ -206,7 +206,7 @@
             btnHome.ForeColor = Color.Gainsboro;
             btnHome.Image = Properties.Resources.home_svgrepo_com_negate;
             btnHome.ImageAlign = ContentAlignment.MiddleLeft;
-            btnHome.Location = new Point(0, 75);
+            btnHome.Location = new Point(0, 56);
             btnHome.Name = "btnHome";
             btnHome.Padding = new Padding(5, 0, 0, 0);
             btnHome.Size = new Size(240, 60);
@@ -223,15 +223,15 @@
             panelLogo.Dock = DockStyle.Top;
             panelLogo.Location = new Point(0, 0);
             panelLogo.Name = "panelLogo";
-            panelLogo.Size = new Size(240, 75);
+            panelLogo.Size = new Size(240, 56);
             panelLogo.TabIndex = 0;
             // 
             // picLogo
             // 
             picLogo.Image = Properties.Resources.imgLogo;
-            picLogo.Location = new Point(36, 7);
+            picLogo.Location = new Point(12, 4);
             picLogo.Name = "picLogo";
-            picLogo.Size = new Size(60, 60);
+            picLogo.Size = new Size(43, 43);
             picLogo.SizeMode = PictureBoxSizeMode.Zoom;
             picLogo.TabIndex = 0;
             picLogo.TabStop = false;
@@ -243,7 +243,7 @@
             panelTitleBar.Dock = DockStyle.Top;
             panelTitleBar.Location = new Point(240, 0);
             panelTitleBar.Name = "panelTitleBar";
-            panelTitleBar.Size = new Size(644, 75);
+            panelTitleBar.Size = new Size(644, 56);
             panelTitleBar.TabIndex = 1;
             // 
             // titleBarText
@@ -254,7 +254,7 @@
             titleBarText.ForeColor = Color.Gainsboro;
             titleBarText.Location = new Point(0, 0);
             titleBarText.Name = "titleBarText";
-            titleBarText.Size = new Size(644, 75);
+            titleBarText.Size = new Size(644, 56);
             titleBarText.TabIndex = 0;
             titleBarText.Text = "Form.Text";
             titleBarText.TextAlign = ContentAlignment.MiddleCenter;
@@ -263,9 +263,9 @@
             // 
             panelDesktop.BackColor = Color.FromArgb(35, 35, 80);
             panelDesktop.Dock = DockStyle.Fill;
-            panelDesktop.Location = new Point(240, 75);
+            panelDesktop.Location = new Point(240, 56);
             panelDesktop.Name = "panelDesktop";
-            panelDesktop.Size = new Size(644, 361);
+            panelDesktop.Size = new Size(644, 380);
             panelDesktop.TabIndex = 2;
             // 
             // FormMain

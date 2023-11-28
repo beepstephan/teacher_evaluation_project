@@ -65,7 +65,7 @@
             panelCenter.BackColor = Color.Transparent;
             panelCenter.Controls.Add(lblWelcome);
             panelCenter.Controls.Add(pictureBox);
-            panelCenter.Location = new Point(39, 25);
+            panelCenter.Location = new Point(39, 34);
             panelCenter.Name = "panelCenter";
             panelCenter.Size = new Size(550, 293);
             panelCenter.TabIndex = 2;
@@ -76,7 +76,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(35, 35, 80);
             BackgroundImageLayout = ImageLayout.None;
-            ClientSize = new Size(628, 322);
+            ClientSize = new Size(628, 341);
             Controls.Add(panelCenter);
             Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
             Name = "FormHome";

@@ -38,9 +38,9 @@
             // 
             loginField.Anchor = AnchorStyles.None;
             loginField.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            loginField.Location = new Point(257, 35);
+            loginField.Location = new Point(238, 45);
             loginField.Name = "loginField";
-            loginField.Size = new Size(114, 26);
+            loginField.Size = new Size(150, 23);
             loginField.TabIndex = 0;
             loginField.Text = "email";
             // 
@@ -48,9 +48,9 @@
             // 
             passField.Anchor = AnchorStyles.None;
             passField.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            passField.Location = new Point(257, 85);
+            passField.Location = new Point(238, 95);
             passField.Name = "passField";
-            passField.Size = new Size(114, 26);
+            passField.Size = new Size(150, 23);
             passField.TabIndex = 1;
             passField.Text = "password";
             // 
@@ -61,7 +61,7 @@
             btnLogIn.FlatStyle = FlatStyle.Flat;
             btnLogIn.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
             btnLogIn.ForeColor = Color.Gainsboro;
-            btnLogIn.Location = new Point(257, 135);
+            btnLogIn.Location = new Point(257, 145);
             btnLogIn.Name = "btnLogIn";
             btnLogIn.Size = new Size(114, 32);
             btnLogIn.TabIndex = 2;
@@ -75,7 +75,7 @@
             lblAccount.Cursor = Cursors.Hand;
             lblAccount.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
             lblAccount.ForeColor = Color.Gainsboro;
-            lblAccount.Location = new Point(151, 185);
+            lblAccount.Location = new Point(151, 195);
             lblAccount.Name = "lblAccount";
             lblAccount.Size = new Size(326, 35);
             lblAccount.TabIndex = 3;
@@ -85,10 +85,10 @@
             // 
             // FormLogIn
             // 
-            AutoScaleDimensions = new SizeF(10F, 20F);
+            AutoScaleDimensions = new SizeF(8F, 16F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(35, 35, 80);
-            ClientSize = new Size(628, 322);
+            ClientSize = new Size(628, 341);
             Controls.Add(lblAccount);
             Controls.Add(btnLogIn);
             Controls.Add(passField);
@@ -96,6 +96,7 @@
             Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
             Name = "FormLogIn";
             Text = "Увійти";
+            Load += FormLogIn_Load;
             ResumeLayout(false);
             PerformLayout();
         }

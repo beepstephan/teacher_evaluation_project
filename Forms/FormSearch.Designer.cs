@@ -112,11 +112,12 @@
             listTeachers.Items.AddRange(new ListViewItem[] { listViewItem1 });
             listTeachers.Location = new Point(39, 145);
             listTeachers.Name = "listTeachers";
-            listTeachers.Size = new Size(549, 164);
+            listTeachers.Size = new Size(549, 183);
             listTeachers.TabIndex = 6;
             listTeachers.UseCompatibleStateImageBehavior = false;
             listTeachers.View = View.Details;
             listTeachers.SelectedIndexChanged += listTeachers_SelectedIndexChanged;
+            listTeachers.SizeChanged += listTeachers_SizeChanged;
             // 
             // columnHeader1
             // 
@@ -148,7 +149,7 @@
             AutoScaleDimensions = new SizeF(8F, 16F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(35, 35, 80);
-            ClientSize = new Size(628, 322);
+            ClientSize = new Size(628, 341);
             Controls.Add(listTeachers);
             Controls.Add(comboBoxDepartment);
             Controls.Add(btnSearch);

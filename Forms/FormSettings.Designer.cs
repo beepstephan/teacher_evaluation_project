@@ -87,7 +87,7 @@
             AutoScaleDimensions = new SizeF(8F, 16F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(35, 35, 80);
-            ClientSize = new Size(628, 322);
+            ClientSize = new Size(628, 341);
             Controls.Add(UpDownFontSize);
             Controls.Add(boxFontStyle);
             Controls.Add(lblFontStyle);

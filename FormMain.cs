@@ -40,7 +40,7 @@ namespace teacher_evaluation_project
             OpenChildForm(formHome);
         }
 
-        
+
 
         private void ActivateMenuItem(object btnSender)
         {
@@ -65,7 +65,7 @@ namespace teacher_evaluation_project
                     btn.Font = new System.Drawing.Font(Theme.fontStyle, Theme.textSize, System.Drawing.FontStyle.Regular);
                 }
             }
-            
+
             activeButton = null;
         }
 
@@ -90,7 +90,7 @@ namespace teacher_evaluation_project
         }
         public override void SetFont()
         {
-            if (Font != new System.Drawing.Font(Theme.fontStyle, Theme.textSize, System.Drawing.FontStyle.Regular))
+            if (Font.FontFamily.Name != Theme.fontStyle || Font.Size != Theme.textSize)
             {
                 foreach (Control btn in panelMenu.Controls)
                 {
@@ -128,11 +128,11 @@ namespace teacher_evaluation_project
         }
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            if (currentUser.isLogIn==true)
+            if (currentUser.isLogIn == true)
             {
                 ActivateMenuItem(sender);
                 OpenChildForm(formSearch);
-            }  
+            }
             else
             {
                 ActivateMenuItem(btnLogIn);

@@ -11,20 +11,24 @@ using teacher_evaluation_project.projectClasses;
 
 namespace teacher_evaluation_project.Forms
 {
-    public partial class FormDev : FormProject {
-        public FormDev() {
+    public partial class FormDev : FormProject
+    {
+        public FormDev()
+        {
             InitializeComponent();
             SetTheme();
         }
-        public override void SetTheme() {
+        public override void SetTheme()
+        {
             SetFont();
-            if (BackColor != Theme.activeTheme.panelDesktopColor) {
+            if (BackColor != Theme.activeTheme.panelDesktopColor)
+            {
                 BackColor = Theme.activeTheme.panelDesktopColor;
             }
         }
         public override void SetFont()
         {
-            if (Font != new System.Drawing.Font(Theme.fontStyle, Theme.textSize, System.Drawing.FontStyle.Regular))
+            if (Font.FontFamily.Name != Theme.fontStyle || Font.Size != Theme.textSize)
             {
                 foreach (Control item in panel1.Controls)
                 {
@@ -33,6 +37,6 @@ namespace teacher_evaluation_project.Forms
             }
         }
 
-        
+
     }
 }

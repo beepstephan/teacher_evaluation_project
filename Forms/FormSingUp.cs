@@ -95,77 +95,12 @@ namespace teacher_evaluation_project.Forms
             db.closeConnection();
         }
 
-        private void loginField_Enter(object sender, EventArgs e)
+        private void FormSingUp_Load(object sender, EventArgs e)
         {
-            if (loginField.Text == "Введіть логін")
-            {
-                loginField.Text = "";
-                loginField.ForeColor = Color.Black;
-
-            }
-        }
-
-        private void passField_TextChanged(object sender, EventArgs e)
-        {
-            if (userNameField.Text == "Введіть пароль")
-            {
-                userNameField.Text = "";
-                userNameField.ForeColor = Color.Black;
-
-            }
-        }
-
-        private void userNameField_TextChanged(object sender, EventArgs e)
-        {
-            if (userNameField.Text == "Введіть ім'я")
-            {
-                userNameField.Text = "";
-                userNameField.ForeColor = Color.Black;
-
-            }
-        }
-
-        private void userSurnameField_TextChanged(object sender, EventArgs e)
-        {
-            if (userNameField.Text == "Введіть прізвище")
-            {
-                userNameField.Text = "";
-                userNameField.ForeColor = Color.Black;
-
-            }
-        }
-
-        private void passField_Enter(object sender, EventArgs e)
-        {
-
-            if (passField.Text == "Введіть пароль")
-            {
-                passField.Text = "";
-                passField.ForeColor = Color.Black;
-
-            }
-        }
-
-        private void userNameField_Enter(object sender, EventArgs e)
-        {
-
-            if (userNameField.Text == "Введіть ім'я")
-            {
-                userNameField.Text = "";
-                userNameField.ForeColor = Color.Black;
-
-            }
-        }
-
-        private void userSurnameField_Enter(object sender, EventArgs e)
-        {
-
-            if (userSurnameField.Text == "Введіть прізвище")
-            {
-                userSurnameField.Text = "";
-                userSurnameField.ForeColor = Color.Black;
-
-            }
+            passField.AddPlaceholder("Введіть пароль");
+            loginField.AddPlaceholder("Введіть email");
+            userNameField.AddPlaceholder("Введіть ім'я");
+            userSurnameField.AddPlaceholder("Введіть прізвище");
         }
     }
 }

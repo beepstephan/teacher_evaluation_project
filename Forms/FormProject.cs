@@ -18,7 +18,8 @@ namespace teacher_evaluation_project.Forms
 
         public virtual void SetTheme() {}
         public virtual void SetFont() {
-            if (Font != new System.Drawing.Font(Theme.fontStyle, Theme.textSize, System.Drawing.FontStyle.Regular)) {
+            if (Font.FontFamily.Name != Theme.fontStyle || Font.Size != Theme.textSize)
+            {
                 foreach (Control item in Controls) {
                     item.Font = new System.Drawing.Font(Theme.fontStyle, Theme.textSize, System.Drawing.FontStyle.Regular);
                 }

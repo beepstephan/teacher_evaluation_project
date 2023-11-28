@@ -46,7 +46,7 @@ namespace teacher_evaluation_project.Forms
         }
         public override void SetFont()
         {
-            if (Font != new System.Drawing.Font(Theme.fontStyle, Theme.textSize, System.Drawing.FontStyle.Regular))
+            if (Font.FontFamily.Name != Theme.fontStyle || Font.Size != Theme.textSize)
             {
                 foreach (Control item in Controls)
                 {

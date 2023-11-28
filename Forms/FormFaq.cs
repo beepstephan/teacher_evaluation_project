@@ -11,8 +11,10 @@ using teacher_evaluation_project.projectClasses;
 
 namespace teacher_evaluation_project.Forms
 {
-    public partial class FormFaq : FormProject {
-        public FormFaq() {
+    public partial class FormFaq : FormProject
+    {
+        public FormFaq()
+        {
             InitializeComponent();
             SetTheme();
             //labelGuide.Text = "Крок 1: \n Авторизуйтесь у вікні \"Увійти\", " +
@@ -20,9 +22,11 @@ namespace teacher_evaluation_project.Forms
             //    "на текст \"Ще немає облікового запису?\" \n Крок 2: \n Перейдіть" +
             //    " до головного меню і натисніть на вікно \"Пошук викладачів\" \n Крок 3: \n";
         }
-        public override void SetTheme() {
+        public override void SetTheme()
+        {
             SetFont();
-            if (BackColor != Theme.activeTheme.panelDesktopColor) {
+            if (BackColor != Theme.activeTheme.panelDesktopColor)
+            {
                 BackColor = Theme.activeTheme.panelDesktopColor;
             }
         }
