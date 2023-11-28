@@ -8,16 +8,11 @@ namespace teacher_evaluation_project
 {
     public partial class FormMain : FormProject
     {
-
-        private Theme themeColor = new Theme();
-
         //Fields
         private Button activeButton;
         private FormProject activeForm;
         static public FormMain mainForm;
         public User currentUser = new User();
-
-
 
         //child forms
         public FormHome formHome = new FormHome();
@@ -40,8 +35,6 @@ namespace teacher_evaluation_project
             OpenChildForm(formHome);
         }
 
-
-
         private void ActivateMenuItem(object btnSender)
         {
             if (btnSender != null)
@@ -51,7 +44,7 @@ namespace teacher_evaluation_project
                     DisableMenuItems();
                     activeButton = (Button)btnSender;
                     activeButton.BackColor = Theme.activeTheme.activeButtoneColor;
-                    activeButton.Font = new System.Drawing.Font(Theme.fontStyle, Theme.textSize + 2, System.Drawing.FontStyle.Regular);
+                    activeButton.Font = new System.Drawing.Font(Theme.fontStyle, Theme.fontSize + 2, System.Drawing.FontStyle.Regular);
                 }
             }
         }
@@ -59,10 +52,10 @@ namespace teacher_evaluation_project
         {
             foreach (Control btn in panelMenu.Controls)
             {
-                if (btn.GetType() == typeof(Button))
+                if (btn.GetType() == typeof(Button) && btn != btnLogIn)
                 {
                     btn.BackColor = Theme.activeTheme.mainMenuColor;
-                    btn.Font = new System.Drawing.Font(Theme.fontStyle, Theme.textSize, System.Drawing.FontStyle.Regular);
+                    btn.Font = new System.Drawing.Font(Theme.fontStyle, Theme.fontSize, System.Drawing.FontStyle.Regular);
                 }
             }
 
@@ -72,29 +65,35 @@ namespace teacher_evaluation_project
         public override void SetTheme()
         {
             SetFont();
-            panelTitleBar.BackColor = Theme.activeTheme.panelTitleBar;
-            panelLogo.BackColor = Theme.activeTheme.mainMenuColor;
-            panelMenu.BackColor = Theme.activeTheme.mainMenuColor;
+            if (themeIndex != Theme.themeIndex)
+            {
+                themeIndex = Theme.themeIndex;
+                panelTitleBar.BackColor = Theme.activeTheme.panelTitleBar;
+                panelLogo.BackColor = Theme.activeTheme.mainMenuColor;
+                panelMenu.BackColor = Theme.activeTheme.mainMenuColor;
 
-            foreach (Control btn in panelMenu.Controls)
-            {
-                if (btn.GetType() == typeof(Button))
+                foreach (Control btn in panelMenu.Controls)
                 {
-                    btn.BackColor = Theme.activeTheme.mainMenuColor;
+                    if (btn.GetType() == typeof(Button) && btn != btnLogIn)
+                    {
+                        btn.BackColor = Theme.activeTheme.mainMenuColor;
+                    }
                 }
-            }
-            if (activeButton != null)
-            {
-                activeButton.BackColor = Theme.activeTheme.activeButtoneColor;
+                if (activeButton != null)
+                {
+                    activeButton.BackColor = Theme.activeTheme.activeButtoneColor;
+                }
             }
         }
         public override void SetFont()
         {
-            if (Font.FontFamily.Name != Theme.fontStyle || Font.Size != Theme.textSize)
+            if (fontStyle != Theme.fontStyle || fontSize != Theme.fontSize)
             {
+                fontStyle = Theme.fontStyle;
+                fontSize = Theme.fontSize;
                 foreach (Control btn in panelMenu.Controls)
                 {
-                    btn.Font = new System.Drawing.Font(Theme.fontStyle, Theme.textSize, System.Drawing.FontStyle.Regular);
+                    btn.Font = new System.Drawing.Font(Theme.fontStyle, Theme.fontSize, System.Drawing.FontStyle.Regular);
                 }
                 titleBarText.Font = new System.Drawing.Font(Theme.fontStyle, 20, System.Drawing.FontStyle.Regular);
             }
@@ -142,7 +141,7 @@ namespace teacher_evaluation_project
         }
         private void btnTheme_Click(object sender, EventArgs e)
         {
-            themeColor.SetNext();
+            Theme.SetNext();
             SetTheme();
             activeForm.SetTheme();
         }
@@ -168,8 +167,21 @@ namespace teacher_evaluation_project
         }
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            ActivateMenuItem(sender);
+            DisableMenuItems();
             OpenChildForm(formLogIn);
+            //if (currentUser.isLogIn == false)
+            //{
+            //    // якщо користувач не авторизувався - відкриття FormLogIn
+            //    DisableMenuItems();
+            //    OpenChildForm(formLogIn);
+            //}
+            //else
+            //{
+            //    // якщо користувач авторизувався - вихід з аакаунта
+            //
+            //    // видалення даних currentUser
+            //    // повернення форми до початкового стану
+            //}
         }
     }
 }

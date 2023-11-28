@@ -29,8 +29,9 @@ namespace teacher_evaluation_project.Forms
         public override void SetTheme()
         {
             SetFont();
-            if (BackColor != Theme.activeTheme.panelDesktopColor)
+            if (themeIndex != Theme.themeIndex)
             {
+                themeIndex = Theme.themeIndex;
                 BackColor = Theme.activeTheme.panelDesktopColor;
                 btnSearch.BackColor = Theme.activeTheme.mainMenuColor;
             }

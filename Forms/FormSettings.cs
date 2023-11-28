@@ -17,20 +17,21 @@ namespace teacher_evaluation_project.Forms
         {
             InitializeComponent();
             SetTheme();
-            UpDownFontSize.Value = (int)Theme.textSize;
+            UpDownFontSize.Value = (int)Theme.fontSize;
             boxFontStyle.Text = Theme.fontStyle;
         }
         public override void SetTheme()
         {
             SetFont();
-            if (BackColor != Theme.activeTheme.panelDesktopColor)
+            if (themeIndex != Theme.themeIndex)
             {
+                themeIndex = Theme.themeIndex;
                 BackColor = Theme.activeTheme.panelDesktopColor;
             }
         }
         private void UpDownFontSize_ValueChanged(object sender, EventArgs e)
         {
-            Theme.textSize = (float)UpDownFontSize.Value;
+            Theme.fontSize = (float)UpDownFontSize.Value;
             FormMain.mainForm.SetFont();
             SetFont();
         }
@@ -46,17 +47,19 @@ namespace teacher_evaluation_project.Forms
         }
         public override void SetFont()
         {
-            if (Font.FontFamily.Name != Theme.fontStyle || Font.Size != Theme.textSize)
+            if (fontStyle != Theme.fontStyle || fontSize != Theme.fontSize)
             {
+                fontStyle = Theme.fontStyle;
+                fontSize = Theme.fontSize;
                 foreach (Control item in Controls)
                 {
                     if (item != boxFontStyle)
                     {
-                        item.Font = new System.Drawing.Font(Theme.fontStyle, Theme.textSize, System.Drawing.FontStyle.Regular);
+                        item.Font = new System.Drawing.Font(Theme.fontStyle, Theme.fontSize, System.Drawing.FontStyle.Regular);
                     }
                     else
                     {
-                        item.Font = new System.Drawing.Font("Microsoft Sans Serif", Theme.textSize, System.Drawing.FontStyle.Regular);
+                        item.Font = new System.Drawing.Font("Microsoft Sans Serif", Theme.fontSize, System.Drawing.FontStyle.Regular);
                     }
                 }
             }

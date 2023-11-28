@@ -43,6 +43,7 @@
             panelTitleBar = new Panel();
             titleBarText = new Label();
             panelDesktop = new Panel();
+            label1 = new Label();
             panelMenu.SuspendLayout();
             panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picLogo).BeginInit();
@@ -141,6 +142,7 @@
             // btnLogIn
             // 
             btnLogIn.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            btnLogIn.BackColor = Color.ForestGreen;
             btnLogIn.FlatAppearance.BorderSize = 0;
             btnLogIn.FlatStyle = FlatStyle.Flat;
             btnLogIn.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
@@ -219,6 +221,7 @@
             // 
             // panelLogo
             // 
+            panelLogo.Controls.Add(label1);
             panelLogo.Controls.Add(picLogo);
             panelLogo.Dock = DockStyle.Top;
             panelLogo.Location = new Point(0, 0);
@@ -229,7 +232,7 @@
             // picLogo
             // 
             picLogo.Image = Properties.Resources.imgLogo;
-            picLogo.Location = new Point(12, 4);
+            picLogo.Location = new Point(12, 7);
             picLogo.Name = "picLogo";
             picLogo.Size = new Size(43, 43);
             picLogo.SizeMode = PictureBoxSizeMode.Zoom;
@@ -268,6 +271,17 @@
             panelDesktop.Size = new Size(644, 380);
             panelDesktop.TabIndex = 2;
             // 
+            // label1
+            // 
+            label1.Dock = DockStyle.Right;
+            label1.ForeColor = Color.Gainsboro;
+            label1.Location = new Point(71, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(169, 56);
+            label1.TabIndex = 1;
+            label1.Text = "label1";
+            label1.TextAlign = ContentAlignment.MiddleLeft;
+            // 
             // FormMain
             // 
             AutoScaleDimensions = new SizeF(8F, 16F);
@@ -305,5 +319,6 @@
         private Label titleBarText;
         private Panel panelDesktop;
         private PictureBox picLogo;
+        private Label label1;
     }
 }

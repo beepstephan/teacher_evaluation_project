@@ -28,11 +28,26 @@ namespace teacher_evaluation_project.Forms
         public override void SetTheme()
         {
             SetFont();
-            if (BackColor != Theme.activeTheme.panelDesktopColor)
+            if (themeIndex != Theme.themeIndex)
             {
+                themeIndex = Theme.themeIndex;
                 BackColor = Theme.activeTheme.panelDesktopColor;
                 buttonSingUp.BackColor = Theme.activeTheme.mainMenuColor;
+            }
+        }
 
+        public override void SetFont()
+        {
+            if (fontStyle != Theme.fontStyle || fontSize != Theme.fontSize)
+            {
+                fontStyle = Theme.fontStyle;
+                fontSize = Theme.fontSize;
+                loginField.Font = new System.Drawing.Font(Theme.fontStyle + 1, Theme.fontSize, System.Drawing.FontStyle.Regular);
+                passField.Font = new System.Drawing.Font(Theme.fontStyle + 1, Theme.fontSize, System.Drawing.FontStyle.Regular);
+                userNameField.Font = new System.Drawing.Font(Theme.fontStyle + 1, Theme.fontSize, System.Drawing.FontStyle.Regular);
+                userSurnameField.Font = new System.Drawing.Font(Theme.fontStyle + 1, Theme.fontSize, System.Drawing.FontStyle.Regular);
+                buttonSingUp.Font = new System.Drawing.Font(Theme.fontStyle + 1, Theme.fontSize, System.Drawing.FontStyle.Bold);
+                lblAccount.Font = new System.Drawing.Font(Theme.fontStyle, Theme.fontSize, System.Drawing.FontStyle.Regular);
             }
         }
 

@@ -30,10 +30,24 @@ namespace teacher_evaluation_project.Forms
         public override void SetTheme()
         {
             SetFont();
-            if (BackColor != Theme.activeTheme.panelDesktopColor)
+            if (themeIndex != Theme.themeIndex)
             {
+                themeIndex = Theme.themeIndex;
                 BackColor = Theme.activeTheme.panelDesktopColor;
                 btnLogIn.BackColor = Theme.activeTheme.mainMenuColor;
+            }
+        }
+
+        public override void SetFont()
+        {
+            if (fontStyle != Theme.fontStyle || fontSize != Theme.fontSize)
+            {
+                fontStyle = Theme.fontStyle;
+                fontSize = Theme.fontSize;
+                loginField.Font = new System.Drawing.Font(Theme.fontStyle + 1, Theme.fontSize, System.Drawing.FontStyle.Regular);
+                passField.Font = new System.Drawing.Font(Theme.fontStyle + 1, Theme.fontSize, System.Drawing.FontStyle.Regular);
+                btnLogIn.Font = new System.Drawing.Font(Theme.fontStyle + 1, Theme.fontSize, System.Drawing.FontStyle.Bold);
+                lblAccount.Font = new System.Drawing.Font(Theme.fontStyle, Theme.fontSize, System.Drawing.FontStyle.Regular);
             }
         }
 
@@ -66,18 +80,6 @@ namespace teacher_evaluation_project.Forms
         {
             loginField.AddPlaceholder("Введіть email");
             passField.AddPlaceholder("Введіть пароль");
-
-            //Paint += new PaintEventHandler(Form1_Paint);
-        }
-        void Form1_Paint(object sender, PaintEventArgs e)
-        {
-            //Graphics g = this.CreateGraphics();
-            //Pen pen = new Pen(Brushes.White, 4);
-            //pen.LineJoin = LineJoin.Bevel;//задаем скошенные углы
-            //pen.MiterLimit = 4;//задаем ограничение толщины скошенных углов
-            //g.DrawRectangle(pen, new Rectangle(loginField.Location.X - 1, loginField.Location.Y - 1, loginField.Width + 3, loginField.Height + 3));
-            ////рисуем прямоугольник с параметрами испоьзуемыми выше            
-            //// ex Hermein
         }
     }
 }

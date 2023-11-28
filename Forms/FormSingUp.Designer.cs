@@ -68,40 +68,40 @@
             // passField
             // 
             passField.Anchor = AnchorStyles.None;
-            passField.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            passField.Location = new Point(238, 95);
+            passField.Font = new Font("Microsoft Sans Serif", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            passField.Location = new Point(213, 95);
             passField.Name = "passField";
-            passField.Size = new Size(150, 23);
+            passField.Size = new Size(200, 24);
             passField.TabIndex = 5;
             passField.Text = "Введіть пароль";
             // 
             // loginField
             // 
             loginField.Anchor = AnchorStyles.None;
-            loginField.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            loginField.Location = new Point(238, 45);
+            loginField.Font = new Font("Microsoft Sans Serif", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            loginField.Location = new Point(213, 45);
             loginField.Name = "loginField";
-            loginField.Size = new Size(150, 23);
+            loginField.Size = new Size(200, 24);
             loginField.TabIndex = 4;
             loginField.Text = "Введіть логін";
             // 
             // userNameField
             // 
             userNameField.Anchor = AnchorStyles.None;
-            userNameField.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            userNameField.Location = new Point(238, 145);
+            userNameField.Font = new Font("Microsoft Sans Serif", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            userNameField.Location = new Point(213, 145);
             userNameField.Name = "userNameField";
-            userNameField.Size = new Size(150, 23);
+            userNameField.Size = new Size(200, 24);
             userNameField.TabIndex = 8;
             userNameField.Text = "Введіть ім'я";
             // 
             // userSurnameField
             // 
             userSurnameField.Anchor = AnchorStyles.None;
-            userSurnameField.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            userSurnameField.Location = new Point(238, 195);
+            userSurnameField.Font = new Font("Microsoft Sans Serif", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            userSurnameField.Location = new Point(213, 195);
             userSurnameField.Name = "userSurnameField";
-            userSurnameField.Size = new Size(150, 23);
+            userSurnameField.Size = new Size(200, 24);
             userSurnameField.TabIndex = 9;
             userSurnameField.Text = "Введіть прізвище";
             // 

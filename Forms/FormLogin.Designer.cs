@@ -37,20 +37,20 @@
             // loginField
             // 
             loginField.Anchor = AnchorStyles.None;
-            loginField.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            loginField.Location = new Point(238, 45);
+            loginField.Font = new Font("Microsoft Sans Serif", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            loginField.Location = new Point(213, 45);
             loginField.Name = "loginField";
-            loginField.Size = new Size(150, 23);
+            loginField.Size = new Size(200, 24);
             loginField.TabIndex = 0;
             loginField.Text = "email";
             // 
             // passField
             // 
             passField.Anchor = AnchorStyles.None;
-            passField.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            passField.Location = new Point(238, 95);
+            passField.Font = new Font("Microsoft Sans Serif", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            passField.Location = new Point(213, 95);
             passField.Name = "passField";
-            passField.Size = new Size(150, 23);
+            passField.Size = new Size(200, 24);
             passField.TabIndex = 1;
             passField.Text = "password";
             // 
@@ -59,7 +59,7 @@
             btnLogIn.Anchor = AnchorStyles.None;
             btnLogIn.BackColor = Color.FromArgb(30, 30, 65);
             btnLogIn.FlatStyle = FlatStyle.Flat;
-            btnLogIn.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            btnLogIn.Font = new Font("Microsoft Sans Serif", 11F, FontStyle.Bold, GraphicsUnit.Point);
             btnLogIn.ForeColor = Color.Gainsboro;
             btnLogIn.Location = new Point(257, 145);
             btnLogIn.Name = "btnLogIn";

@@ -28,19 +28,22 @@ namespace teacher_evaluation_project.Forms
         public override void SetTheme()
         {
             SetFont();
-            if (BackColor != Theme.activeTheme.panelDesktopColor)
+            if (themeIndex != Theme.themeIndex)
             {
+                themeIndex = Theme.themeIndex;
                 BackColor = Theme.activeTheme.panelDesktopColor;
             }
         }
 
         public override void SetFont()
         {
-            if (Font.FontFamily.Name != Theme.fontStyle || Font.Size != Theme.textSize)
+            if (fontStyle != Theme.fontStyle || fontSize != Theme.fontSize)
             {
+                fontStyle = Theme.fontStyle;
+                fontSize = Theme.fontSize;
                 foreach (Control btn in Controls)
                 {
-                    btn.Font = new System.Drawing.Font(Theme.fontStyle, Theme.textSize, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                    btn.Font = new System.Drawing.Font(Theme.fontStyle, Theme.fontSize, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                 }
             }
         }
