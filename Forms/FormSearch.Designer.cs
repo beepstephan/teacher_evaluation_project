@@ -50,7 +50,7 @@
             radBtnABC.ForeColor = Color.Gainsboro;
             radBtnABC.Location = new Point(39, 118);
             radBtnABC.Name = "radBtnABC";
-            radBtnABC.Size = new Size(116, 21);
+            radBtnABC.Size = new Size(149, 24);
             radBtnABC.TabIndex = 1;
             radBtnABC.TabStop = true;
             radBtnABC.Text = "За алфавітом";
@@ -63,7 +63,7 @@
             radBtnRating.ForeColor = Color.Gainsboro;
             radBtnRating.Location = new Point(183, 118);
             radBtnRating.Name = "radBtnRating";
-            radBtnRating.Size = new Size(116, 21);
+            radBtnRating.Size = new Size(147, 24);
             radBtnRating.TabIndex = 2;
             radBtnRating.Text = "За рейтингом";
             radBtnRating.UseVisualStyleBackColor = true;
@@ -74,7 +74,7 @@
             textBoxSurname.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
             textBoxSurname.Location = new Point(39, 26);
             textBoxSurname.Name = "textBoxSurname";
-            textBoxSurname.Size = new Size(185, 23);
+            textBoxSurname.Size = new Size(185, 26);
             textBoxSurname.TabIndex = 3;
             textBoxSurname.Text = "Введіть прізвище";
             // 
@@ -91,6 +91,7 @@
             btnSearch.TabIndex = 4;
             btnSearch.Text = "Пошук";
             btnSearch.UseVisualStyleBackColor = false;
+            btnSearch.Click += btnSearch_Click;
             // 
             // comboBoxDepartment
             // 
@@ -99,7 +100,7 @@
             comboBoxDepartment.FormattingEnabled = true;
             comboBoxDepartment.Location = new Point(267, 26);
             comboBoxDepartment.Name = "comboBoxDepartment";
-            comboBoxDepartment.Size = new Size(138, 24);
+            comboBoxDepartment.Size = new Size(138, 28);
             comboBoxDepartment.TabIndex = 5;
             comboBoxDepartment.Text = "Кафедра";
             // 
@@ -145,7 +146,7 @@
             // 
             // FormSearch
             // 
-            AutoScaleDimensions = new SizeF(8F, 16F);
+            AutoScaleDimensions = new SizeF(10F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(35, 35, 80);
             ClientSize = new Size(628, 322);
