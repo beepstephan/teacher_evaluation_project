@@ -18,6 +18,11 @@ namespace teacher_evaluation_project.Forms
         {
             InitializeComponent();
             SetTheme();
+
+            passField.AddPlaceholder("Введіть пароль");
+            loginField.AddPlaceholder("Введіть email");
+            userNameField.AddPlaceholder("Введіть ім'я");
+            userSurnameField.AddPlaceholder("Введіть прізвище");
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -108,14 +113,6 @@ namespace teacher_evaluation_project.Forms
                 MessageBox.Show("Акаунт не був створений");
 
             db.closeConnection();
-        }
-
-        private void FormSingUp_Load(object sender, EventArgs e)
-        {
-            passField.AddPlaceholder("Введіть пароль");
-            loginField.AddPlaceholder("Введіть email");
-            userNameField.AddPlaceholder("Введіть ім'я");
-            userSurnameField.AddPlaceholder("Введіть прізвище");
         }
     }
 }

@@ -20,6 +20,9 @@ namespace teacher_evaluation_project.Forms
         {
             InitializeComponent();
             SetTheme();
+
+            loginField.AddPlaceholder("Введіть email");
+            passField.AddPlaceholder("Введіть пароль");
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -74,12 +77,6 @@ namespace teacher_evaluation_project.Forms
 
             else
                 MessageBox.Show("NO");
-        }
-
-        private void FormLogIn_Load(object sender, EventArgs e)
-        {
-            loginField.AddPlaceholder("Введіть email");
-            passField.AddPlaceholder("Введіть пароль");
         }
     }
 }

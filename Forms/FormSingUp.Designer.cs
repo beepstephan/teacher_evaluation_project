@@ -120,7 +120,6 @@
             Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
             Name = "FormSingUp";
             Text = "Реєстрація";
-            Load += FormSingUp_Load;
             ResumeLayout(false);
             PerformLayout();
         }

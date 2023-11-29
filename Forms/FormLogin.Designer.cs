@@ -96,7 +96,6 @@
             Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
             Name = "FormLogIn";
             Text = "Увійти";
-            Load += FormLogIn_Load;
             ResumeLayout(false);
             PerformLayout();
         }
