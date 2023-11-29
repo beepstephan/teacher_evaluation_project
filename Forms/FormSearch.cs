@@ -22,6 +22,7 @@ namespace teacher_evaluation_project.Forms
             InitializeComponent();
             SetTheme();
 
+            textBoxSurname.AddPlaceholder("Введіть прізфище");
             // завантаження викладачів 
 
         }
