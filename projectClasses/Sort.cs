@@ -3,28 +3,29 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace teacher_evaluation_project.projectClasses
 {
-    internal class Sort
+    internal class CustomSort
     {
 
-        static List<Teacher> SurnameAscending(List<Teacher> list)
+        public static List<ListViewItem> SurnameAscending(List<ListViewItem> list)
         {
             if (list.Count <= 1)
                 return list;
 
             int pivotIndex = list.Count / 2;
-            Teacher pivot = list[pivotIndex];
-            List<Teacher> left = new List<Teacher>();
-            List<Teacher> right = new List<Teacher>();
+            ListViewItem pivot = list[pivotIndex];
+            List<ListViewItem> left = new List<ListViewItem>();
+            List<ListViewItem> right = new List<ListViewItem>();
 
             for (int i = 0; i < list.Count; i++)
             {
                 if (i == pivotIndex)
                     continue;
 
-                if (String.Compare(list[i].Surname, pivot.Surname) <= 0)
+                if (String.Compare(list[i].Text, pivot.Text) <= 0)
                 {
                     left.Add(list[i]);
                 }
@@ -34,28 +35,28 @@ namespace teacher_evaluation_project.projectClasses
                 }
             }
 
-            List<Teacher> sorted = SurnameAscending(left);
+            List<ListViewItem> sorted = SurnameAscending(left);
             sorted.Add(pivot);
             sorted.AddRange(SurnameAscending(right));
             return sorted;
         }
 
-        static List<Teacher> SurnameDescending(List<Teacher> list)
+        public static List<ListViewItem> SurnameDescending(List<ListViewItem> list)
         {
             if (list.Count <= 1)
                 return list;
 
             int pivotIndex = list.Count / 2;
-            Teacher pivot = list[pivotIndex];
-            List<Teacher> left = new List<Teacher>();
-            List<Teacher> right = new List<Teacher>();
+            ListViewItem pivot = list[pivotIndex];
+            List<ListViewItem> left = new List<ListViewItem>();
+            List<ListViewItem> right = new List<ListViewItem>();
 
             for (int i = 0; i < list.Count; i++)
             {
                 if (i == pivotIndex)
                     continue;
 
-                if (String.Compare(list[i].Surname, pivot.Surname) > 0)
+                if (String.Compare(list[i].Text, pivot.Text) > 0)
                 {
                     left.Add(list[i]);
                 }
@@ -65,28 +66,28 @@ namespace teacher_evaluation_project.projectClasses
                 }
             }
 
-            List<Teacher> sorted = SurnameDescending(left);
+            List<ListViewItem> sorted = SurnameDescending(left);
             sorted.Add(pivot);
             sorted.AddRange(SurnameDescending(right));
             return sorted;
         }
 
-        static List<Teacher> RateAscending(List<Teacher> list)
+        public static List<ListViewItem> RateAscending(List<ListViewItem> list)
         {
             if (list.Count <= 1)
                 return list;
 
             int pivotIndex = list.Count / 2;
-            Teacher pivot = list[pivotIndex];
-            List<Teacher> left = new List<Teacher>();
-            List<Teacher> right = new List<Teacher>();
+            ListViewItem pivot = list[pivotIndex];
+            List<ListViewItem> left = new List<ListViewItem>();
+            List<ListViewItem> right = new List<ListViewItem>();
 
             for (int i = 0; i < list.Count; i++)
             {
                 if (i == pivotIndex)
                     continue;
 
-                if (list[i].Rate <= pivot.Rate)
+                if (Convert.ToDouble(list[i].SubItems[4].Text) <= Convert.ToDouble(pivot.SubItems[4].Text))
                 {
                     left.Add(list[i]);
                 }
@@ -96,28 +97,28 @@ namespace teacher_evaluation_project.projectClasses
                 }
             }
 
-            List<Teacher> sorted = RateAscending(left);
+            List<ListViewItem> sorted = RateAscending(left);
             sorted.Add(pivot);
             sorted.AddRange(RateAscending(right));
             return sorted;
         }
 
-        static List<Teacher> RateDescending(List<Teacher> list)
+        public static List<ListViewItem> RateDescending(List<ListViewItem> list)
         {
             if (list.Count <= 1)
                 return list;
 
             int pivotIndex = list.Count / 2;
-            Teacher pivot = list[pivotIndex];
-            List<Teacher> left = new List<Teacher>();
-            List<Teacher> right = new List<Teacher>();
+            ListViewItem pivot = list[pivotIndex];
+            List<ListViewItem> left = new List<ListViewItem>();
+            List<ListViewItem> right = new List<ListViewItem>();
 
             for (int i = 0; i < list.Count; i++)
             {
                 if (i == pivotIndex)
                     continue;
 
-                if (list[i].Rate >= pivot.Rate)
+                if (Convert.ToDouble(list[i].SubItems[4].Text) >= Convert.ToDouble(pivot.SubItems[4].Text))
                 {
                     left.Add(list[i]);
                 }
@@ -127,7 +128,7 @@ namespace teacher_evaluation_project.projectClasses
                 }
             }
 
-            List<Teacher> sorted = RateDescending(left);
+            List<ListViewItem> sorted = RateDescending(left);
             sorted.Add(pivot);
             sorted.AddRange(RateDescending(right));
             return sorted;

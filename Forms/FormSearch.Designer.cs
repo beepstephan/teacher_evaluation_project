@@ -28,9 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            ListViewItem listViewItem1 = new ListViewItem(new string[] { "Субботін", "Сергій", "Олександрович", "завідувач кафедризавідувач кафедризавідувач кафедризавідувач кафедри" }, -1);
-            radBtnABC = new RadioButton();
-            radBtnRating = new RadioButton();
             textBoxSurname = new TextBox();
             btnSearch = new Button();
             comboBoxDepartment = new ComboBox();
@@ -40,33 +37,8 @@
             columnHeader3 = new ColumnHeader();
             columnHeader4 = new ColumnHeader();
             columnHeader5 = new ColumnHeader();
+            sortComboBox = new ComboBox();
             SuspendLayout();
-            // 
-            // radBtnABC
-            // 
-            radBtnABC.AutoSize = true;
-            radBtnABC.Checked = true;
-            radBtnABC.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            radBtnABC.ForeColor = Color.Gainsboro;
-            radBtnABC.Location = new Point(39, 118);
-            radBtnABC.Name = "radBtnABC";
-            radBtnABC.Size = new Size(116, 21);
-            radBtnABC.TabIndex = 1;
-            radBtnABC.TabStop = true;
-            radBtnABC.Text = "За алфавітом";
-            radBtnABC.UseVisualStyleBackColor = true;
-            // 
-            // radBtnRating
-            // 
-            radBtnRating.AutoSize = true;
-            radBtnRating.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            radBtnRating.ForeColor = Color.Gainsboro;
-            radBtnRating.Location = new Point(183, 118);
-            radBtnRating.Name = "radBtnRating";
-            radBtnRating.Size = new Size(116, 21);
-            radBtnRating.TabIndex = 2;
-            radBtnRating.Text = "За рейтингом";
-            radBtnRating.UseVisualStyleBackColor = true;
             // 
             // textBoxSurname
             // 
@@ -91,6 +63,7 @@
             btnSearch.TabIndex = 4;
             btnSearch.Text = "Пошук";
             btnSearch.UseVisualStyleBackColor = false;
+            btnSearch.Click += btnSearch_Click;
             // 
             // comboBoxDepartment
             // 
@@ -109,7 +82,6 @@
             listTeachers.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3, columnHeader4, columnHeader5 });
             listTeachers.FullRowSelect = true;
             listTeachers.GridLines = true;
-            listTeachers.Items.AddRange(new ListViewItem[] { listViewItem1 });
             listTeachers.Location = new Point(39, 145);
             listTeachers.Name = "listTeachers";
             listTeachers.Size = new Size(549, 164);
@@ -143,18 +115,29 @@
             columnHeader5.Text = "Рейтинг";
             columnHeader5.Width = 70;
             // 
+            // sortComboBox
+            // 
+            sortComboBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            sortComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            sortComboBox.FormattingEnabled = true;
+            sortComboBox.Items.AddRange(new object[] { "Рейтинг за зростанням", "Рейтинг за спаданням", "За алфавітом А-Я", "За алфавітом Я-А" });
+            sortComboBox.Location = new Point(403, 115);
+            sortComboBox.Name = "sortComboBox";
+            sortComboBox.Size = new Size(185, 24);
+            sortComboBox.TabIndex = 7;
+            sortComboBox.SelectedIndexChanged += sortComboBox_SelectedIndexChanged;
+            // 
             // FormSearch
             // 
             AutoScaleDimensions = new SizeF(8F, 16F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(35, 35, 80);
             ClientSize = new Size(628, 322);
+            Controls.Add(sortComboBox);
             Controls.Add(listTeachers);
             Controls.Add(comboBoxDepartment);
             Controls.Add(btnSearch);
             Controls.Add(textBoxSurname);
-            Controls.Add(radBtnRating);
-            Controls.Add(radBtnABC);
             Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
             Name = "FormSearch";
             Text = "Пошук викладачів";
@@ -163,8 +146,6 @@
         }
 
         #endregion
-        private RadioButton radBtnABC;
-        private RadioButton radBtnRating;
         private TextBox textBoxSurname;
         private Button btnSearch;
         private ComboBox comboBoxDepartment;
@@ -174,5 +155,6 @@
         private ColumnHeader columnHeader3;
         private ColumnHeader columnHeader4;
         private ColumnHeader columnHeader5;
+        private ComboBox sortComboBox;
     }
 }
