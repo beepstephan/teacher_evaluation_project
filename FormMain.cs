@@ -95,8 +95,8 @@ namespace teacher_evaluation_project
                 {
                     btn.Font = new System.Drawing.Font(Theme.fontStyle, Theme.fontSize, System.Drawing.FontStyle.Regular);
                 }
-                titleBarText.Font = new System.Drawing.Font(Theme.fontStyle, 20, System.Drawing.FontStyle.Regular);
-                lblLogo.Font = new System.Drawing.Font(Theme.fontStyle, 20, System.Drawing.FontStyle.Regular);
+                titleBarText.Font = new System.Drawing.Font(Theme.fontStyle, titleBarText.Font.Size, System.Drawing.FontStyle.Regular);
+                lblLogo.Font = new System.Drawing.Font(Theme.fontStyle, lblLogo.Font.Size, System.Drawing.FontStyle.Regular);
             }
         }
 

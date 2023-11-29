@@ -17,10 +17,6 @@ namespace teacher_evaluation_project.Forms
         {
             InitializeComponent();
             SetTheme();
-            //labelGuide.Text = "Крок 1: \n Авторизуйтесь у вікні \"Увійти\", " +
-            //    "якщо у вас немає акаунту, зареєструйтесь, натиснувши " +
-            //    "на текст \"Ще немає облікового запису?\" \n Крок 2: \n Перейдіть" +
-            //    " до головного меню і натисніть на вікно \"Пошук викладачів\" \n Крок 3: \n";
         }
         public override void SetTheme()
         {
@@ -30,6 +26,23 @@ namespace teacher_evaluation_project.Forms
                 themeIndex = Theme.themeIndex;
                 BackColor = Theme.activeTheme.panelDesktopColor;
             }
+        }
+
+        public override void SetFont()
+        {
+            if (fontStyle != Theme.fontStyle || fontSize != Theme.fontSize)
+            {
+                fontStyle = Theme.fontStyle;
+                fontSize = Theme.fontSize;
+                lblTitle.Font = new System.Drawing.Font(Theme.fontStyle, Theme.fontSize + 1, System.Drawing.FontStyle.Bold);
+                labelGuide.Font = new System.Drawing.Font(Theme.fontStyle, Theme.fontSize, System.Drawing.FontStyle.Regular);
+            }
+        }
+
+        private void FormFaq_Paint(object sender, PaintEventArgs e)
+        {
+            labelGuide.MaximumSize = new System.Drawing.Size(Width - 70, labelGuide.MaximumSize.Height);
+            labelGuide.Location = new Point((Width - labelGuide.Width - 18) / 2, labelGuide.Location.Y);
         }
     }
 }

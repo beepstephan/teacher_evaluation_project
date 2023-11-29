@@ -242,7 +242,7 @@
             // lblLogo
             // 
             lblLogo.Dock = DockStyle.Right;
-            lblLogo.Font = new Font("Microsoft Sans Serif", 20F, FontStyle.Regular, GraphicsUnit.Point);
+            lblLogo.Font = new Font("Microsoft Sans Serif", 15F, FontStyle.Regular, GraphicsUnit.Point);
             lblLogo.ForeColor = Color.Gainsboro;
             lblLogo.Location = new Point(52, 0);
             lblLogo.Name = "lblLogo";

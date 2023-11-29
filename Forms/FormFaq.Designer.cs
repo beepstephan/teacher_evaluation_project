@@ -36,7 +36,7 @@
             // lblTitle
             // 
             lblTitle.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            lblTitle.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            lblTitle.Font = new Font("Microsoft Sans Serif", 11F, FontStyle.Bold, GraphicsUnit.Point);
             lblTitle.ForeColor = Color.Gainsboro;
             lblTitle.Location = new Point(11, 9);
             lblTitle.Name = "lblTitle";
@@ -47,11 +47,14 @@
             // 
             // labelGuide
             // 
-            labelGuide.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            labelGuide.Anchor = AnchorStyles.Top;
+            labelGuide.AutoSize = true;
             labelGuide.ForeColor = Color.Gainsboro;
-            labelGuide.Location = new Point(11, 57);
+            labelGuide.Location = new Point(28, 63);
+            labelGuide.MaximumSize = new Size(570, 500);
+            labelGuide.MinimumSize = new Size(570, 274);
             labelGuide.Name = "labelGuide";
-            labelGuide.Size = new Size(605, 275);
+            labelGuide.Size = new Size(570, 274);
             labelGuide.TabIndex = 1;
             labelGuide.Text = resources.GetString("labelGuide.Text");
             labelGuide.TextAlign = ContentAlignment.TopCenter;
@@ -60,6 +63,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 16F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoScroll = true;
             BackColor = Color.FromArgb(35, 35, 80);
             ClientSize = new Size(628, 341);
             Controls.Add(labelGuide);
@@ -67,7 +71,9 @@
             Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
             Name = "FormFaq";
             Text = "FAQ";
+            Paint += FormFaq_Paint;
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
