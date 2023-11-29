@@ -18,7 +18,7 @@ namespace teacher_evaluation_project.Forms
             InitializeComponent();
             SetTheme();
             UpDownFontSize.Value = (int)Theme.fontSize;
-            boxFontStyle.Text = Theme.fontStyle;
+            boxFontStyle.SelectedIndex = boxFontStyle.FindStringExact(Theme.fontStyle);
         }
         public override void SetTheme()
         {

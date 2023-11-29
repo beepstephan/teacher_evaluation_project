@@ -53,13 +53,15 @@
             UpDownFontSize.Maximum = new decimal(new int[] { 13, 0, 0, 0 });
             UpDownFontSize.Minimum = new decimal(new int[] { 10, 0, 0, 0 });
             UpDownFontSize.Name = "UpDownFontSize";
-            UpDownFontSize.Size = new Size(120, 23);
+            UpDownFontSize.Size = new Size(48, 23);
             UpDownFontSize.TabIndex = 4;
+            UpDownFontSize.TextAlign = HorizontalAlignment.Center;
             UpDownFontSize.Value = new decimal(new int[] { 10, 0, 0, 0 });
             UpDownFontSize.ValueChanged += UpDownFontSize_ValueChanged;
             // 
             // boxFontStyle
             // 
+            boxFontStyle.DropDownStyle = ComboBoxStyle.DropDownList;
             boxFontStyle.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
             boxFontStyle.FormattingEnabled = true;
             boxFontStyle.ImeMode = ImeMode.NoControl;
@@ -67,7 +69,7 @@
             boxFontStyle.Location = new Point(201, 79);
             boxFontStyle.Name = "boxFontStyle";
             boxFontStyle.RightToLeft = RightToLeft.No;
-            boxFontStyle.Size = new Size(120, 24);
+            boxFontStyle.Size = new Size(150, 24);
             boxFontStyle.TabIndex = 3;
             boxFontStyle.SelectedValueChanged += comboBoxFont_SelectedValueChanged;
             // 
