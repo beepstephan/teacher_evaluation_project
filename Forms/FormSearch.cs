@@ -19,11 +19,11 @@ namespace teacher_evaluation_project.Forms
     {
         List<ListViewItem> AllTeachers = new List<ListViewItem>()
         {
-            new ListViewItem(new string[]{"Дейнега", "Лариса", "", "Старший викладач", "9,1"}),
-            new ListViewItem(new string[]{"Качан", "Лариса", "", "Професор", "9,4"}),
-            new ListViewItem(new string[]{"Ав", "Лариса", "", "Доцент", "8,8"}),
-            new ListViewItem(new string[]{"П", "Лариса", "", "Завідувач кафедри", "7,9"}),
-            new ListViewItem(new string[]{"О", "Лариса", "", "Старший викладач", "9,5"})
+            new ListViewItem(new string[]{"Дейнега", "Лариса", "Юріївна", "Старший викладач", "9,1"}),
+            new ListViewItem(new string[]{"Качан", "Олександр", "Іванович", "Старший викладач", "9,4"}),
+            new ListViewItem(new string[]{"Каплієнко", "Тетяна", "Ігорівна", "Доцент", "8,8"}),
+            new ListViewItem(new string[]{"Субботін", "Сергій", "Олександрович", "Завідувач кафедри", "7,9"}),
+            new ListViewItem(new string[]{"Олійник", "Андрій", "Олександрович", "Професор", "9,5"})
         };
         public FormSearch()
         {
