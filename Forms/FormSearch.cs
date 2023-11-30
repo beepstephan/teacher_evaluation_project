@@ -23,7 +23,9 @@ namespace teacher_evaluation_project.Forms
             new ListViewItem(new string[]{"Качан", "Олександр", "Іванович", "Старший викладач", "9,4"}),
             new ListViewItem(new string[]{"Каплієнко", "Тетяна", "Ігорівна", "Доцент", "8,8"}),
             new ListViewItem(new string[]{"Субботін", "Сергій", "Олександрович", "Завідувач кафедри", "7,9"}),
-            new ListViewItem(new string[]{"Олійник", "Андрій", "Олександрович", "Професор", "9,5"})
+            new ListViewItem(new string[]{"Олійник", "Андрій", "Олександрович", "Професор", "9,5"}),
+            new ListViewItem(new string[]{"Каврін", "Дмитро", "Анатолійович", "Асистент", "9,3"}),
+            new ListViewItem(new string[]{"Полянський", "Едуард", "Дмитрович", "Лаборант", "8,6"})
         };
         public FormSearch()
         {
@@ -38,7 +40,7 @@ namespace teacher_evaluation_project.Forms
                 listTeachers.Items.Add(item);
             }
             sortComboBox.SelectedItem = sortComboBox.Items[2];
-            
+
         }
 
         public override void SetTheme()
@@ -133,6 +135,6 @@ namespace teacher_evaluation_project.Forms
                 listTeachers.Items.Add(item);
             }
         }
-       
+
     }
 }
