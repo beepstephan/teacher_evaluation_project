@@ -76,7 +76,6 @@
             comboBoxPosition.Name = "comboBoxPosition";
             comboBoxPosition.Size = new Size(138, 28);
             comboBoxPosition.TabIndex = 5;
-            comboBoxPosition.SelectedIndexChanged += comboBoxPosition_SelectedIndexChanged;
             // 
             // listTeachers
             // 

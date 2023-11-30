@@ -19,11 +19,11 @@ namespace teacher_evaluation_project.Forms
     {
         List<ListViewItem> AllTeachers = new List<ListViewItem>()
         {
-            new ListViewItem(new string[]{"Дейнега", "Лариса", "", "Професор", "9,1"}),
+            new ListViewItem(new string[]{"Дейнега", "Лариса", "", "Старший викладач", "9,1"}),
             new ListViewItem(new string[]{"Качан", "Лариса", "", "Професор", "9,4"}),
-            new ListViewItem(new string[]{"Ав", "Лариса", "", "", "8,8"}),
-            new ListViewItem(new string[]{"П", "Лариса", "", "", "7,9"}),
-            new ListViewItem(new string[]{"О", "Лариса", "", "", "9,5"})
+            new ListViewItem(new string[]{"Ав", "Лариса", "", "Доцент", "8,8"}),
+            new ListViewItem(new string[]{"П", "Лариса", "", "Завідувач кафедри", "7,9"}),
+            new ListViewItem(new string[]{"О", "Лариса", "", "Старший викладач", "9,5"})
         };
         public FormSearch()
         {
@@ -74,15 +74,10 @@ namespace teacher_evaluation_project.Forms
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
+            List<ListViewItem> list = new List<ListViewItem>(AllTeachers);
             if (textBoxSurname.Text.Length > 0)
             {
-                List<ListViewItem> list = new List<ListViewItem>();
-
-                foreach (ListViewItem item in listTeachers.Items)
-                {
-                    list.Add(item);
-                }
-                list = CustomSearch.SearchByName(list, textBoxSurname.Text);
+                list = CustomSearch.SearchByName(list, textBoxSurname.Text, comboBoxPosition.Text);
 
                 listTeachers.Items.Clear();
 
@@ -93,8 +88,11 @@ namespace teacher_evaluation_project.Forms
             }
             else
             {
+                list = CustomSearch.SearchByName(list, "", comboBoxPosition.Text);
+
                 listTeachers.Items.Clear();
-                foreach (ListViewItem item in AllTeachers)
+
+                foreach (ListViewItem item in list)
                 {
                     listTeachers.Items.Add(item);
                 }
@@ -110,79 +108,31 @@ namespace teacher_evaluation_project.Forms
             {
                 list.Add(item);
             }
+
             if (sortComboBox.SelectedIndex == 0)
             {
                 list = CustomSort.RateAscending(list);
-
-                listTeachers.Items.Clear();
-
-                foreach (ListViewItem item in list)
-                {
-                    listTeachers.Items.Add(item);
-                }
             }
             else if (sortComboBox.SelectedIndex == 1)
             {
                 list = CustomSort.RateDescending(list);
-
-                listTeachers.Items.Clear();
-
-                foreach (ListViewItem item in list)
-                {
-                    listTeachers.Items.Add(item);
-                }
             }
             else if (sortComboBox.SelectedIndex == 2)
             {
                 list = CustomSort.SurnameAscending(list);
-
-                listTeachers.Items.Clear();
-
-                foreach (ListViewItem item in list)
-                {
-                    listTeachers.Items.Add(item);
-                }
             }
             else if (sortComboBox.SelectedIndex == 3)
             {
                 list = CustomSort.SurnameDescending(list);
-
-                listTeachers.Items.Clear();
-
-                foreach (ListViewItem item in list)
-                {
-                    listTeachers.Items.Add(item);
-                }
             }
-        }
-
-        private void comboBoxPosition_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            List<ListViewItem> list = new List<ListViewItem>();
-            foreach (ListViewItem item in listTeachers.Items)
-                list.Add(item);
 
             listTeachers.Items.Clear();
 
-            list = CustomSearch.SearchByPosition(list, comboBoxPosition.Text);
             foreach (ListViewItem item in list)
             {
                 listTeachers.Items.Add(item);
             }
         }
-
-        //private void textBoxSurname_TextChanged(object sender, EventArgs e)
-        //{
-        //    List<ListViewItem> list = AllTeachers;
-
-        //    list = Search.SearchByName(list, textBoxSurname.Text);
-
-        //    listTeachers.Items.Clear();
-
-        //    foreach (ListViewItem item in list)
-        //    {
-        //        listTeachers.Items.Add(item);
-        //    }
-        //}
+       
     }
 }
