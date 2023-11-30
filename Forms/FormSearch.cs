@@ -19,8 +19,8 @@ namespace teacher_evaluation_project.Forms
     {
         List<ListViewItem> AllTeachers = new List<ListViewItem>()
         {
-            new ListViewItem(new string[]{"Дейнега", "Лариса", "", "", "9,1"}),
-            new ListViewItem(new string[]{"Качан", "Лариса", "", "", "9,4"}),
+            new ListViewItem(new string[]{"Дейнега", "Лариса", "", "Професор", "9,1"}),
+            new ListViewItem(new string[]{"Качан", "Лариса", "", "Професор", "9,4"}),
             new ListViewItem(new string[]{"Ав", "Лариса", "", "", "8,8"}),
             new ListViewItem(new string[]{"П", "Лариса", "", "", "7,9"}),
             new ListViewItem(new string[]{"О", "Лариса", "", "", "9,5"})
@@ -29,13 +29,16 @@ namespace teacher_evaluation_project.Forms
         {
             InitializeComponent();
             SetTheme();
-            
+
+            comboBoxPosition.SelectedItem = comboBoxPosition.Items[0];
+
             // завантаження викладачів 
             foreach (ListViewItem item in AllTeachers)
             {
                 listTeachers.Items.Add(item);
             }
             sortComboBox.SelectedItem = sortComboBox.Items[2];
+            
         }
 
         public override void SetTheme()
@@ -150,6 +153,21 @@ namespace teacher_evaluation_project.Forms
                 {
                     listTeachers.Items.Add(item);
                 }
+            }
+        }
+
+        private void comboBoxPosition_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            List<ListViewItem> list = new List<ListViewItem>();
+            foreach (ListViewItem item in listTeachers.Items)
+                list.Add(item);
+
+            listTeachers.Items.Clear();
+
+            list = CustomSearch.SearchByPosition(list, comboBoxPosition.Text);
+            foreach (ListViewItem item in list)
+            {
+                listTeachers.Items.Add(item);
             }
         }
 

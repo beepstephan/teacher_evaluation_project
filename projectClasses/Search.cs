@@ -19,5 +19,19 @@ namespace teacher_evaluation_project.projectClasses
 
             return result;
         }
+
+        public static List<ListViewItem> SearchByPosition(List<ListViewItem> list, string position)
+        {
+            List<ListViewItem> result = new List<ListViewItem>();
+            foreach (ListViewItem teacher in list)
+            {
+                if (teacher.SubItems[3].Text.Equals(position))
+                    result.Add(teacher);
+                    
+            }
+
+            return result;
+        }
+
     }
 }
