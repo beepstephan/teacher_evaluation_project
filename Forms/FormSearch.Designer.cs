@@ -28,45 +28,45 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBoxSurname = new System.Windows.Forms.TextBox();
-            this.btnSearch = new System.Windows.Forms.Button();
-            this.comboBoxPosition = new ComboBox();
-            this.listTeachers = new System.Windows.Forms.ListView();
-            this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader2 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader3 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader4 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader5 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader6 = new System.Windows.Forms.ColumnHeader();
-            this.sortComboBox = new ComboBox();
-            this.SuspendLayout();
+            textBoxSurname = new TextBox();
+            btnSearch = new Button();
+            comboBoxPosition = new ComboBox();
+            listTeachers = new ListView();
+            columnHeader6 = new ColumnHeader();
+            columnHeader1 = new ColumnHeader();
+            columnHeader2 = new ColumnHeader();
+            columnHeader3 = new ColumnHeader();
+            columnHeader4 = new ColumnHeader();
             columnHeader5 = new ColumnHeader();
+            sortComboBox = new ComboBox();
             SuspendLayout();
             // 
-            this.textBoxSurname.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBoxSurname.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBoxSurname.Location = new System.Drawing.Point(39, 26);
-            this.textBoxSurname.Name = "textBoxSurname";
-            this.textBoxSurname.Size = new System.Drawing.Size(185, 23);
-            this.textBoxSurname.TabIndex = 3;
-            this.textBoxSurname.Text = "Введіть прізвище";
+            // textBoxSurname
+            // 
+            textBoxSurname.Anchor = AnchorStyles.Top;
+            textBoxSurname.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            textBoxSurname.Location = new Point(39, 26);
+            textBoxSurname.Name = "textBoxSurname";
+            textBoxSurname.Size = new Size(185, 23);
             textBoxSurname.TabIndex = 3;
             textBoxSurname.Text = "Введіть прізвище";
             // 
-            this.btnSearch.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(65)))));
-            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnSearch.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnSearch.Location = new System.Drawing.Point(267, 70);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(94, 33);
-            this.btnSearch.TabIndex = 4;
-            this.btnSearch.Text = "Пошук";
-            this.btnSearch.UseVisualStyleBackColor = false;
-            this.btnSearch.Click += btnSearch_Click;
+            // btnSearch
+            // 
+            btnSearch.Anchor = AnchorStyles.Top;
+            btnSearch.BackColor = Color.FromArgb(30, 30, 65);
+            btnSearch.FlatStyle = FlatStyle.Flat;
+            btnSearch.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            btnSearch.ForeColor = Color.Gainsboro;
+            btnSearch.Location = new Point(267, 70);
+            btnSearch.Name = "btnSearch";
+            btnSearch.Size = new Size(94, 33);
+            btnSearch.TabIndex = 4;
             btnSearch.Text = "Пошук";
             btnSearch.UseVisualStyleBackColor = false;
+            btnSearch.Click += btnSearch_Click;
+            // 
+            // comboBoxPosition
             // 
             comboBoxPosition.Anchor = AnchorStyles.Top;
             comboBoxPosition.DropDownStyle = ComboBoxStyle.DropDownList;
@@ -79,58 +79,51 @@
             comboBoxPosition.Size = new Size(152, 24);
             comboBoxPosition.TabIndex = 5;
             // 
-            this.listTeachers.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.listTeachers.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader6,
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3,
-            this.columnHeader4,
-            this.columnHeader5});
-            this.listTeachers.FullRowSelect = true;
-            this.listTeachers.GridLines = true;
-            this.listTeachers.Location = new System.Drawing.Point(39, 145);
-            this.listTeachers.MultiSelect = false;
-            this.listTeachers.Name = "listTeachers";
-            this.listTeachers.Size = new System.Drawing.Size(549, 183);
-            this.listTeachers.TabIndex = 6;
-            this.listTeachers.UseCompatibleStateImageBehavior = false;
-            this.listTeachers.View = System.Windows.Forms.View.Details;
-
+            // listTeachers
+            // 
+            listTeachers.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            listTeachers.Columns.AddRange(new ColumnHeader[] { columnHeader6, columnHeader1, columnHeader2, columnHeader3, columnHeader4, columnHeader5 });
+            listTeachers.FullRowSelect = true;
+            listTeachers.GridLines = true;
+            listTeachers.Location = new Point(39, 145);
+            listTeachers.MultiSelect = false;
+            listTeachers.Name = "listTeachers";
+            listTeachers.Size = new Size(549, 165);
+            listTeachers.TabIndex = 6;
+            listTeachers.UseCompatibleStateImageBehavior = false;
             listTeachers.View = View.Details;
             listTeachers.SelectedIndexChanged += listTeachers_SelectedIndexChanged;
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "Прізвище";
-            this.columnHeader1.Width = 100;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Ім\'я";
-            this.columnHeader2.Width = 80;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "Побатькові";
-            this.columnHeader3.Width = 120;
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "Посада";
-            this.columnHeader4.Width = 120;
-            // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Text = "Рейтинг";
-            this.columnHeader5.Width = 70;
+            listTeachers.SizeChanged += listTeachers_SizeChanged;
             // 
             // columnHeader6
             // 
-            this.columnHeader6.Text = "ID";
-            this.columnHeader6.Width = 40;
+            columnHeader6.Text = "ID";
+            columnHeader6.Width = 40;
+            // 
+            // columnHeader1
+            // 
+            columnHeader1.Text = "Прізвище";
+            columnHeader1.Width = 100;
+            // 
+            // columnHeader2
+            // 
+            columnHeader2.Text = "Ім'я";
+            columnHeader2.Width = 80;
+            // 
+            // columnHeader3
+            // 
+            columnHeader3.Text = "Побатькові";
+            columnHeader3.Width = 120;
+            // 
+            // columnHeader4
+            // 
+            columnHeader4.Text = "Посада";
+            columnHeader4.Width = 135;
+            // 
+            // columnHeader5
+            // 
+            columnHeader5.Text = "Рейтинг";
+            columnHeader5.Width = 66;
             // 
             // sortComboBox
             // 
@@ -144,6 +137,8 @@
             sortComboBox.TabIndex = 7;
             sortComboBox.SelectedIndexChanged += sortComboBox_SelectedIndexChanged;
             // 
+            // FormSearch
+            // 
             AutoScaleDimensions = new SizeF(8F, 16F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(35, 35, 80);
@@ -156,8 +151,6 @@
             Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
             Name = "FormSearch";
             Text = "Пошук викладачів";
-            ResumeLayout(false);
-            PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }

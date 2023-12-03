@@ -48,8 +48,8 @@ namespace teacher_evaluation_project.Forms
         public MySqlConnection connection;
         public MySqlCommand command;
         const string connect = "server=localhost;port=3306;username=root;password=root;database=teachers";
-        
-        
+
+
         public void LoadTeachers()
         {
 
@@ -57,7 +57,7 @@ namespace teacher_evaluation_project.Forms
             {
                 connection = new MySqlConnection(connect);
                 connection.Open();
-                
+
                 string script = "SELECT id, surname, name, middlename, pos, rate FROM `dep`";
                 MySqlDataAdapter adapter = new MySqlDataAdapter(script, connect);
                 DataTable dt = new DataTable();
@@ -68,7 +68,7 @@ namespace teacher_evaluation_project.Forms
                     ListViewItem listitem = new ListViewItem(new string[] { dr["id"].ToString(), dr["surname"].ToString(), dr["name"].ToString(), dr["middlename"].ToString(), dr["pos"].ToString(), dr["rate"].ToString(), });
                     AllTeachers.Add(listitem);
                 }
-                
+
                 connection.Close();
             }
             catch
