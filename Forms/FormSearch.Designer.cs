@@ -47,7 +47,7 @@
             textBoxSurname.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
             textBoxSurname.Location = new Point(39, 26);
             textBoxSurname.Name = "textBoxSurname";
-            textBoxSurname.Size = new Size(185, 23);
+            textBoxSurname.Size = new Size(185, 26);
             textBoxSurname.TabIndex = 3;
             textBoxSurname.Text = "Введіть прізвище";
             // 
@@ -70,13 +70,13 @@
             // 
             comboBoxPosition.Anchor = AnchorStyles.Top;
             comboBoxPosition.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBoxPosition.DropDownWidth = 226;
+            comboBoxPosition.DropDownWidth = 300;
             comboBoxPosition.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
             comboBoxPosition.FormattingEnabled = true;
-            comboBoxPosition.Items.AddRange(new object[] { "Усі посади", "Завідувач кафедри", "Професор", "Доцент", "Старший викладач", "Завідувач лабораторії", "Асистент / Інженер / Лаборант", "Сумісник / Погодинник" });
+            comboBoxPosition.Items.AddRange(new object[] { "Усі посади", "Зав кафедри", "Професор кафедри", "Доцент кафедри", "Старший викладач кафедри", "Завідувач лабораторії кафедри", "Асистент кафедри", "Лаборант кафедри", "Сумісник кафедри" });
             comboBoxPosition.Location = new Point(292, 25);
             comboBoxPosition.Name = "comboBoxPosition";
-            comboBoxPosition.Size = new Size(152, 24);
+            comboBoxPosition.Size = new Size(152, 28);
             comboBoxPosition.TabIndex = 5;
             // 
             // listTeachers
@@ -129,17 +129,18 @@
             // 
             sortComboBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             sortComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            sortComboBox.DropDownWidth = 205;
             sortComboBox.FormattingEnabled = true;
             sortComboBox.Items.AddRange(new object[] { "Рейтинг за зростанням", "Рейтинг за спаданням", "За алфавітом А-Я", "За алфавітом Я-А" });
             sortComboBox.Location = new Point(403, 115);
             sortComboBox.Name = "sortComboBox";
-            sortComboBox.Size = new Size(185, 24);
+            sortComboBox.Size = new Size(185, 28);
             sortComboBox.TabIndex = 7;
             sortComboBox.SelectedIndexChanged += sortComboBox_SelectedIndexChanged;
             // 
             // FormSearch
             // 
-            AutoScaleDimensions = new SizeF(8F, 16F);
+            AutoScaleDimensions = new SizeF(10F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(35, 35, 80);
             ClientSize = new Size(628, 322);

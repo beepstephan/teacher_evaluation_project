@@ -111,7 +111,7 @@ namespace teacher_evaluation_project.Forms
 
                 listTeachers.Items.Clear();
 
-                foreach (ListViewItem item in AllTeachers)
+                foreach (ListViewItem item in list)
                 {
                     listTeachers.Items.Add(item);
                 }
