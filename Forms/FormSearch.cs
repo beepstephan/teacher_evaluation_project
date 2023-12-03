@@ -17,13 +17,14 @@ namespace teacher_evaluation_project.Forms
 {
     public partial class FormSearch : FormProject
     {
+        List<ListViewItem> AllTeachers = new List<ListViewItem>();
         public FormSearch()
         {
             InitializeComponent();
             SetTheme();
 
             textBoxSurname.AddPlaceholder("Введіть прізфище");
-            // завантаження викладачів 
+            LoadTeachers();
 
         }
 
@@ -38,6 +39,38 @@ namespace teacher_evaluation_project.Forms
             }
         }
 
+
+        public MySqlConnection connection;
+        public MySqlCommand command;
+        const string connect = "server=localhost;port=3306;username=root;password=root;database=teachers";
+        
+        
+        public void LoadTeachers()
+        {
+
+            try
+            {
+                connection = new MySqlConnection(connect);
+                connection.Open();
+                
+                string script = "SELECT id, surname, name, middlename, pos, rate FROM `dep`";
+                MySqlDataAdapter adapter = new MySqlDataAdapter(script, connect);
+                DataTable dt = new DataTable();
+                adapter.Fill(dt);
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    DataRow dr = dt.Rows[i];
+                    ListViewItem listitem = new ListViewItem(new string[] { dr["id"].ToString(), dr["surname"].ToString(), dr["name"].ToString(), dr["middlename"].ToString(), dr["pos"].ToString(), dr["rate"].ToString(), });
+                    AllTeachers.Add(listitem);
+                }
+                
+                connection.Close();
+            }
+            catch
+            {
+                MessageBox.Show("Connection lost");
+            }
+        }
         private void listTeachers_SelectedIndexChanged(object sender, EventArgs e)
         {
 
