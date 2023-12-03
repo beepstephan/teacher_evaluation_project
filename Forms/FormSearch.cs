@@ -23,14 +23,14 @@ namespace teacher_evaluation_project.Forms
             InitializeComponent();
             SetTheme();
 
-            textBoxSurname.AddPlaceholder("Введіть прізфище");
+            textBoxSurname.AddPlaceholder("Введіть прізвище");
             LoadTeachers();
             foreach (ListViewItem item in AllTeachers)
             {
                 listTeachers.Items.Add(item);
             }
-            sortComboBox.SelectedItem = sortComboBox.Items[2];
             comboBoxPosition.SelectedItem = comboBoxPosition.Items[0];
+            sortComboBox.SelectedItem = sortComboBox.Items[2];
         }
 
         public override void SetTheme()
@@ -78,7 +78,6 @@ namespace teacher_evaluation_project.Forms
         }
         private void listTeachers_SelectedIndexChanged(object sender, EventArgs e)
         {
-
             if (listTeachers.SelectedItems.Count > 0)
             {
                 ListViewItem item = listTeachers.SelectedItems[0];
@@ -89,13 +88,13 @@ namespace teacher_evaluation_project.Forms
 
         private void listTeachers_SizeChanged(object sender, EventArgs e)
         {
-            listTeachers.Columns[4].Width = listTeachers.Width - 6 - (listTeachers.Columns[0].Width + listTeachers.Columns[1].Width + listTeachers.Columns[2].Width + listTeachers.Columns[3].Width + listTeachers.Columns[5].Width);
+            listTeachers.Columns[4].Width = listTeachers.Width - 21 - (listTeachers.Columns[0].Width + listTeachers.Columns[1].Width + listTeachers.Columns[2].Width + listTeachers.Columns[3].Width + listTeachers.Columns[5].Width);
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
             List<ListViewItem> list = new List<ListViewItem>(AllTeachers);
-            if (textBoxSurname.Text.Length > 0)
+            if (textBoxSurname.Text != "Введіть прізвище")
             {
                 list = CustomSearch.SearchByName(list, textBoxSurname.Text, comboBoxPosition.Text);
 
@@ -112,12 +111,12 @@ namespace teacher_evaluation_project.Forms
 
                 listTeachers.Items.Clear();
 
-                foreach (ListViewItem item in list)
+                foreach (ListViewItem item in AllTeachers)
                 {
                     listTeachers.Items.Add(item);
                 }
             }
-
+            sortComboBox_SelectedIndexChanged(sortComboBox, e);
         }
 
         private void sortComboBox_SelectedIndexChanged(object sender, EventArgs e)

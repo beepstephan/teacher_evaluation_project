@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             textBoxComment = new RichTextBox();
-            lblTeacherName = new Label();
+            lblName = new Label();
             btnDone = new Button();
             trackBarRating = new TrackBar();
             lblCounter = new Label();
@@ -48,17 +48,17 @@
             textBoxComment.Text = "";
             textBoxComment.TextChanged += textBoxComment_TextChanged;
             // 
-            // lblTeacherName
+            // lblName
             // 
-            lblTeacherName.Dock = DockStyle.Top;
-            lblTeacherName.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            lblTeacherName.ForeColor = Color.Gainsboro;
-            lblTeacherName.Location = new Point(0, 0);
-            lblTeacherName.Name = "lblTeacherName";
-            lblTeacherName.Size = new Size(628, 28);
-            lblTeacherName.TabIndex = 1;
-            lblTeacherName.Text = "ПІБ";
-            lblTeacherName.TextAlign = ContentAlignment.MiddleCenter;
+            lblName.Dock = DockStyle.Top;
+            lblName.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            lblName.ForeColor = Color.Gainsboro;
+            lblName.Location = new Point(0, 0);
+            lblName.Name = "lblName";
+            lblName.Size = new Size(628, 28);
+            lblName.TabIndex = 1;
+            lblName.Text = "ПІБ";
+            lblName.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // btnDone
             // 
@@ -104,7 +104,7 @@
             Controls.Add(lblCounter);
             Controls.Add(trackBarRating);
             Controls.Add(btnDone);
-            Controls.Add(lblTeacherName);
+            Controls.Add(lblName);
             Controls.Add(textBoxComment);
             Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
             Name = "FormComment";
@@ -117,7 +117,7 @@
         #endregion
 
         private RichTextBox textBoxComment;
-        private Label lblTeacherName;
+        private Label lblName;
         private Button btnDone;
         private TrackBar trackBarRating;
         private Label lblCounter;

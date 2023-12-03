@@ -13,6 +13,7 @@ namespace teacher_evaluation_project.Forms
 {
     public partial class FormComment : FormProject
     {
+        ListViewItem teacher;
         public FormComment()
         {
             InitializeComponent();
@@ -22,15 +23,22 @@ namespace teacher_evaluation_project.Forms
         {
             InitializeComponent();
             SetTheme();
-            lblTeacherName.Text = $"{item.Text} {item.SubItems[1].Text} {item.SubItems[2].Text}";
+
+            teacher = item;
+
+            // додавання даних на форму
+            lblName.Text = $"{item.SubItems[1].Text} {item.SubItems[2].Text} {item.SubItems[3].Text}";
         }
 
         private void btnDone_Click(object sender, EventArgs e)
         {
             // логіка
-            // ...
+            // пошук викладача у БД за ID (teacher.Text)
+
+            // оновлення даних
 
             // повернення до вікна пошуку викладачів
+            FormMain.mainForm.formSearch = new FormSearch();
             FormMain.mainForm.OpenChildForm(FormMain.mainForm.formSearch);
         }
         public override void SetTheme()

@@ -35,7 +35,6 @@
             lblActivity = new Label();
             btnComment = new Button();
             lblGpa = new Label();
-            listComments = new ListView();
             ((System.ComponentModel.ISupportInitialize)photoTeacher).BeginInit();
             SuspendLayout();
             // 
@@ -118,22 +117,12 @@
             lblGpa.TabIndex = 6;
             lblGpa.Text = "Середні оцінка: 8.4/10";
             // 
-            // listComments
-            // 
-            listComments.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            listComments.Location = new Point(37, 226);
-            listComments.Name = "listComments";
-            listComments.Size = new Size(563, 102);
-            listComments.TabIndex = 7;
-            listComments.UseCompatibleStateImageBehavior = false;
-            // 
             // FormTeacher
             // 
             AutoScaleDimensions = new SizeF(8F, 16F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(35, 35, 80);
             ClientSize = new Size(628, 341);
-            Controls.Add(listComments);
             Controls.Add(lblGpa);
             Controls.Add(btnComment);
             Controls.Add(lblActivity);
@@ -158,6 +147,5 @@
         private Label lblActivity;
         private Button btnComment;
         private Label lblGpa;
-        private ListView listComments;
     }
 }

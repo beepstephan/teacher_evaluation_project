@@ -23,8 +23,12 @@ namespace teacher_evaluation_project.Forms
         {
             InitializeComponent();
             SetTheme();
+
             teacher = item;
-            lblName.Text = $"{item.Text} {item.SubItems[1].Text} {item.SubItems[2].Text}";
+
+            // запит до БД
+            // додаємо дані на форму
+            lblName.Text = $"{item.SubItems[1].Text} {item.SubItems[2].Text} {item.SubItems[3].Text}";
         }
 
         private void btnComment_Click(object sender, EventArgs e)

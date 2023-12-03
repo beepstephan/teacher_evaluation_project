@@ -131,6 +131,7 @@ namespace teacher_evaluation_project
             if (currentUser.isLogIn == true)
             {
                 ActivateMenuItem(sender);
+                formSearch = new FormSearch();
                 OpenChildForm(formSearch);
             }
             else
