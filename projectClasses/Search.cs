@@ -19,7 +19,7 @@ namespace teacher_evaluation_project.projectClasses
 
                 foreach (ListViewItem teacher in list)
                 {
-                    string fullName = teacher.Text + " " + teacher.SubItems[1].Text + " " + teacher.SubItems[2].Text;
+                    string fullName = teacher.SubItems[1].Text + " " + teacher.SubItems[2].Text + " " + teacher.SubItems[3].Text;
                     if (IsContains(fullName, matches))
                         result.Add(teacher);
                 }
@@ -28,7 +28,7 @@ namespace teacher_evaluation_project.projectClasses
             {
                 foreach (ListViewItem teacher in list)
                 {
-                    if (position.Contains(teacher.SubItems[3].Text))
+                    if (position.Contains(teacher.SubItems[4].Text))
                     {
                         result.Add(teacher);
                     }
@@ -41,8 +41,8 @@ namespace teacher_evaluation_project.projectClasses
 
                 foreach (ListViewItem teacher in list)
                 {
-                    string fullName = teacher.Text + " " + teacher.SubItems[1].Text + " " + teacher.SubItems[2].Text;
-                    if (IsContains(fullName, matches) && position.Contains(teacher.SubItems[3].Text))
+                    string fullName = teacher.SubItems[1].Text + " " + teacher.SubItems[2].Text + " " + teacher.SubItems[3].Text;
+                    if (IsContains(fullName, matches) && position.Contains(teacher.SubItems[4].Text))
                     {
                         result.Add(teacher);
                     }

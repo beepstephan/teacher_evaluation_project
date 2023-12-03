@@ -25,7 +25,7 @@ namespace teacher_evaluation_project.projectClasses
                 if (i == pivotIndex)
                     continue;
 
-                if (String.Compare(list[i].Text, pivot.Text) <= 0)
+                if (String.Compare(list[i].SubItems[1].Text, pivot.SubItems[1].Text) <= 0)
                 {
                     left.Add(list[i]);
                 }
@@ -56,7 +56,7 @@ namespace teacher_evaluation_project.projectClasses
                 if (i == pivotIndex)
                     continue;
 
-                if (String.Compare(list[i].Text, pivot.Text) > 0)
+                if (String.Compare(list[i].SubItems[1].Text, pivot.SubItems[1].Text) > 0)
                 {
                     left.Add(list[i]);
                 }
@@ -87,7 +87,7 @@ namespace teacher_evaluation_project.projectClasses
                 if (i == pivotIndex)
                     continue;
 
-                if (Convert.ToDouble(list[i].SubItems[4].Text) <= Convert.ToDouble(pivot.SubItems[4].Text))
+                if (Convert.ToDouble(list[i].SubItems[5].Text) <= Convert.ToDouble(pivot.SubItems[5].Text))
                 {
                     left.Add(list[i]);
                 }
@@ -118,7 +118,7 @@ namespace teacher_evaluation_project.projectClasses
                 if (i == pivotIndex)
                     continue;
 
-                if (Convert.ToDouble(list[i].SubItems[4].Text) >= Convert.ToDouble(pivot.SubItems[4].Text))
+                if (Convert.ToDouble(list[i].SubItems[5].Text) >= Convert.ToDouble(pivot.SubItems[5].Text))
                 {
                     left.Add(list[i]);
                 }

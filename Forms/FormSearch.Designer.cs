@@ -78,8 +78,6 @@
             comboBoxPosition.Name = "comboBoxPosition";
             comboBoxPosition.Size = new Size(152, 24);
             comboBoxPosition.TabIndex = 5;
-            comboBoxDepartment.TabIndex = 5;
-            comboBoxDepartment.Text = "Кафедра";
             // 
             this.listTeachers.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 

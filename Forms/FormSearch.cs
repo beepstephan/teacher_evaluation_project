@@ -30,7 +30,7 @@ namespace teacher_evaluation_project.Forms
                 listTeachers.Items.Add(item);
             }
             sortComboBox.SelectedItem = sortComboBox.Items[2];
-
+            comboBoxPosition.SelectedItem = comboBoxPosition.Items[0];
         }
 
         public override void SetTheme()
@@ -89,7 +89,7 @@ namespace teacher_evaluation_project.Forms
 
         private void listTeachers_SizeChanged(object sender, EventArgs e)
         {
-            listTeachers.Columns[3].Width = listTeachers.Width - 6 - (listTeachers.Columns[0].Width + listTeachers.Columns[1].Width + listTeachers.Columns[2].Width + listTeachers.Columns[4].Width);
+            listTeachers.Columns[4].Width = listTeachers.Width - 6 - (listTeachers.Columns[0].Width + listTeachers.Columns[1].Width + listTeachers.Columns[2].Width + listTeachers.Columns[3].Width + listTeachers.Columns[5].Width);
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
