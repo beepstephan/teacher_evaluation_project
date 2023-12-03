@@ -25,6 +25,11 @@ namespace teacher_evaluation_project.Forms
 
             textBoxSurname.AddPlaceholder("Введіть прізфище");
             LoadTeachers();
+            foreach (ListViewItem item in AllTeachers)
+            {
+                listTeachers.Items.Add(item);
+            }
+            sortComboBox.SelectedItem = sortComboBox.Items[2];
 
         }
 
@@ -86,5 +91,68 @@ namespace teacher_evaluation_project.Forms
         {
             listTeachers.Columns[3].Width = listTeachers.Width - 6 - (listTeachers.Columns[0].Width + listTeachers.Columns[1].Width + listTeachers.Columns[2].Width + listTeachers.Columns[4].Width);
         }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            List<ListViewItem> list = new List<ListViewItem>(AllTeachers);
+            if (textBoxSurname.Text.Length > 0)
+            {
+                list = CustomSearch.SearchByName(list, textBoxSurname.Text, comboBoxPosition.Text);
+
+                listTeachers.Items.Clear();
+
+                foreach (ListViewItem item in list)
+                {
+                    listTeachers.Items.Add(item);
+                }
+            }
+            else
+            {
+                list = CustomSearch.SearchByName(list, "", comboBoxPosition.Text);
+
+                listTeachers.Items.Clear();
+
+                foreach (ListViewItem item in list)
+                {
+                    listTeachers.Items.Add(item);
+                }
+            }
+
+        }
+
+        private void sortComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            List<ListViewItem> list = new List<ListViewItem>();
+
+            foreach (ListViewItem item in listTeachers.Items)
+            {
+                list.Add(item);
+            }
+
+            if (sortComboBox.SelectedIndex == 0)
+            {
+                list = CustomSort.RateAscending(list);
+            }
+            else if (sortComboBox.SelectedIndex == 1)
+            {
+                list = CustomSort.RateDescending(list);
+            }
+            else if (sortComboBox.SelectedIndex == 2)
+            {
+                list = CustomSort.SurnameAscending(list);
+            }
+            else if (sortComboBox.SelectedIndex == 3)
+            {
+                list = CustomSort.SurnameDescending(list);
+            }
+
+            listTeachers.Items.Clear();
+
+            foreach (ListViewItem item in list)
+            {
+                listTeachers.Items.Add(item);
+            }
+        }
+
     }
 }

@@ -30,7 +30,7 @@
         {
             this.textBoxSurname = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
-            this.comboBoxDepartment = new System.Windows.Forms.ComboBox();
+            this.comboBoxPosition = new ComboBox();
             this.listTeachers = new System.Windows.Forms.ListView();
             this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader2 = new System.Windows.Forms.ColumnHeader();
@@ -38,9 +38,10 @@
             this.columnHeader4 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader5 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader6 = new System.Windows.Forms.ColumnHeader();
+            this.sortComboBox = new ComboBox();
             this.SuspendLayout();
-            // 
-            // textBoxSurname
+            columnHeader5 = new ColumnHeader();
+            SuspendLayout();
             // 
             this.textBoxSurname.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.textBoxSurname.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -49,8 +50,8 @@
             this.textBoxSurname.Size = new System.Drawing.Size(185, 23);
             this.textBoxSurname.TabIndex = 3;
             this.textBoxSurname.Text = "Введіть прізвище";
-            // 
-            // btnSearch
+            textBoxSurname.TabIndex = 3;
+            textBoxSurname.Text = "Введіть прізвище";
             // 
             this.btnSearch.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(65)))));
@@ -63,19 +64,22 @@
             this.btnSearch.TabIndex = 4;
             this.btnSearch.Text = "Пошук";
             this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += btnSearch_Click;
+            btnSearch.Text = "Пошук";
+            btnSearch.UseVisualStyleBackColor = false;
             // 
-            // comboBoxDepartment
-            // 
-            this.comboBoxDepartment.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.comboBoxDepartment.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.comboBoxDepartment.FormattingEnabled = true;
-            this.comboBoxDepartment.Location = new System.Drawing.Point(267, 26);
-            this.comboBoxDepartment.Name = "comboBoxDepartment";
-            this.comboBoxDepartment.Size = new System.Drawing.Size(138, 24);
-            this.comboBoxDepartment.TabIndex = 5;
-            this.comboBoxDepartment.Text = "Кафедра";
-            // 
-            // listTeachers
+            comboBoxPosition.Anchor = AnchorStyles.Top;
+            comboBoxPosition.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxPosition.DropDownWidth = 226;
+            comboBoxPosition.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            comboBoxPosition.FormattingEnabled = true;
+            comboBoxPosition.Items.AddRange(new object[] { "Усі посади", "Завідувач кафедри", "Професор", "Доцент", "Старший викладач", "Завідувач лабораторії", "Асистент / Інженер / Лаборант", "Сумісник / Погодинник" });
+            comboBoxPosition.Location = new Point(292, 25);
+            comboBoxPosition.Name = "comboBoxPosition";
+            comboBoxPosition.Size = new Size(152, 24);
+            comboBoxPosition.TabIndex = 5;
+            comboBoxDepartment.TabIndex = 5;
+            comboBoxDepartment.Text = "Кафедра";
             // 
             this.listTeachers.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
@@ -96,6 +100,9 @@
             this.listTeachers.TabIndex = 6;
             this.listTeachers.UseCompatibleStateImageBehavior = false;
             this.listTeachers.View = System.Windows.Forms.View.Details;
+
+            listTeachers.View = View.Details;
+            listTeachers.SelectedIndexChanged += listTeachers_SelectedIndexChanged;
             // 
             // columnHeader1
             // 
@@ -127,34 +134,47 @@
             this.columnHeader6.Text = "ID";
             this.columnHeader6.Width = 40;
             // 
-            // FormSearch
+            // sortComboBox
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(80)))));
-            this.ClientSize = new System.Drawing.Size(628, 341);
-            this.Controls.Add(this.listTeachers);
-            this.Controls.Add(this.comboBoxDepartment);
-            this.Controls.Add(this.btnSearch);
-            this.Controls.Add(this.textBoxSurname);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Name = "FormSearch";
-            this.Text = "Пошук викладачів";
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            sortComboBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            sortComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            sortComboBox.FormattingEnabled = true;
+            sortComboBox.Items.AddRange(new object[] { "Рейтинг за зростанням", "Рейтинг за спаданням", "За алфавітом А-Я", "За алфавітом Я-А" });
+            sortComboBox.Location = new Point(403, 115);
+            sortComboBox.Name = "sortComboBox";
+            sortComboBox.Size = new Size(185, 24);
+            sortComboBox.TabIndex = 7;
+            sortComboBox.SelectedIndexChanged += sortComboBox_SelectedIndexChanged;
+            // 
+            AutoScaleDimensions = new SizeF(8F, 16F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(35, 35, 80);
+            ClientSize = new Size(628, 322);
+            Controls.Add(sortComboBox);
+            Controls.Add(listTeachers);
+            Controls.Add(comboBoxPosition);
+            Controls.Add(btnSearch);
+            Controls.Add(textBoxSurname);
+            Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            Name = "FormSearch";
+            Text = "Пошук викладачів";
+            ResumeLayout(false);
+            PerformLayout();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
         private TextBox textBoxSurname;
         private Button btnSearch;
-        private ComboBox comboBoxDepartment;
+        private ComboBox comboBoxPosition;
         private ListView listTeachers;
         private ColumnHeader columnHeader1;
         private ColumnHeader columnHeader2;
         private ColumnHeader columnHeader3;
+        private ComboBox sortComboBox;
+        private ColumnHeader columnHeader6;
         private ColumnHeader columnHeader4;
         private ColumnHeader columnHeader5;
-        private ColumnHeader columnHeader6;
     }
 }
