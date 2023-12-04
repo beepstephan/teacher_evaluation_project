@@ -47,9 +47,9 @@
             textBoxSurname.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
             textBoxSurname.Location = new Point(39, 26);
             textBoxSurname.Name = "textBoxSurname";
-            textBoxSurname.Size = new Size(185, 26);
+            textBoxSurname.Size = new Size(185, 23);
             textBoxSurname.TabIndex = 3;
-            textBoxSurname.Text = "Введіть прізвище";
+            textBoxSurname.Text = "Введіть дані";
             // 
             // btnSearch
             // 
@@ -76,7 +76,7 @@
             comboBoxPosition.Items.AddRange(new object[] { "Усі посади", "Зав кафедри", "Професор кафедри", "Доцент кафедри", "Старший викладач кафедри", "Завідувач лабораторії кафедри", "Асистент кафедри", "Лаборант кафедри", "Сумісник кафедри" });
             comboBoxPosition.Location = new Point(292, 25);
             comboBoxPosition.Name = "comboBoxPosition";
-            comboBoxPosition.Size = new Size(152, 28);
+            comboBoxPosition.Size = new Size(152, 24);
             comboBoxPosition.TabIndex = 5;
             // 
             // listTeachers
@@ -134,13 +134,13 @@
             sortComboBox.Items.AddRange(new object[] { "Рейтинг за зростанням", "Рейтинг за спаданням", "За алфавітом А-Я", "За алфавітом Я-А" });
             sortComboBox.Location = new Point(403, 115);
             sortComboBox.Name = "sortComboBox";
-            sortComboBox.Size = new Size(185, 28);
+            sortComboBox.Size = new Size(185, 24);
             sortComboBox.TabIndex = 7;
             sortComboBox.SelectedIndexChanged += sortComboBox_SelectedIndexChanged;
             // 
             // FormSearch
             // 
-            AutoScaleDimensions = new SizeF(10F, 20F);
+            AutoScaleDimensions = new SizeF(8F, 16F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(35, 35, 80);
             ClientSize = new Size(628, 322);

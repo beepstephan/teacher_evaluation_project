@@ -65,7 +65,7 @@ namespace teacher_evaluation_project.projectClasses
                 {
                     field.Text = "";
                     field.ForeColor = Color.Black;
-                    field.Font = new System.Drawing.Font(Theme.fontStyle + 1, Theme.fontSize, System.Drawing.FontStyle.Bold);
+                    field.Font = new System.Drawing.Font(Theme.fontStyle, Theme.fontSize, System.Drawing.FontStyle.Bold);
                 }
             };
 
@@ -75,7 +75,7 @@ namespace teacher_evaluation_project.projectClasses
                 {
                     field.Text = textPlaceholder;
                     field.ForeColor = Color.Gray;
-                    field.Font = new System.Drawing.Font(Theme.fontStyle + 1, Theme.fontSize, System.Drawing.FontStyle.Regular);
+                    field.Font = new System.Drawing.Font(Theme.fontStyle, Theme.fontSize, System.Drawing.FontStyle.Regular);
                 }
             };
         }

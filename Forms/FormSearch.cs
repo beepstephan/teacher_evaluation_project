@@ -23,7 +23,7 @@ namespace teacher_evaluation_project.Forms
             InitializeComponent();
             SetTheme();
 
-            textBoxSurname.AddPlaceholder("Введіть прізвище");
+            textBoxSurname.AddPlaceholder("Введіть дані");
             LoadTeachers();
             foreach (ListViewItem item in AllTeachers)
             {
@@ -94,7 +94,7 @@ namespace teacher_evaluation_project.Forms
         private void btnSearch_Click(object sender, EventArgs e)
         {
             List<ListViewItem> list = new List<ListViewItem>(AllTeachers);
-            if (textBoxSurname.Text != "Введіть прізвище")
+            if (textBoxSurname.Text != "Введіть дані")
             {
                 list = CustomSearch.SearchByName(list, textBoxSurname.Text, comboBoxPosition.Text);
 
