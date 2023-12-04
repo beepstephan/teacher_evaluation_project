@@ -44,6 +44,7 @@
             this.photoTeacher.Location = new System.Drawing.Point(37, 27);
             this.photoTeacher.Name = "photoTeacher";
             this.photoTeacher.Size = new System.Drawing.Size(114, 128);
+            this.photoTeacher.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.photoTeacher.TabIndex = 0;
             this.photoTeacher.TabStop = false;
             // 
