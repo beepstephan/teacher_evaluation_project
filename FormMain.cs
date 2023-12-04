@@ -1,12 +1,8 @@
-using MySql.Data.MySqlClient;
-using System.Data;
-using System;
 using System.Drawing.Imaging;
 using System.Runtime.InteropServices;
 using System.Security.Cryptography.Xml;
 using teacher_evaluation_project.Forms;
 using teacher_evaluation_project.projectClasses;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace teacher_evaluation_project
 {
@@ -16,10 +12,6 @@ namespace teacher_evaluation_project
         private Button activeButton;
         private FormProject activeForm;
         static public FormMain mainForm;
-        public MySqlConnection connection;
-        public MySqlCommand command;
-        const string connect = "server=localhost;port=3306;username=root;password=root;database=teachers";
-        public List<ListViewItem> AllTeachers = new List<ListViewItem>();
         public User currentUser = new User();
 
         //child forms
@@ -41,35 +33,8 @@ namespace teacher_evaluation_project
             InitializeComponent();
             ActivateMenuItem(btnHome);
             OpenChildForm(formHome);
-            LoadTeachers();
         }
 
-        public void LoadTeachers()
-        {
-
-            try
-            {
-                connection = new MySqlConnection(connect);
-                connection.Open();
-
-                string script = "SELECT id, surname, name, middlename, pos, rate FROM `dep`";
-                MySqlDataAdapter adapter = new MySqlDataAdapter(script, connect);
-                DataTable dt = new DataTable();
-                adapter.Fill(dt);
-                for (int i = 0; i < dt.Rows.Count; i++)
-                {
-                    DataRow dr = dt.Rows[i];
-                    ListViewItem listitem = new ListViewItem(new string[] { dr["id"].ToString(), dr["surname"].ToString(), dr["name"].ToString(), dr["middlename"].ToString(), dr["pos"].ToString(), dr["rate"].ToString() });
-                    AllTeachers.Add(listitem);
-                }
-
-                connection.Close();
-            }
-            catch
-            {
-                MessageBox.Show("Connection lost");
-            }
-        }
         private void ActivateMenuItem(object btnSender)
         {
             if (btnSender != null)
@@ -166,7 +131,7 @@ namespace teacher_evaluation_project
             if (currentUser.isLogIn == true)
             {
                 ActivateMenuItem(sender);
-                formSearch = new FormSearch(AllTeachers);
+                formSearch = new FormSearch();
                 OpenChildForm(formSearch);
             }
             else
