@@ -32,6 +32,7 @@
             passField = new TextBox();
             btnLogIn = new Button();
             lblAccount = new Label();
+            checkPass = new CheckBox();
             SuspendLayout();
             // 
             // loginField
@@ -52,6 +53,7 @@
             passField.Name = "passField";
             passField.Size = new Size(200, 24);
             passField.TabIndex = 1;
+            passField.Tag = "pass";
             passField.Text = "password";
             // 
             // btnLogIn
@@ -61,7 +63,7 @@
             btnLogIn.FlatStyle = FlatStyle.Flat;
             btnLogIn.Font = new Font("Microsoft Sans Serif", 11F, FontStyle.Bold, GraphicsUnit.Point);
             btnLogIn.ForeColor = Color.Gainsboro;
-            btnLogIn.Location = new Point(257, 145);
+            btnLogIn.Location = new Point(257, 163);
             btnLogIn.Name = "btnLogIn";
             btnLogIn.Size = new Size(114, 32);
             btnLogIn.TabIndex = 2;
@@ -75,13 +77,26 @@
             lblAccount.Cursor = Cursors.Hand;
             lblAccount.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
             lblAccount.ForeColor = Color.Gainsboro;
-            lblAccount.Location = new Point(151, 195);
+            lblAccount.Location = new Point(151, 213);
             lblAccount.Name = "lblAccount";
-            lblAccount.Size = new Size(326, 35);
+            lblAccount.Size = new Size(326, 30);
             lblAccount.TabIndex = 3;
             lblAccount.Text = "Ще немає облікового запису?";
             lblAccount.TextAlign = ContentAlignment.TopCenter;
             lblAccount.Click += label1_Click;
+            // 
+            // checkPass
+            // 
+            checkPass.Anchor = AnchorStyles.None;
+            checkPass.AutoSize = true;
+            checkPass.ForeColor = Color.Gainsboro;
+            checkPass.Location = new Point(273, 125);
+            checkPass.Name = "checkPass";
+            checkPass.Size = new Size(140, 21);
+            checkPass.TabIndex = 4;
+            checkPass.Text = "Показать пароль";
+            checkPass.UseVisualStyleBackColor = true;
+            checkPass.CheckedChanged += checkPass_CheckedChanged;
             // 
             // FormLogIn
             // 
@@ -89,6 +104,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(35, 35, 80);
             ClientSize = new Size(628, 341);
+            Controls.Add(checkPass);
             Controls.Add(lblAccount);
             Controls.Add(btnLogIn);
             Controls.Add(passField);
@@ -106,5 +122,6 @@
         private TextBox passField;
         private Button btnLogIn;
         private Label lblAccount;
+        private CheckBox checkPass;
     }
 }

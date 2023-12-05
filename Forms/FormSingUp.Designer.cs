@@ -34,6 +34,7 @@
             loginField = new TextBox();
             userNameField = new TextBox();
             userSurnameField = new TextBox();
+            checkPass = new CheckBox();
             SuspendLayout();
             // 
             // lblAccount
@@ -55,11 +56,11 @@
             buttonSingUp.Anchor = AnchorStyles.None;
             buttonSingUp.BackColor = Color.FromArgb(30, 30, 65);
             buttonSingUp.FlatStyle = FlatStyle.Flat;
-            buttonSingUp.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            buttonSingUp.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Bold, GraphicsUnit.Point);
             buttonSingUp.ForeColor = Color.Gainsboro;
-            buttonSingUp.Location = new Point(257, 245);
+            buttonSingUp.Location = new Point(252, 245);
             buttonSingUp.Name = "buttonSingUp";
-            buttonSingUp.Size = new Size(114, 32);
+            buttonSingUp.Size = new Size(124, 32);
             buttonSingUp.TabIndex = 6;
             buttonSingUp.Text = "Реєстрація";
             buttonSingUp.UseVisualStyleBackColor = false;
@@ -69,17 +70,18 @@
             // 
             passField.Anchor = AnchorStyles.None;
             passField.Font = new Font("Microsoft Sans Serif", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            passField.Location = new Point(213, 95);
+            passField.Location = new Point(213, 81);
             passField.Name = "passField";
             passField.Size = new Size(200, 24);
             passField.TabIndex = 5;
+            passField.Tag = "pass";
             passField.Text = "Введіть пароль";
             // 
             // loginField
             // 
             loginField.Anchor = AnchorStyles.None;
             loginField.Font = new Font("Microsoft Sans Serif", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            loginField.Location = new Point(213, 45);
+            loginField.Location = new Point(213, 31);
             loginField.Name = "loginField";
             loginField.Size = new Size(200, 24);
             loginField.TabIndex = 4;
@@ -105,12 +107,26 @@
             userSurnameField.TabIndex = 9;
             userSurnameField.Text = "Введіть прізвище";
             // 
+            // checkPass
+            // 
+            checkPass.Anchor = AnchorStyles.None;
+            checkPass.AutoSize = true;
+            checkPass.ForeColor = Color.Gainsboro;
+            checkPass.Location = new Point(273, 111);
+            checkPass.Name = "checkPass";
+            checkPass.Size = new Size(140, 21);
+            checkPass.TabIndex = 10;
+            checkPass.Text = "Показать пароль";
+            checkPass.UseVisualStyleBackColor = true;
+            checkPass.CheckedChanged += checkPass_CheckedChanged;
+            // 
             // FormSingUp
             // 
             AutoScaleDimensions = new SizeF(8F, 16F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(35, 35, 80);
             ClientSize = new Size(628, 341);
+            Controls.Add(checkPass);
             Controls.Add(userSurnameField);
             Controls.Add(userNameField);
             Controls.Add(lblAccount);
@@ -132,5 +148,6 @@
         private TextBox loginField;
         private TextBox userNameField;
         private TextBox userSurnameField;
+        private CheckBox checkPass;
     }
 }

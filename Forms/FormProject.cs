@@ -14,7 +14,7 @@ namespace teacher_evaluation_project.Forms
     public partial class FormProject : Form {
         protected int themeIndex = 0;
         protected float fontSize = 10;
-        protected string fontStyle = "Microsoft Sans Serif";
+        protected string fontFamily = "Microsoft Sans Serif";
 
         public FormProject() {
             InitializeComponent();
@@ -22,13 +22,13 @@ namespace teacher_evaluation_project.Forms
 
         public virtual void SetTheme() {}
         public virtual void SetFont() {
-            if (fontStyle != Theme.fontStyle || fontSize != Theme.fontSize)
+            if (fontFamily != Theme.fontFamily || fontSize != Theme.fontSize)
             {
-                fontStyle = Theme.fontStyle;
+                fontFamily = Theme.fontFamily;
                 fontSize = Theme.fontSize;
                 foreach (Control item in Controls)
                 {
-                    item.Font = new System.Drawing.Font(Theme.fontStyle, Theme.fontSize, System.Drawing.FontStyle.Regular);
+                    item.Font = new System.Drawing.Font(Theme.fontFamily, Theme.fontSize, System.Drawing.FontStyle.Regular);
                 }
             }
         }

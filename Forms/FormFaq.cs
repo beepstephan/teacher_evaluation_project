@@ -30,12 +30,12 @@ namespace teacher_evaluation_project.Forms
 
         public override void SetFont()
         {
-            if (fontStyle != Theme.fontStyle || fontSize != Theme.fontSize)
+            if (fontFamily != Theme.fontFamily || fontSize != Theme.fontSize)
             {
-                fontStyle = Theme.fontStyle;
+                fontFamily = Theme.fontFamily;
                 fontSize = Theme.fontSize;
-                lblTitle.Font = new System.Drawing.Font(Theme.fontStyle, Theme.fontSize + 1, System.Drawing.FontStyle.Bold);
-                labelGuide.Font = new System.Drawing.Font(Theme.fontStyle, Theme.fontSize, System.Drawing.FontStyle.Regular);
+                lblTitle.Font = new System.Drawing.Font(Theme.fontFamily, Theme.fontSize + 1, System.Drawing.FontStyle.Bold);
+                labelGuide.Font = new System.Drawing.Font(Theme.fontFamily, Theme.fontSize, System.Drawing.FontStyle.Regular);
             }
         }
 

@@ -54,13 +54,13 @@ namespace teacher_evaluation_project.Forms
 
         public override void SetFont()
         {
-            if (fontStyle != Theme.fontStyle || fontSize != Theme.fontSize)
+            if (fontFamily != Theme.fontFamily || fontSize != Theme.fontSize)
             {
-                fontStyle = Theme.fontStyle;
+                fontFamily = Theme.fontFamily;
                 fontSize = Theme.fontSize;
                 foreach (Control btn in Controls)
                 {
-                    btn.Font = new System.Drawing.Font(Theme.fontStyle, Theme.fontSize, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                    btn.Font = new System.Drawing.Font(Theme.fontFamily, Theme.fontSize, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                 }
             }
         }

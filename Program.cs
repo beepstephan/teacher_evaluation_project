@@ -5,7 +5,7 @@ namespace teacher_evaluation_project {
         /// </summary>
         [STAThread]
         static void Main() {
-            // To customize application configuration such as set high DPI settings or default fontStyle,
+            // To customize application configuration such as set high DPI settings or default fontFamily,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             Application.Run(new FormMain());

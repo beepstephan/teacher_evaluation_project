@@ -18,7 +18,7 @@ namespace teacher_evaluation_project.Forms
             InitializeComponent();
             SetTheme();
             UpDownFontSize.Value = (int)Theme.fontSize;
-            boxFontStyle.SelectedIndex = boxFontStyle.FindStringExact(Theme.fontStyle);
+            boxFontStyle.SelectedIndex = boxFontStyle.FindStringExact(Theme.fontFamily);
         }
         public override void SetTheme()
         {
@@ -38,7 +38,7 @@ namespace teacher_evaluation_project.Forms
 
         private void comboBoxFont_SelectedValueChanged(object sender, EventArgs e)
         {
-            Theme.fontStyle = boxFontStyle.Text;
+            Theme.fontFamily = boxFontStyle.Text;
             if (FormMain.mainForm != null)
             {
                 FormMain.mainForm.SetFont();
@@ -47,15 +47,15 @@ namespace teacher_evaluation_project.Forms
         }
         public override void SetFont()
         {
-            if (fontStyle != Theme.fontStyle || fontSize != Theme.fontSize)
+            if (fontFamily != Theme.fontFamily || fontSize != Theme.fontSize)
             {
-                fontStyle = Theme.fontStyle;
+                fontFamily = Theme.fontFamily;
                 fontSize = Theme.fontSize;
                 foreach (Control item in Controls)
                 {
                     if (item != boxFontStyle)
                     {
-                        item.Font = new System.Drawing.Font(Theme.fontStyle, Theme.fontSize, System.Drawing.FontStyle.Regular);
+                        item.Font = new System.Drawing.Font(Theme.fontFamily, Theme.fontSize, System.Drawing.FontStyle.Regular);
                     }
                     else
                     {

@@ -43,14 +43,14 @@ namespace teacher_evaluation_project.Forms
 
         public override void SetFont()
         {
-            if (fontStyle != Theme.fontStyle || fontSize != Theme.fontSize)
+            if (fontFamily != Theme.fontFamily || fontSize != Theme.fontSize)
             {
-                fontStyle = Theme.fontStyle;
+                fontFamily = Theme.fontFamily;
                 fontSize = Theme.fontSize;
-                loginField.Font = new System.Drawing.Font(Theme.fontStyle + 1, Theme.fontSize, System.Drawing.FontStyle.Regular);
-                passField.Font = new System.Drawing.Font(Theme.fontStyle + 1, Theme.fontSize, System.Drawing.FontStyle.Regular);
-                btnLogIn.Font = new System.Drawing.Font(Theme.fontStyle + 1, Theme.fontSize, System.Drawing.FontStyle.Bold);
-                lblAccount.Font = new System.Drawing.Font(Theme.fontStyle, Theme.fontSize, System.Drawing.FontStyle.Regular);
+                foreach (Control control in Controls)
+                {
+                    control.Font = new Font(Theme.fontFamily, Theme.fontSize, control.Font.Style);
+                }
             }
         }
 
@@ -77,6 +77,18 @@ namespace teacher_evaluation_project.Forms
 
             else
                 MessageBox.Show("NO");
+        }
+
+        private void checkPass_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkPass.Checked)
+            {
+                passField.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                passField.UseSystemPasswordChar = true;
+            }
         }
     }
 }

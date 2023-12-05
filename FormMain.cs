@@ -44,7 +44,7 @@ namespace teacher_evaluation_project
                     DisableMenuItems();
                     activeButton = (Button)btnSender;
                     activeButton.BackColor = Theme.activeTheme.activeButtoneColor;
-                    activeButton.Font = new System.Drawing.Font(Theme.fontStyle, Theme.fontSize + 2, System.Drawing.FontStyle.Regular);
+                    activeButton.Font = new System.Drawing.Font(Theme.fontFamily, Theme.fontSize + 2, System.Drawing.FontStyle.Regular);
                 }
             }
         }
@@ -55,7 +55,7 @@ namespace teacher_evaluation_project
                 if (btn.GetType() == typeof(Button) && btn != btnLogIn)
                 {
                     btn.BackColor = Theme.activeTheme.mainMenuColor;
-                    btn.Font = new System.Drawing.Font(Theme.fontStyle, Theme.fontSize, System.Drawing.FontStyle.Regular);
+                    btn.Font = new System.Drawing.Font(Theme.fontFamily, Theme.fontSize, System.Drawing.FontStyle.Regular);
                 }
             }
 
@@ -87,16 +87,16 @@ namespace teacher_evaluation_project
         }
         public override void SetFont()
         {
-            if (fontStyle != Theme.fontStyle || fontSize != Theme.fontSize)
+            if (fontFamily != Theme.fontFamily || fontSize != Theme.fontSize)
             {
-                fontStyle = Theme.fontStyle;
+                fontFamily = Theme.fontFamily;
                 fontSize = Theme.fontSize;
                 foreach (Control btn in panelMenu.Controls)
                 {
-                    btn.Font = new System.Drawing.Font(Theme.fontStyle, Theme.fontSize, System.Drawing.FontStyle.Regular);
+                    btn.Font = new System.Drawing.Font(Theme.fontFamily, Theme.fontSize, System.Drawing.FontStyle.Regular);
                 }
-                titleBarText.Font = new System.Drawing.Font(Theme.fontStyle, titleBarText.Font.Size, System.Drawing.FontStyle.Regular);
-                lblLogo.Font = new System.Drawing.Font(Theme.fontStyle, lblLogo.Font.Size, System.Drawing.FontStyle.Regular);
+                titleBarText.Font = new System.Drawing.Font(Theme.fontFamily, titleBarText.Font.Size, System.Drawing.FontStyle.Regular);
+                lblLogo.Font = new System.Drawing.Font(Theme.fontFamily, lblLogo.Font.Size, System.Drawing.FontStyle.Regular);
             }
         }
 

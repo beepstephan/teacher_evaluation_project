@@ -32,7 +32,7 @@ namespace teacher_evaluation_project.projectClasses
     {
         public static int themeIndex = 0;
         public static float fontSize = 10;
-        public static string fontStyle = "Microsoft Sans Serif";
+        public static string fontFamily = "Microsoft Sans Serif";
         static List<Palette> themeList = new List<Palette>()
         {
             //         mainMenuColor               panelDesktopColor           panelTitleBar               activeButtoneColor
@@ -63,9 +63,13 @@ namespace teacher_evaluation_project.projectClasses
             {
                 if (field.Text == textPlaceholder)
                 {
+                    if (field.Tag != null && field.Tag.ToString() == "pass")
+                    {
+                        field.UseSystemPasswordChar = true;
+                    }
                     field.Text = "";
                     field.ForeColor = Color.Black;
-                    field.Font = new System.Drawing.Font(Theme.fontStyle, Theme.fontSize, System.Drawing.FontStyle.Bold);
+                    field.Font = new System.Drawing.Font(Theme.fontFamily, Theme.fontSize, System.Drawing.FontStyle.Bold);
                 }
             };
 
@@ -73,9 +77,13 @@ namespace teacher_evaluation_project.projectClasses
             {
                 if (field.Text == "")
                 {
+                    if (field.Tag != null && field.Tag.ToString() == "pass")
+                    {
+                        field.UseSystemPasswordChar = false;
+                    }
                     field.Text = textPlaceholder;
                     field.ForeColor = Color.Gray;
-                    field.Font = new System.Drawing.Font(Theme.fontStyle, Theme.fontSize, System.Drawing.FontStyle.Regular);
+                    field.Font = new System.Drawing.Font(Theme.fontFamily, Theme.fontSize, System.Drawing.FontStyle.Regular);
                 }
             };
         }
