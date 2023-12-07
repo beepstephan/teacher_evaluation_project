@@ -62,7 +62,7 @@ namespace teacher_evaluation_project.Forms
 
             MySqlDataAdapter adapter = new MySqlDataAdapter();
 
-            MySqlCommand command = new MySqlCommand("SELECT * FROM `users`WHERE `email` = @uE ", db.getConnection());
+            MySqlCommand command = new MySqlCommand("SELECT * FROM `users` WHERE `email` = @uE ", db.getConnection());
             command.Parameters.Add("@uE", MySqlDbType.VarChar).Value = loginField.Text;
 
             adapter.SelectCommand = command;

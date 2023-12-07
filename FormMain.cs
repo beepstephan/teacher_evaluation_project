@@ -13,6 +13,7 @@ namespace teacher_evaluation_project
         private FormProject activeForm;
         static public FormMain mainForm;
         public User currentUser = new User();
+        public bool isConnected = false;
 
         //child forms
         public FormHome formHome = new FormHome();
@@ -99,6 +100,8 @@ namespace teacher_evaluation_project
                 lblLogo.Font = new System.Drawing.Font(Theme.fontFamily, lblLogo.Font.Size, System.Drawing.FontStyle.Regular);
             }
         }
+
+        
 
         public void OpenChildForm(FormProject childForm)
         {

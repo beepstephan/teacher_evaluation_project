@@ -24,11 +24,9 @@ namespace teacher_evaluation_project.Forms
             SetTheme();
 
             textBoxSurname.AddPlaceholder("Введіть дані");
-            LoadTeachers();
-            foreach (ListViewItem item in AllTeachers)
-            {
-                listTeachers.Items.Add(item);
-            }
+            if (FormMain.mainForm!=null)
+                LoadTeachers();
+            
             comboBoxPosition.SelectedItem = comboBoxPosition.Items[0];
             sortComboBox.SelectedItem = sortComboBox.Items[2];
         }
@@ -68,7 +66,10 @@ namespace teacher_evaluation_project.Forms
                     ListViewItem listitem = new ListViewItem(new string[] { dr["id"].ToString(), dr["surname"].ToString(), dr["name"].ToString(), dr["middlename"].ToString(), dr["pos"].ToString(), dr["rate"].ToString(), });
                     AllTeachers.Add(listitem);
                 }
-
+                foreach (ListViewItem item in AllTeachers)
+                {
+                    listTeachers.Items.Add(item);
+                }
                 connection.Close();
             }
             catch
@@ -81,7 +82,7 @@ namespace teacher_evaluation_project.Forms
             if (listTeachers.SelectedItems.Count > 0)
             {
                 ListViewItem item = listTeachers.SelectedItems[0];
-                FormMain.mainForm.formTeacher = new FormTeacher(item);
+                FormMain.mainForm.formTeacher = new FormTeacher(item.Text);
                 FormMain.mainForm.OpenChildForm(FormMain.mainForm.formTeacher);
             }
         }
