@@ -73,7 +73,16 @@ namespace teacher_evaluation_project.Forms
             adapter.Fill(table);
 
             if (table.Rows.Count > 0)
-                MessageBox.Show("YES");
+            {
+                DataRow userData = table.Rows[0];
+                User.Id = Convert.ToInt32(userData["id"].ToString());
+                User.Email = userData["email"].ToString();
+                User.Password = userData["pass"].ToString();
+                User.Surname = userData["pass"].ToString();
+                User.Name = userData["pass"].ToString();
+                User.isLogIn = true;
+            }
+                
 
             else
                 MessageBox.Show("NO");

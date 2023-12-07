@@ -131,7 +131,7 @@ namespace teacher_evaluation_project
         }
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            if (currentUser.isLogIn == true)
+            if (User.isLogIn == true)
             {
                 ActivateMenuItem(sender);
                 formSearch = new FormSearch();

@@ -9,17 +9,17 @@ namespace teacher_evaluation_project.projectClasses
     public class User
     {
         // поля
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public string Surname { get; set; }
-        public string Email { get; set; }
-        public string Password { get; set; }
-        public bool isLogIn { get; set; }
+        public static int Id { get; set; }
+        public static string Name { get; set; }
+        public static string Surname { get; set; }
+        public static string Email { get; set; }
+        public static string Password { get; set; }
+        public static bool isLogIn { get; set; }
 
         // конструктори
         public User()
         {
-            isLogIn = true;
+            isLogIn = false;
         }
 
         // шось с реєстрацією

@@ -10,24 +10,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 using teacher_evaluation_project.projectClasses;
 
 namespace teacher_evaluation_project.Forms
 {
     public partial class FormTeacher : FormProject
     {
-        ListViewItem teacher;
+        List<Comment> commentList = new List<Comment>();
         string teacherSurname, teacherName, teacherMiddlename, teacherPosition, teacherDescription, teacherSubjects, teacherRate;
         int teacherRatePoints, teacherRateCounter;
         string jsonComments;
         TableLayoutPanel tableComments;
-        string id;
+        int id;
         public FormTeacher()
         {
             InitializeComponent();
             SetTheme();
         }
-        public FormTeacher(string id)
+        public FormTeacher(int id)
         {
             InitializeComponent();
 
@@ -53,11 +54,12 @@ namespace teacher_evaluation_project.Forms
             MySqlDataAdapter adapter = new MySqlDataAdapter();
 
             MySqlCommand command = new MySqlCommand("SELECT * FROM `dep` WHERE `id` = @uID", database.getConnection());
-            command.Parameters.Add("@uID", MySqlDbType.VarChar).Value = id;
+            command.Parameters.Add("@uID", MySqlDbType.Int32).Value = id;
             adapter.SelectCommand = command;
             adapter.Fill(table);
 
             DataRow dr = table.Rows[0];
+            
             teacherSurname = dr["surname"].ToString();
             teacherName = dr["name"].ToString();
             teacherMiddlename = dr["middlename"].ToString();
@@ -77,7 +79,7 @@ namespace teacher_evaluation_project.Forms
         private void btnComment_Click(object sender, EventArgs e)
         {
             // відкриття форми коментування
-            FormMain.mainForm.formComent = new FormComment(teacher);
+            FormMain.mainForm.formComent = new FormComment(id, commentList, teacherName, teacherSurname, teacherMiddlename);
             FormMain.mainForm.OpenChildForm(FormMain.mainForm.formComent);
         }
         public override void SetTheme()
@@ -119,7 +121,7 @@ namespace teacher_evaluation_project.Forms
             // JSON to List<Comments>
             if (jsonComments != "null")
             {
-                List<Comment> commentList = new List<Comment>();
+                
                 commentList = JsonConvert.DeserializeObject<List<Comment>>(jsonComments);
 
 

@@ -82,7 +82,7 @@ namespace teacher_evaluation_project.Forms
             if (listTeachers.SelectedItems.Count > 0)
             {
                 ListViewItem item = listTeachers.SelectedItems[0];
-                FormMain.mainForm.formTeacher = new FormTeacher(item.Text);
+                FormMain.mainForm.formTeacher = new FormTeacher(Convert.ToInt32(item.Text));
                 FormMain.mainForm.OpenChildForm(FormMain.mainForm.formTeacher);
             }
         }

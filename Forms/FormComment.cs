@@ -13,23 +13,37 @@ namespace teacher_evaluation_project.Forms
 {
     public partial class FormComment : FormProject
     {
-        ListViewItem teacher;
+        int id;
+        int commentIndex = -1;
+        List<Comment> comments;
         public FormComment()
         {
             InitializeComponent();
             SetTheme();
         }
-        public FormComment(ListViewItem item)
+        public FormComment(int id, List<Comment> comms, string name, string sname, string mname)
         {
             InitializeComponent();
+
+            this.id = id;
+            comments = comms;
+            
+            for(int i=0; i<comms.Count; i++)
+            {
+                if (comms[i].id == User.Id)
+                {
+                    commentIndex = i;
+                    trackBarRating.Value = comms[i].rate;
+                    textBoxComment.Text = comms[i].text;
+                    lblCounter.Text = $"Символів:{textBoxComment.Text.Length}/{textBoxComment.MaxLength}";
+                    break;
+                }
+            }
+            
+            lblName.Text = $"{sname} {name} {mname}";
             SetTheme();
-
-            teacher = item;
-
-            // додавання даних на форму
-            lblName.Text = $"{item.SubItems[1].Text} {item.SubItems[2].Text} {item.SubItems[3].Text}";
         }
-
+        
         private void btnDone_Click(object sender, EventArgs e)
         {
             // логіка
