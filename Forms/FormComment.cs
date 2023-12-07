@@ -71,26 +71,6 @@ namespace teacher_evaluation_project.Forms
 
             string json = JsonConvert.SerializeObject(comments);
 
-            //try
-            //{
-            //    //This is my connection string i have assigned the database file address path
-            //    DataBase dbForUpdate = new DataBase();
-            //    //This is my update query in which i am taking input from the user through windows forms and update the record.
-            //    string commandForUpdate = "update teachers.dep set comments='" + json + ", rate='2.5' where id='" + teacherId + "'";
-            //    //This is  MySqlConnection here i have created the object and pass my connection string.
-
-            //    MySqlCommand MyCommand2 = new MySqlCommand(commandForUpdate, dbForUpdate.getConnection());
-
-            //    dbForUpdate.openConnection();
-            //    MyCommand2.ExecuteReader();
-
-
-            //    dbForUpdate.closeConnection();
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message);
-            //}
             try
             {
                 //This is my connection string i have assigned the database file address path
