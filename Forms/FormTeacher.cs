@@ -19,7 +19,7 @@ namespace teacher_evaluation_project.Forms
     {
         List<Comment> commentList = new List<Comment>();
         string teacherSurname, teacherName, teacherMiddlename, teacherPosition, teacherDescription, teacherSubjects, teacherRate;
-        int teacherRatePoints, teacherRateCounter;
+        
         string jsonComments;
         TableLayoutPanel tableComments;
         int id;
@@ -66,8 +66,6 @@ namespace teacher_evaluation_project.Forms
             teacherPosition = dr["pos"].ToString();
             teacherDescription = dr["description"].ToString();
             teacherSubjects = dr["subjects"].ToString();
-            teacherRatePoints = Convert.ToInt32(dr["ratepoints"].ToString());
-            teacherRateCounter = Convert.ToInt32(dr["ratecounter"].ToString());
             teacherRate = dr["rate"].ToString();
             jsonComments = dr["comments"].ToString();
 

@@ -15,7 +15,7 @@ namespace teacher_evaluation_project.projectClasses
         public string Position { get; set; }
         public string Description { get; set; }
         public string Subjects { get; set; }
-        public double Rate { get; set; }
+        public string Rate { get; set; }
         // методи для отримання інфи про них
     }
 }

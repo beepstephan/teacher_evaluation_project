@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,7 +15,7 @@ namespace teacher_evaluation_project.Forms
 {
     public partial class FormComment : FormProject
     {
-        int id;
+        int teacherId;
         int commentIndex = -1;
         List<Comment> comments;
         public FormComment()
@@ -21,11 +23,11 @@ namespace teacher_evaluation_project.Forms
             InitializeComponent();
             SetTheme();
         }
-        public FormComment(int id, List<Comment> comms, string name, string sname, string mname)
+        public FormComment(int teacherId, List<Comment> comms, string name, string sname, string mname)
         {
             InitializeComponent();
 
-            this.id = id;
+            this.teacherId = teacherId;
             comments = comms;
             
             for(int i=0; i<comms.Count; i++)
@@ -46,10 +48,68 @@ namespace teacher_evaluation_project.Forms
         
         private void btnDone_Click(object sender, EventArgs e)
         {
-            // логіка
-            // пошук викладача у БД за ID (teacher.Text)
+            Comment newComment = new Comment(User.Id, DateTime.Now.ToString("dd/MM/yyyy HH:mm"), trackBarRating.Value, textBoxComment.Text);
+            if (commentIndex > -1)
+            {
+                comments[commentIndex] = newComment;
+            }
+            else
+            {
+                comments.Add(newComment);
+            }
+            comments = comments.OrderByDescending(o => o.time).ToList();
 
-            // оновлення даних
+            int pointSum = 0;
+            double readyRate = 0.0;
+            foreach (Comment com in comments)
+            {
+                pointSum += com.rate;
+            }
+            readyRate = (double)pointSum /  (double)comments.Count;
+            Math.Round(readyRate, 2);
+            string stringRate = readyRate.ToString();
+
+            string json = JsonConvert.SerializeObject(comments);
+
+            //try
+            //{
+            //    //This is my connection string i have assigned the database file address path
+            //    DataBase dbForUpdate = new DataBase();
+            //    //This is my update query in which i am taking input from the user through windows forms and update the record.
+            //    string commandForUpdate = "update teachers.dep set comments='" + json + ", rate='2.5' where id='" + teacherId + "'";
+            //    //This is  MySqlConnection here i have created the object and pass my connection string.
+
+            //    MySqlCommand MyCommand2 = new MySqlCommand(commandForUpdate, dbForUpdate.getConnection());
+
+            //    dbForUpdate.openConnection();
+            //    MyCommand2.ExecuteReader();
+
+
+            //    dbForUpdate.closeConnection();
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
+            try
+            {
+                //This is my connection string i have assigned the database file address path
+                string MyConnection2 = "datasource=localhost;port=3306;username=root;password=root";
+                //This is my update query in which i am taking input from the user through windows forms and update the record.
+                string Query = "update teachers.dep set comments='" + json + "',rate='" + stringRate + "' where id='" + teacherId + "';";
+                //This is  MySqlConnection here i have created the object and pass my connection string.
+                MySqlConnection MyConn2 = new MySqlConnection(MyConnection2);
+                MySqlCommand MyCommand2 = new MySqlCommand(Query, MyConn2);
+                MySqlDataReader MyReader2;
+                MyConn2.Open();
+                MyReader2 = MyCommand2.ExecuteReader();
+                
+                MyConn2.Close();//Connection closed here
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
             // повернення до вікна пошуку викладачів
             FormMain.mainForm.formSearch = new FormSearch();

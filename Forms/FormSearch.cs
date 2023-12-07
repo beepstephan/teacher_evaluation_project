@@ -63,6 +63,7 @@ namespace teacher_evaluation_project.Forms
                 for (int i = 0; i < dt.Rows.Count; i++)
                 {
                     DataRow dr = dt.Rows[i];
+                    //string updatedRate = Convert.ToDouble(dr["rate"]).ToString("#,##");
                     ListViewItem listitem = new ListViewItem(new string[] { dr["id"].ToString(), dr["surname"].ToString(), dr["name"].ToString(), dr["middlename"].ToString(), dr["pos"].ToString(), dr["rate"].ToString(), });
                     AllTeachers.Add(listitem);
                 }
@@ -72,9 +73,9 @@ namespace teacher_evaluation_project.Forms
                 }
                 connection.Close();
             }
-            catch
+            catch (Exception ex)
             {
-                MessageBox.Show("Connection lost");
+                MessageBox.Show(ex.Message);
             }
         }
         private void listTeachers_SelectedIndexChanged(object sender, EventArgs e)
