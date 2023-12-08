@@ -81,11 +81,16 @@ namespace teacher_evaluation_project.Forms
                 User.Surname = userData["pass"].ToString();
                 User.Name = userData["pass"].ToString();
                 User.isLogIn = true;
-            }
-                
 
+                FormMain.mainForm.btnLogIn.BackColor = Color.Brown;
+                FormMain.mainForm.btnLogIn.Text = "   Вийти";
+
+                FormMain.mainForm.OpenChildForm(FormMain.mainForm.formHome);
+            }
             else
+            {
                 MessageBox.Show("NO");
+            }
         }
 
         private void checkPass_CheckedChanged(object sender, EventArgs e)

@@ -1,3 +1,5 @@
+using MySql.Data.MySqlClient;
+using System.Data;
 using System.Drawing.Imaging;
 using System.Runtime.InteropServices;
 using System.Security.Cryptography.Xml;
@@ -101,7 +103,7 @@ namespace teacher_evaluation_project
             }
         }
 
-        
+
 
         public void OpenChildForm(FormProject childForm)
         {
@@ -139,7 +141,7 @@ namespace teacher_evaluation_project
             }
             else
             {
-                ActivateMenuItem(btnLogIn);
+                DisableMenuItems();
                 OpenChildForm(formLogIn);
                 MessageBox.Show("Щоб почати пошук викладачів, виконайте авторизацію", "Потрібна авторизація", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -173,20 +175,20 @@ namespace teacher_evaluation_project
         private void btnLogin_Click(object sender, EventArgs e)
         {
             DisableMenuItems();
-            OpenChildForm(formLogIn);
-            //if (currentUser.isLogIn == false)
-            //{
-            //    // якщо користувач не авторизувався - відкриття FormLogIn
-            //    DisableMenuItems();
-            //    OpenChildForm(formLogIn);
-            //}
-            //else
-            //{
-            //    // якщо користувач авторизувався - вихід з аакаунта
-            //
-            //    // видалення даних currentUser
-            //    // повернення форми до початкового стану
-            //}
+            if (!User.isLogIn)
+            {
+                formLogIn = new FormLogIn();
+                OpenChildForm(formLogIn);
+            }
+            else
+            {
+                User.LogOut();
+
+                btnLogIn.BackColor = Color.ForestGreen;
+                btnLogIn.Text = "   Увійти";
+
+                OpenChildForm(formHome);
+            }
         }
     }
 }
