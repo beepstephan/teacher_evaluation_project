@@ -47,7 +47,7 @@
             textBoxSurname.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
             textBoxSurname.Location = new Point(39, 26);
             textBoxSurname.Name = "textBoxSurname";
-            textBoxSurname.Size = new Size(185, 23);
+            textBoxSurname.Size = new Size(185, 26);
             textBoxSurname.TabIndex = 3;
             textBoxSurname.Text = "Введіть дані";
             // 
@@ -140,7 +140,7 @@
             // 
             // FormSearch
             // 
-            AutoScaleDimensions = new SizeF(8F, 16F);
+            AutoScaleDimensions = new SizeF(10F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(35, 35, 80);
             ClientSize = new Size(628, 322);
