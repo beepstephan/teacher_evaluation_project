@@ -95,15 +95,10 @@ namespace teacher_evaluation_project.projectClasses
             MySqlConnection connection = new MySqlConnection(conn);
             try
             {
-
                 connection.Open();
-
                 result = true;
-
                 connection.Close();
-
             }
-
             catch
             {
                 result = false;
@@ -111,6 +106,5 @@ namespace teacher_evaluation_project.projectClasses
             }
             return result;
         }
-
     }
 }
