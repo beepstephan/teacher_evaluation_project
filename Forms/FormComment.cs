@@ -87,7 +87,7 @@ namespace teacher_evaluation_project.Forms
                     MyConn2.Open();
                     MyReader2 = MyCommand2.ExecuteReader();
 
-                    MyConn2.Close();//Connection closed here
+                    MyConn2.Close();
                 }
                 catch (Exception ex)
                 {

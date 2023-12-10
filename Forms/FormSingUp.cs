@@ -136,6 +136,5 @@ namespace teacher_evaluation_project.Forms
                 passField.UseSystemPasswordChar = true;
             }
         }
-        
     }
 }
