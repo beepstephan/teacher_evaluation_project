@@ -18,8 +18,9 @@ namespace teacher_evaluation_project.Forms
 {
     public partial class FormLogIn : FormProject
     {
+        // це чисто патерни для перевірки вмісту ну там шоб не було різних незроз символів
         public string namepattern = "^[А-ЩЬЮЯЇІЄҐґа-щьюяїієґҐ]+$";
-        public string emailPattern = @"^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,4}$"; // це чисто патерни для перевірки вмісту ну там шоб не було різних незроз символів і якойсь хуйні
+        public string emailPattern = @"^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,4}$"; 
         public FormLogIn()
         {
             InitializeComponent();
@@ -72,7 +73,7 @@ namespace teacher_evaluation_project.Forms
                     if (!LoginException.IsValidPassword(passField.Text) || !LoginException.IsValidEmail(loginField.Text))
                     {
                         throw new Except(loginField.Text, passField.Text);
-                    }
+                    }      
                     
                     string loginUser = loginField.Text;
                     string passUser = passField.Text;
@@ -81,7 +82,7 @@ namespace teacher_evaluation_project.Forms
 
                     MySqlDataAdapter adapter = new MySqlDataAdapter();
 
-                    MySqlCommand command = new MySqlCommand("SELECT * FROM `users`WHERE `email` = @uE AND `pass` = @uP", db.getConnection());
+                    MySqlCommand command = new MySqlCommand("SELECT * FROM `users` WHERE `email` = @uE AND `pass` = @uP", db.getConnection());
                     command.Parameters.Add("@uE", MySqlDbType.VarChar).Value = loginUser;
                     command.Parameters.Add("@uP", MySqlDbType.VarChar).Value = passUser;
 
