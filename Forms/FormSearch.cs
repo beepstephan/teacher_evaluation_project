@@ -19,8 +19,7 @@ namespace teacher_evaluation_project.Forms
     public partial class FormSearch : FormProject
     {
         List<ListViewItem> AllTeachers = new List<ListViewItem>();
-#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
-#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
+
         public FormSearch()
         {
             InitializeComponent();

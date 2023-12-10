@@ -9,11 +9,15 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using teacher_evaluation_project.projectClasses;
 using MySql.Data.MySqlClient;
+using System.Text.RegularExpressions;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace teacher_evaluation_project.Forms
 {
     public partial class FormSingUp : FormProject
     {
+        public string namepattern = "^[А-ЩЬЮЯЇІЄҐґа-щьюяїієґҐ]+$";
+        public string emailPattern = @"^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,4}$"; // це чисто патерни для перевірки вмісту ну там шоб не було різних незроз символів і якойсь хуйні
         public FormSingUp()
         {
             InitializeComponent();
@@ -83,40 +87,52 @@ namespace teacher_evaluation_project.Forms
             DataBase db = new DataBase();
             Except ConnectionException = new Except();
             bool isConnected = ConnectionException.IsValidConnection("server=localhost;port=3306;username=root;password=root;database=teachers");
-            if(isConnected) {
+            if (isConnected) {
                 Except signUpException = new Except();
-                signUpException.ExceptionsRegistration(userNameField.Text, userSurnameField.Text, loginField.Text, passField.Text);
-
-                if (userNameField.Text == "Введіть ім'я")
+                try
                 {
-                    MessageBox.Show("Введіть ім'я");
-                    return;
-                }
+                    if (!signUpException.IsValidUsername(userNameField.Text) && !signUpException.IsValidPassword(passField.Text) && !signUpException.IsValidEmail(loginField.Text) && !signUpException.IsValidSurname(userSurnameField.Text))
+                    {
+                        throw new Except(userNameField.Text, userSurnameField.Text, loginField.Text, passField.Text);
+                    }
+                    
+                    if (userNameField.Text == "Введіть ім'я")
+                    {
+                        MessageBox.Show("Введіть ім'я");
+                        return;
+                    }
 
-                if (userSurnameField.Text == "")
+                    if (userSurnameField.Text == "")
+                    {
+                        MessageBox.Show("Введіть прізвище");
+                        return;
+                    }
+
+                    if (isUsersExists())
+                        return;
+
+                    MySqlCommand command = new MySqlCommand("INSERT INTO `users` ( `email`, `pass`, `name`, `surname`) VALUES ( @email, @pass, @name, @surname)", db.getConnection());
+
+                    command.Parameters.Add("@email", MySqlDbType.VarChar).Value = loginField.Text;
+                    command.Parameters.Add("@pass", MySqlDbType.VarChar).Value = passField.Text;
+                    command.Parameters.Add("@name", MySqlDbType.VarChar).Value = userNameField.Text;
+                    command.Parameters.Add("@surname", MySqlDbType.VarChar).Value = userSurnameField.Text;
+
+                    db.openConnection();
+
+                    if (command.ExecuteNonQuery() == 1)
+                    {
+                        MessageBox.Show("Реєстрація успішна", "Успіх", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        FormMain.mainForm.formLogIn = new FormLogIn();
+                        FormMain.mainForm.OpenChildForm(FormMain.mainForm.formLogIn);
+                    }
+                    db.closeConnection();
+                    
+                }
+                catch (Except ex)
                 {
-                    MessageBox.Show("Введіть фамілію");
-                    return;
+                    MessageBox.Show(ex.Message);
                 }
-
-                if (isUsersExists())
-                    return;
-
-                MySqlCommand command = new MySqlCommand("INSERT INTO `users` ( `email`, `pass`, `name`, `surname`) VALUES ( @email, @pass, @name, @surname)", db.getConnection());
-
-                command.Parameters.Add("@email", MySqlDbType.VarChar).Value = loginField.Text;
-                command.Parameters.Add("@pass", MySqlDbType.VarChar).Value = passField.Text;
-                command.Parameters.Add("@name", MySqlDbType.VarChar).Value = userNameField.Text;
-                command.Parameters.Add("@surname", MySqlDbType.VarChar).Value = userSurnameField.Text;
-
-                db.openConnection();
-
-                if (command.ExecuteNonQuery() == 1)
-                    MessageBox.Show("Акаунт був створений");
-                else
-                    MessageBox.Show("Акаунт не був створений");
-
-                db.closeConnection();
 
             }
       
@@ -133,5 +149,6 @@ namespace teacher_evaluation_project.Forms
                 passField.UseSystemPasswordChar = true;
             }
         }
+        
     }
 }

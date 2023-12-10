@@ -101,25 +101,18 @@ namespace teacher_evaluation_project.Forms
 #pragma warning restore CS8601 // Possible null reference assignment.
 #pragma warning disable CS8601 // Possible null reference assignment.
             teacherName = dr["name"].ToString();
-#pragma warning restore CS8601 // Possible null reference assignment.
-#pragma warning disable CS8601 // Possible null reference assignment.
+
             teacherMiddlename = dr["middlename"].ToString();
-#pragma warning restore CS8601 // Possible null reference assignment.
-#pragma warning disable CS8601 // Possible null reference assignment.
+
             teacherPosition = dr["pos"].ToString();
-#pragma warning restore CS8601 // Possible null reference assignment.
-#pragma warning disable CS8601 // Possible null reference assignment.
+
             teacherDescription = dr["description"].ToString();
-#pragma warning restore CS8601 // Possible null reference assignment.
-#pragma warning disable CS8601 // Possible null reference assignment.
+
             teacherSubjects = dr["subjects"].ToString();
-#pragma warning restore CS8601 // Possible null reference assignment.
-#pragma warning disable CS8601 // Possible null reference assignment.
+
             teacherRate = dr["rate"].ToString();
-#pragma warning restore CS8601 // Possible null reference assignment.
-#pragma warning disable CS8601 // Possible null reference assignment.
+
             jsonComments = dr["comments"].ToString();
-#pragma warning restore CS8601 // Possible null reference assignment.
 
             byte[] teacherImg = (byte[])dr["image"];
             MemoryStream ms = new MemoryStream(teacherImg);
@@ -172,11 +165,8 @@ namespace teacher_evaluation_project.Forms
             if (jsonComments != "null")
             {
                 
-#pragma warning disable CS8601 // Possible null reference assignment.
+
                 commentList = JsonConvert.DeserializeObject<List<Comment>>(jsonComments);
-#pragma warning restore CS8601 // Possible null reference assignment.
-
-
 
                 // створення таблиці коментарів
                 tableComments = new TableLayoutPanel()

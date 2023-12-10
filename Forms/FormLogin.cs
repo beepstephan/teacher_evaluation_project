@@ -11,11 +11,15 @@ using teacher_evaluation_project.projectClasses;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using MySql.Data.MySqlClient;
 using System.Drawing.Drawing2D;
+using System.Text.RegularExpressions;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace teacher_evaluation_project.Forms
 {
     public partial class FormLogIn : FormProject
     {
+        public string namepattern = "^[А-ЩЬЮЯЇІЄҐґа-щьюяїієґҐ]+$";
+        public string emailPattern = @"^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,4}$"; // це чисто патерни для перевірки вмісту ну там шоб не було різних незроз символів і якойсь хуйні
         public FormLogIn()
         {
             InitializeComponent();
@@ -62,42 +66,52 @@ namespace teacher_evaluation_project.Forms
 
             if (isConnected == true)
             {
-                Except LoginException = new Except();
-                LoginException.ExceptionsLogin(loginField.Text, passField.Text);
-
-                string loginUser = loginField.Text;
-                string passUser = passField.Text;
-
-                DataTable table = new DataTable();
-
-                MySqlDataAdapter adapter = new MySqlDataAdapter();
-
-                MySqlCommand command = new MySqlCommand("SELECT * FROM `users`WHERE `email` = @uE AND `pass` = @uP", db.getConnection());
-                command.Parameters.Add("@uE", MySqlDbType.VarChar).Value = loginUser;
-                command.Parameters.Add("@uP", MySqlDbType.VarChar).Value = passUser;
-
-                adapter.SelectCommand = command;
-                adapter.Fill(table);
-
-                if (table.Rows.Count > 0)
+                try
                 {
-                    DataRow userData = table.Rows[0];
-                    User.Id = Convert.ToInt32(userData["id"].ToString());
-                    User.Email = userData["email"].ToString();
-                    User.Password = userData["pass"].ToString();
-                    User.Surname = userData["surname"].ToString();
-                    User.Name = userData["name"].ToString();
-                    User.isLogIn = true;
+                    Except LoginException = new Except();   
+                    if (!LoginException.IsValidPassword(passField.Text) || !LoginException.IsValidEmail(loginField.Text))
+                    {
+                        throw new Except(loginField.Text, passField.Text);
+                    }
+                    
+                    string loginUser = loginField.Text;
+                    string passUser = passField.Text;
 
-                    FormMain.mainForm.btnLogIn.BackColor = Color.Brown;
-                    FormMain.mainForm.btnLogIn.Text = "   Вийти";
+                    DataTable table = new DataTable();
 
-                    FormMain.mainForm.OpenChildForm(FormMain.mainForm.formHome);
+                    MySqlDataAdapter adapter = new MySqlDataAdapter();
+
+                    MySqlCommand command = new MySqlCommand("SELECT * FROM `users`WHERE `email` = @uE AND `pass` = @uP", db.getConnection());
+                    command.Parameters.Add("@uE", MySqlDbType.VarChar).Value = loginUser;
+                    command.Parameters.Add("@uP", MySqlDbType.VarChar).Value = passUser;
+
+                    adapter.SelectCommand = command;
+                    adapter.Fill(table);
+                    string msg = "Акаунт не знайдений!";
+
+                    if (table.Rows.Count > 0)
+                    {
+                        DataRow userData = table.Rows[0];
+                        User.Id = Convert.ToInt32(userData["id"].ToString());
+                        User.Email = userData["email"].ToString();
+                        User.Password = userData["pass"].ToString();
+                        User.Surname = userData["surname"].ToString();
+                        User.Name = userData["name"].ToString();
+                        User.isLogIn = true;
+
+                        FormMain.mainForm.btnLogIn.BackColor = Color.Brown;
+                        FormMain.mainForm.btnLogIn.Text = "   Вийти";
+
+                        FormMain.mainForm.OpenChildForm(FormMain.mainForm.formHome);
+                    }
+                    else throw new Except(msg);
+                    
                 }
-                else
+                catch(Except ex)
                 {
-                    MessageBox.Show("NO");
+                    MessageBox.Show(ex.Message);
                 }
+
             }
         }
         private void checkPass_CheckedChanged(object sender, EventArgs e)
@@ -111,5 +125,6 @@ namespace teacher_evaluation_project.Forms
                 passField.UseSystemPasswordChar = true;
             }
         }
+        
     }
 }
