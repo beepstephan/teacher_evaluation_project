@@ -25,11 +25,25 @@ namespace teacher_evaluation_project.projectClasses
         public static bool isLogIn { get; set; }
 
         // конструктори
-        public User()
+        public static void LogIn(int id, string e, string p, string s, string n)
         {
+            Id = id;
+            Email = e;
+            Password = p;
+            Surname = s;
+            Name = n;
             isLogIn = false;
         }
 
-        // шось с реєстрацією
+        // методи
+        public static void LogOut()
+        {
+            Id = -1;
+            Email = "";
+            Password = "";
+            Surname = "";
+            Name = "";
+            isLogIn = false;
+        }
     }
 }

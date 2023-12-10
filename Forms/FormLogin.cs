@@ -78,31 +78,26 @@ namespace teacher_evaluation_project.Forms
                 adapter.SelectCommand = command;
                 adapter.Fill(table);
 
-                if (table.Rows.Count > 0)
-                {
-                    DataRow userData = table.Rows[0];
-                    User.Id = Convert.ToInt32(userData["id"].ToString());
-#pragma warning disable CS8601 // Possible null reference assignment.
-                    User.Email = userData["email"].ToString();
-#pragma warning restore CS8601 // Possible null reference assignment.
-#pragma warning disable CS8601 // Possible null reference assignment.
-                    User.Password = userData["pass"].ToString();
-#pragma warning restore CS8601 // Possible null reference assignment.
-#pragma warning disable CS8601 // Possible null reference assignment.
-                    User.Surname = userData["pass"].ToString();
-#pragma warning restore CS8601 // Possible null reference assignment.
-#pragma warning disable CS8601 // Possible null reference assignment.
-                    User.Name = userData["pass"].ToString();
-#pragma warning restore CS8601 // Possible null reference assignment.
-                    User.isLogIn = true;
-                }
+            if (table.Rows.Count > 0)
+            {
+                DataRow userData = table.Rows[0];
+                User.Id = Convert.ToInt32(userData["id"].ToString());
+                User.Email = userData["email"].ToString();
+                User.Password = userData["pass"].ToString();
+                User.Surname = userData["pass"].ToString();
+                User.Name = userData["pass"].ToString();
+                User.isLogIn = true;
 
+                FormMain.mainForm.btnLogIn.BackColor = Color.Brown;
+                FormMain.mainForm.btnLogIn.Text = "   Вийти";
 
-                else
-                    MessageBox.Show("NO");
+                FormMain.mainForm.OpenChildForm(FormMain.mainForm.formHome);
+            }
+            else
+            {
+                MessageBox.Show("NO");
             }
         }
-            
 
         private void checkPass_CheckedChanged(object sender, EventArgs e)
         {

@@ -305,14 +305,11 @@
         }
 
         #endregion
-
-        private Panel panelMenu;
         private Panel panelLogo;
         private Button btnSettings;
         private Button btnTheme;
         private Button btnSearch;
         private Button btnHome;
-        private Button btnLogIn;
         private Button btnAbout;
         private Button btnFaq;
         private Button btnDev;
@@ -321,5 +318,7 @@
         private Panel panelDesktop;
         private PictureBox picLogo;
         private Label lblLogo;
+        public Button btnLogIn;
+        private Panel panelMenu;
     }
 }
