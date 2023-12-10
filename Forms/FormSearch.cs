@@ -18,7 +18,11 @@ namespace teacher_evaluation_project.Forms
     public partial class FormSearch : FormProject
     {
         List<ListViewItem> AllTeachers = new List<ListViewItem>();
+#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
+#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
         public FormSearch()
+#pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
+#pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
         {
             InitializeComponent();
             SetTheme();
@@ -64,7 +68,9 @@ namespace teacher_evaluation_project.Forms
                 {
                     DataRow dr = dt.Rows[i];
                     //string updatedRate = Convert.ToDouble(dr["rate"]).ToString("#,##");
+
                     ListViewItem listitem = new ListViewItem(new string[] { dr["id"].ToString(), dr["surname"].ToString(), dr["name"].ToString(), dr["middlename"].ToString(), dr["pos"].ToString(), dr["rate"].ToString(), });
+
                     AllTeachers.Add(listitem);
                 }
                 foreach (ListViewItem item in AllTeachers)
@@ -75,6 +81,7 @@ namespace teacher_evaluation_project.Forms
             }
             catch (Exception ex)
             {
+                FormMain.mainForm.OpenChildForm(FormMain.mainForm.formHome);
                 MessageBox.Show(ex.Message);
             }
         }
@@ -94,7 +101,12 @@ namespace teacher_evaluation_project.Forms
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
-        {
+        {   
+            Except SearchException = new Except();
+            if (!SearchException.ExceptionSearch(textBoxSurname.Text, comboBoxPosition.Text))
+            {
+                return;
+            }
             List<ListViewItem> list = new List<ListViewItem>(AllTeachers);
             if (textBoxSurname.Text != "Введіть дані")
             {

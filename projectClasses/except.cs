@@ -1,6 +1,9 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
+using System.Diagnostics.Eventing.Reader;
 using System.Linq;
+using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -11,10 +14,13 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace teacher_evaluation_project.projectClasses
 {
-    internal class Except
+    internal class Except:Exception
     {
-        public string namepattern = "^[А-ЩЬЮЯЇІЄҐґа-щьюяїієґҐ ]+$";
+        public string namepattern = "^[А-ЩЬЮЯЇІЄҐґа-щьюяїієґҐ]+$";
         public string emailPattern = @"^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,4}$"; // це чисто патерни для перевірки вмісту ну там шоб не було різних незроз символів і якойсь хуйні
+        public Except() { 
+        
+        }
         public bool ExceptionsRegistration(string Name, string Surname, string Email, string Password)
         {
             if (IsValidUsername(Name) && IsValidPassword(Password) && IsValidEmail(Email)&& IsValidSurname(Surname))
@@ -44,9 +50,8 @@ namespace teacher_evaluation_project.projectClasses
 
         public bool ExceptionSearch(string Name, string Kafedra)
         {
-            if (IsValidUsername(Name) && IsValidKafedra(Kafedra))
+            if (IsValidUsername(Name) && IsValidVikladach(Kafedra))
             {
-                MessageBox.Show("Пошук пройшов успішно!"); // perevirka poshuku vikladachiv i kafedri
                 return true;
             }
             else
@@ -79,10 +84,47 @@ namespace teacher_evaluation_project.projectClasses
          // perevirka imeila
             return Regex.IsMatch(email, emailPattern);
         }
-        private bool IsValidKafedra(string username)
+        private bool IsValidVikladach(string username)
         {
 
-            return Regex.IsMatch(username, namepattern) && !string.IsNullOrEmpty(username) && username.Length > 1 && username.Length < 25;
+            return !string.IsNullOrEmpty(username) && username.Length > 1 && username.Length < 50;
         }
+        public bool IsValidComment(string text, int rate)
+        {
+            if (!String.IsNullOrEmpty(text)&&rate!=1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+                MessageBox.Show("Обидва поля повинні бути заповненими!");
+            }
+        }
+        public bool IsValidConnection(string conn)
+        {
+            bool result = false;
+            MySqlConnection connection = new MySqlConnection(conn);
+            try
+            {
+
+                connection.Open();
+
+                result = true;
+
+                connection.Close();
+
+            }
+
+            catch
+
+            {
+
+                result = false;
+                MessageBox.Show("Не вдалося підключитися до сервера. Приносимо вибачення");
+            }
+            return result;
+        }
+
     }
 }

@@ -56,37 +56,53 @@ namespace teacher_evaluation_project.Forms
 
         private void btnLogIn_Click(object sender, EventArgs e)
         {
-            string loginUser = loginField.Text;
-            string passUser = passField.Text;
-
             DataBase db = new DataBase();
+            Except ConnectionException = new Except();
+            bool isConnected=ConnectionException.IsValidConnection("server=localhost;port=3306;username=root;password=root;database=teachers");
+         
+            if (isConnected == true) {
+                Except LoginException = new Except();
+                LoginException.ExceptionsLogin(loginField.Text, passField.Text);
 
-            DataTable table = new DataTable();
+                string loginUser = loginField.Text;
+                string passUser = passField.Text;
 
-            MySqlDataAdapter adapter = new MySqlDataAdapter();
+                DataTable table = new DataTable();
 
-            MySqlCommand command = new MySqlCommand("SELECT * FROM `users`WHERE `email` = @uE AND `pass` = @uP", db.getConnection());
-            command.Parameters.Add("@uE", MySqlDbType.VarChar).Value = loginUser;
-            command.Parameters.Add("@uP", MySqlDbType.VarChar).Value = passUser;
+                MySqlDataAdapter adapter = new MySqlDataAdapter();
 
-            adapter.SelectCommand = command;
-            adapter.Fill(table);
+                MySqlCommand command = new MySqlCommand("SELECT * FROM `users`WHERE `email` = @uE AND `pass` = @uP", db.getConnection());
+                command.Parameters.Add("@uE", MySqlDbType.VarChar).Value = loginUser;
+                command.Parameters.Add("@uP", MySqlDbType.VarChar).Value = passUser;
 
-            if (table.Rows.Count > 0)
-            {
-                DataRow userData = table.Rows[0];
-                User.Id = Convert.ToInt32(userData["id"].ToString());
-                User.Email = userData["email"].ToString();
-                User.Password = userData["pass"].ToString();
-                User.Surname = userData["pass"].ToString();
-                User.Name = userData["pass"].ToString();
-                User.isLogIn = true;
+                adapter.SelectCommand = command;
+                adapter.Fill(table);
+
+                if (table.Rows.Count > 0)
+                {
+                    DataRow userData = table.Rows[0];
+                    User.Id = Convert.ToInt32(userData["id"].ToString());
+#pragma warning disable CS8601 // Possible null reference assignment.
+                    User.Email = userData["email"].ToString();
+#pragma warning restore CS8601 // Possible null reference assignment.
+#pragma warning disable CS8601 // Possible null reference assignment.
+                    User.Password = userData["pass"].ToString();
+#pragma warning restore CS8601 // Possible null reference assignment.
+#pragma warning disable CS8601 // Possible null reference assignment.
+                    User.Surname = userData["pass"].ToString();
+#pragma warning restore CS8601 // Possible null reference assignment.
+#pragma warning disable CS8601 // Possible null reference assignment.
+                    User.Name = userData["pass"].ToString();
+#pragma warning restore CS8601 // Possible null reference assignment.
+                    User.isLogIn = true;
+                }
+
+
+                else
+                    MessageBox.Show("NO");
             }
-                
-
-            else
-                MessageBox.Show("NO");
         }
+            
 
         private void checkPass_CheckedChanged(object sender, EventArgs e)
         {

@@ -11,7 +11,9 @@ namespace teacher_evaluation_project
         //Fields
         private Button activeButton;
         private FormProject activeForm;
+#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
         static public FormMain mainForm;
+#pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
         public User currentUser = new User();
         public bool isConnected = false;
 
@@ -28,7 +30,11 @@ namespace teacher_evaluation_project
         public FormAbout formAbout = new FormAbout();
 
         //Constructor
+#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
+#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
         public FormMain()
+#pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
+#pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
         {
             mainForm = this;
             InitializeComponent();
@@ -60,7 +66,9 @@ namespace teacher_evaluation_project
                 }
             }
 
+#pragma warning disable CS8625 // Cannot convert null literal to non-nullable reference type.
             activeButton = null;
+#pragma warning restore CS8625 // Cannot convert null literal to non-nullable reference type.
         }
 
         public override void SetTheme()

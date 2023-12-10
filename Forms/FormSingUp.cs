@@ -80,37 +80,46 @@ namespace teacher_evaluation_project.Forms
 
         private void buttonSingUp_Click_1(object sender, EventArgs e)
         {
-            if (userNameField.Text == "Введіть ім'я")
-            {
-                MessageBox.Show("Введіть ім'я");
-                return;
+            DataBase db = new DataBase();
+            Except ConnectionException = new Except();
+            bool isConnected = ConnectionException.IsValidConnection("server=localhost;port=3306;username=root;password=root;database=teachers");
+            if(isConnected) {
+                Except signUpException = new Except();
+                signUpException.ExceptionsRegistration(userNameField.Text, userSurnameField.Text, loginField.Text, passField.Text);
+
+                if (userNameField.Text == "Введіть ім'я")
+                {
+                    MessageBox.Show("Введіть ім'я");
+                    return;
+                }
+
+                if (userSurnameField.Text == "")
+                {
+                    MessageBox.Show("Введіть фамілію");
+                    return;
+                }
+
+                if (isUsersExists())
+                    return;
+
+                MySqlCommand command = new MySqlCommand("INSERT INTO `users` ( `email`, `pass`, `name`, `surname`) VALUES ( @email, @pass, @name, @surname)", db.getConnection());
+
+                command.Parameters.Add("@email", MySqlDbType.VarChar).Value = loginField.Text;
+                command.Parameters.Add("@pass", MySqlDbType.VarChar).Value = passField.Text;
+                command.Parameters.Add("@name", MySqlDbType.VarChar).Value = userNameField.Text;
+                command.Parameters.Add("@surname", MySqlDbType.VarChar).Value = userSurnameField.Text;
+
+                db.openConnection();
+
+                if (command.ExecuteNonQuery() == 1)
+                    MessageBox.Show("Акаунт був створений");
+                else
+                    MessageBox.Show("Акаунт не був створений");
+
+                db.closeConnection();
+
             }
-
-            if (userSurnameField.Text == "")
-            {
-                MessageBox.Show("Введіть фамілію");
-                return;
-            }
-
-            if (isUsersExists())
-                return;
-
-            DataBase db = new DataBase();// Створення бази даних 
-            MySqlCommand command = new MySqlCommand("INSERT INTO `users` ( `email`, `pass`, `name`, `surname`) VALUES ( @email, @pass, @name, @surname)", db.getConnection());
-
-            command.Parameters.Add("@email", MySqlDbType.VarChar).Value = loginField.Text;
-            command.Parameters.Add("@pass", MySqlDbType.VarChar).Value = passField.Text;
-            command.Parameters.Add("@name", MySqlDbType.VarChar).Value = userNameField.Text;
-            command.Parameters.Add("@surname", MySqlDbType.VarChar).Value = userSurnameField.Text;
-
-            db.openConnection();
-
-            if (command.ExecuteNonQuery() == 1)
-                MessageBox.Show("Акаунт був створений");
-            else
-                MessageBox.Show("Акаунт не був створений");
-
-            db.closeConnection();
+      
         }
 
         private void checkPass_CheckedChanged(object sender, EventArgs e)
