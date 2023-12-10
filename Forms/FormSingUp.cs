@@ -91,7 +91,7 @@ namespace teacher_evaluation_project.Forms
                 Except signUpException = new Except();
                 try
                 {
-                    if (!signUpException.IsValidUsername(userNameField.Text) && !signUpException.IsValidPassword(passField.Text) && !signUpException.IsValidEmail(loginField.Text) && !signUpException.IsValidSurname(userSurnameField.Text))
+                    if (!signUpException.IsValidUsername(userNameField.Text) || !signUpException.IsValidPassword(passField.Text) || !signUpException.IsValidEmail(loginField.Text) || !signUpException.IsValidSurname(userSurnameField.Text))
                     {
                         throw new Except(userNameField.Text, userSurnameField.Text, loginField.Text, passField.Text);
                     }

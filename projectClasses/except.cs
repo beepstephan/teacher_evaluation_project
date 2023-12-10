@@ -37,19 +37,19 @@ namespace teacher_evaluation_project.projectClasses
         {
 
         }
-        public bool ExceptionsRegistration(string Name, string Surname, string Email, string Password)
-        {
-            if (IsValidUsername(Name) && IsValidPassword(Password) && IsValidEmail(Email)&& IsValidSurname(Surname))
-            {
-                MessageBox.Show("Реєстрація пройшла успішно!"); //perevirka reestacii
-                return true;
-            }
-            else
-            {
-                MessageBox.Show("Помилка при реєстрації. Перевірте правильність введених даних.");
-                return false;
-            }
-        }
+        //public bool ExceptionsRegistration(string Name, string Surname, string Email, string Password)
+        //{
+        //    if (IsValidUsername(Name) && IsValidPassword(Password) && IsValidEmail(Email)&& IsValidSurname(Surname))
+        //    {
+        //        MessageBox.Show("Реєстрація пройшла успішно!"); //perevirka reestacii
+        //        return true;
+        //    }
+        //    else
+        //    {
+        //        MessageBox.Show("Помилка при реєстрації. Перевірте правильність введених даних.");
+        //        return false;
+        //    }
+        //}
         //public void ExceptionsLogin( string Email, string Password)
         //{
         //    if (IsValidPassword(Password) && IsValidEmail(Email))

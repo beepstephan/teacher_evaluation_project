@@ -105,7 +105,6 @@ namespace teacher_evaluation_project.Forms
                         FormMain.mainForm.OpenChildForm(FormMain.mainForm.formHome);
                     }
                     else throw new Except(msg);
-                    
                 }
                 catch(Except ex)
                 {
