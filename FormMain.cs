@@ -44,7 +44,7 @@ namespace teacher_evaluation_project
             OpenChildForm(formHome);
         }
 
-        private void ActivateMenuItem(object btnSender)
+        public void ActivateMenuItem(object btnSender)
         {
             if (btnSender != null)
             {

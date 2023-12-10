@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using teacher_evaluation_project.projectClasses;
 using MySql.Data.MySqlClient;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.Reflection;
 
 
 namespace teacher_evaluation_project.Forms
@@ -21,18 +22,17 @@ namespace teacher_evaluation_project.Forms
 #pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
 #pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
         public FormSearch()
-#pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
-#pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
         {
             InitializeComponent();
             SetTheme();
 
             textBoxSurname.AddPlaceholder("Введіть дані");
-            if (FormMain.mainForm!=null)
+            if (FormMain.mainForm != null)
+            {
                 LoadTeachers();
-            
-            comboBoxPosition.SelectedItem = comboBoxPosition.Items[0];
-            sortComboBox.SelectedItem = sortComboBox.Items[2];
+                comboBoxPosition.SelectedItem = comboBoxPosition.Items[0];
+                sortComboBox.SelectedItem = sortComboBox.Items[2];
+            }
         }
 
         public override void SetTheme()
@@ -52,9 +52,8 @@ namespace teacher_evaluation_project.Forms
         const string connect = "server=localhost;port=3306;username=root;password=root;database=teachers";
 
 
-        public void LoadTeachers()
+        public async void LoadTeachers()
         {
-
             try
             {
                 connection = new MySqlConnection(connect);
@@ -81,8 +80,10 @@ namespace teacher_evaluation_project.Forms
             }
             catch (Exception ex)
             {
-                FormMain.mainForm.OpenChildForm(FormMain.mainForm.formHome);
                 MessageBox.Show(ex.Message);
+                await Task.Delay(100);
+                FormMain.mainForm.OpenChildForm(FormMain.mainForm.formHome);
+                FormMain.mainForm.ActivateMenuItem(FormMain.mainForm.btnHome);
             }
         }
         private void listTeachers_SelectedIndexChanged(object sender, EventArgs e)

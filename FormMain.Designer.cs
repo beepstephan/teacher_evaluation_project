@@ -309,7 +309,6 @@
         private Button btnSettings;
         private Button btnTheme;
         private Button btnSearch;
-        private Button btnHome;
         private Button btnAbout;
         private Button btnFaq;
         private Button btnDev;
@@ -320,5 +319,6 @@
         private Label lblLogo;
         public Button btnLogIn;
         private Panel panelMenu;
+        internal Button btnHome;
     }
 }

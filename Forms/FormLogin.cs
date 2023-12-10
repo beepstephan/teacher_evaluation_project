@@ -58,9 +58,10 @@ namespace teacher_evaluation_project.Forms
         {
             DataBase db = new DataBase();
             Except ConnectionException = new Except();
-            bool isConnected=ConnectionException.IsValidConnection("server=localhost;port=3306;username=root;password=root;database=teachers");
-         
-            if (isConnected == true) {
+            bool isConnected = ConnectionException.IsValidConnection("server=localhost;port=3306;username=root;password=root;database=teachers");
+
+            if (isConnected == true)
+            {
                 Except LoginException = new Except();
                 LoginException.ExceptionsLogin(loginField.Text, passField.Text);
 
@@ -78,27 +79,27 @@ namespace teacher_evaluation_project.Forms
                 adapter.SelectCommand = command;
                 adapter.Fill(table);
 
-            if (table.Rows.Count > 0)
-            {
-                DataRow userData = table.Rows[0];
-                User.Id = Convert.ToInt32(userData["id"].ToString());
-                User.Email = userData["email"].ToString();
-                User.Password = userData["pass"].ToString();
-                User.Surname = userData["pass"].ToString();
-                User.Name = userData["pass"].ToString();
-                User.isLogIn = true;
+                if (table.Rows.Count > 0)
+                {
+                    DataRow userData = table.Rows[0];
+                    User.Id = Convert.ToInt32(userData["id"].ToString());
+                    User.Email = userData["email"].ToString();
+                    User.Password = userData["pass"].ToString();
+                    User.Surname = userData["surname"].ToString();
+                    User.Name = userData["name"].ToString();
+                    User.isLogIn = true;
 
-                FormMain.mainForm.btnLogIn.BackColor = Color.Brown;
-                FormMain.mainForm.btnLogIn.Text = "   Вийти";
+                    FormMain.mainForm.btnLogIn.BackColor = Color.Brown;
+                    FormMain.mainForm.btnLogIn.Text = "   Вийти";
 
-                FormMain.mainForm.OpenChildForm(FormMain.mainForm.formHome);
-            }
-            else
-            {
-                MessageBox.Show("NO");
+                    FormMain.mainForm.OpenChildForm(FormMain.mainForm.formHome);
+                }
+                else
+                {
+                    MessageBox.Show("NO");
+                }
             }
         }
-
         private void checkPass_CheckedChanged(object sender, EventArgs e)
         {
             if (checkPass.Checked)
