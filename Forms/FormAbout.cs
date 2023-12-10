@@ -20,7 +20,7 @@ namespace teacher_evaluation_project.Forms
             SetTheme();
         }
 
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void imgLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             imgLink.LinkVisited = true;
             Process.Start(new ProcessStartInfo("https://www.svgrepo.com/") { UseShellExecute = true });
@@ -33,6 +33,12 @@ namespace teacher_evaluation_project.Forms
                 themeIndex = Theme.themeIndex;
                 BackColor = Theme.activeTheme.panelDesktopColor;
             }
+        }
+
+        private void imgTeacherLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            imgLink.LinkVisited = true;
+            Process.Start(new ProcessStartInfo("https://pz.zp.ua/spivrobitnyky/") { UseShellExecute = true });
         }
     }
 }
