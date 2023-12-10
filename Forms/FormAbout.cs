@@ -34,18 +34,5 @@ namespace teacher_evaluation_project.Forms
                 BackColor = Theme.activeTheme.panelDesktopColor;
             }
         }
-
-        public override void SetFont()
-        {
-            if (fontFamily != Theme.fontFamily || fontSize != Theme.fontSize)
-            {
-                fontFamily = Theme.fontFamily;
-                fontSize = Theme.fontSize;
-                foreach (Control btn in Controls)
-                {
-                    btn.Font = new System.Drawing.Font(Theme.fontFamily, Theme.fontSize, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                }
-            }
-        }
     }
 }

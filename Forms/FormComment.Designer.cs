@@ -31,9 +31,10 @@
             textBoxComment = new RichTextBox();
             lblName = new Label();
             btnDone = new Button();
-            trackBarRating = new TrackBar();
+            trackBarRate = new TrackBar();
             lblCounter = new Label();
-            ((System.ComponentModel.ISupportInitialize)trackBarRating).BeginInit();
+            lblRate = new Label();
+            ((System.ComponentModel.ISupportInitialize)trackBarRate).BeginInit();
             SuspendLayout();
             // 
             // textBoxComment
@@ -75,14 +76,15 @@
             btnDone.UseVisualStyleBackColor = false;
             btnDone.Click += btnDone_Click;
             // 
-            // trackBarRating
+            // trackBarRate
             // 
-            trackBarRating.Location = new Point(14, 41);
-            trackBarRating.Minimum = 1;
-            trackBarRating.Name = "trackBarRating";
-            trackBarRating.Size = new Size(293, 45);
-            trackBarRating.TabIndex = 3;
-            trackBarRating.Value = 1;
+            trackBarRate.Location = new Point(14, 41);
+            trackBarRate.Minimum = 1;
+            trackBarRate.Name = "trackBarRate";
+            trackBarRate.Size = new Size(293, 45);
+            trackBarRate.TabIndex = 3;
+            trackBarRate.Value = 1;
+            trackBarRate.ValueChanged += trackBarRating_ValueChanged;
             // 
             // lblCounter
             // 
@@ -95,21 +97,32 @@
             lblCounter.TabIndex = 4;
             lblCounter.Text = "Символів: 0/250";
             // 
+            // lblRate
+            // 
+            lblRate.AutoSize = true;
+            lblRate.ForeColor = Color.Gainsboro;
+            lblRate.Location = new Point(271, 78);
+            lblRate.Name = "lblRate";
+            lblRate.Size = new Size(36, 17);
+            lblRate.TabIndex = 5;
+            lblRate.Text = "1/10";
+            // 
             // FormComment
             // 
             AutoScaleDimensions = new SizeF(8F, 16F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(35, 35, 80);
             ClientSize = new Size(628, 341);
+            Controls.Add(lblRate);
             Controls.Add(lblCounter);
-            Controls.Add(trackBarRating);
+            Controls.Add(trackBarRate);
             Controls.Add(btnDone);
             Controls.Add(lblName);
             Controls.Add(textBoxComment);
             Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
             Name = "FormComment";
             Text = "Дати відгук";
-            ((System.ComponentModel.ISupportInitialize)trackBarRating).EndInit();
+            ((System.ComponentModel.ISupportInitialize)trackBarRate).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -119,7 +132,8 @@
         private RichTextBox textBoxComment;
         private Label lblName;
         private Button btnDone;
-        private TrackBar trackBarRating;
+        private TrackBar trackBarRate;
         private Label lblCounter;
+        private Label lblRate;
     }
 }

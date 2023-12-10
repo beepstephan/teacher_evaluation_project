@@ -19,9 +19,7 @@ namespace teacher_evaluation_project.Forms
         int teacherId;
         int commentIndex = -1;
         List<Comment> comments;
-#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
         public FormComment()
-#pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
         {
             InitializeComponent();
             SetTheme();
@@ -32,29 +30,31 @@ namespace teacher_evaluation_project.Forms
 
             this.teacherId = teacherId;
             comments = comms;
-            
-            for(int i=0; i<comms.Count; i++)
+
+            for (int i = 0; i < comms.Count; i++)
             {
                 if (comms[i].id == User.Id)
                 {
                     commentIndex = i;
-                    trackBarRating.Value = comms[i].rate;
+                    trackBarRate.Value = comms[i].rate;
+                    lblRate.Text = $"{comms[i].rate}/10";
                     textBoxComment.Text = comms[i].text;
                     lblCounter.Text = $"Символів:{textBoxComment.Text.Length}/{textBoxComment.MaxLength}";
                     break;
                 }
             }
-            
+
             lblName.Text = $"{sname} {name} {mname}";
             SetTheme();
         }
-        
+
         private void btnDone_Click(object sender, EventArgs e)
-        {   
+        {
             Except CommentException = new Except();
-            bool bothfill=CommentException.IsValidComment(textBoxComment.Text, trackBarRating.Value);
-            if(bothfill==true) {
-                Comment newComment = new Comment(User.Id, DateTime.Now.ToString("dd/MM/yyyy HH:mm"), trackBarRating.Value, textBoxComment.Text);
+            bool bothfill = CommentException.IsValidComment(textBoxComment.Text, trackBarRate.Value);
+            if (bothfill == true)
+            {
+                Comment newComment = new Comment(User.Id, DateTime.Now.ToString("dd/MM/yyyy HH:mm"), trackBarRate.Value, textBoxComment.Text);
                 if (commentIndex > -1)
                 {
                     comments[commentIndex] = newComment;
@@ -79,11 +79,8 @@ namespace teacher_evaluation_project.Forms
 
                 try
                 {
-                    //This is my connection string i have assigned the database file address path
                     string MyConnection2 = "datasource=localhost;port=3306;username=root;password=root";
-                    //This is my update query in which i am taking input from the user through windows forms and update the record.
                     string Query = "update teachers.dep set comments='" + json + "',rate='" + stringRate + "' where id='" + teacherId + "';";
-                    //This is  MySqlConnection here i have created the object and pass my connection string.
                     MySqlConnection MyConn2 = new MySqlConnection(MyConnection2);
                     MySqlCommand MyCommand2 = new MySqlCommand(Query, MyConn2);
                     MySqlDataReader MyReader2;
@@ -105,7 +102,7 @@ namespace teacher_evaluation_project.Forms
             {
                 MessageBox.Show("Обидва поля повинні бути заповненими!");
             }
-            
+
         }
         public override void SetTheme()
         {
@@ -118,23 +115,15 @@ namespace teacher_evaluation_project.Forms
             }
         }
 
-        public override void SetFont()
-        {
-            if (fontFamily != Theme.fontFamily || fontSize != Theme.fontSize)
-            {
-                fontFamily = Theme.fontFamily;
-                fontSize = Theme.fontSize;
-                foreach (Control btn in Controls)
-                {
-                    btn.Font = new System.Drawing.Font(Theme.fontFamily, Theme.fontSize, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                }
-            }
-        }
-
         private void textBoxComment_TextChanged(object sender, EventArgs e)
         {
             lblCounter.Text = "Символів: " + textBoxComment.Text.Length.ToString() + "/250";
             Update();
+        }
+
+        private void trackBarRating_ValueChanged(object sender, EventArgs e)
+        {
+            lblRate.Text = $"{trackBarRate}/10";
         }
     }
 }

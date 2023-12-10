@@ -28,7 +28,7 @@ namespace teacher_evaluation_project.Forms
                 fontSize = Theme.fontSize;
                 foreach (Control item in Controls)
                 {
-                    item.Font = new System.Drawing.Font(Theme.fontFamily, Theme.fontSize, System.Drawing.FontStyle.Regular);
+                    item.Font = new Font(Theme.fontFamily, Theme.fontSize, item.Font.Style);
                 }
             }
         }

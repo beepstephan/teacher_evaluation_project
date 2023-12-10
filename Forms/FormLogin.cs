@@ -46,19 +46,6 @@ namespace teacher_evaluation_project.Forms
             }
         }
 
-        public override void SetFont()
-        {
-            if (fontFamily != Theme.fontFamily || fontSize != Theme.fontSize)
-            {
-                fontFamily = Theme.fontFamily;
-                fontSize = Theme.fontSize;
-                foreach (Control control in Controls)
-                {
-                    control.Font = new Font(Theme.fontFamily, Theme.fontSize, control.Font.Style);
-                }
-            }
-        }
-
         private void btnLogIn_Click(object sender, EventArgs e)
         {
             DataBase db = new DataBase();
