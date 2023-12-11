@@ -1,8 +1,3 @@
-using MySql.Data.MySqlClient;
-using System.Data;
-using System.Drawing.Imaging;
-using System.Runtime.InteropServices;
-using System.Security.Cryptography.Xml;
 using teacher_evaluation_project.Forms;
 using teacher_evaluation_project.projectClasses;
 

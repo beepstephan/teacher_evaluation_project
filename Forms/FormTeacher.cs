@@ -1,16 +1,6 @@
-﻿using Microsoft.Data.SqlClient;
-using MySql.Data.MySqlClient;
+﻿using MySql.Data.MySqlClient;
 using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Xml.Linq;
 using teacher_evaluation_project.projectClasses;
 
 namespace teacher_evaluation_project.Forms
@@ -145,7 +135,6 @@ namespace teacher_evaluation_project.Forms
                 tableComments.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
 
                 // додавання до таблиці коментарів
-#pragma warning disable CS8602 // Dereference of a possibly null reference.
                 for (int i = 0; i < commentList.Count; i++)
                 {
                     // створення tableItem
@@ -180,7 +169,6 @@ namespace teacher_evaluation_project.Forms
                     // додавання tableItem в рядок
                     tableComments.Controls.Add(tableItem, 0, i);
                 }
-#pragma warning restore CS8602 // Dereference of a possibly null reference.
 
                 Controls.Add(tableComments);
             }
