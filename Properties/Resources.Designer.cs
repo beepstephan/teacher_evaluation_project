@@ -63,6 +63,16 @@ namespace teacher_evaluation_project.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _26 {
+            get {
+                object obj = ResourceManager.GetObject("26", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap color_palette_svgrepo_com_negate {
             get {
                 object obj = ResourceManager.GetObject("color_palette_svgrepo_com_negate", resourceCulture);
