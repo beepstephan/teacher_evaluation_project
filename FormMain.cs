@@ -9,8 +9,6 @@ namespace teacher_evaluation_project
         private Button activeButton;
         private FormProject activeForm;
         static public FormMain mainForm;
-        public User currentUser = new User();
-        public bool isConnected = false;
 
         //child forms
         public FormHome formHome = new FormHome();

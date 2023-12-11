@@ -7,7 +7,7 @@ namespace teacher_evaluation_project.Forms
 {
     public partial class FormSearch : FormProject
     {
-        List<ListViewItem> AllTeachers = new List<ListViewItem>();
+        private List<ListViewItem> AllTeachers = new List<ListViewItem>();
 
         public FormSearch()
         {
