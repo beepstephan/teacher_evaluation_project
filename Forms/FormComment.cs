@@ -123,7 +123,7 @@ namespace teacher_evaluation_project.Forms
 
         private void trackBarRating_ValueChanged(object sender, EventArgs e)
         {
-            lblRate.Text = $"{trackBarRate}/10";
+            lblRate.Text = $"{trackBarRate.Value}/10";
         }
     }
 }

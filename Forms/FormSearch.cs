@@ -101,36 +101,45 @@ namespace teacher_evaluation_project.Forms
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
-        {   
-            Except SearchException = new Except();
-            if (!SearchException.ExceptionSearch(textBoxSurname.Text, comboBoxPosition.Text))
+        {
+            try
             {
-                return;
-            }
-            List<ListViewItem> list = new List<ListViewItem>(AllTeachers);
-            if (textBoxSurname.Text != "Введіть дані")
-            {
-                list = CustomSearch.SearchByName(list, textBoxSurname.Text, comboBoxPosition.Text);
-
-                listTeachers.Items.Clear();
-
-                foreach (ListViewItem item in list)
+                Except SearchException = new Except();
+                List<ListViewItem> list = new List<ListViewItem>(AllTeachers);
+                if (textBoxSurname.Text != "Введіть дані")
                 {
-                    listTeachers.Items.Add(item);
+                    list = CustomSearch.SearchByName(list, textBoxSurname.Text, comboBoxPosition.Text);
+
+                    listTeachers.Items.Clear();
+
+                    foreach (ListViewItem item in list)
+                    {
+                        listTeachers.Items.Add(item);
+                    }
+                }
+                else
+                {
+                    list = CustomSearch.SearchByName(list, "", comboBoxPosition.Text);
+
+                    listTeachers.Items.Clear();
+
+                    foreach (ListViewItem item in list)
+                    {
+                        listTeachers.Items.Add(item);
+                    }
+                }
+                sortComboBox_SelectedIndexChanged(sortComboBox, e);
+
+                if (listTeachers.Items.Count == 0)
+                {
+                    string msg = "За вашим запитом не знайдено жодного викладача!";
+                    throw new Except(msg);
                 }
             }
-            else
+            catch(Except ex)
             {
-                list = CustomSearch.SearchByName(list, "", comboBoxPosition.Text);
-
-                listTeachers.Items.Clear();
-
-                foreach (ListViewItem item in list)
-                {
-                    listTeachers.Items.Add(item);
-                }
+                MessageBox.Show(ex.Message, "Помилка запиту", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            sortComboBox_SelectedIndexChanged(sortComboBox, e);
         }
 
         private void sortComboBox_SelectedIndexChanged(object sender, EventArgs e)
