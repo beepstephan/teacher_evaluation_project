@@ -126,8 +126,8 @@ namespace teacher_evaluation_project.Forms
                         }
                         // =======
 
-                        FormMain.mainForm.formLogIn = new FormLogIn();
-                        FormMain.mainForm.OpenChildForm(FormMain.mainForm.formLogIn);
+                        // на головну
+                        FormMain.mainForm.OpenChildForm(FormMain.mainForm.formHome);
                     }
                     db.closeConnection();
                     
