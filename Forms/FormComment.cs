@@ -64,8 +64,8 @@ namespace teacher_evaluation_project.Forms
                     pointSum += com.rate;
                 }
                 readyRate = (double)pointSum / (double)comments.Count;
-                Math.Round(readyRate, 2);
-                string stringRate = readyRate.ToString();
+                
+                string stringRate = Math.Round(readyRate, 2).ToString();
 
                 string json = JsonConvert.SerializeObject(comments);
 
@@ -77,8 +77,7 @@ namespace teacher_evaluation_project.Forms
                     MySqlCommand MyCommand2 = new MySqlCommand(Query, MyConn2);
                     MySqlDataReader MyReader2;
                     MyConn2.Open();
-                    MyReader2 = MyCommand2.ExecuteReader();
-
+                    MyCommand2.ExecuteReader();
                     MyConn2.Close();
                 }
                 catch (Exception ex)

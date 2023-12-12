@@ -68,7 +68,6 @@ namespace teacher_evaluation_project.Forms
                         DataRow userData = table.Rows[0];
                         User.Id = Convert.ToInt32(userData["id"].ToString());
                         User.Email = userData["email"].ToString();
-                        User.Password = userData["pass"].ToString();
                         User.Surname = userData["surname"].ToString();
                         User.Name = userData["name"].ToString();
                         User.isLogIn = true;
