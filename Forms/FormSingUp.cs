@@ -99,6 +99,33 @@ namespace teacher_evaluation_project.Forms
                     if (command.ExecuteNonQuery() == 1)
                     {
                         MessageBox.Show("Реєстрація успішна", "Успіх", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        // авторизація
+                        DataTable table = new DataTable();
+                        MySqlDataAdapter adapter = new MySqlDataAdapter();
+
+                        MySqlCommand cmdGet = new MySqlCommand("SELECT id FROM `users` WHERE `email` = @uE", db.getConnection());
+                        cmdGet.Parameters.Add("@uE", MySqlDbType.VarChar).Value = loginField.Text;
+
+                        adapter.SelectCommand = cmdGet;
+                        adapter.Fill(table);
+
+                        if (table.Rows.Count > 0)
+                        {
+                            DataRow userData = table.Rows[0];
+                            User.Id = Convert.ToInt32(userData["id"].ToString());
+                            User.Email = loginField.Text;
+                            User.Surname = userSurnameField.Text;
+                            User.Name = userNameField.Text;
+                            User.isLogIn = true;
+
+                            FormMain.mainForm.btnLogIn.BackColor = Color.Brown;
+                            FormMain.mainForm.btnLogIn.Text = "   Вийти";
+
+                            FormMain.mainForm.OpenChildForm(FormMain.mainForm.formHome);
+                        }
+                        // =======
+
                         FormMain.mainForm.formLogIn = new FormLogIn();
                         FormMain.mainForm.OpenChildForm(FormMain.mainForm.formLogIn);
                     }
