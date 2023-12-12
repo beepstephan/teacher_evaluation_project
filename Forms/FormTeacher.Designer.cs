@@ -28,119 +28,117 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.photoTeacher = new System.Windows.Forms.PictureBox();
-            this.lblName = new System.Windows.Forms.Label();
-            this.lblPosition = new System.Windows.Forms.Label();
-            this.lblSubject = new System.Windows.Forms.Label();
-            this.lblDescription = new System.Windows.Forms.Label();
-            this.btnComment = new System.Windows.Forms.Button();
-            this.lblGpa = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.photoTeacher)).BeginInit();
-            this.SuspendLayout();
+            photoTeacher = new PictureBox();
+            lblName = new Label();
+            lblPosition = new Label();
+            lblSubject = new Label();
+            lblDescription = new Label();
+            btnComment = new Button();
+            lblGpa = new Label();
+            ((System.ComponentModel.ISupportInitialize)photoTeacher).BeginInit();
+            SuspendLayout();
             // 
             // photoTeacher
             // 
-            this.photoTeacher.BackColor = System.Drawing.Color.Gainsboro;
-            this.photoTeacher.ErrorImage = global::teacher_evaluation_project.Properties.Resources._26;
-            this.photoTeacher.Location = new System.Drawing.Point(37, 27);
-            this.photoTeacher.Name = "photoTeacher";
-            this.photoTeacher.Size = new System.Drawing.Size(114, 128);
-            this.photoTeacher.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.photoTeacher.TabIndex = 0;
-            this.photoTeacher.TabStop = false;
+            photoTeacher.BackColor = Color.Gainsboro;
+            photoTeacher.ErrorImage = Properties.Resources._26;
+            photoTeacher.Location = new Point(37, 27);
+            photoTeacher.Name = "photoTeacher";
+            photoTeacher.Size = new Size(114, 128);
+            photoTeacher.SizeMode = PictureBoxSizeMode.StretchImage;
+            photoTeacher.TabIndex = 0;
+            photoTeacher.TabStop = false;
             // 
             // lblName
             // 
-            this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblName.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblName.Location = new System.Drawing.Point(178, 27);
-            this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(422, 22);
-            this.lblName.TabIndex = 1;
-            this.lblName.Text = "ПІБ: ";
+            lblName.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            lblName.ForeColor = Color.Gainsboro;
+            lblName.Location = new Point(178, 27);
+            lblName.Name = "lblName";
+            lblName.Size = new Size(422, 22);
+            lblName.TabIndex = 1;
+            lblName.Text = "ПІБ: ";
             // 
             // lblPosition
             // 
-            this.lblPosition.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblPosition.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblPosition.Location = new System.Drawing.Point(178, 62);
-            this.lblPosition.Name = "lblPosition";
-            this.lblPosition.Size = new System.Drawing.Size(422, 22);
-            this.lblPosition.TabIndex = 2;
-            this.lblPosition.Text = "Посада: ";
+            lblPosition.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            lblPosition.ForeColor = Color.Gainsboro;
+            lblPosition.Location = new Point(178, 62);
+            lblPosition.Name = "lblPosition";
+            lblPosition.Size = new Size(422, 22);
+            lblPosition.TabIndex = 2;
+            lblPosition.Text = "Посада: ";
             // 
             // lblSubject
             // 
-            this.lblSubject.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblSubject.AutoEllipsis = true;
-            this.lblSubject.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblSubject.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblSubject.Location = new System.Drawing.Point(178, 97);
-            this.lblSubject.Name = "lblSubject";
-            this.lblSubject.Size = new System.Drawing.Size(422, 22);
-            this.lblSubject.TabIndex = 3;
-            this.lblSubject.Text = "Дисципліни: ";
+            lblSubject.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            lblSubject.AutoEllipsis = true;
+            lblSubject.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            lblSubject.ForeColor = Color.Gainsboro;
+            lblSubject.Location = new Point(178, 97);
+            lblSubject.Name = "lblSubject";
+            lblSubject.Size = new Size(422, 22);
+            lblSubject.TabIndex = 3;
+            lblSubject.Text = "Дисципліни: ";
             // 
             // lblDescription
             // 
-            this.lblDescription.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblDescription.AutoEllipsis = true;
-            this.lblDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblDescription.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblDescription.Location = new System.Drawing.Point(178, 137);
-            this.lblDescription.Name = "lblDescription";
-            this.lblDescription.Size = new System.Drawing.Size(422, 22);
-            this.lblDescription.TabIndex = 4;
-            this.lblDescription.Text = "Опис: ";
+            lblDescription.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            lblDescription.AutoEllipsis = true;
+            lblDescription.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            lblDescription.ForeColor = Color.Gainsboro;
+            lblDescription.Location = new Point(178, 137);
+            lblDescription.Name = "lblDescription";
+            lblDescription.Size = new Size(422, 22);
+            lblDescription.TabIndex = 4;
+            lblDescription.Text = "Опис: ";
             // 
             // btnComment
             // 
-            this.btnComment.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnComment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(65)))));
-            this.btnComment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnComment.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnComment.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnComment.Location = new System.Drawing.Point(429, 167);
-            this.btnComment.Name = "btnComment";
-            this.btnComment.Size = new System.Drawing.Size(171, 41);
-            this.btnComment.TabIndex = 5;
-            this.btnComment.Text = "Дати відгук";
-            this.btnComment.UseVisualStyleBackColor = false;
+            btnComment.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnComment.BackColor = Color.FromArgb(30, 30, 65);
+            btnComment.FlatStyle = FlatStyle.Flat;
+            btnComment.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            btnComment.ForeColor = Color.Gainsboro;
+            btnComment.Location = new Point(429, 167);
+            btnComment.Name = "btnComment";
+            btnComment.Size = new Size(171, 41);
+            btnComment.TabIndex = 5;
+            btnComment.Text = "Дати відгук";
+            btnComment.UseVisualStyleBackColor = false;
+            btnComment.Click += btnComment_Click;
             // 
             // lblGpa
             // 
-            this.lblGpa.AutoSize = true;
-            this.lblGpa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblGpa.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblGpa.Location = new System.Drawing.Point(37, 190);
-            this.lblGpa.Name = "lblGpa";
-            this.lblGpa.Size = new System.Drawing.Size(154, 17);
-            this.lblGpa.TabIndex = 6;
-            this.lblGpa.Text = "Середні оцінка: 8.4/10";
+            lblGpa.AutoSize = true;
+            lblGpa.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            lblGpa.ForeColor = Color.Gainsboro;
+            lblGpa.Location = new Point(37, 190);
+            lblGpa.Name = "lblGpa";
+            lblGpa.Size = new Size(154, 17);
+            lblGpa.TabIndex = 6;
+            lblGpa.Text = "Середні оцінка: 8.4/10";
             // 
             // FormTeacher
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoScroll = true;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(80)))));
-            this.ClientSize = new System.Drawing.Size(628, 341);
-            this.Controls.Add(this.lblGpa);
-            this.Controls.Add(this.btnComment);
-            this.Controls.Add(this.lblDescription);
-            this.Controls.Add(this.lblSubject);
-            this.Controls.Add(this.lblPosition);
-            this.Controls.Add(this.lblName);
-            this.Controls.Add(this.photoTeacher);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Name = "FormTeacher";
-            this.Text = "Викладач";
-            ((System.ComponentModel.ISupportInitialize)(this.photoTeacher)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(8F, 16F);
+            AutoScaleMode = AutoScaleMode.Font;
+            AutoScroll = true;
+            BackColor = Color.FromArgb(35, 35, 80);
+            ClientSize = new Size(628, 341);
+            Controls.Add(lblGpa);
+            Controls.Add(btnComment);
+            Controls.Add(lblDescription);
+            Controls.Add(lblSubject);
+            Controls.Add(lblPosition);
+            Controls.Add(lblName);
+            Controls.Add(photoTeacher);
+            Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            Name = "FormTeacher";
+            Text = "Викладач";
+            ((System.ComponentModel.ISupportInitialize)photoTeacher).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

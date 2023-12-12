@@ -9,7 +9,7 @@ namespace teacher_evaluation_project.Forms
     {
         List<Comment> commentList = new List<Comment>();
         string teacherSurname, teacherName, teacherMiddlename, teacherPosition, teacherDescription, teacherSubjects, teacherRate;
-        
+
         string jsonComments;
         TableLayoutPanel tableComments;
         int id;
@@ -30,7 +30,7 @@ namespace teacher_evaluation_project.Forms
             lblSubject.Text = $"Дисципліни: {teacherSubjects}";
             lblDescription.Text = $"Опис: {teacherDescription}";
             lblGpa.Text = $"Середня оцінка: {teacherRate}/10";
-            
+
             LoadComments();
             SetTheme();
         }
@@ -49,7 +49,7 @@ namespace teacher_evaluation_project.Forms
             adapter.Fill(table);
 
             DataRow dr = table.Rows[0];
-            
+
             teacherSurname = dr["surname"].ToString();
             teacherName = dr["name"].ToString();
 
@@ -115,7 +115,7 @@ namespace teacher_evaluation_project.Forms
             // JSON to List<Comments>
             if (jsonComments != "null")
             {
-                
+
 
                 commentList = JsonConvert.DeserializeObject<List<Comment>>(jsonComments);
 
@@ -172,7 +172,7 @@ namespace teacher_evaluation_project.Forms
 
                 Controls.Add(tableComments);
             }
-            
+
         }
 
         private void FormTeacher_SizeChanged(object sender, EventArgs e)
