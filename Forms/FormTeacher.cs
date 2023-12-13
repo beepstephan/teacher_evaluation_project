@@ -8,7 +8,6 @@ namespace teacher_evaluation_project.Forms
     public partial class FormTeacher : FormProject
     {
         List<Comment> commentList = new List<Comment>();
-        string teacherSurname, teacherName, teacherMiddlename, teacherPosition, teacherDescription, teacherSubjects, teacherRate;
 
         string jsonComments;
         TableLayoutPanel tableComments;
@@ -22,14 +21,14 @@ namespace teacher_evaluation_project.Forms
         {
             InitializeComponent();
 
-            this.id = id;
+            Teacher.Id = id;
             getInfo();
 
-            lblName.Text = $"{teacherSurname} {teacherName} {teacherMiddlename}";
-            lblPosition.Text = $"Посада: {teacherPosition}";
-            lblSubject.Text = $"Дисципліни: {teacherSubjects}";
-            lblDescription.Text = $"Опис: {teacherDescription}";
-            lblGpa.Text = $"Середня оцінка: {teacherRate}/10";
+            lblName.Text = $"{Teacher.Surname} {Teacher.Name} {Teacher.MiddleName}";
+            lblPosition.Text = $"Посада: {Teacher.Position}";
+            lblSubject.Text = $"Дисципліни: {Teacher.Subjects}";
+            lblDescription.Text = $"Опис: {Teacher.Description}";
+            lblGpa.Text = $"Середня оцінка: {Teacher.Rate}/10";
 
             LoadComments();
             SetTheme();
@@ -44,27 +43,25 @@ namespace teacher_evaluation_project.Forms
             MySqlDataAdapter adapter = new MySqlDataAdapter();
 
             MySqlCommand command = new MySqlCommand("SELECT * FROM `dep` WHERE `id` = @uID", database.getConnection());
-            command.Parameters.Add("@uID", MySqlDbType.Int32).Value = id;
+            command.Parameters.Add("@uID", MySqlDbType.Int32).Value = Teacher.Id;
             adapter.SelectCommand = command;
             adapter.Fill(table);
 
             DataRow dr = table.Rows[0];
 
-            teacherSurname = dr["surname"].ToString();
-            teacherName = dr["name"].ToString();
+            // заповнення даних викладача з БД 
+            Teacher.Surname = dr["surname"].ToString();
+            Teacher.Name = dr["name"].ToString();
+            Teacher.MiddleName = dr["middlename"].ToString();
+            Teacher.Position = dr["pos"].ToString();
+            Teacher.Description = dr["description"].ToString();
+            Teacher.Subjects = dr["subjects"].ToString();
+            Teacher.Rate = dr["rate"].ToString();
 
-            teacherMiddlename = dr["middlename"].ToString();
-
-            teacherPosition = dr["pos"].ToString();
-
-            teacherDescription = dr["description"].ToString();
-
-            teacherSubjects = dr["subjects"].ToString();
-
-            teacherRate = dr["rate"].ToString();
-
+            // завантаження коментарів формату JSON з БД
             jsonComments = dr["comments"].ToString();
 
+            // завантаження фото викладача з БД
             byte[] teacherImg = (byte[])dr["image"];
             MemoryStream ms = new MemoryStream(teacherImg);
             photoTeacher.Image = Image.FromStream(ms);
@@ -73,7 +70,7 @@ namespace teacher_evaluation_project.Forms
         private void btnComment_Click(object sender, EventArgs e)
         {
             // відкриття форми коментування
-            FormMain.mainForm.formComent = new FormComment(id, commentList, teacherName, teacherSurname, teacherMiddlename);
+            FormMain.mainForm.formComent = new FormComment(Teacher.Id, commentList, Teacher.Name, Teacher.Surname, Teacher.MiddleName);
             FormMain.mainForm.OpenChildForm(FormMain.mainForm.formComent);
         }
         public override void SetTheme()

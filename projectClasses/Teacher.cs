@@ -1,16 +1,16 @@
 ﻿
 namespace teacher_evaluation_project.projectClasses
 {
-    internal class Teacher
+    public class Teacher
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public string Surname { get; set; }
-        public string MiddleName { get; set; }
-        public string Position { get; set; }
-        public string Description { get; set; }
-        public string Subjects { get; set; }
-        public string Rate { get; set; }
+        public static int Id { get; set; }
+        public static string Name { get; set; }
+        public static string Surname { get; set; }
+        public static string MiddleName { get; set; }
+        public static string Position { get; set; }
+        public static string Description { get; set; }
+        public static string Subjects { get; set; }
+        public static string Rate { get; set; }
         
     }
 }

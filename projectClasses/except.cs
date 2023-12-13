@@ -27,18 +27,7 @@ namespace teacher_evaluation_project.projectClasses
         {
 
         }
-        public bool ExceptionSearch(string Name, string Kafedra)
-        {
-            if (IsValidUsername(Name) && IsValidVikladach(Kafedra))
-            {
-                return true;
-            }
-            else
-            {
-                MessageBox.Show("Помилка при пошуку. Перевірте правильність введених даних.");
-                return false;
-            }
-        }
+       
         public bool IsValidUsername(string username)
         {
             // perevirka logina maks i min dovzhina 
@@ -75,8 +64,8 @@ namespace teacher_evaluation_project.projectClasses
             }
             else
             {
-                return false;
                 MessageBox.Show("Обидва поля повинні бути заповненими!");
+                return false;
             }
         }
         public bool IsValidConnection(string conn)

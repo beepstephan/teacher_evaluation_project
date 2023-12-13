@@ -10,17 +10,6 @@ namespace teacher_evaluation_project.projectClasses
         public static string Email { get; set; }
         public static bool isLogIn { get; set; }
 
-        // конструктори
-        public static void LogIn(int id, string e, string s, string n)
-        {
-            Id = id;
-            Email = e;
-            
-            Surname = s;
-            Name = n;
-            isLogIn = false;
-        }
-
         // методи
         public static void LogOut()
         {
