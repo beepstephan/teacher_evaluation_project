@@ -144,11 +144,11 @@ namespace teacher_evaluation_project.Forms
 
             if (sortComboBox.SelectedIndex == 0)
             {
-                CustomSort.RateAscending(list, 0, list.Count() - 1);
+                list = CustomSort.RateAscending(list);
             }
             else if (sortComboBox.SelectedIndex == 1)
             {
-                CustomSort.RateDescending(list, 0, list.Count() - 1);
+                list = CustomSort.RateDescending(list);
             }
             else if (sortComboBox.SelectedIndex == 2)
             {

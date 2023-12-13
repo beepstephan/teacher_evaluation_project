@@ -100,93 +100,66 @@ namespace teacher_evaluation_project.projectClasses
         }
 
 
-        public static void RateAscending(List<ListViewItem> list, int low, int high)
+        public static List<ListViewItem> RateAscending(List<ListViewItem> list)
         {
-            if (low < high)
-            {
-                int pivotIndex = PartitionRateAscending(list, low, high);
-                RateAscending(list, low, pivotIndex);
-                RateAscending(list, pivotIndex + 1, high);
-            }
-        }
+            if (list.Count <= 1)
+                return list;
 
-        private static int PartitionRateAscending(List<ListViewItem> list, int low, int high)
-        {
-            ListViewItem pivot = list[low];
-            int left = low + 1;
-            int right = high;
+            int pivotIndex = list.Count / 2;
+            ListViewItem pivot = list[pivotIndex];
+            List<ListViewItem> left = new List<ListViewItem>();
+            List<ListViewItem> right = new List<ListViewItem>();
 
-            while (left <= right)
+            for (int i = 0; i < list.Count; i++)
             {
-                if (Convert.ToDouble(list[left].SubItems[5].Text) <= Convert.ToDouble(pivot.SubItems[5].Text))
+                if (i == pivotIndex)
+                    continue;
+
+                if (Convert.ToDouble(list[i].SubItems[5].Text) <= Convert.ToDouble(pivot.SubItems[5].Text))
                 {
-                    left++;
-                }
-                else if (Convert.ToDouble(list[right].SubItems[5].Text) > Convert.ToDouble(pivot.SubItems[5].Text))
-                {
-                    right--;
+                    left.Add(list[i]);
                 }
                 else
                 {
-                    ListViewItem temp = list[left];
-                    list[left] = list[right];
-                    list[right] = temp;
-
-                    left++;
-                    right--;
+                    right.Add(list[i]);
                 }
             }
 
-            ListViewItem temp2 = list[low];
-            list[low] = list[right];
-            list[right] = temp2;
-
-            return right;
+            List<ListViewItem> sorted = RateAscending(left);
+            sorted.Add(pivot);
+            sorted.AddRange(RateAscending(right));
+            return sorted;
         }
 
-
-        public static void RateDescending(List<ListViewItem> list, int low, int high)
+        public static List<ListViewItem> RateDescending(List<ListViewItem> list)
         {
-            if (low < high)
-            {
-                int pivotIndex = PartitionRateDescending(list, low, high);
-                RateDescending(list, low, pivotIndex);
-                RateDescending(list, pivotIndex + 1, high);
-            }
-        }
+            if (list.Count <= 1)
+                return list;
 
-        private static int PartitionRateDescending(List<ListViewItem> list, int low, int high)
-        {
-            ListViewItem pivot = list[low];
-            int left = low + 1;
-            int right = high;
+            int pivotIndex = list.Count / 2;
+            ListViewItem pivot = list[pivotIndex];
+            List<ListViewItem> left = new List<ListViewItem>();
+            List<ListViewItem> right = new List<ListViewItem>();
 
-            while (left <= right)
+            for (int i = 0; i < list.Count; i++)
             {
-                if (Convert.ToDouble(list[left].SubItems[5].Text) >= Convert.ToDouble(pivot.SubItems[5].Text))
+                if (i == pivotIndex)
+                    continue;
+
+                if (Convert.ToDouble(list[i].SubItems[5].Text) >= Convert.ToDouble(pivot.SubItems[5].Text))
                 {
-                    left++;
-                }
-                else if (Convert.ToDouble(list[right].SubItems[5].Text) < Convert.ToDouble(pivot.SubItems[5].Text))
-                {
-                    right--;
+                    left.Add(list[i]);
                 }
                 else
                 {
-                    ListViewItem temp = list[left];
-                    list[left] = list[right];
-                    list[right] = temp;
-
-                    left++;
-                    right--;
+                    right.Add(list[i]);
                 }
             }
 
-            ListViewItem temp2 = list[low];
-            list[low] = list[right];
-            list[right] = temp2;
-
-            return right;
+            List<ListViewItem> sorted = RateDescending(left);
+            sorted.Add(pivot);
+            sorted.AddRange(RateDescending(right));
+            return sorted;
         }
 
     }
