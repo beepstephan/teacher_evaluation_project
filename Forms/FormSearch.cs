@@ -144,11 +144,11 @@ namespace teacher_evaluation_project.Forms
 
             if (sortComboBox.SelectedIndex == 0)
             {
-                list = CustomSort.RateAscending(list);
+                CustomSort.RateAscending(list, 0, list.Count() - 1);
             }
             else if (sortComboBox.SelectedIndex == 1)
             {
-                list = CustomSort.RateDescending(list);
+                CustomSort.RateDescending(list, 0, list.Count() - 1);
             }
             else if (sortComboBox.SelectedIndex == 2)
             {
@@ -156,7 +156,7 @@ namespace teacher_evaluation_project.Forms
             }
             else if (sortComboBox.SelectedIndex == 3)
             {
-                list = CustomSort.SurnameDescending(list);
+                CustomSort.SurnameDescending(list, 0, list.Count() - 1);
             }
 
             listTeachers.Items.Clear();
