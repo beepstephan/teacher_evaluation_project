@@ -4,67 +4,95 @@ namespace teacher_evaluation_project.projectClasses
     internal class CustomSort
     {
 
-        public static List<ListViewItem> SurnameAscending(List<ListViewItem> list)
+        public static void SurnameAscending(List<ListViewItem> list, int low, int high)
         {
-            if (list.Count <= 1)
-                return list;
-
-            int pivotIndex = list.Count / 2;
-            ListViewItem pivot = list[pivotIndex];
-            List<ListViewItem> left = new List<ListViewItem>();
-            List<ListViewItem> right = new List<ListViewItem>();
-
-            for (int i = 0; i < list.Count; i++)
+            if (low < high)
             {
-                if (i == pivotIndex)
-                    continue;
+                int pivotIndex = PartitionAscending(list, low, high);
+                SurnameAscending(list, low, pivotIndex);
+                SurnameAscending(list, pivotIndex + 1, high);
+            }
+        }
 
-                if (String.Compare(list[i].SubItems[1].Text, pivot.SubItems[1].Text) <= 0)
+        private static int PartitionAscending(List<ListViewItem> list, int low, int high)
+        {
+            ListViewItem pivot = list[low];
+            int left = low + 1;
+            int right = high;
+
+            while (left <= right)
+            {
+                if (String.Compare(list[left].SubItems[1].Text, pivot.SubItems[1].Text) <= 0)
                 {
-                    left.Add(list[i]);
+                    left++;
+                }
+                else if (String.Compare(list[right].SubItems[1].Text, pivot.SubItems[1].Text) > 0)
+                {
+                    right--;
                 }
                 else
                 {
-                    right.Add(list[i]);
+                    ListViewItem temp = list[left];
+                    list[left] = list[right];
+                    list[right] = temp;
+
+                    left++;
+                    right--;
                 }
             }
 
-            List<ListViewItem> sorted = SurnameAscending(left);
-            sorted.Add(pivot);
-            sorted.AddRange(SurnameAscending(right));
-            return sorted;
+            ListViewItem temp2 = list[low];
+            list[low] = list[right];
+            list[right] = temp2;
+
+            return right;
         }
 
-        public static List<ListViewItem> SurnameDescending(List<ListViewItem> list)
+
+        public static void SurnameDescending(List<ListViewItem> list, int low, int high)
         {
-            if (list.Count <= 1)
-                return list;
-
-            int pivotIndex = list.Count / 2;
-            ListViewItem pivot = list[pivotIndex];
-            List<ListViewItem> left = new List<ListViewItem>();
-            List<ListViewItem> right = new List<ListViewItem>();
-
-            for (int i = 0; i < list.Count; i++)
+            if (low < high)
             {
-                if (i == pivotIndex)
-                    continue;
+                int pivotIndex = PartitionDescending(list, low, high);
+                SurnameDescending(list, low, pivotIndex);
+                SurnameDescending(list, pivotIndex + 1, high);
+            }
+        }
 
-                if (String.Compare(list[i].SubItems[1].Text, pivot.SubItems[1].Text) > 0)
+        private static int PartitionDescending(List<ListViewItem> list, int low, int high)
+        {
+            ListViewItem pivot = list[low];
+            int left = low + 1;
+            int right = high;
+
+            while (left <= right)
+            {
+                if (String.Compare(list[left].SubItems[1].Text, pivot.SubItems[1].Text) > 0)
                 {
-                    left.Add(list[i]);
+                    left++;
+                }
+                else if (String.Compare(list[right].SubItems[1].Text, pivot.SubItems[1].Text) <= 0)
+                {
+                    right--;
                 }
                 else
                 {
-                    right.Add(list[i]);
+                    ListViewItem temp = list[left];
+                    list[left] = list[right];
+                    list[right] = temp;
+
+                    left++;
+                    right--;
                 }
             }
 
-            List<ListViewItem> sorted = SurnameDescending(left);
-            sorted.Add(pivot);
-            sorted.AddRange(SurnameDescending(right));
-            return sorted;
+            ListViewItem temp2 = list[low];
+            list[low] = list[right];
+            list[right] = temp2;
+
+            return right;
         }
+
 
         public static List<ListViewItem> RateAscending(List<ListViewItem> list)
         {
@@ -127,5 +155,6 @@ namespace teacher_evaluation_project.projectClasses
             sorted.AddRange(RateDescending(right));
             return sorted;
         }
+
     }
 }
