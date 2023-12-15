@@ -51,11 +51,7 @@ namespace teacher_evaluation_project.projectClasses
          // perevirka imeila
             return Regex.IsMatch(email, emailPattern);
         }
-        public bool IsValidVikladach(string username)
-        {
-
-            return !string.IsNullOrEmpty(username) && username.Length > 1 && username.Length < 50;
-        }
+        
         public bool IsValidComment(string text, int rate)
         {
             if (!String.IsNullOrEmpty(text)&&rate!=1)
