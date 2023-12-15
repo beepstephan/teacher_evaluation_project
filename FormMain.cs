@@ -136,6 +136,7 @@ namespace teacher_evaluation_project
             else
             {
                 DisableMenuItems();
+                formLogIn = new FormLogIn();
                 OpenChildForm(formLogIn);
                 MessageBox.Show("Щоб почати пошук викладачів, виконайте авторизацію", "Потрібна авторизація", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
