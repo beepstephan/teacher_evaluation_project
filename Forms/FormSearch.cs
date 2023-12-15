@@ -125,7 +125,7 @@ namespace teacher_evaluation_project.Forms
                     throw new Except(msg);
                 }
             }
-            catch(Except ex)
+            catch (Except ex)
             {
                 MessageBox.Show(ex.Message, "Помилка запиту", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }

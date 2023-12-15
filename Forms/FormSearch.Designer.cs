@@ -47,8 +47,8 @@
             textBoxSurname.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
             textBoxSurname.Location = new Point(39, 26);
             textBoxSurname.Name = "textBoxSurname";
-            textBoxSurname.Size = new Size(185, 26);
-            textBoxSurname.TabIndex = 3;
+            textBoxSurname.Size = new Size(185, 23);
+            textBoxSurname.TabIndex = 1;
             textBoxSurname.Text = "Введіть дані";
             // 
             // btnSearch
@@ -61,7 +61,7 @@
             btnSearch.Location = new Point(267, 70);
             btnSearch.Name = "btnSearch";
             btnSearch.Size = new Size(94, 33);
-            btnSearch.TabIndex = 4;
+            btnSearch.TabIndex = 3;
             btnSearch.Text = "Пошук";
             btnSearch.UseVisualStyleBackColor = false;
             btnSearch.Click += btnSearch_Click;
@@ -77,7 +77,7 @@
             comboBoxPosition.Location = new Point(292, 25);
             comboBoxPosition.Name = "comboBoxPosition";
             comboBoxPosition.Size = new Size(152, 24);
-            comboBoxPosition.TabIndex = 5;
+            comboBoxPosition.TabIndex = 2;
             // 
             // listTeachers
             // 
@@ -89,7 +89,7 @@
             listTeachers.MultiSelect = false;
             listTeachers.Name = "listTeachers";
             listTeachers.Size = new Size(549, 165);
-            listTeachers.TabIndex = 6;
+            listTeachers.TabIndex = 5;
             listTeachers.UseCompatibleStateImageBehavior = false;
             listTeachers.View = View.Details;
             listTeachers.SelectedIndexChanged += listTeachers_SelectedIndexChanged;
@@ -135,12 +135,12 @@
             sortComboBox.Location = new Point(403, 115);
             sortComboBox.Name = "sortComboBox";
             sortComboBox.Size = new Size(185, 24);
-            sortComboBox.TabIndex = 7;
+            sortComboBox.TabIndex = 4;
             sortComboBox.SelectedIndexChanged += sortComboBox_SelectedIndexChanged;
             // 
             // FormSearch
             // 
-            AutoScaleDimensions = new SizeF(10F, 20F);
+            AutoScaleDimensions = new SizeF(8F, 16F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(35, 35, 80);
             ClientSize = new Size(628, 322);

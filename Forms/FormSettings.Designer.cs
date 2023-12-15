@@ -54,7 +54,7 @@
             UpDownFontSize.Minimum = new decimal(new int[] { 10, 0, 0, 0 });
             UpDownFontSize.Name = "UpDownFontSize";
             UpDownFontSize.Size = new Size(48, 23);
-            UpDownFontSize.TabIndex = 4;
+            UpDownFontSize.TabIndex = 0;
             UpDownFontSize.TextAlign = HorizontalAlignment.Center;
             UpDownFontSize.Value = new decimal(new int[] { 10, 0, 0, 0 });
             UpDownFontSize.ValueChanged += UpDownFontSize_ValueChanged;
@@ -70,7 +70,7 @@
             boxFontStyle.Name = "boxFontStyle";
             boxFontStyle.RightToLeft = RightToLeft.No;
             boxFontStyle.Size = new Size(150, 24);
-            boxFontStyle.TabIndex = 3;
+            boxFontStyle.TabIndex = 1;
             boxFontStyle.SelectedValueChanged += comboBoxFont_SelectedValueChanged;
             // 
             // lblFontStyle

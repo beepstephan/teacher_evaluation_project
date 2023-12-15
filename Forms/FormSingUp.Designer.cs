@@ -46,7 +46,7 @@
             lblAccount.Location = new Point(150, 295);
             lblAccount.Name = "lblAccount";
             lblAccount.Size = new Size(326, 30);
-            lblAccount.TabIndex = 7;
+            lblAccount.TabIndex = 6;
             lblAccount.Text = "Вже є обліковий запис?";
             lblAccount.TextAlign = ContentAlignment.TopCenter;
             lblAccount.Click += label1_Click;
@@ -61,7 +61,7 @@
             buttonSingUp.Location = new Point(252, 245);
             buttonSingUp.Name = "buttonSingUp";
             buttonSingUp.Size = new Size(124, 32);
-            buttonSingUp.TabIndex = 6;
+            buttonSingUp.TabIndex = 5;
             buttonSingUp.Text = "Реєстрація";
             buttonSingUp.UseVisualStyleBackColor = false;
             buttonSingUp.Click += buttonSingUp_Click_1;
@@ -73,7 +73,7 @@
             passField.Location = new Point(213, 81);
             passField.Name = "passField";
             passField.Size = new Size(200, 24);
-            passField.TabIndex = 5;
+            passField.TabIndex = 1;
             passField.Tag = "pass";
             passField.Text = "Введіть пароль";
             // 
@@ -84,7 +84,7 @@
             loginField.Location = new Point(213, 31);
             loginField.Name = "loginField";
             loginField.Size = new Size(200, 24);
-            loginField.TabIndex = 4;
+            loginField.TabIndex = 0;
             loginField.Text = "Введіть логін";
             // 
             // userNameField
@@ -94,7 +94,7 @@
             userNameField.Location = new Point(213, 145);
             userNameField.Name = "userNameField";
             userNameField.Size = new Size(200, 24);
-            userNameField.TabIndex = 8;
+            userNameField.TabIndex = 3;
             userNameField.Text = "Введіть ім'я";
             // 
             // userSurnameField
@@ -104,7 +104,7 @@
             userSurnameField.Location = new Point(213, 195);
             userSurnameField.Name = "userSurnameField";
             userSurnameField.Size = new Size(200, 24);
-            userSurnameField.TabIndex = 9;
+            userSurnameField.TabIndex = 4;
             userSurnameField.Text = "Введіть прізвище";
             // 
             // checkPass
@@ -115,7 +115,7 @@
             checkPass.Location = new Point(273, 111);
             checkPass.Name = "checkPass";
             checkPass.Size = new Size(140, 21);
-            checkPass.TabIndex = 10;
+            checkPass.TabIndex = 2;
             checkPass.Text = "Показать пароль";
             checkPass.UseVisualStyleBackColor = true;
             checkPass.CheckedChanged += checkPass_CheckedChanged;

@@ -103,7 +103,7 @@
             btnComment.Location = new Point(429, 167);
             btnComment.Name = "btnComment";
             btnComment.Size = new Size(171, 41);
-            btnComment.TabIndex = 5;
+            btnComment.TabIndex = 0;
             btnComment.Text = "Дати відгук";
             btnComment.UseVisualStyleBackColor = false;
             btnComment.Click += btnComment_Click;
@@ -116,7 +116,7 @@
             lblGpa.Location = new Point(37, 190);
             lblGpa.Name = "lblGpa";
             lblGpa.Size = new Size(154, 17);
-            lblGpa.TabIndex = 6;
+            lblGpa.TabIndex = 5;
             lblGpa.Text = "Середні оцінка: 8.4/10";
             // 
             // FormTeacher

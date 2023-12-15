@@ -6,7 +6,7 @@ using MySql.Data.MySqlClient;
 namespace teacher_evaluation_project.Forms
 {
     public partial class FormLogIn : FormProject
-    {   
+    {
         public FormLogIn()
         {
             InitializeComponent();
@@ -42,12 +42,12 @@ namespace teacher_evaluation_project.Forms
             {
                 try
                 {
-                    Except LoginException = new Except();   
+                    Except LoginException = new Except();
                     if (!LoginException.IsValidPassword(passField.Text) || !LoginException.IsValidEmail(loginField.Text))
                     {
                         throw new Except(loginField.Text, passField.Text);
-                    }      
-                    
+                    }
+
                     string loginUser = loginField.Text;
                     string passUser = passField.Text;
 
@@ -79,7 +79,7 @@ namespace teacher_evaluation_project.Forms
                     }
                     else throw new Except(msg);
                 }
-                catch(Except ex)
+                catch (Except ex)
                 {
                     MessageBox.Show(ex.Message);
                 }

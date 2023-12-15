@@ -63,7 +63,8 @@ namespace teacher_evaluation_project.Forms
             DataBase db = new DataBase();
             Except ConnectionException = new Except();
             bool isConnected = ConnectionException.IsValidConnection("server=localhost;port=3306;username=root;password=root;database=teachers");
-            if (isConnected) {
+            if (isConnected)
+            {
                 Except signUpException = new Except();
                 try
                 {
@@ -71,7 +72,7 @@ namespace teacher_evaluation_project.Forms
                     {
                         throw new Except(userNameField.Text, userSurnameField.Text, loginField.Text, passField.Text);
                     }
-                    
+
                     if (userNameField.Text == "Введіть ім'я")
                     {
                         MessageBox.Show("Введіть ім'я");
@@ -130,7 +131,7 @@ namespace teacher_evaluation_project.Forms
                         FormMain.mainForm.OpenChildForm(FormMain.mainForm.formHome);
                     }
                     db.closeConnection();
-                    
+
                 }
                 catch (Except ex)
                 {
@@ -138,7 +139,7 @@ namespace teacher_evaluation_project.Forms
                 }
 
             }
-      
+
         }
 
         private void checkPass_CheckedChanged(object sender, EventArgs e)

@@ -81,7 +81,7 @@
             btnTheme.Name = "btnTheme";
             btnTheme.Padding = new Padding(5, 0, 0, 0);
             btnTheme.Size = new Size(240, 60);
-            btnTheme.TabIndex = 11;
+            btnTheme.TabIndex = 4;
             btnTheme.Text = "   Тема";
             btnTheme.TextAlign = ContentAlignment.MiddleLeft;
             btnTheme.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -152,7 +152,7 @@
             btnLogIn.Name = "btnLogIn";
             btnLogIn.Padding = new Padding(5, 0, 0, 0);
             btnLogIn.Size = new Size(240, 60);
-            btnLogIn.TabIndex = 14;
+            btnLogIn.TabIndex = 5;
             btnLogIn.Text = "   Увійти";
             btnLogIn.TextAlign = ContentAlignment.MiddleLeft;
             btnLogIn.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -172,7 +172,7 @@
             btnSettings.Name = "btnSettings";
             btnSettings.Padding = new Padding(5, 0, 0, 0);
             btnSettings.Size = new Size(240, 60);
-            btnSettings.TabIndex = 12;
+            btnSettings.TabIndex = 3;
             btnSettings.Text = "   Налаштування";
             btnSettings.TextAlign = ContentAlignment.MiddleLeft;
             btnSettings.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -192,7 +192,7 @@
             btnSearch.Name = "btnSearch";
             btnSearch.Padding = new Padding(5, 0, 0, 0);
             btnSearch.Size = new Size(240, 60);
-            btnSearch.TabIndex = 10;
+            btnSearch.TabIndex = 2;
             btnSearch.Text = "   Пошук викладачів";
             btnSearch.TextAlign = ContentAlignment.MiddleLeft;
             btnSearch.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -212,7 +212,7 @@
             btnHome.Name = "btnHome";
             btnHome.Padding = new Padding(5, 0, 0, 0);
             btnHome.Size = new Size(240, 60);
-            btnHome.TabIndex = 9;
+            btnHome.TabIndex = 1;
             btnHome.Text = "   Головна";
             btnHome.TextAlign = ContentAlignment.MiddleLeft;
             btnHome.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -244,9 +244,9 @@
             lblLogo.Dock = DockStyle.Right;
             lblLogo.Font = new Font("Microsoft Sans Serif", 15F, FontStyle.Regular, GraphicsUnit.Point);
             lblLogo.ForeColor = Color.Gainsboro;
-            lblLogo.Location = new Point(52, 0);
+            lblLogo.Location = new Point(55, 0);
             lblLogo.Name = "lblLogo";
-            lblLogo.Size = new Size(188, 56);
+            lblLogo.Size = new Size(185, 56);
             lblLogo.TabIndex = 1;
             lblLogo.Text = "Feedback";
             lblLogo.TextAlign = ContentAlignment.MiddleLeft;
@@ -281,7 +281,7 @@
             panelDesktop.Location = new Point(240, 56);
             panelDesktop.Name = "panelDesktop";
             panelDesktop.Size = new Size(644, 380);
-            panelDesktop.TabIndex = 2;
+            panelDesktop.TabIndex = 9;
             // 
             // FormMain
             // 

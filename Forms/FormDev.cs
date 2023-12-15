@@ -20,7 +20,7 @@ namespace teacher_evaluation_project.Forms
         }
         public override void SetFont()
         {
-            if(fontFamily != Theme.fontFamily || fontSize != Theme.fontSize)
+            if (fontFamily != Theme.fontFamily || fontSize != Theme.fontSize)
             {
                 fontFamily = Theme.fontFamily;
                 fontSize = Theme.fontSize;

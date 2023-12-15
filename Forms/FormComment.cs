@@ -64,7 +64,7 @@ namespace teacher_evaluation_project.Forms
                     pointSum += com.rate;
                 }
                 readyRate = (double)pointSum / (double)comments.Count;
-                
+
                 string stringRate = Math.Round(readyRate, 2).ToString();
 
                 string json = JsonConvert.SerializeObject(comments);

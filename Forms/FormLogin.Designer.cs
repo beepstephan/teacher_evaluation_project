@@ -66,7 +66,7 @@
             btnLogIn.Location = new Point(257, 163);
             btnLogIn.Name = "btnLogIn";
             btnLogIn.Size = new Size(114, 32);
-            btnLogIn.TabIndex = 2;
+            btnLogIn.TabIndex = 3;
             btnLogIn.Text = "Увійти";
             btnLogIn.UseVisualStyleBackColor = false;
             btnLogIn.Click += btnLogIn_Click;
@@ -80,7 +80,7 @@
             lblAccount.Location = new Point(151, 213);
             lblAccount.Name = "lblAccount";
             lblAccount.Size = new Size(326, 30);
-            lblAccount.TabIndex = 3;
+            lblAccount.TabIndex = 4;
             lblAccount.Text = "Ще немає облікового запису?";
             lblAccount.TextAlign = ContentAlignment.TopCenter;
             lblAccount.Click += label1_Click;
@@ -93,7 +93,7 @@
             checkPass.Location = new Point(273, 125);
             checkPass.Name = "checkPass";
             checkPass.Size = new Size(140, 21);
-            checkPass.TabIndex = 4;
+            checkPass.TabIndex = 2;
             checkPass.Text = "Показать пароль";
             checkPass.UseVisualStyleBackColor = true;
             checkPass.CheckedChanged += checkPass_CheckedChanged;

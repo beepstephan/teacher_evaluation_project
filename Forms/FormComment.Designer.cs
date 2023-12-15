@@ -45,7 +45,7 @@
             textBoxComment.MaxLength = 250;
             textBoxComment.Name = "textBoxComment";
             textBoxComment.Size = new Size(600, 215);
-            textBoxComment.TabIndex = 0;
+            textBoxComment.TabIndex = 1;
             textBoxComment.Text = "";
             textBoxComment.TextChanged += textBoxComment_TextChanged;
             // 
@@ -82,7 +82,7 @@
             trackBarRate.Minimum = 1;
             trackBarRate.Name = "trackBarRate";
             trackBarRate.Size = new Size(293, 45);
-            trackBarRate.TabIndex = 3;
+            trackBarRate.TabIndex = 0;
             trackBarRate.Value = 1;
             trackBarRate.ValueChanged += trackBarRating_ValueChanged;
             // 

@@ -44,7 +44,7 @@
             lblAuthor1.Location = new Point(3, 188);
             lblAuthor1.Name = "lblAuthor1";
             lblAuthor1.Size = new Size(593, 50);
-            lblAuthor1.TabIndex = 0;
+            lblAuthor1.TabIndex = 4;
             lblAuthor1.Text = "Степанов Ігор -> класи, архітектура";
             lblAuthor1.TextAlign = ContentAlignment.MiddleCenter;
             // 
@@ -55,7 +55,7 @@
             lblAuthor3.Location = new Point(3, 125);
             lblAuthor3.Name = "lblAuthor3";
             lblAuthor3.Size = new Size(593, 50);
-            lblAuthor3.TabIndex = 2;
+            lblAuthor3.TabIndex = 3;
             lblAuthor3.Text = "Пастушенко Микита -> дані";
             lblAuthor3.TextAlign = ContentAlignment.MiddleCenter;
             // 
@@ -66,7 +66,7 @@
             lblAuthor4.Location = new Point(3, 64);
             lblAuthor4.Name = "lblAuthor4";
             lblAuthor4.Size = new Size(593, 50);
-            lblAuthor4.TabIndex = 3;
+            lblAuthor4.TabIndex = 2;
             lblAuthor4.Text = "Гоголенко Дмитро -> інтерфейс";
             lblAuthor4.TextAlign = ContentAlignment.MiddleCenter;
             // 
@@ -77,7 +77,7 @@
             lblAuthor5.Location = new Point(3, 0);
             lblAuthor5.Name = "lblAuthor5";
             lblAuthor5.Size = new Size(593, 50);
-            lblAuthor5.TabIndex = 4;
+            lblAuthor5.TabIndex = 1;
             lblAuthor5.Text = "Борисенко Володимир -> Обробка  вин. ситуацій";
             lblAuthor5.TextAlign = ContentAlignment.MiddleCenter;
             // 
@@ -88,7 +88,7 @@
             label1.Location = new Point(3, 251);
             label1.Name = "label1";
             label1.Size = new Size(593, 50);
-            label1.TabIndex = 1;
+            label1.TabIndex = 5;
             label1.Text = "Федишен Станіслав -> алгоритми";
             label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
@@ -103,7 +103,7 @@
             panel1.Location = new Point(17, 21);
             panel1.Name = "panel1";
             panel1.Size = new Size(599, 308);
-            panel1.TabIndex = 5;
+            panel1.TabIndex = 0;
             // 
             // FormDev
             // 
