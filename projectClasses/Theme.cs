@@ -37,11 +37,6 @@ namespace teacher_evaluation_project.projectClasses
         };
         public static Palette activeTheme = themeList[0];
 
-        public static Palette GetFirst()
-        {
-            return themeList[0];
-        }
-
         public static void SetNext()
         {
             themeIndex++;
